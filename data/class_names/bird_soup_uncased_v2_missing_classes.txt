@@ -1,0 +1,277 @@
+albatross
+american kestrel
+american robin
+american wigeon
+antbird
+avadavat
+bald eagle
+bald ibis
+bird of paradise
+black cockato
+black throated huet
+blue heron
+brown headed cowbird
+bufflehead
+california quail
+canary
+canvasback
+carmine bee eater
+cassowary
+cinnamon teal
+cockatoo
+common loon
+crested fireback
+crow
+emu
+fairy bluebird
+fairy tern
+fan tailed widow
+frigate
+go away bird
+golden eagle
+green magpie
+guineafowl
+harlequin duck
+house finch
+indian bustard
+iwi
+kiwi
+kookaburra
+lark bunting
+laughing gull
+myna
+northern cardinal
+northern gannet
+northern shoveler
+ostrich
+oyster catcher
+peacock
+peregrine falcon
+phainopepla
+philippine eagle
+puffin
+purple gallinule
+purple martin
+pygmy kingfisher
+quetzal
+red shouldered hawk
+red tailed hawk
+ring necked pheasant
+roadrunner
+rufous kingfisher
+sand martin
+snow goose
+steamer duck
+surf scoter
+tailorbird
+takahe
+wattled lapwing
+white tailed tropic
+wood duck
+red crossbill
+dunlin
+allen hummingbird
+arctic tern
+barrow goldeneye
+black guillemot
+black scoter
+black bellied plover
+black chinned hummingbird
+black crowned night heron
+black headed grosbeak
+black legged kittiwake
+blackpoll warbler
+blue winged teal
+broad billed hummingbird
+broad tailed hummingbird
+broad winged hawk
+bullock oriole
+calliope hummingbird
+cassin finch
+common eider
+common gallinule
+common goldeneye
+common merganser
+cooper hawk
+costa hummingbird
+double crested cormorant
+dusky flycatcher
+european starling
+gambel quail
+golden crowned sparrow
+gray flycatcher
+great black backed gull
+great cormorant
+greater scaup
+green winged teal
+lesser goldfinch
+lesser scaup
+little blue heron
+long tailed duck
+northern harrier
+northern pintail
+red necked grebe
+red throated loon
+reddish egret
+redhead
+ring necked duck
+rough legged hawk
+ruddy duck
+sanderling
+sharp shinned hawk
+snow bunting
+spotted owl
+spotted sandpiper
+swainson hawk
+western tanager
+white ibis
+white winged crossbill
+white winged scoter
+wilson phalarope
+yellow crowned night heron
+yellow rumped warbler
+african cuckoo
+ashy thrush
+asian openbill
+banded antbird
+banded barbet
+banded honeyeater
+banded kingfisher
+banded sunbird
+banded wren
+barred warbler
+bee hummingbird
+black coucal
+black cuckoo
+black thrush
+black headed parrot
+black throated wren
+blue seedeater
+brown honeyeater
+capped white eye
+chinese barbet
+chinese blue flycatcher
+chinese fulvetta
+chukar
+collared flycatcher
+collared grosbeak
+collared kingfisher
+collared nightjar
+collared puffbird
+collared sunbird
+crested drongo
+crested eagle
+crested guan
+crested ibis
+crested myna
+crested spinetail
+crested tit
+crowned hornbill
+fork tailed drongo
+gray crow
+gray noddy
+gray tit
+gray wren
+gray rumped swift
+gray throated white eye
+green oropendola
+green sunbird
+green warbler
+hooded parrot
+hooded tanager
+island imperial pigeon
+lesser cuckoo
+little cuckoo
+long billed wren
+madagascar cuckoo
+malia
+mao
+masked finch
+moluccan cuckoo
+mountain quail
+mountain wren
+olive flycatcher
+olive woodpecker
+oriental magpie
+palm tanager
+pied cormorant
+pied cuckoo
+plumbeous hawk
+purple crowned fairy
+red bird of paradise
+red goshawk
+red kite
+red lark
+red lory
+red myzomela
+red owl
+red spurfowl
+red warbler
+red capped robin
+red fronted parrot
+rook
+ruff
+rufous flycatcher
+short tailed parrot
+spectacled bulbul
+spectacled warbler
+spot throat
+spotted honeyeater
+spotted nightjar
+spotted owlet
+spotted pardalote
+streaked flycatcher
+striped sparrow
+striped woodcreeper
+sunda cuckoo
+thrush babbler
+tui
+verreaux eagle
+violet crow
+white hawk
+white monjita
+white browed robin
+white browed tit
+white rumped swift
+white tailed shrike
+white throated robin
+whitehead
+yellow grosbeak
+yellow faced parrot
+pauraque
+pampa finch
+hen
+junco
+bustard
+coucal
+macaw
+ptarmigan
+prairie chicken
+dowitcher
+pelican
+bittern
+vulture
+spoonbill
+bulbul
+goldfinch
+drake
+magpie
+goose
+jay
+oystercatcher
+lorikeet
+hummingbird
+toucan
+hornbill
+quail
+flamingo
+crane
+jacamar
+cock
+kite
+chickadee
+robin
+bee eater
+redshank
+partridge
+hoopoe

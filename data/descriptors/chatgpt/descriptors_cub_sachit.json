@@ -1,0 +1,1865 @@
+{
+    "Black-footed Albatross": [
+        "Large bird",
+        "Mostly black or dark brown plumage",
+        "Long, narrow wings",
+        "Hooked beak",
+        "White around the base of the beak",
+        "Pink or red legs and feet",
+        "Webbed feet",
+        "Tail feathers that are white-tipped."
+    ],
+    "Laysan Albatross": [
+        "large bird",
+        "predominantly white plumage",
+        "black and white wings",
+        "large, hooked beak",
+        "black legs and webbed feet",
+        "large wingspan",
+        "body length of about 32 inches",
+        "eyes encircled with a dark ring."
+    ],
+    "Sooty Albatross": [
+        "Dark or sooty-brown plumage",
+        "Long, slender wings",
+        "White eye-rings",
+        "Long, hook-tipped beak",
+        "Large webbed feet",
+        "A streamlined body shape for efficient soaring flight."
+    ],
+    "Groove-billed Ani": [
+        "black feathered bird",
+        "medium-sized bird",
+        "long tail ",
+        "large, curved beak with noticeable ridges or grooves",
+        "often found in groups",
+        "found in semi-open habitats like savannas and scrublands."
+    ],
+    "Crested Auklet": [
+        "Small, plump bird",
+        "Black or dark grey in color",
+        "Orange, slightly curved beak",
+        "White eye with a small black pupil",
+        "Distinctive crest on the top of the head",
+        "Wings are relatively short and rounded",
+        "Legs and feet are orange or red."
+    ],
+    "Least Auklet": [
+        "Small bird ",
+        "Black upper body and white underbody",
+        "Short wings",
+        "Orange legs and feet",
+        "White eye ring",
+        "Short, thick, and orange beak",
+        "Found often in rocky coastal areas or open sea."
+    ],
+    "Parakeet Auklet": [
+        "Small bird, typically around 10 inches in length",
+        "Black or dark gray plumage on the body",
+        "White underparts and faces",
+        "Bright orange, short and stubby bill",
+        "White eye with a small black pupil",
+        "Long tail feathers",
+        "In flight, they show fast, direct flight on short wings",
+        "They are seabirds, so they might be found near bodies of water or in the air."
+    ],
+    "Rhinoceros Auklet": [
+        "small to medium-sized bird",
+        "black or dark gray plumage",
+        "white underbelly",
+        "distinctive horn on its beak",
+        "webbed feet",
+        "short wings ",
+        "bright yellow eyes",
+        "prominent bill with a slight curve at the tip."
+    ],
+    "Brewer Blackbird": [
+        "Medium-sized bird",
+        "Males are entirely black with a yellow eye",
+        "Females are dark grey with a dark eye",
+        "Long, slender beak",
+        "Often seen near water or in open habitats",
+        "Characteristic posture with an upright stance."
+    ],
+    "Red-winged Blackbird": [
+        "small to medium-sized bird",
+        "predominantly black feathers",
+        "bright red and yellow patches on wings",
+        "sharp, pointed beak",
+        "slender tail feathers",
+        "often seen near water or marshy areas",
+        "males have more pronounced coloration than females."
+    ],
+    "Rusty Blackbird": [
+        "black or rusty colored feathers",
+        "a small beak",
+        "yellow eyes",
+        "a medium-sized bird",
+        "often found in wet wooded areas or near water bodies",
+        "in flight, they display broad wings and a short, squared tail."
+    ],
+    "Yellow-headed Blackbird": [
+        "Bright yellow head and chest",
+        "Black body",
+        "Medium-sized bird",
+        "Dark eye",
+        "Sharp, pointed beak",
+        "Often found near water or in marshy areas",
+        "Males have a white wing patch which can be seen during flight."
+    ],
+    "Bobolink": [
+        "small bird",
+        "males have a black body, white back, and yellowish nape (back of the neck)",
+        "females and juveniles are more of a yellow-brown color",
+        "distinctive \"bob-o-link\" song",
+        "conical beak",
+        "found in grasslands or meadows during breeding season",
+        "migratory bird, often found in South America during winter months."
+    ],
+    "Indigo Bunting": [
+        "Bright blue plumage (in males)",
+        "Small, finch-like body",
+        "Short, conical beak",
+        "Brownish wings and tail (in females and juveniles)",
+        "A habitat setting such as open areas with shrubs or trees, or forest edges",
+        "Often seen near bird feeders."
+    ],
+    "Lazuli Bunting": [
+        "Small bird",
+        "Bright blue head and back for males",
+        "Rust-colored chest for males",
+        "White belly",
+        "Females are more dull in color, usually a grey-brown ",
+        "Sparrow-sized ",
+        "Short, thick bill",
+        "Slightly forked tail."
+    ],
+    "Painted Bunting": [
+        "brightly colored feathers, often red, green, yellow and blue",
+        "small size",
+        "conical beak",
+        "rounded head",
+        "short tail",
+        "found in North America",
+        "male and female birds look different, with males being more brightly colored",
+        "typically found in shrubs or trees."
+    ],
+    "Cardinal": [
+        "Bright red plumage (for male cardinals)",
+        "Crest on the head",
+        "Black \"mask\" around the eyes (for male cardinals)",
+        "Small, cone-shaped beak",
+        "Females are tan or brown with a slight reddish hue on the wings, tail, and crest",
+        "Round body shape with a long tail",
+        "Often seen in trees or shrubs."
+    ],
+    "Spotted Catbird": [
+        "Greenish-black or dark green plumage",
+        "White spots on the body",
+        "Yellow eyes",
+        "Slender, slightly curved beak",
+        "Long tail",
+        "Medium to large sized bird",
+        "Native to Australia and New Guinea, so may be pictured in those environments."
+    ],
+    "Gray Catbird": [
+        "Medium-sized bird",
+        "Entirely gray body",
+        "Black cap on the top of their head",
+        "Bright rusty-orange patch under their tail",
+        "Slender, straight beak",
+        "Long, rounded tail",
+        "Short legs with clawed feet."
+    ],
+    "Yellow-breasted Chat": [
+        "Bright yellow breast",
+        "White belly and undertail",
+        "Olive-green upperparts",
+        "Long tail",
+        "Thick, dark bill",
+        "Large size for a warbler",
+        "White spectacles (eye rings) ",
+        "Dark legs."
+    ],
+    "Eastern Towhee": [
+        "medium-sized bird",
+        "large, round body with a long tail",
+        "males are black on the upper parts and flanks, and white below",
+        "females are brown where the males are black",
+        "red eyes",
+        "thick, pointed beak",
+        "commonly found on or near the ground in forests or shrublands."
+    ],
+    "Chuck-will Widow": [
+        "bird species ",
+        "brown, black, and gray plumage ",
+        "distinctive white patches on wings and tail ",
+        "large, gaping mouth ",
+        "long tail ",
+        "short, stout beak ",
+        "large eyes ",
+        "nocturnal, often seen at dusk or dawn."
+    ],
+    "Brandt Cormorant": [
+        "Bird species",
+        "Mostly black or dark plumage",
+        "Long beak with a hook at the end",
+        "Blue eyes",
+        "Throat pouch which is blue in color during breeding season",
+        "Narrow and elongated body",
+        "Long, webbed feet",
+        "Slim neck and small head for its body size",
+        "Often found near water bodies."
+    ],
+    "Red-faced Cormorant": [
+        "aquatic bird with webbed feet",
+        "black or dark blue feathers",
+        "bright red skin on the face, especially around eyes",
+        "slender neck",
+        "pointed beak",
+        "can often be seen with wings spread out to dry after diving."
+    ],
+    "Pelagic Cormorant": [
+        "Black or dark plumage",
+        "Long, thin neck",
+        "Hooked bill",
+        "Yellow or orange throat patch (during breeding season)",
+        "Webbed feet",
+        "Medium to large bird size",
+        "Often seen near or in water bodies",
+        "Thin, elongated body shape",
+        "Short legs situated at the back of the body",
+        "During breeding season, they may have white patches on their flanks and white filaments on their head and neck."
+    ],
+    "Bronzed Cowbird": [
+        "Black or glossy blue-black colored feathers",
+        "Bright red eyes",
+        "Thick, cone-shaped beak",
+        "Relatively short tail",
+        "Males have a distinctive puffed-neck display ",
+        "Typically found near feeders or grasslands."
+    ],
+    "Shiny Cowbird": [
+        "Glossy black plumage",
+        "Male birds have a slight purple-blue sheen",
+        "Females are duller and more brown in color",
+        "They have a sharp beak",
+        "Their eyes are very dark, almost black",
+        "They are small in size, similar to a sparrow",
+        "They have short legs and claws."
+    ],
+    "Brown Creeper": [
+        "Small, slender bird",
+        "Brown upper body with white underparts",
+        "Long, thin and curved beak",
+        "Short legs with long toes and claws",
+        "Often found clinging to tree trunks or branches ",
+        "White eye-ring ",
+        "Striped or spotted plumage pattern on the wings and back."
+    ],
+    "American Crow": [
+        "completely black in color",
+        "large bird ",
+        "shiny feathers",
+        "strong and stout beak",
+        "fan-shaped tail",
+        "straight, thick legs",
+        "robust body ",
+        "large wings when spread out."
+    ],
+    "Fish Crow": [
+        "Black feathers all over its body",
+        "Fairly small size compared to other crow species",
+        "Slender body",
+        "Pointed wings",
+        "Straight tail",
+        "Sharp, pointed beak",
+        "Bright eyes",
+        "Often seen near water bodies as they feed on fish and other aquatic animals."
+    ],
+    "Black-billed Cuckoo": [
+        "Small to medium-sized bird",
+        "Black, pointed beak",
+        "White or pale belly",
+        "Brown or greyish-brown back and wings",
+        "Long, pointed tail with white spots",
+        "Bright red ring around the eyes",
+        "Long, curved claws."
+    ],
+    "Mangrove Cuckoo": [
+        "A bird species",
+        "Mostly brown on the upper parts and grayish on the underparts",
+        "Yellow eye-ring and lower bill",
+        "Long tail with large white spots underneath",
+        "Black mask on the face",
+        "Often found in mangroves or other tropical/subtropical environments."
+    ],
+    "Yellow-billed Cuckoo": [
+        "Long, pointed wings",
+        "Yellow beak",
+        "Large, red-brown eyes",
+        "Long tail with white spots",
+        "Grayish-brown body",
+        "White underparts",
+        "Long, thin legs and feet."
+    ],
+    "Gray-crowned-Rosy Finch": [
+        "Small bird ",
+        "Grey or black crown on the head",
+        "Pink-hued chest and belly",
+        "Dark wings with white edges",
+        "Dark tail",
+        "Small, pointed beak",
+        "Often found in cold, mountainous regions"
+    ],
+    "Purple Finch": [
+        "small bird",
+        "males have a raspberry red head, breast, and back",
+        "females are brown and heavily streaked",
+        "conical beak",
+        "short, notched tail",
+        "brown wings and tail",
+        "often found in trees or bushes."
+    ],
+    "Northern Flicker": [
+        "Medium-sized bird",
+        "Pointed, slightly curved beak",
+        "Brown or gray overall, with a white rump patch that's conspicuous in flight",
+        "Black-scalloped plumage",
+        "A black or red \"moustache\" stripe at the base of the beak",
+        "Yellow or red underwings and undertail (depending on the region)",
+        "Large, round spots on the lower belly ",
+        "Males have a red or black \"moustache\" stripe on their face."
+    ],
+    "Acadian Flycatcher": [
+        "Small bird with a relatively long tail",
+        "Greenish-olive color on the upper parts",
+        "Pale underparts",
+        "A white eye-ring",
+        "A prominent, two-toned beak",
+        "Wing bars",
+        "Short legs and feet."
+    ],
+    "Great-Crested Flycatcher": [
+        "medium-sized bird",
+        "brownish-gray or olive-green back and wings",
+        "bright yellow belly",
+        "large, thick bill",
+        "long, fluffy tail with rufous coloration",
+        "a slight crest on its head",
+        "black eye line and white throat",
+        "perched on a branch or in flight."
+    ],
+    "Least Flycatcher": [
+        "Small bird (around 13-15 cm in length)",
+        "Greyish-olive upperparts ",
+        "White underparts with a buffy wash to the sides",
+        "Two white wing bars",
+        "Large white eye-ring",
+        "Short, sharp bill",
+        "Short tail"
+    ],
+    "Olive-sided Flycatcher": [
+        "Large bird with a thick neck and large head",
+        "Dark olive-gray upper parts",
+        "Large, dark bill",
+        "White throat and belly with dark 'vest' on the chest and flanks",
+        "Long wings and short tail",
+        "Often seen perching upright on tree tops",
+        "Distinctive call (if video with audio)"
+    ],
+    "Scissor-tailed Flycatcher": [
+        "Long, forked tail that resembles a pair of open scissors",
+        "Light grey and white body",
+        "Bright salmon-pink flanks and underwing coverts",
+        "Small black mask around the eyes",
+        "Pointed, slender beak",
+        "Often seen perched on fences or wires."
+    ],
+    "Vermilion Flycatcher": [
+        "small bird species",
+        "bright red or vermilion plumage, especially in males",
+        "females and juveniles are more brown or grey",
+        "black mask around the eyes in adult males",
+        "relatively short beak",
+        "often perches on branches or wires",
+        "native to the Americas, particularly in warmer climates."
+    ],
+    "Yellow-bellied Flycatcher": [
+        "Small bird",
+        "Yellow belly ",
+        "Olive-green back and wings",
+        "White eye ring",
+        "Short, sharp beak for catching insects",
+        "Tail feathers often have white edges",
+        "Usually found in forested areas or on tree branches."
+    ],
+    "Frigatebird": [
+        "large wingspan",
+        "black or brownish-black feathers",
+        "long, hooked beak",
+        "forked tail",
+        "males have a red throat pouch that can be inflated to attract females",
+        "females have a white chest",
+        "they are usually seen near the ocean, as they are seabirds."
+    ],
+    "Northern Fulmar": [
+        "medium-sized bird",
+        "white or light grey plumage",
+        "dark wings and tail",
+        "short, thick beak",
+        "tube-like nostrils on top of the beak",
+        "webbed feet",
+        "often found near water or in coastal areas",
+        "distinctive gliding flight pattern."
+    ],
+    "Gadwall": [
+        "Medium-sized duck",
+        "Males have a gray body with a black rear end and a white patch on the wing",
+        "Males also have a brown head and neck",
+        "Females are generally mottled brown",
+        "Both genders have a slightly upturned tail",
+        "Blue-green speculum (colored patch on the wing) with white borders",
+        "Yellow or orange feet and legs",
+        "Relatively long, pointed bill."
+    ],
+    "American Goldfinch": [
+        "bright yellow in summer",
+        "black wings with white markings",
+        "notched tail ",
+        "small conical bill",
+        "in winter, their plumage is brownish or dull yellow",
+        "males have a black forehead."
+    ],
+    "European Goldfinch": [
+        "small bird",
+        "bright red face",
+        "black and white head",
+        "yellow wing bar",
+        "long pointed beak",
+        "short legs",
+        "brownish back and white underparts."
+    ],
+    "Boat-tailed Grackle": [
+        "Long, keel-shaped tail ",
+        "Black or iridescent body",
+        "Pointed beak",
+        "Males are much larger than females and have a dark coloration",
+        "Females are smaller and have a brown coloration",
+        "Bright yellow eyes",
+        "Often found near water in coastal areas."
+    ],
+    "Eared Grebe": [
+        "small aquatic bird",
+        "black head and neck",
+        "red eyes",
+        "bright yellow or golden feather tufts behind the eyes",
+        "whitish or light grey belly",
+        "thin, sharp beak",
+        "lobed toes for swimming"
+    ],
+    "Horned Grebe": [
+        "Small to medium-sized bird",
+        "Distinctive breeding plumage with a 'horned' golden-yellow patch behind the eyes",
+        "Black or dark grey body",
+        "Reddish neck",
+        "Sharp pointed beak",
+        "Floating on water or flying with feet trailing behind",
+        "Creeping low in the water with only head and neck visible."
+    ],
+    "Pied-billed Grebe": [
+        "small-sized bird",
+        "brown or grey feathers",
+        "short, thick, chicken-like beak that is light in color with a black stripe (or band) across it",
+        "red eyes",
+        "round body with a small head",
+        "short tail",
+        "legs are placed far back on the body",
+        "often seen on water as it's a diving bird."
+    ],
+    "Western Grebe": [
+        "Long, slender neck",
+        "Black and white colored feathers",
+        "Red or pink eyes",
+        "Pointed, slightly upturned beak",
+        "Long body and short legs",
+        "Often seen on water as it is a diving bird",
+        "In breeding season, they have a noticeable golden-yellow patch on the sides of their heads."
+    ],
+    "Blue Grosbeak": [
+        "Blue feathers, particularly in males",
+        "Large, triangular beak",
+        "Brown wing bars or patches in males",
+        "Brownish or russet colored feathers in females",
+        "Medium size bird",
+        "Stout body shape",
+        "Short tail",
+        "Often seen near shrubs or trees."
+    ],
+    "Evening Grosbeak": [
+        "Bright yellow and black or brown plumage ",
+        "Large, chunky body ",
+        "Large, conical beak ",
+        "White patches on wings ",
+        "Fan-shaped tail ",
+        "Male has a bright yellow forehead and body ",
+        "Female has a more subdued coloration, typically grey or brownish with some yellow ",
+        "Usually found in forested areas."
+    ],
+    "Pine Grosbeak": [
+        "It is a bird species usually found in coniferous woods",
+        "Thick, strong bill",
+        "Males are reddish pink in color",
+        "Females and young ones are olive-brown",
+        "They have a black tail and black wings with two white wing bars",
+        "Medium to large size bird",
+        "Rounded head and body."
+    ],
+    "Rose-breasted Grosbeak": [
+        "Conical, thick beak",
+        "Black, white, and rose-red plumage for males",
+        "Striped brown and white plumage for females",
+        "Black wings with white patches",
+        "Medium-sized songbird",
+        "Rose-red patch on chest (for males) ",
+        "Rounded tail"
+    ],
+    "Pigeon Guillemot": [
+        "Black or dark brown plumage",
+        "Red legs and feet",
+        "Bright white patches on the wings",
+        "Long, narrow, pointed beak",
+        "A small, plump body shape",
+        "Often seen near water as they are seabirds",
+        "During breeding season, they have a black body with a white wing patch",
+        "During non-breeding season they have a mottled grey and white body."
+    ],
+    "California Gull": [
+        "medium-sized bird",
+        "white body with grey wings",
+        "black wingtips with white spots",
+        "yellow legs",
+        "yellow beak with a red and black spot",
+        "eyes with dark iris",
+        "found near water bodies or coastal areas."
+    ],
+    "Glaucous-winged Gull": [
+        "White or light grey body",
+        "Large bird",
+        "Light grey wings with white tips",
+        "Yellow bill with a red spot near the tip",
+        "Webbed feet",
+        "Rounded head",
+        "Often found near the sea or other bodies of water."
+    ],
+    "Heermann Gull": [
+        "Seabird with a white body and grey wings",
+        "Bright red bill with a black tip",
+        "Red legs and feet ",
+        "White or light grey head",
+        "Medium size compared to other gulls",
+        "Often found near the sea or ocean."
+    ],
+    "Herring Gull": [
+        "medium to large bird",
+        "white body with grey wings",
+        "black wingtips with white 'mirrors'",
+        "yellow beak with red dot near the tip",
+        "pink legs",
+        "round head with large eyes",
+        "often found near bodies of water"
+    ],
+    "Ivory Gull": [
+        "White feathers all over the body",
+        "Small, slender bill that is blue at the base and black at the tip",
+        "Black eyes",
+        "Short legs with webbed feet",
+        "Medium size bird",
+        "Mostly found in Arctic regions, so may be seen in a snowy or icy background."
+    ],
+    "Ring-billed Gull": [
+        "white or grey feathers",
+        "yellow beak with a black ring around it",
+        "yellow or greenish legs",
+        "relatively small size compared to other gulls",
+        "black wingtips with white spots",
+        "round body shape",
+        "often found near water bodies",
+        "pointed wings in flight"
+    ],
+    "Slaty-backed Gull": [
+        "Large size bird",
+        "Predominantly white body",
+        "Grey back and wings",
+        "Black wingtips with white spots",
+        "Yellow beak with a red spot on the lower part",
+        "Yellow or pinkish legs",
+        "Rounded head ",
+        "Often seen near water bodies."
+    ],
+    "Western Gull": [
+        "medium to large size bird",
+        "white body",
+        "grey wings and back",
+        "yellow beak with a red spot",
+        "pink legs and feet",
+        "round head",
+        "webbed feet",
+        "found near coastal areas."
+    ],
+    "Anna Hummingbird": [
+        "small in size",
+        "iridescent reddish-pink feathers on its throat and head (in males)",
+        "green and gray plumage on the body",
+        "long, thin beak",
+        "rapid wing movement",
+        "hovering near flowers or bird feeders",
+        "white underbelly."
+    ],
+    "Ruby-throated Hummingbird": [
+        "small size",
+        "bright red throat (if male)",
+        "green upper parts",
+        "grayish white underparts",
+        "long, thin beak",
+        "rapidly beating wings",
+        "ability to hover in air while feeding on nectar"
+    ],
+    "Rufous Hummingbird": [
+        "small bird",
+        "bright orange or rufous coloration on the back and belly",
+        "white breast and throat",
+        "a small, slender, pointed beak designed for sipping nectar",
+        "rapid, flapping wings",
+        "ability to hover in mid-air",
+        "males have a bright red throat, known as a gorget."
+    ],
+    "Green Violetear": [
+        "small bird (about 4 inches long)",
+        "predominantly green plumage",
+        "distinctive violet-blue patches on the sides of its neck and head",
+        "long, thin, and sharp beak",
+        "ability to hover mid-air",
+        "short tail",
+        "black eyes"
+    ],
+    "Long-tailed Jaeger": [
+        "Small to medium-sized bird",
+        "Long tail feathers",
+        "Dark cap on its head",
+        "Light grey or white belly",
+        "Dark wings with white patches",
+        "Sharp, hooked beak",
+        "Yellow or light colored eyes",
+        "Predominantly grey or brown plumage."
+    ],
+    "Pomarine Jaeger": [
+        "medium to large size bird",
+        "dark cap on the head",
+        "white underparts",
+        "dark brown or grey upperparts",
+        "long wings",
+        "long, pointed tail feathers",
+        "hooked beak",
+        "lives in arctic or subarctic regions",
+        "may be seen in flight over water"
+    ],
+    "Blue Jay": [
+        "bright blue, white, and black plumage",
+        "crest on its head",
+        "chunky bird with a full, rounded tail",
+        "black band around the neck and head",
+        "black, bristle-like feathers covering the nostrils",
+        "blue wings and tail with black banding and white tips",
+        "large, black beak."
+    ],
+    "Florida Jay": [
+        "Blue and gray plumage",
+        "Crested head",
+        "Long tail",
+        "Short, stout bill",
+        "Black legs and feet",
+        "Bright white underparts",
+        "Often found in pairs or family groups",
+        "Commonly seen on the ground or in low vegetation."
+    ],
+    "Green Jay": [
+        "Brightly colored feathers in green, blue, yellow or black",
+        "Distinctive crest on its head",
+        "Black beak",
+        "Medium size bird",
+        "Black eyes",
+        "Long tail feathers",
+        "Found often in trees or flying."
+    ],
+    "Dark-eyed Junco": [
+        "small bird ",
+        "black or dark gray head and upper body",
+        "light gray or white belly ",
+        "pinkish beak",
+        "white outer tail feathers",
+        "rounded head",
+        "short, stout beak",
+        "relatively short wings",
+        "males are typically darker than females."
+    ],
+    "Tropical Kingbird": [
+        "Bright yellow belly and chest",
+        "Dark grey or brown wings and back",
+        "A long, pointed beak",
+        "Medium-sized bird",
+        "Forked tail with white edges",
+        "Sharp, pointed wings",
+        "Found in open habitats, often perched prominently on trees or wires."
+    ],
+    "Gray Kingbird": [
+        "medium-sized bird",
+        "grey upper body",
+        "lighter grey or white underbelly",
+        "black beak",
+        "fairly long tail",
+        "black legs and feet",
+        "often seen in tropical environments",
+        "large head relative to body size."
+    ],
+    "Belted Kingfisher": [
+        "Medium-sized bird",
+        "Blue-grey plumage on head and upperparts",
+        "White underparts with a blue band on the chest",
+        "Large head with a shaggy crest",
+        "Large, pointed beak",
+        "Females have a rusty band across their chest",
+        "Usually found near bodies of water as they are fishing birds"
+    ],
+    "Green Kingfisher": [
+        "Small bird, typically around 20 cm in length",
+        "Bright green upperparts ",
+        "White collar around the neck",
+        "White underparts with green streaks or spots",
+        "Large, long, pointed beak, often orange or red in color",
+        "Short legs",
+        "Often found near water bodies as they primarily eat fish."
+    ],
+    "Pied Kingfisher": [
+        "black and white plumage",
+        "a long, pointed beak",
+        "a crest on top of its head",
+        "a white collar around the neck",
+        "black bands across the chest and belly",
+        "hovering above water (common behavior)",
+        "small, rounded wings",
+        "short legs."
+    ],
+    "Ringed Kingfisher": [
+        "Large bird with a robust body",
+        "Bright blue upperparts and white underparts",
+        "Broad white collar and a white rump",
+        "Rusty flanks",
+        "Large, pointed beak, usually red-orange in color",
+        "Black band across the chest",
+        "Often seen near water as they are a type of water bird",
+        "Can often be seen perched on a branch or wire, overlooking the water."
+    ],
+    "White-breasted Kingfisher": [
+        "Bright blue back, wings and tail",
+        "White belly and chest",
+        "Large red beak",
+        "Medium size bird",
+        "Sharp, pointed beak",
+        "Usually seen near water bodies",
+        "Black eye with a white patch around it."
+    ],
+    "Red-legged Kittiwake": [
+        "Bird species",
+        "White feathers with grey wings",
+        "Red legs and feet",
+        "Black eyes surrounded by a white circle",
+        "Small black beak",
+        "Tails have a black tip",
+        "Usually found in coastal or oceanic areas."
+    ],
+    "Horned Lark": [
+        "Small bird",
+        "Yellow or white underparts",
+        "Brown or gray upperparts",
+        "Black or brown mask across the eyes",
+        "Black or brown \u201chorns\u201d or tufts of feathers on the head",
+        "Small, sharp beak",
+        "Short tail",
+        "Typically found in open fields or grasslands."
+    ],
+    "Pacific Loon": [
+        "Black or grey on the upperparts ",
+        "White underparts ",
+        "A grey or white throat ",
+        "A dark, pointed bill",
+        "Red eyes",
+        "Webbed feet",
+        "Sleek, streamlined body shape",
+        "In flight, they hold their necks slightly raised and their wings beat deeply and quickly."
+    ],
+    "Mallard": [
+        "Green head and neck (in males)",
+        "Brown body (in females)",
+        "Yellow bill",
+        "Blue speculum (patch) on the wings",
+        "White ring around the neck (in males)",
+        "Generally found near water bodies."
+    ],
+    "Western Meadowlark": [
+        "Bright yellow chest with a black \"V\" shaped stripe",
+        "Brown, black, and white streaks on the back and wings",
+        "Long, pointed beak",
+        "White edges on the tail",
+        "Relatively small bird often found in grasslands or fields",
+        "It might be standing on the ground, rather than perched in a tree."
+    ],
+    "Hooded Merganser": [
+        "small to medium-sized duck",
+        "distinct fan-shaped crest on the head, usually white and black for males and brown for females",
+        "thin, sharp beak",
+        "body colors typically include black, white, brown, and grey",
+        "males have bright golden eyes, females have brown eyes",
+        "white patch on the wing",
+        "males have a black and white body, while females are brown overall."
+    ],
+    "Red-breasted Merganser": [
+        "Crested head with shaggy feathers",
+        "Reddish-brown breast",
+        "White neck",
+        "Grey body",
+        "Thin, sharp bill",
+        "It's a type of duck, so it may be found in or near water",
+        "Males have a greenish-black head while females have a rusty-cinnamon head."
+    ],
+    "Mockingbird": [
+        "medium-sized bird",
+        "grey or brown feathers",
+        "long tail feathers",
+        "small head",
+        "thin, pointed beak",
+        "white patches on wings and tail when in flight",
+        "prominent and dark eye circles."
+    ],
+    "Nighthawk": [
+        "Bird with pointed wings",
+        "Short beak and large mouth",
+        "Dull brown or gray plumage with black and white patterns ",
+        "Large eyes ",
+        "Long, slightly forked tail",
+        "Often seen flying in a jerky, erratic manner usually at dawn or dusk",
+        "Relatively short legs",
+        "They may be seen roosting during the day on tree limbs, fence posts, or on the ground."
+    ],
+    "Clark Nutcracker": [
+        "medium-sized bird",
+        "gray or grayish-black plumage",
+        "long, sharp beak",
+        "short legs with clawed feet",
+        "white patches on wings and tail",
+        "usually found in pine forests or mountainous regions",
+        "often seen holding nuts or seeds in their beak or claws."
+    ],
+    "White-breasted Nuthatch": [
+        "Small bird with a stout build",
+        "White underparts and face",
+        "Gray-blue upperparts",
+        "Black or gray cap or crown on its head",
+        "Short tail",
+        "Long, sharp beak",
+        "The bird may be seen walking head-first down tree trunks"
+    ],
+    "Baltimore Oriole": [
+        "Bright orange and black coloring (in males)",
+        "Smaller, more slender size compared to other birds",
+        "Sharp, pointed beak",
+        "Sleek body shape",
+        "White bars on the wings",
+        "Long, pointed tail",
+        "Females and young males are yellow-brown on the head and back, with an orange or yellow breast."
+    ],
+    "Hooded Oriole": [
+        "Bright yellow-orange body",
+        "Black head and throat (in males)",
+        "Long, curved beak",
+        "Black wings with white wing bars",
+        "Medium-sized songbird",
+        "Long tail feathers."
+    ],
+    "Orchard Oriole": [
+        "Small size ",
+        "Sleek, slender body shape ",
+        "Pointed beak",
+        "Male is black and chestnut-orange, female and immature birds are yellowish or greenish-yellow",
+        "Often found in trees or bushes ",
+        "Long tail feathers ",
+        "Sharp, pointed wings."
+    ],
+    "Scott Oriole": [
+        "Black and yellow or orange plumage",
+        "Long, slender, slightly curved beak",
+        "Relatively long tail",
+        "Males have a black head and back with a yellow or orange belly, while females are more grey and yellow",
+        "They are a type of bird, so features such as wings, feathers, and a beak are present."
+    ],
+    "Ovenbird": [
+        "Small bird, around 5-6 inches in size",
+        "Brownish or olive-brown feathers",
+        "White or light colored belly with dark streaks ",
+        "Orange crown bordered by two dark stripes",
+        "Short tail",
+        "Thin pointed beak",
+        "Pinkish legs and feet",
+        "Large dark eyes",
+        "Often seen on the ground as it's a ground-dwelling bird."
+    ],
+    "Brown Pelican": [
+        "large bird with a long bill",
+        "throat pouch for catching fish",
+        "brown and gray plumage",
+        "white neck and yellow head in adults",
+        "webbed feet",
+        "wingspan can reach up to 6.5 feet",
+        "often seen near bodies of water."
+    ],
+    "White Pelican": [
+        "large bird with a long neck",
+        "predominantly white feathers",
+        "large orange or yellow beak",
+        "a large pouch attached to the lower half of the beak",
+        "webbed feet",
+        "large wings, often with black tips."
+    ],
+    "Western-Wood Pewee": [
+        "Small bird",
+        "Grey-brown or olive-brown plumage",
+        "White or pale underparts",
+        "Two wing bars",
+        "Dark bill",
+        "Peak-like crest",
+        "Slightly forked tail",
+        "Perching behavior, often seen on exposed branches or atop dead trees."
+    ],
+    "Sayornis": [
+        "small bird",
+        "dark, usually black or grey feathers",
+        "white or light-colored belly",
+        "sharp, pointed beak",
+        "relatively long tail",
+        "found perching or in flight."
+    ],
+    "American Pipit": [
+        "small bird",
+        "brownish upperparts with streaking on the chest",
+        "pale underparts",
+        "thin bill",
+        "white or pale eyebrows",
+        "legs and feet are usually pinkish or yellowish",
+        "often seen in open habitats such as tundra, beaches, or fields."
+    ],
+    "Whip-poor Will": [
+        "Medium-sized bird",
+        "Brown, grey, and white mottled plumage",
+        "Large eyes",
+        "Small beak",
+        "Pointed wings",
+        "Short legs ",
+        "Long tail feathers with white tips."
+    ],
+    "Horned Puffin": [
+        "Black and white plumage",
+        "Large, triangular beak often with a yellow and red coloration",
+        "Small horns above the eyes",
+        "Webbed feet",
+        "Mostly seen near water bodies or in flight",
+        "Short wings and tail"
+    ],
+    "Common Raven": [
+        "black plumage",
+        "large bird",
+        "thick, black beak",
+        "black eyes",
+        "wedge-shaped tail",
+        "strong, robust legs and feet",
+        "often found near human habitats or in natural environments like forests and mountains."
+    ],
+    "White-necked Raven": [
+        "Large bird",
+        "Entirely black in color",
+        "Distinct white patch on the back of the neck",
+        "Long, thick bill",
+        "Shaggy throat feathers",
+        "Large wings",
+        "Long, wedge-shaped tail."
+    ],
+    "American Redstart": [
+        "small bird size",
+        "orange-red patches on the sides, wings, and tail",
+        "black body for males, grey for females",
+        "thin, pointed beak",
+        "white belly",
+        "found often in trees or shrubs."
+    ],
+    "Geococcyx": [
+        "Long legs with zygodactyl feet",
+        "Long tail feathers",
+        "Crest on the head",
+        "Blue-black body color with lighter underparts",
+        "Mottled or patterned back and wings",
+        "Bright yellow eyes",
+        "Beak is slightly curved downwards",
+        "They are usually seen on ground rather than flying as they are known for being great runners."
+    ],
+    "Loggerhead Shrike": [
+        "Grey, black, and white plumage",
+        "Distinct black \"mask\" that extends across the eyes and down the sides of the neck",
+        "Sharp, hooked beak",
+        "Somewhat large head in comparison to body",
+        "Short wings",
+        "Long, black tail with white edges",
+        "Predominantly found in open habitats."
+    ],
+    "Great-Grey Shrike": [
+        "Medium-sized bird",
+        "Predominantly grey plumage",
+        "Black mask over the eyes",
+        "Black wings with white patches",
+        "Black tail with white outer feathers",
+        "Sharp, hooked beak",
+        "Typically perched on top of a tree or bush."
+    ],
+    "Baird Sparrow": [
+        "Small bird",
+        "Brown plumage with black streaks",
+        "Pinkish beak",
+        "White belly and underparts",
+        "Crown has dark streaks",
+        "Pale yellow or buffy eyebrow stripe",
+        "Short tail."
+    ],
+    "Black-throated Sparrow": [
+        "small bird",
+        "black throat and upper chest",
+        "white underparts and lower chest",
+        "gray back and wings",
+        "two white stripes on the head",
+        "long, pointed beak",
+        "black eyes",
+        "legs and feet are often light pink or gray."
+    ],
+    "Brewer Sparrow": [
+        "small bird (around 5 inches in length)",
+        "pale brown or grayish-brown plumage ",
+        "faint streaking on the breast",
+        "thin, pointed beak",
+        "long tail with white edges",
+        "pale eye ring",
+        "usually found in dry, shrub-filled habitats."
+    ],
+    "Chipping Sparrow": [
+        "Small bird",
+        "Brownish-grey or rusty brown back and wings",
+        "White or light grey underparts",
+        "Black line through eye",
+        "White stripe over the eye",
+        "Distinctive reddish-brown cap or crown on top of the head",
+        "Thin, pointed beak",
+        "Short tail."
+    ],
+    "Clay-colored Sparrow": [
+        "Small bird size",
+        "Grey or brown upperparts with pale underparts",
+        "Distinctive facial pattern with a pale stripe over the eye and a dark cheek patch",
+        "Short, notched tail",
+        "Thin bill ",
+        "Light-colored legs and feet."
+    ],
+    "House Sparrow": [
+        "small bird",
+        "greyish or brownish feathers",
+        "black bib (in males)",
+        "relatively short tail",
+        "stout, conical beak",
+        "round body shape ",
+        "brown streaks on back and wings."
+    ],
+    "Field Sparrow": [
+        "small bird",
+        "light brown or pinkish color",
+        "white eyering",
+        "pink bill",
+        "grey or white chest ",
+        "a distinctive rusty cap ",
+        "streaked or spotted back",
+        "long, rounded tail."
+    ],
+    "Fox Sparrow": [
+        "Small bird (about the size of a sparrow)",
+        "Thick, pointed beak",
+        "Rufous or reddish-brown colored feathers with grey on the head and rump",
+        "Heavily streaked or spotted underbelly",
+        "Short, notched tail",
+        "Short, rounded wings",
+        "Black legs and feet."
+    ],
+    "Grasshopper Sparrow": [
+        "Small bird",
+        "Brown, buff, or white coloration",
+        "Flat, rounded head",
+        "Short tail",
+        "Yellowish patch in front of eye",
+        "Chest and belly is often pale or white with streaked flanks",
+        "Darker wings with white edges."
+    ],
+    "Harris Sparrow": [
+        "black crown and face",
+        "white underparts with black spots/streaks",
+        "pink bill",
+        "large size compared to other sparrows",
+        "brown wings with white edges",
+        "long tail",
+        "often found in grassy or brushy areas."
+    ],
+    "Henslow Sparrow": [
+        "Small, compact bird",
+        "Brown streaked body",
+        "Olive colored head with dark stripes on the sides",
+        "Large, flat bill",
+        "Short tail",
+        "White belly and underparts",
+        "Pink legs and feet."
+    ],
+    "Le-Conte Sparrow": [
+        "Small bird",
+        "Buff and orange colored face",
+        "Gray nape and crown",
+        "Streaked back and wings",
+        "Pale underparts",
+        "Long, pointed tail",
+        "Sharp, conical beak",
+        "Found in grassy or marshy areas."
+    ],
+    "Lincoln Sparrow": [
+        "small bird",
+        "brown on top and gray below",
+        "buffy streaked breast",
+        "thin, sharp bill",
+        "black streaks on crown and back",
+        "a buffy eye-ring",
+        "white belly and undertail coverts",
+        "long, rounded tail."
+    ],
+    "Nelson-Sharp-tailed Sparrow": [
+        "Small bird size",
+        "Brown streaked upperparts",
+        "White underparts with fine brown streaks",
+        "Short, sharp tail",
+        "Orange face with gray cheeks",
+        "Gray nape and crown",
+        "Thin, pointed beak",
+        "Legs and feet are pink or grayish."
+    ],
+    "Savannah Sparrow": [
+        "Small bird",
+        "Brown, white, or black",
+        "Streaked underparts",
+        "Pinkish or yellowish beak",
+        "Short notched tail",
+        "Yellow eyebrow stripe",
+        "Brown streaks on the back and wings",
+        "Flat-headed appearance",
+        "White belly and underparts",
+        "Grayish-brown face with dark eyeline."
+    ],
+    "Seaside Sparrow": [
+        "Small bird",
+        "Brown or grey overall color ",
+        "Distinctive yellow streak near the eye",
+        "Solid grey breast",
+        "Sharp, pointed beak",
+        "Short, notched tail",
+        "Often seen in marshy or coastal areas",
+        "Dark streaks along the back and wings."
+    ],
+    "Song Sparrow": [
+        "small bird ",
+        "streaked brown and grey plumage",
+        "long, rounded tail",
+        "small, pointed beak",
+        "thick streaks on the chest converging into a central spot",
+        "white belly and throat",
+        "brown crown with grey stripe in the middle",
+        "typically found in shrubs or trees."
+    ],
+    "Tree Sparrow": [
+        "small size (around 14 cm long)",
+        "brown plumage with a chestnut crown and nape",
+        "black patch on each pure white cheek ",
+        "stout, greyish beak",
+        "pale underparts ",
+        "short, square-ended tail",
+        "wing bars ",
+        "dark legs and feet."
+    ],
+    "Vesper Sparrow": [
+        "Small bird",
+        "Brown, black, and white feathers",
+        "Long tail with white outer feathers",
+        "Chest is lightly streaked",
+        "Brown streak behind the eye",
+        "Pale eyebrow stripe ",
+        "Small, pointed beak."
+    ],
+    "White-crowned Sparrow": [
+        "small bird",
+        "white stripes on its head ",
+        "gray face ",
+        "brown streaked back and wings",
+        "pale underparts",
+        "long tail",
+        "conical beak",
+        "dark eyes"
+    ],
+    "White-throated Sparrow": [
+        "small bird",
+        "white throat",
+        "brown, grey, and white feathers",
+        "yellow spots between the eye and beak",
+        "streaked breast",
+        "dark stripes on the head",
+        "rounded tail",
+        "small, sharp beak."
+    ],
+    "Cape-Glossy Starling": [
+        "Bright, glossy blue-green plumage",
+        "Pointed black bill",
+        "Long tail feathers",
+        "Pale yellow eyes",
+        "Found in Southern Africa",
+        "Often seen in pairs or small flocks",
+        "Slightly smaller than a typical crow."
+    ],
+    "Bank Swallow": [
+        "small bird",
+        "brown upperparts",
+        "white underparts with a brown band across the chest",
+        "forked tail",
+        "small beak",
+        "often seen near bodies of water or sandy cliffs."
+    ],
+    "Barn Swallow": [
+        "Small bird",
+        "Deeply forked tail",
+        "Dark, glossy-blue back, wings and tail",
+        "Lighter, often rusty underparts",
+        "Round head with a small beak",
+        "Often seen in flight or perched on wires or posts."
+    ],
+    "Cliff Swallow": [
+        "Small bird",
+        "Blue-black upperparts with a shiny or metallic sheen",
+        "A pale, pumpkin-orange rump",
+        "A buff or cinnamon-colored forehead",
+        "White or buff underparts",
+        "A dark, squared tail",
+        "A distinct, mud nest often found in colonies on cliff faces, bridges, or buildings."
+    ],
+    "Tree Swallow": [
+        "small bird",
+        "bright blue or iridescent green on top",
+        "white on the bottom",
+        "pointed wings",
+        "short, thin beak",
+        "forked tail",
+        "often seen flying or perching on wires or branches"
+    ],
+    "Scarlet Tanager": [
+        "bright red body ",
+        "black wings and tail (in males)",
+        "olive-yellow body and wings (in females)",
+        "medium-sized bird",
+        "pointed beak",
+        "they are often seen in treetops or high branches."
+    ],
+    "Summer Tanager": [
+        "Bright red (male) or yellow-green (female) coloring",
+        "Medium-sized bird",
+        "Pointed, stout beak",
+        "Smooth rounded head",
+        "Forked tail ",
+        "Typically found in trees or wooded areas"
+    ],
+    "Artic Tern": [
+        "Small bird",
+        "Black cap and nape",
+        "Bright red-orange beak",
+        "Grey and white plumage",
+        "Long, forked tail",
+        "Pointed wings",
+        "Red legs and feet",
+        "Often seen flying as they are migratory birds."
+    ],
+    "Black Tern": [
+        "small bird",
+        "black or dark grey plumage",
+        "pointed wings",
+        "slightly forked tail",
+        "short, pointed bill",
+        "red or orange legs",
+        "white underparts (in non-breeding plumage)",
+        "often seen hovering over water while hunting for food."
+    ],
+    "Caspian Tern": [
+        "Large water bird",
+        "Predominantly white with some grey on its wings",
+        "Long, pointed wings",
+        "Large, red-orange bill",
+        "Black cap on its head",
+        "Forked tail",
+        "Webbed feet",
+        "Often seen near water bodies."
+    ],
+    "Common Tern": [
+        "medium-sized bird",
+        "sharp, pointed beak that is often red with a black tip",
+        "long, forked tail",
+        "grey upper body and white underbody",
+        "black cap on the head",
+        "slender body",
+        "wings are long, narrow, and pointed",
+        "feet are webbed and red or orange in color."
+    ],
+    "Elegant Tern": [
+        "long, slender, orange beak",
+        "white feathers",
+        "black cap on the head during breeding season",
+        "forked tail",
+        "slender body",
+        "webbed feet",
+        "usually found near coastal regions."
+    ],
+    "Forsters Tern": [
+        "medium-sized bird",
+        "white body with black cap on head",
+        "long, pointed, orange beak",
+        "forked tail",
+        "long, thin legs",
+        "often seen near water bodies",
+        "wings are pale gray, and they have a distinctive black \"eye mask\""
+    ],
+    "Least Tern": [
+        "Small bird",
+        "White to light grey plumage",
+        "Black cap on head",
+        "Yellow beak ",
+        "Forked tail",
+        "Black wing tips ",
+        "Often found near water bodies",
+        "Legs are relatively short and orange-yellow in color."
+    ],
+    "Green-tailed Towhee": [
+        "small bird with a stout body",
+        "olive or greenish tail and upper parts",
+        "grey head and underparts",
+        "red cap or crown",
+        "white throat",
+        "dark beak",
+        "often seen on the ground or in low shrubs",
+        "thick, pointed bill",
+        "white corners on the tail when it is spread."
+    ],
+    "Brown Thrasher": [
+        "brown or reddish-brown feathers",
+        "long, slightly downward-curved beak",
+        "bright yellow eyes",
+        "thin, straight legs",
+        "a long tail",
+        "a white or pale yellow chest with dark streaks",
+        "a size between 9.1-11.8 in (23-30 cm) long",
+        "a wingspan of 11.8-13.4 in (29-34 cm) ",
+        "often found near the ground in dense vegetation."
+    ],
+    "Sage Thrasher": [
+        "Small bird size",
+        "Brown or gray color",
+        "Long tail",
+        "Short wings",
+        "Small, sharp, slightly curved beak",
+        "Spotted chest and belly",
+        "Found often in sagebrush or desert environments"
+    ],
+    "Black-capped Vireo": [
+        "small bird species ",
+        "black cap on its head",
+        "white underparts",
+        "olive-green upperparts",
+        "red or brown eyes",
+        "short and straight beak",
+        "relatively short tail"
+    ],
+    "Blue-headed Vireo": [
+        "Distinctive blue-grey head and neck",
+        "Bright white underparts",
+        "Greenish upperparts",
+        "Dark eyes with bold white \"spectacles\" or eye rings",
+        "Slender, pointed beak",
+        "Small bird, typically around 5-6 inches in length",
+        "Two wing bars on each wing."
+    ],
+    "Philadelphia Vireo": [
+        "small bird",
+        "olive-green upperparts",
+        "yellowish underparts",
+        "dark eyes with a thin, dark line through them",
+        "a short beak with a slight hook",
+        "slender, pointed wings",
+        "a short, slightly notched tail",
+        "often found in deciduous forests or shrubs during migration."
+    ],
+    "Red-eyed Vireo": [
+        "Small bird",
+        "Olive-green upper body",
+        "White underbody",
+        "Reddish-brown eyes",
+        "Grey crown",
+        "Thick, hooked beak",
+        "Black line through eyes",
+        "Slim, pointed wings",
+        "A short, stubby tail."
+    ],
+    "Warbling Vireo": [
+        "Small bird",
+        "Olive-greenish upperparts",
+        "White underparts",
+        "Faint white eye-ring",
+        "Dark eyes",
+        "Slightly hooked beak",
+        "Thin, dark legs",
+        "Small, rounded head",
+        "Slightly curved tail feathers ",
+        "Brownish or grayish wings with faint stripes."
+    ],
+    "White-eyed Vireo": [
+        "small bird",
+        "olive-green upperparts",
+        "yellowish underparts",
+        "white eye with yellow \"spectacles\" around it",
+        "short, thick, hooked beak",
+        "wings with two white or yellowish wing bars",
+        "black line through eye and a white eyebrow",
+        "relatively long tail for its size."
+    ],
+    "Yellow-throated Vireo": [
+        "bright yellow throat and chest",
+        "grey or olive green back and wings",
+        "white belly",
+        "two white wing bars",
+        "stout, slightly hooked bill",
+        "dark eyes with a white \"spectacles\" ring around them",
+        "small, compact size similar to a sparrow",
+        "often seen in trees or shrubs as it is a songbird."
+    ],
+    "Bay-breasted Warbler": [
+        "small bird",
+        "brownish-red or pinkish color on the breast and flanks",
+        "black or dark brown wings with white edges",
+        "yellowish or white belly",
+        "black streaks on the back",
+        "dark beak",
+        "prominent eye-ring."
+    ],
+    "Black-and-white Warbler": [
+        "Small bird",
+        "Striped black and white plumage",
+        "Thin pointed beak",
+        "Often found on tree trunks or branches",
+        "Round body shape",
+        "Long tail",
+        "Short legs with clawed feet"
+    ],
+    "Black-throated-Blue Warbler": [
+        "small bird",
+        "distinctive black throat and face",
+        "blue-gray upper body",
+        "white belly",
+        "small, pointed beak",
+        "males have a black sides and back, with a blue crown and rump",
+        "females are more olive-brown, with a light stripe over the eyes."
+    ],
+    "Blue-winged Warbler": [
+        "small bird",
+        "blue-gray wings",
+        "yellow body and head",
+        "thin, pointed beak",
+        "white belly",
+        "black line through the eyes",
+        "often found in shrubs and trees."
+    ],
+    "Canada Warbler": [
+        "Small bird size",
+        "Yellow underparts",
+        "Blue-grey upperparts",
+        "Black streaks on the neck and back",
+        "Black eye-line and necklace",
+        "Small, thin bill",
+        "Brownish wings with two white bars",
+        "Long legs."
+    ],
+    "Cape-May Warbler": [
+        "Bright yellow color with streaks of black",
+        "Distinctive facial markings with a thin, pointed beak",
+        "White wing bars ",
+        "Greenish-black upperparts with a yellow rump",
+        "Male Cape May Warblers have chestnut cheek patches",
+        "Female Cape May Warblers are duller and lack the chestnut cheek patches",
+        "Small size, typically around 4-5 inches in length",
+        "Often seen in trees or bushes as they are insect-eating birds."
+    ],
+    "Cerulean Warbler": [
+        "Small bird",
+        "Distinctive blue color on the upper parts and white underneath",
+        "Thin, pointed beak",
+        "Black streaks on the back and flank",
+        "Black line through the eyes",
+        "Males are brighter blue than females",
+        "Often found in trees or shrubs"
+    ],
+    "Chestnut-sided Warbler": [
+        "small size (around 12-14 cm long)",
+        "yellow cap on the head",
+        "black eye line and malar stripe (\"mustache\")",
+        "a chestnut colored patch on the flanks",
+        "white underside",
+        "greenish back and wings with black streaks",
+        "the males have a black triangular patch on the throat",
+        "thin, pointed beak."
+    ],
+    "Golden-winged Warbler": [
+        "small bird",
+        "yellow wing patches",
+        "grey plumage",
+        "black eye line",
+        "white underparts",
+        "thin, pointed beak",
+        "males have a black throat and crown."
+    ],
+    "Hooded Warbler": [
+        "Small bird",
+        "Yellow face and belly",
+        "Black hood and throat (in males)",
+        "Olive upperparts",
+        "White wing bars",
+        "Short, thin beak",
+        "Round, compact body shape",
+        "Found in forested areas, especially near water."
+    ],
+    "Kentucky Warbler": [
+        "Bright yellow underparts",
+        "Olive-green upperparts",
+        "Black cheek patches",
+        "Long, pointed beak",
+        "Short tail",
+        "Small, round body",
+        "Usually seen in dense understory of eastern deciduous forests",
+        "Dark eyes and legs"
+    ],
+    "Magnolia Warbler": [
+        "Small bird, typically about 13 cm long",
+        "Black mask on face",
+        "Yellow underparts with black streaks ",
+        "Gray or blue-gray head and back",
+        "White wing bars ",
+        "Black tail with white band ",
+        "Male birds have more pronounced and bright colors than females."
+    ],
+    "Mourning Warbler": [
+        "small bird",
+        "olive green or brown on top",
+        "yellow on the underside",
+        "a distinctive black \"hood\" on the head and throat for males",
+        "lack of wing bars",
+        "thin, pointed beak",
+        "white eye-ring in females and young birds",
+        "round body shape",
+        "short tail"
+    ],
+    "Myrtle Warbler": [
+        "Small bird",
+        "Yellow patch on the rump",
+        "White belly and underparts",
+        "Dark gray to black back and head",
+        "Two white wing bars",
+        "A thin, pointed beak",
+        "Male Myrtle Warblers have a black mask around the eyes."
+    ],
+    "Nashville Warbler": [
+        "small size bird",
+        "olive green back and yellow belly",
+        "white eye-rings",
+        "grey hood on males",
+        "thin pointed beak",
+        "short tail",
+        "black legs and feet."
+    ],
+    "Orange-crowned Warbler": [
+        "Small bird",
+        "Greenish-yellow or olive-colored plumage",
+        "Thin, pointed beak",
+        "Pale belly",
+        "Faint orange patch on the crown of its head (often hard to see)",
+        "Small, round body",
+        "Thin legs and feet",
+        "Short tail feathers"
+    ],
+    "Palm Warbler": [
+        "Small bird",
+        "Brown or yellowish-brown color",
+        "Chestnut cap",
+        "Yellow undertail coverts",
+        "Streaked breast",
+        "Constantly wags its tail",
+        "Thin, pointed beak",
+        "Black eye-line",
+        "Often found in low vegetation or on the ground."
+    ],
+    "Pine Warbler": [
+        "Small bird ",
+        "Bright yellow plumage on the throat and belly",
+        "Olive-green or gray back and wings",
+        "White or light colored eye rings",
+        "Fine, pointed beak",
+        "May be seen in or around pine trees",
+        "Thin legs and feet."
+    ],
+    "Prairie Warbler": [
+        "Small bird size",
+        "Yellow underparts with black streaks on the sides",
+        "Olive-green upperparts with chestnut streaks on the back",
+        "Small, pointed beak",
+        "Yellow line above the eye",
+        "Thin, pointed wings",
+        "Short tail with white edges ",
+        "Males may have black marks on the face."
+    ],
+    "Prothonotary Warbler": [
+        "Small-sized bird",
+        "Bright yellow body",
+        "Blue-gray wings",
+        "Olive back and tail",
+        "Long thin beak",
+        "Often found in swampy woodland habitats"
+    ],
+    "Swainson Warbler": [
+        "Small bird",
+        "Brown or olive-brown color",
+        "Pale eyebrows",
+        "Long bill",
+        "Thin white eye-ring",
+        "Dark legs",
+        "Often found in dense undergrowth or shrubs."
+    ],
+    "Tennessee Warbler": [
+        "small bird",
+        "olive-green upperparts",
+        "white or yellowish underparts",
+        "thin, pointed beak",
+        "thin, short tail",
+        "black eyes",
+        "often found in trees or shrubs."
+    ],
+    "Wilson Warbler": [
+        "small bird size",
+        "bright yellow body ",
+        "distinctive black or dark colored cap on the head",
+        "thin, pointed beak",
+        "white underparts",
+        "dark wings with no wing bars",
+        "often found in wooded areas or shrubs."
+    ],
+    "Worm-eating Warbler": [
+        "Small bird",
+        "Olive-brown upperparts",
+        "Buff colored underparts",
+        "Dark streaks on the head ",
+        "Pinkish legs",
+        "Slim, pointed beak",
+        "Dark eye with a faint eye-ring",
+        "They are often seen in dense vegetation or on the ground."
+    ],
+    "Yellow Warbler": [
+        "Bright yellow or golden body",
+        "Thin, pointed beak",
+        "Small size (typically around 4 5 inches in length)",
+        "Thin, dark legs",
+        "Some may have reddish streaks on the underparts",
+        "Rounded wings",
+        "Active behavior, often seen flitting around in trees or shrubs."
+    ],
+    "Northern Waterthrush": [
+        "Small bird",
+        "Olive-brown upperparts",
+        "Light underparts with dark streaks",
+        "Light stripe over the eye",
+        "Thin, pointed beak",
+        "Pinkish legs",
+        "Habitats near water or in wet areas",
+        "Often seen on the ground or low in vegetation."
+    ],
+    "Louisiana Waterthrush": [
+        "brownish upperparts ",
+        "white underparts with dark streaking",
+        "a long, pinkish bill",
+        "white eye-line",
+        "long, pinkish legs",
+        "usually found near water bodies",
+        "a wagging tail."
+    ],
+    "Bohemian Waxwing": [
+        "Small bird size",
+        "Crested head",
+        "Grayish-brown overall color",
+        "Yellow-tipped tail",
+        "Red wax-like wing tips",
+        "Black mask-like feature around the eyes",
+        "White and yellow coloration on the wings."
+    ],
+    "Cedar Waxwing": [
+        "Medium-sized bird",
+        "Prominent crest on its head",
+        "Black mask around the eyes",
+        "Brown upper parts and pale underparts",
+        "Bright yellow tip on the tail",
+        "Red wax-like tips on secondary wing feathers",
+        "Often seen in flocks or pairs."
+    ],
+    "American-Three-toed Woodpecker": [
+        "Small size bird (8-9 inches in length)",
+        "Mostly black and white plumage",
+        "Barred flanks and back ",
+        "White underparts ",
+        "Yellow cap on the head (in males)",
+        "Short beak",
+        "Three toes on each foot, two facing forward and one backward ",
+        "Found often on tree trunks or branches."
+    ],
+    "Pileated Woodpecker": [
+        "large bird, usually between 16-19 inches long",
+        "black body with white stripes running down the neck",
+        "a bright red crest on its head",
+        "long, pointed beak",
+        "white underwings visible during flight",
+        "males have a red stripe on the cheek."
+    ],
+    "Red-bellied Woodpecker": [
+        "Medium-sized bird",
+        "Red cap and nape",
+        "Black and white striped back and wings",
+        "Pale or white underparts",
+        "Bright red belly",
+        "Black beak",
+        "Males have a full red cap while females only have a red nape."
+    ],
+    "Red-cockaded Woodpecker": [
+        "small to medium-sized bird",
+        "black and white barred back",
+        "white underparts",
+        "black cap and nape encircling large white cheek patches",
+        "black wings spotted with white",
+        "males have a small red streak on the side of their head called a cockade"
+    ],
+    "Red-headed Woodpecker": [
+        "Bright red head and neck",
+        "White underparts and black wings",
+        "Large, pointed beak",
+        "Claws for gripping onto tree trunks",
+        "Can be seen in tree trunks or flying with a distinctive bounding flight pattern."
+    ],
+    "Downy Woodpecker": [
+        "Small bird",
+        "Black and white feathers",
+        "Checkered or spotted wings",
+        "White underparts",
+        "Black cap and white face",
+        "Males have a small red patch on the back of their heads",
+        "Sharp, pointed beak",
+        "Short legs with strong claws for gripping tree trunks",
+        "Often seen clinging to tree trunks or branches."
+    ],
+    "Bewick Wren": [
+        "small bird",
+        "brownish-gray plumage ",
+        "white belly ",
+        "long, white eyebrows",
+        "narrow, slightly curved beak",
+        "long, barred tail often held upright",
+        "small size, typically around 5 inches in length."
+    ],
+    "Cactus Wren": [
+        "brown and white plumage ",
+        "distinct black and white spotted and striped pattern on the wings and tail",
+        "large, curved beak",
+        "long tail feathers",
+        "relatively larger size than other wren species ",
+        "often found in desert or cactus-filled environments."
+    ],
+    "Carolina Wren": [
+        "small size (about 5 inches long)",
+        "brown upperparts and buff underparts",
+        "long, upward-cocked tail ",
+        "white eyebrow stripe",
+        "thin, slightly curved beak",
+        "round body with short wings",
+        "often found near or on the ground in wooded areas."
+    ],
+    "House Wren": [
+        "small bird",
+        "brown or grey-brown feathers",
+        "a short, thin beak",
+        "a short, rounded tail that is often cocked upward",
+        "a rounded body shape",
+        "white or cream-colored belly",
+        "small size, typically around 5 inches long",
+        "barred pattern on wings and tail",
+        "eye ring or stripe (may not always be visible)"
+    ],
+    "Marsh Wren": [
+        "Small bird size",
+        "Brown, black, and white feathers",
+        "Long, thin beak",
+        "Round body shape",
+        "Short tail that is often held upright",
+        "Location (usually found in wetland habitats)",
+        "Distinctive barred pattern on wings and tail",
+        "White streaks on back and flanks",
+        "Black cap on head."
+    ],
+    "Rock Wren": [
+        "Small size bird",
+        "Brown, gray, or white in color",
+        "Thin, pointed beak",
+        "Short tail often cocked upward",
+        "Often seen in rocky habitats",
+        "Distinctive white eye-ring",
+        "Pale belly with darker back and wings",
+        "Legs and feet are usually black or dark brown."
+    ],
+    "Winter Wren": [
+        "Small bird",
+        "Brown plumage",
+        "Short, stubby wings",
+        "Short and thin beak",
+        "Upright tail often cocked",
+        "Pale eyebrow stripe",
+        "Short legs with strong feet for hopping",
+        "Sometimes seen in wooded or brushy habitats."
+    ],
+    "Common Yellowthroat": [
+        "Small bird size",
+        "Yellow throat and chest",
+        "Olive back and wings",
+        "Black \"mask\" on the face (in males)",
+        "White belly",
+        "Rounded tail",
+        "Commonly found in marshy or wetland habitats."
+    ]
+}

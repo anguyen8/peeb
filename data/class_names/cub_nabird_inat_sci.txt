@@ -1,0 +1,1805 @@
+platalea ajaja
+podiceps cristatus
+parabuteo unicinctus
+theristicus melanopis
+pardalotus punctatus
+clangula hyemalis (female/juvenile)
+sporophila nigricollis
+crithagra mozambica
+setophaga magnolia (female/immature male)
+dicrurus leucophaeus
+sarkidiornis melanotos
+saxicola rubetra
+hieraaetus pennatus
+limnodromus griseus
+pteroglossus torquatus
+spizelloides arborea
+dryocopus pileatus
+euphonia laniirostris
+anthus trivialis
+selasphorus platycercus (adult male)
+larus fuscus
+euphonia affinis
+gavia arctica
+phoebetria fusca
+acrocephalus dumetorum
+setophaga nigrescens
+ixobrychus minutus
+phasianus colchicus (female/juvenile)
+pheucticus ludovicianus (female/immature male)
+thalasseus bergii
+ninox novaeseelandiae
+agelaioides badius
+chlorophanes spiza
+egretta rufescens (white morph)
+gorsachius melanolophus
+archilochus alexandri (female, immature)
+syrigma sibilatrix
+numenius americanus
+pachycephala rufiventris
+haliastur sphenurus
+acridotheres cristatellus
+calypte anna (adult male)
+aramus guarauna
+tachybaptus novaehollandiae
+muscicapa dauurica
+campylorhynchus zonatus
+selasphorus calliope
+aethia psittacula
+momotus mexicanus
+tachybaptus ruficollis
+elanus leucurus
+ramphastos toco
+cepphus columba
+lanius excubitor
+dendragapus obscurus
+phalacrocorax carbo
+spizella breweri
+hypothymis azurea
+podiceps nigricollis (nonbreeding/juvenile)
+chordeiles minor
+limnothlypis swainsonii
+seiurus aurocapilla
+ciconia ciconia
+fulica americana
+eudocimus albus (adult)
+geranoaetus polyosoma
+oxyura jamaicensis (winter male)
+myiozetetes cayanensis
+numida meleagris
+ptyonoprogne rupestris
+phalaropus tricolor (nonbreeding, juvenile)
+sericornis frontalis
+panurus biarmicus
+eopsaltria australis
+dryobates scalaris
+passerina caerulea
+ploceus ocularis
+pica hudsonia
+columbina talpacoti
+coccothraustes vespertinus
+icterus graduacauda
+tringa incana
+rissa tridactyla (adult)
+elanoides forficatus
+quiscalus lugubris
+eupetomena macroura
+baeolophus atricristatus
+passer domesticus (female/juvenile)
+tringa ochropus
+falco tinnunculus
+cyanocitta stelleri
+pica pica
+lanius minor
+calocitta colliei
+rhipidura fuliginosa
+jynx torquilla
+vanellus indicus
+euplectes orix
+sula nebouxii
+larus glaucescens (adult)
+melanerpes chrysogenys
+charadrius marginatus
+anthropoides paradiseus
+aramides cajaneus
+streptopelia decaocto
+actitis macularius (breeding)
+patagioenas picazuro
+anser caerulescens
+spinus psaltria
+myiopsitta monachus
+furnarius rufus
+accipiter striatus (immature)
+gallirallus australis
+oriolus xanthornus
+spatula clypeata
+trichoglossus moluccanus
+clangula hyemalis (winter male)
+pica serica
+saltator atriceps
+accipiter trivirgatus
+crax rubra
+anthus pratensis
+gallinula galeata (immature)
+spatula querquedula
+ardea goliath
+accipiter nisus
+calidris pusilla
+poecile palustris
+tyrannus melancholicus
+passerina amoena
+passerina caerulea (adult male)
+irediparra gallinacea
+turdus rufopalliatus
+buteo regalis
+icterus gularis
+lophaetus occipitalis
+eupsittula canicularis
+loxia curvirostra
+turdus chiguanco
+hypsipetes amaurotis
+ixoreus naevius
+megaceryle alcyon
+prinia maculosa
+plegadis chihi
+oreoscoptes montanus
+zosterops virens
+malurus splendens
+chauna torquata
+acridotheres javanicus
+toxostoma curvirostre
+megascops choliba
+larus glaucoides
+strix nebulosa
+anas platyrhynchos (breeding male)
+circaetus cinereus
+halcyon smyrnensis
+scopus umbretta
+larus canus
+rallus aquaticus
+larus marinus (immature)
+egretta tricolor
+junco hyemalis (white winged)
+chloephaga picta
+hymenops perspicillatus
+egretta caerulea (adult)
+parus major
+tachybaptus dominicus
+aythya collaris (female/eclipse male)
+molothrus aeneus
+passer melanurus
+melierax canorus
+larus delawarensis (immature)
+branta sandvicensis
+aegolius acadicus
+turdus fuscater
+ramphastos ambiguus
+troglodytes pacificus
+lophophanes cristatus
+progne chalybea
+calidris pugnax
+icterus bullockii (adult male)
+melanitta americana
+falco rufigularis
+troglodytes hiemalis
+sitta canadensis
+myzomela sanguinolenta
+leucophaeus pipixcan
+setophaga petechia
+eupsittula pertinax
+falco vespertinus
+selasphorus sasin (female, immature)
+tangara gyrola
+antrostomus carolinensis
+polemaetus bellicosus
+sternula albifrons
+pluvialis dominica
+icterus bullockii
+eudocimus albus
+geopelia humeralis
+phylidonyris niger
+eudyptula minor
+melanerpes erythrocephalus (immature)
+mergus serrator (female/immature male)
+thalasseus maximus
+anthobaphes violacea
+buteo lineatus
+colibri thalassinus
+buteo jamaicensis (dark morph)
+anthracothorax nigricollis
+sporophila caerulescens
+aquila rapax
+butorides virescens
+anas superciliosa
+nestor notabilis
+piranga rubra (female)
+lybius torquatus
+vanellus vanellus
+aegithina tiphia
+mareca americana (breeding male)
+platalea leucorodia
+botaurus lentiginosus
+progne subis (adult male)
+barnardius zonarius
+aquila chrysaetos (adult)
+tetrastes bonasia
+erithacus rubecula
+leucosticte tephrocotis
+caracara cheriway
+euphagus cyanocephalus
+agelaius tricolor
+orthotomus sutorius
+troglodytes troglodytes
+coccyzus americanus
+threskiornis melanocephalus
+microcarbo niger
+psittacara leucophthalmus
+phainopepla nitens (female/juvenile)
+larus schistisagus
+diglossa baritula
+tringa totanus
+zapornia flavirostra
+ortalis cinereiceps
+leistes loyca
+bucephala albeola (female/immature male)
+thraupis palmarum
+dicrurus adsimilis
+mycteria ibis
+geranoaetus melanoleucus
+rhipidura leucophrys
+stilpnia cyanicollis
+buteo rufinus
+buteo lineatus (adult )
+xenus cinereus
+emberiza rustica
+lanius ludovicianus
+myophonus caeruleus
+dacelo novaeguineae
+emberiza spodocephala
+cepphus columba (nonbreeding, juvenile)
+turdus philomelos
+tringa brevipes
+dendrocopos major
+colaptes auratus (yellow shafted)
+sturnella neglecta
+plectrophenax nivalis
+setophaga striata
+setophaga pensylvanica (breeding male)
+scolopax minor
+chroicocephalus ridibundus
+gerygone igata
+ocyphaps lophotes
+anhinga anhinga
+haliaeetus leucocephalus
+corthylio calendula
+anthus hodgsoni
+vanellus chilensis
+porphyrio melanotus
+piranga bidentata
+calothorax lucifer
+agapornis roseicollis
+calypte costae
+embernagra platensis
+spilornis cheela
+burhinus vermiculatus
+sphyrapicus thyroideus
+picus viridis
+anas castanea
+certhia familiaris
+pharomachrus mocinno
+coccothraustes vespertinus (adult male)
+aythya affinis
+falco cenchroides
+phoenicopterus ruber
+myiodynastes maculatus
+aegypius monachus
+todiramphus sanctus
+cepphus grylle (breeding)
+lullula arborea
+alopochen aegyptiaca
+merops apiaster
+empidonax hammondii
+porphyrio martinica
+buteo plagiatus
+halcyon senegalensis
+cyanocorax yncas
+spatula cyanoptera (female/juvenile)
+cinnyris afer
+charadrius bicinctus
+calidris acuminata
+copsychus saularis
+aythya americana (female/eclipse male)
+bucephala islandica
+terathopius ecaudatus
+spatula discors (male)
+anas fulvigula
+spatula clypeata (female/eclipse male)
+gallinula galeata
+ammospiza leconteii
+fulica cristata
+pycnonotus aurigaster
+amazilia beryllina
+phalacrocorax capensis
+campylorhynchus rufinucha
+dendragapus fuliginosus
+larus glaucescens
+buteo swainsoni (immature)
+megascops asio
+motacilla flava
+icterus spurius (immature male)
+archilochus alexandri (adult male)
+leptotila verreauxi
+setophaga fusca
+cardinalis cardinalis (female/juvenile)
+haematopus moquini
+gallinula tenebrosa
+aythya fuligula
+empidonax minimus
+icterus bullockii (female/immature male)
+pluvialis fulva
+falco subbuteo
+dryobates albolarvatus
+trogon caligatus
+bucephala clangula (breeding male)
+zonotrichia atricapilla (immature)
+chroicocephalus philadelphia
+pachyramphus aglaiae
+stelgidopteryx serripennis
+cerorhinca monocerata
+xanthocephalus xanthocephalus
+setophaga ruticilla (adult male)
+setophaga magnolia (breeding male)
+chroicocephalus hartlaubii
+tyto alba
+calidris alba (nonbreeding/juvenile)
+ammodramus savannarum
+ammospiza maritima
+aquila chrysaetos
+sturnus vulgaris (juvenile)
+cygnus atratus
+milvago chimango
+lophonetta specularioides
+trogon melanocephalus
+junco hyemalis
+dendrocitta formosae
+leucosticte australis
+todirostrum cinereum
+mareca strepera (female/eclipse male)
+phalacrocorax auritus
+chalcophaps indica
+phalacrocorax brasilianus
+haematopus bachmani
+pelargopsis capensis
+theristicus caudatus
+mniotilta varia
+haematopus fuliginosus
+catharus guttatus
+burhinus grallarius
+turdus grayi
+pheucticus melanocephalus (female/immature male)
+haemorhous cassinii (female/immature)
+melanerpes erythrocephalus
+ocreatus underwoodii
+ploceus velatus
+phalacrocorax carbo (adult)
+coracias garrulus
+anhinga rufa
+chloris chloris
+psilopogon haemacephalus
+calypte anna
+dryocopus lineatus
+milvus migrans
+luscinia luscinia
+passer diffusus
+grus grus
+tigrisoma lineatum
+merops pusillus
+junco phaeonotus
+anhinga melanogaster
+stercorarius longicaudus
+oreothlypis superciliosa
+pheucticus ludovicianus
+motacilla tschutschensis
+vultur gryphus
+anthropoides virgo
+icterus spurius (adult male)
+ardea cinerea
+lichmera indistincta
+calidris minuta
+piranga ludoviciana
+plectrophenax nivalis (nonbreeding)
+corvus ossifragus
+larus delawarensis
+lonchura striata
+mimus saturninus
+catharus minimus
+phalacrocorax aristotelis
+zonotrichia atricapilla
+geopelia placida
+mareca penelope
+aethia pusilla
+quiscalus major
+melanitta americana (male)
+buteogallus anthracinus
+asio flammeus
+numenius madagascariensis
+momotus aequatorialis
+chloris sinica
+tachycineta thalassina
+tangara arthus
+sporophila corvina
+pachycephala pectoralis
+helmitheros vermivorum
+calidris himantopus
+icterus pyrrhopterus
+anthracoceros albirostris
+setophaga americana
+dendrocopos leucotos
+colaptes chrysoides
+archilochus colubris (adult male)
+baeolophus bicolor
+anthus spinoletta
+psittacula krameri
+picus canus
+aphelocoma coerulescens
+ramphastos sulfuratus
+aeronautes saxatalis
+fringilla coelebs
+anas crecca
+chroicocephalus bulleri
+calidris bairdii
+ceryle rudis
+anser caerulescens (white morph)
+urile penicillatus
+aythya marila (breeding male)
+ara macao
+recurvirostra americana
+xiphorhynchus flavigaster
+hirundo smithii
+anas acuta (female/eclipse male)
+hirundo rustica
+tringa nebularia
+picoides dorsalis
+pinicola enucleator (female/juvenile)
+myiarchus crinitus
+amazilia violiceps
+vireo olivaceus
+emberiza calandra
+poecile hudsonicus
+progne tapera
+melanerpes lewis
+hirundo neoxena
+pycnonotus sinensis
+phalacrocorax penicillatus
+treron vernans
+petroica boodang
+certhiaxis cinnamomeus
+lonchura punctulata
+mimus gilvus
+phoenicopterus chilensis
+amazilia yucatanensis
+burhinus capensis
+cygnus cygnus
+turdus merula
+larus hyperboreus
+antigone canadensis
+anas georgica
+piaya cayana
+piranga flava
+upupa epops
+calidris ruficollis
+microcarbo melanoleucos
+falco columbarius
+tadorna ferruginea
+furnarius leucopus
+euphagus cyanocephalus (male)
+polyboroides typus
+lanius collurio
+nannopterum auritum (adult)
+botaurus stellaris
+limosa haemastica
+coccothraustes vespertinus (female/juvenile)
+bucephala clangula
+circus hudsonius (adult male)
+sylvia atricapilla
+emberiza schoeniclus
+poecile montanus
+dryobates nuttallii
+larus cachinnans
+stilpnia vitriolina
+ardea intermedia
+melanitta perspicillata (female/immature)
+loxia leucoptera
+geothlypis philadelphia
+iduna caligata
+tachyphonus rufus
+anser brachyrhynchus
+myadestes townsendi
+bucephala clangula (female/eclipse male)
+passerina ciris (female/juvenile)
+ichthyaetus melanocephalus
+melanerpes uropygialis
+molothrus ater (male)
+buteo rufofuscus
+poecile atricapillus
+pelecanus philippensis
+charadrius pecuarius
+acrocephalus arundinaceus
+lanius cristatus
+psephotus haematonotus
+cinclus cinclus
+prinia subflava
+centronyx bairdii
+agelaius phoeniceus
+setophaga occidentalis
+prunella modularis
+contopus sordidulus
+picoides arcticus
+ara ararauna
+calidris subruficollis
+cassiculus melanicterus
+sylvia communis
+saltator maximus
+troglodytes aedon
+cardinalis cardinalis
+corvus macrorhynchos
+peucaea carpalis
+emberiza cia
+merops philippinus
+thalassarche melanophris
+tersina viridis
+pycnonotus cafer
+campylorhynchus gularis
+anser indicus
+nyctanassa violacea (adult)
+charadrius alexandrinus
+parkesia noveboracensis
+mitrephanes phaeocercus
+penelope obscura
+cathartes burrovianus
+patagioenas fasciata
+aythya valisineria (female/eclipse male)
+spinus tristis
+tyrannus verticalis
+morus bassanus
+chalcomitra senegalensis
+dolichonyx oryzivorus (breeding male)
+vireo cassinii
+setophaga caerulescens (female/immature male)
+artamus leucorynchus
+terpsiphone viridis
+calidris mauri
+cisticola exilis
+corvus albus
+eremophila alpestris
+merops ornatus
+aegithalos caudatus
+antrostomus vociferus
+chlidonias leucopterus
+pelecanus erythrorhynchos
+phoenicurus auroreus
+butorides striata
+amazonetta brasiliensis
+larus delawarensis (adult)
+salpinctes obsoletus
+regulus satrapa
+corvus cryptoleucus
+uraeginthus angolensis
+passerella iliaca (red)
+megascops kennicottii
+mergus merganser
+myiarchus tyrannulus
+dryobates borealis
+anas platyrhynchos
+setophaga tigrina
+cygnus melancoryphus
+gavia stellata
+nycticorax caledonicus
+coracina novaehollandiae
+manorina melanocephala
+campephilus melanoleucos
+athene brama
+setophaga citrina
+trogon collaris
+pelecanus occidentalis
+hydrocoloeus minutus
+lanius schach
+sterna paradisaea
+anthus rufulus
+macronectes giganteus
+cyanistes cyanus
+myioborus pictus
+vanellus senegallus
+clanga clanga
+eudynamys scolopaceus
+turdoides striata
+icterus cucullatus
+gallus gallus
+hypsipetes leucocephalus
+larus argentatus
+colaptes melanochloros
+geranospiza caerulescens
+phalaropus tricolor
+setophaga coronata (breeding myrtle)
+psittacara erythrogenys
+haliaeetus leucocephalus (adult, subadult)
+spizella passerina (breeding)
+strix aluco
+ammospiza nelsoni
+branta canadensis
+loxia curvirostra (female/juvenile)
+platalea regia
+motacilla capensis
+haemorhous cassinii
+buteo jamaicensis (light morph immature)
+nucifraga caryocatactes
+spinus psaltria (adult male)
+corvus coronoides
+catharus ustulatus
+aythya marila (female/eclipse male)
+fulica armillata
+cyanocitta cristata
+circus cyaneus
+quiscalus mexicanus
+anas bahamensis
+loxia curvirostra (adult male)
+aimophila ruficeps
+accipiter striatus (adult )
+setophaga caerulescens
+serinus serinus
+jacana jacana
+platycercus adscitus
+phoenicopterus roseus
+pluvialis squatarola (breeding)
+passerina cyanea (adult male)
+strix varia
+pyrrhula pyrrhula
+estrilda astrild
+phoeniconaias minor
+buteo lineatus (immature)
+ardea cocoi
+spheniscus magellanicus
+gavia immer (nonbreeding/juvenile)
+regulus ignicapilla
+aethia cristatella
+histrionicus histrionicus
+chlorostilbon lucidus
+larus marinus
+struthio camelus
+alectoris chukar
+passerculus sandwichensis
+clangula hyemalis
+melozone crissalis
+elaenia flavogaster
+melanitta deglandi (female/juvenile)
+selasphorus rufus (female, immature)
+pelecanus onocrotalus
+muscicapa striata
+anas zonorhyncha
+acanthis flammea
+haematopus ostralegus
+phaetusa simplex
+myiozetetes similis
+piranga rubra (immature male)
+vanellus miles
+ictinia plumbea
+megaceryle torquata
+dives dives
+emberiza elegans
+lonchura atricapilla
+piranga olivacea (breeding male)
+spatula clypeata (breeding male)
+phalacrocorax punctatus
+geothlypis trichas
+saltator aurantiirostris
+setophaga coronata (winter/juvenile myrtle)
+calamospiza melanocorys
+myioborus miniatus
+cyanocorax yucatanicus
+phaps chalcoptera
+bucephala islandica (breeding male)
+francolinus pondicerianus
+merops orientalis
+melozone fusca
+melospiza lincolnii
+geranoaetus albicaudatus
+fratercula arctica
+habia fuscicauda
+cisticola juncidis
+pitangus sulphuratus
+phoenicurus phoenicurus
+setophaga castanea (female, nonbreeding male, immature)
+anas rubripes
+ptilonorhynchus violaceus
+threskiornis spinicollis
+bucephala albeola
+recurvirostra avosetta
+macronyx croceus
+lamprotornis nitens
+passer hispaniolensis
+larus californicus (immature)
+aulacorhynchus prasinus
+opisthocomus hoazin
+ardeotis kori
+anser caerulescens (blue morph)
+buteo lagopus (dark morph)
+anthus rubescens
+setophaga dominica
+pyrrhocorax pyrrhocorax
+turdus leucomelas
+podiceps auritus (breeding)
+vireo bellii
+ciconia maguari
+podiceps grisegena
+anas gracilis
+elanus axillaris
+pyrocephalus rubinus (female, immature)
+calidris alba (breeding)
+anser anser
+lophodytes cucullatus (breeding male)
+columba oenas
+anas erythrorhyncha
+lophoceros nasutus
+dacnis cayana
+dryobates villosus
+melanitta perspicillata
+streptopelia tranquebarica
+cyanocorax chrysops
+thraupis abbas
+morus serrator
+icterus galbula
+aix sponsa (female/eclipse male)
+momotus lessonii
+leiothlypis ruficapilla
+malurus cyaneus
+coragyps atratus
+euphonia hirundinacea
+haliaeetus leucocephalus (immature, juvenile)
+eumomota superciliosa
+merops bullockoides
+rissa tridactyla
+leucophaeus atricilla (breeding)
+cinnyris jugularis
+setophaga ruticilla (female/juvenile)
+colaptes auratus
+xanthocephalus xanthocephalus (adult male)
+icterus galbula (adult male)
+setophaga virens
+athene noctua
+cairina moschata
+amazona autumnalis
+phasianus colchicus (male)
+zonotrichia atricapilla (adult)
+poecile carolinensis
+tadorna tadornoides
+falcipennis canadensis
+charadrius vociferus
+philemon corniculatus
+plectrophenax nivalis (breeding adult)
+cepphus grylle
+acrocephalus scirpaceus
+passer domesticus
+monticola solitarius
+spatula rhynchotis
+icterus chrysater
+setophaga pensylvanica (female/immature male)
+tyrannus crassirostris
+callipepla californica
+caligavis chrysops
+progne subis (female/juvenile)
+fulica atra
+setophaga coronata (breeding audubon)
+gavia immer (breeding)
+brotogeris chiriri
+cinnyris chalybeus
+piranga rubra
+sturnus vulgaris
+melanerpes aurifrons
+coracias caudatus
+buteo swainsoni
+pavo cristatus
+selasphorus rufus
+myiarchus cinerascens
+melanitta americana (female/juvenile)
+lepidocolaptes angustirostris
+acrocephalus australis
+empidonax occidentalis
+pipilo erythrophthalmus
+garrulax perspicillatus
+buteo buteo
+malacorhynchus membranaceus
+passerella iliaca (sooty)
+zonotrichia querula (adult)
+calcarius lapponicus
+alisterus scapularis
+aythya affinis (female/eclipse male)
+cyanoramphus novaezelandiae
+dryobates minor
+spinus psaltria (female/juvenile)
+passerina amoena (adult male)
+malurus melanocephalus
+turdus ignobilis
+psilopogon nuchalis
+zonotrichia leucophrys (adult)
+leucophaeus atricilla
+mesembrinibis cayennensis
+threskiornis aethiopicus
+ortalis poliocephala
+falco peregrinus
+polioptila melanura
+uria aalge
+haematopus unicolor
+antigone rubicunda
+aix sponsa
+pinicola enucleator
+larus brachyrhynchus
+tyrannus couchii
+colaptes campestris
+pelecanus thagus
+accipiter cooperii
+ardenna pacifica
+larus heermanni (immature)
+gavia pacifica (nonbreeding/juvenile)
+turdus iliacus
+nycticorax nycticorax
+thalurania colombica
+cormobates leucophaea
+nannopterum brasilianum
+microcarbo pygmaeus
+histrionicus histrionicus (female/juvenile)
+pycnonotus goiavier
+eugenes fulgens
+callipepla californica (male)
+centropus sinensis
+haliaeetus leucogaster
+alcedo atthis
+passerina ciris (adult male)
+chloroceryle amazona
+haematopus finschi
+morus bassanus (immature/juvenile)
+phoebastria nigripes
+regulus calendula
+brachyramphus marmoratus
+pica nuttalli
+emberiza hortulana
+cistothorus platensis
+buteo albonotatus
+heliodoxa jacula
+streptopelia chinensis
+molothrus ater
+cygnus olor
+junco hyemalis (oregon)
+icterus pectoralis
+trogon rufus
+crotophaga sulcirostris
+plectropterus gambensis
+circus macrourus
+chloropicus fuscescens
+philesturnus rufusater
+melanerpes erythrocephalus (adult)
+sayornis
+remiz pendulinus
+phalaropus tricolor (breeding)
+ciconia nigra
+phoenicurus fuliginosus
+cardinalis sinuatus
+campephilus guatemalensis
+charadrius ruficapillus
+tachycineta bicolor
+garrulus glandarius
+corvus brachyrhynchos
+columbina picui
+platalea flavipes
+plegadis falcinellus
+polioptila dumicola
+peucaea cassinii
+himantopus mexicanus
+paroaria capitata
+calidris virgata
+vireo griseus
+ortalis wagleri
+oenanthe oenanthe
+falco peregrinus (adult)
+hydroprogne caspia
+eumyias thalassinus
+anseranas semipalmata
+sphyrapicus nuchalis
+streptopelia capicola
+cossypha caffra
+prosthemadera novaeseelandiae
+anas flavirostris
+tyrannus dominicensis
+campylorhynchus brunneicapillus
+aythya valisineria
+actitis macularius (nonbreeding/juvenile)
+phalaenoptilus nuttallii
+pardalotus striatus
+vanellus armatus
+porzana carolina
+calidris minutilla
+charadrius nivosus
+ardea pacifica
+fluvicola nengeta
+ramphocelus flammigerus
+pernis apivorus
+necrosyrtes monachus
+pipilo maculatus
+spizella pusilla
+anser cygnoides
+stelgidopteryx ruficollis
+anthochaera chrysoptera
+sitta pygmaea
+alectura lathami
+corvus albicollis
+melopsittacus undulatus
+cinnyris asiaticus
+haemorhous purpureus
+spinus pinus
+empidonax alnorum
+carpodacus erythrinus
+aix galericulata
+elanus caeruleus
+aythya americana (breeding male)
+junco hyemalis (red backed/gray headed)
+bonasa umbellus
+phalaropus fulicarius
+neochmia temporalis
+aix sponsa (breeding male)
+somateria mollissima (immature/eclipse male)
+linaria cannabina
+anthus petrosus
+forpus conspicillatus
+podiceps nigricollis
+cacomantis flabelliformis
+dumetella carolinensis
+rhipidura albiscapa
+pluvialis apricaria
+sterna forsteri
+setophaga caerulescens (adult male)
+bubo scandiacus
+larus argentatus (immature)
+aythya nyroca
+oriolus oriolus
+menura novaehollandiae
+sphyrapicus ruber
+nyctidromus albicollis
+larus occidentalis
+calidris canutus
+egretta rufescens
+poliocephalus poliocephalus
+microcarbo africanus
+lanius senator
+psittacara mitratus
+selasphorus rufus (adult male)
+eupsittula nana
+accipiter cooperii (immature)
+trogon massena
+tadorna tadorna
+podargus strigoides
+mimus polyglottos
+camptostoma imberbe
+mergus merganser (female/immature male)
+thryomanes bewickii
+porphyrio martinica (adult)
+psaltriparus minimus
+entomyzon cyanotis
+sturnus unicolor
+quiscalus quiscula
+vireo philadelphicus
+falco novaeseelandiae
+ardea herodias
+amblyospiza albifrons
+tachycineta albiventer
+geothlypis formosa
+aythya novaeseelandiae
+actitis hypoleucos
+petroica australis
+zonotrichia albicollis (tan striped/immature)
+spheniscus demersus
+bombycilla garrulus
+gracupica nigricollis
+icterus abeillei
+turdus rufiventris
+buteo lagopus (light morph)
+circus pygargus
+turdus amaurochalinus
+amaurornis phoenicurus
+ramphocelus dimidiatus
+dicrurus macrocercus
+eucometis penicillata
+anas undulata
+pycnonotus capensis
+streptopelia senegalensis
+paroaria coronata
+zosterops simplex
+melanitta perspicillata (male)
+aythya australis
+calamospiza melanocorys (female/nonbreeding male)
+corvus frugilegus
+nycticorax nycticorax (immature)
+thamnophilus doliatus
+aquila chrysaetos (immature)
+calidris alpina
+ardenna creatopus
+sturnella magna
+icterus galbula (female/immature male)
+falco sparverius (female, immature)
+bubulcus ibis
+certhia brachydactyla
+chroicocephalus serranus
+charadrius dubius
+pyrocephalus rubinus (adult male)
+zosterops japonicus
+ploceus philippinus
+calidris alba
+pygoscelis papua
+charadrius mongolus
+arremonops rufivirgatus
+charadrius obscurus
+molothrus bonariensis
+phoeniculus purpureus
+alca torda
+cacatua sanguinea
+geothlypis trichas (female/immature male)
+peucedramus taeniatus
+saxicola maurus
+piranga ludoviciana (female/nonbreeding male)
+gavia immer
+grallina cyanoleuca
+dryobates pubescens
+prinia inornata
+accipiter cooperii (adult)
+phoebastria immutabilis
+charadrius wilsonia
+cyanocompsa parellina
+callipepla gambelii (male)
+pipraeidea bonariensis
+selasphorus sasin
+gallinula chloropus
+anthracothorax prevostii
+cacatua galerita
+rostratula benghalensis
+ficedula hypoleuca
+setophaga castanea
+amazona viridigenalis
+acanthisitta chloris
+calidris fuscicollis
+zenaida macroura
+glareola pratincola
+cracticus torquatus
+geopelia striata
+cecropis daurica
+selasphorus sasin (adult male)
+circus aeruginosus
+riparia riparia
+telophorus zeylonus
+larus argentatus (adult)
+falco sparverius
+branta bernicla
+burhinus bistriatus
+ardeola grayii
+spizella passerina (immature/nonbreeding adult)
+haematopus palliatus
+ardea alba
+zonotrichia querula (immature)
+junco hyemalis (slate colored)
+cynanthus latirostris (female, immature)
+halcyon albiventris
+corythaixoides concolor
+tringa stagnatilis
+melanerpes pucherani
+colibri cyanotus
+tringa melanoleuca
+morus bassanus (adult, subadult)
+passerina versicolor
+vidua macroura
+sturnus vulgaris (breeding adult)
+sporophila torqueola
+coscoroba coscoroba
+ciconia episcopus
+onychognathus morio
+setophaga pitiayumi
+stilpnia larvata
+pycnonotus leucotis
+contopus pertinax
+sphyrapicus varius
+columbina inca
+urile urile
+dicrurus bracteatus
+aramides albiventris
+galerida cristata
+parkesia motacilla
+phasianus colchicus
+buteo platypterus (immature)
+falco sparverius (adult male)
+buteo jamaicensis (light morph adult)
+cochlearius cochlearius
+streptopelia turtur
+chalcomitra amethystina
+phylidonyris novaehollandiae
+prunella collaris
+corvus corax
+larus livens
+zonotrichia leucophrys
+phalaropus lobatus
+strepera graculina
+pandion haliaetus
+parus minor
+euphagus cyanocephalus (female/juvenile)
+sicalis luteola
+chondrohierax uncinatus
+cyanopica cyanus
+megaceryle maxima
+egretta caerulea (immature)
+nycticorax nycticorax (adult)
+chrysomus icterocephalus
+milvago chimachima
+limosa limosa
+peucaea ruficauda
+ploceus cucullatus
+setophaga ruticilla
+ixobrychus sinensis
+oxyura jamaicensis (breeding male)
+lagonosticta senegala
+actophilornis africanus
+pheucticus melanocephalus
+anthreptes malacensis
+saxicola rubicola
+spizella atrogularis
+colius striatus
+sagittarius serpentarius
+colaptes auratus (red shafted)
+melanospiza bicolor
+alectoris rufa
+nyctibius griseus
+nyctanassa violacea
+perdix perdix
+cynanthus latirostris
+rissa brevirostris
+euphonia elegantissima
+hydrophasianus chirurgus
+selasphorus calliope (adult male)
+sylvia borin
+limosa fedoa
+jacana spinosa
+setophaga cerulea
+acanthiza pusilla
+plocepasser mahali
+charadrius melodus
+toxostoma longirostre
+anser albifrons
+spermestes cucullata
+pternistis capensis
+melanitta deglandi
+threskiornis molucca
+callocephalon fimbriatum
+actitis macularius
+icteria virens
+egretta thula
+cynanthus latirostris (adult male)
+mycteria leucocephala
+vermivora cyanoptera
+setophaga discolor
+fratercula corniculata
+zonotrichia capensis
+gypaetus barbatus
+haliaeetus vocifer
+thraupis episcopus
+clangula hyemalis (summer male)
+aquila nipalensis
+melozone aberti
+geothlypis trichas (adult male)
+setophaga striata (breeding male)
+acrocephalus schoenobaenus
+pionus menstruus
+caprimulgus europaeus
+turdus viscivorus
+buteo brachyurus
+colibri coruscans
+anthus cinnamomeus
+egretta garzetta
+mergus merganser (breeding male)
+calypte costae (adult male)
+amazilia rutila
+copsychus malabaricus
+setophaga pinus
+aechmophorus occidentalis
+spinus magellanicus
+caracara plancus
+dendrocitta vagabunda
+setophaga pensylvanica
+gyps africanus
+melaenornis silens
+calidris alpina (breeding)
+pelecanus conspicillatus
+tityra semifasciata
+stercorarius pomarinus
+columba guinea
+coereba flaveola
+todiramphus chloris
+setophaga coronata (winter/juvenile audubon)
+buteo swainsoni (dark morph )
+sicalis flaveola
+aythya affinis (breeding male)
+columba livia
+nyctibius jamaicensis
+amazona albifrons
+emberiza cirlus
+tockus leucomelas
+cepphus grylle (nonbreeding, juvenile)
+cardellina canadensis
+promerops cafer
+auriparus flaviceps
+anas platyrhynchos (female/eclipse male)
+rissa tridactyla (immature)
+euodice malabarica
+egretta rufescens (dark morph)
+contopus cooperi
+ailuroedus maculosus
+trogon elegans
+crotophaga ani
+tiaris olivaceus
+todiramphus macleayii
+gyps fulvus
+passer italiae
+artemisiospiza nevadensis
+laniarius ferrugineus
+cracticus nigrogularis
+colinus virginianus
+luscinia svecica
+dryocopus martius
+gymnorhina tibicen
+buteogallus meridionalis
+nisaetus cirrhatus
+cygnus buccinator
+larus occidentalis (immature)
+corvus cornix
+accipiter badius
+corvus caurinus
+hirundo tahitica
+urocissa erythroryncha
+buteo swainsoni (light morph )
+acanthis hornemanni
+mergus serrator
+setophaga graciae
+ardeola ralloides
+loxia leucoptera (female/juvenile)
+aythya valisineria (breeding male)
+branta hutchinsii
+bartramia longicauda
+vireo flavifrons
+circaetus gallicus
+centropus superciliosus
+corvus mellori
+coracias benghalensis
+anas crecca (female/juvenile)
+cardinalis cardinalis (adult male)
+tringa solitaria
+pericrocotus speciosus
+icterus cucullatus (female/immature male)
+anthus cervinus
+terpsiphone paradisi
+aechmophorus clarkii
+falco peregrinus (immature)
+setophaga magnolia
+leptocoma zeylonica
+bucephala albeola (breeding male)
+zosterops lateralis
+ichthyaetus ichthyaetus
+dolichonyx oryzivorus (female/juvenile/nonbreeding male)
+ixobrychus exilis
+spinus lawrencei
+anthus campestris
+neophron percnopterus
+turdus migratorius
+chroicocephalus genei
+myiarchus tuberculifer
+anastomus oscitans
+gavia stellata (nonbreeding/juvenile)
+circus hudsonius (female, immature)
+lanius borealis
+dicaeum hirundinaceum
+netta peposaca
+vermivora chrysoptera
+certhia americana
+jabiru mycteria
+guira guira
+boissonneaua flavescens
+dinopium benghalense
+calidris alpina (nonbreeding/juvenile)
+anser rossii
+charadrius tricollaris
+pagophila eburnea
+glossopsitta concinna
+molothrus ater (female/juvenile)
+acridotheres tristis
+strix uralensis
+pheucticus melanocephalus (adult male)
+vireo solitarius
+vanellus coronatus
+falco mexicanus
+poecile rufescens
+baeolophus ridgwayi
+spizella pallida
+acanthis cabaret
+psarocolius decumanus
+zonotrichia leucophrys (immature)
+psarocolius montezuma
+oriolus larvatus
+gavicalis virescens
+egretta sacra
+andropadus importunus
+aphelocoma californica
+herpetotheres cachinnans
+pernis ptilorhynchus
+zosterops palpebrosus
+patagioenas cayennensis
+charadrius collaris
+lophodytes cucullatus
+progne subis
+mergus serrator (breeding male)
+callipepla gambelii (female/juvenile)
+sylvia curruca
+anthornis melanura
+pipilo chlorurus
+hirundo albigularis
+spodiopsar cineraceus
+pelecanus crispus
+passer montanus
+haemorhous mexicanus (adult male)
+cistothorus palustris
+gavia pacifica
+melanotis caerulescens
+charadrius hiaticula
+petrochelidon pyrrhonota
+hedydipna collaris
+pycnonotus jocosus
+oriolus sagittatus
+corcorax melanorhamphos
+cinnyricinclus leucogaster
+centronyx henslowii
+passerina caerulea (female/juvenile)
+ardenna grisea
+setophaga striata (female/juvenile)
+melanitta deglandi (male)
+patagioenas leucocephala
+anthus novaeseelandiae
+agelaius phoeniceus (female/juvenile)
+dromaius novaehollandiae
+zonotrichia albicollis (white striped)
+zonotrichia querula
+saxicola torquatus
+chondestes grammacus
+amazilia cyanocephala
+sterna hirundo
+somateria mollissima (female/juvenile)
+aythya ferina
+leptoptilos crumenifer
+dolichonyx oryzivorus
+gallinago gallinago
+machetornis rixosa
+thalasseus elegans
+archilochus colubris (female, immature)
+ramphocelus passerinii
+nucifraga columbiana
+chroicocephalus cirrocephalus
+pyrrhocorax graculus
+selasphorus calliope (female, immature)
+ptilotula penicillata
+bucephala islandica (female/eclipse male)
+protonotaria citrea
+basileuterus rufifrons
+trichoglossus chlorolepidotus
+icterus pustulatus
+colaptes punctigula
+leiothlypis peregrina
+chlidonias hybrida
+arenaria melanocephala
+ardea purpurea
+empidonax flaviventris
+patagioenas maculosa
+melanerpes hoffmannii
+petroica macrocephala
+piranga olivacea (female/nonbreeding male)
+columbina passerina
+tetrao tetrix
+campylopterus hemileucurus
+lophodytes cucullatus (female/immature male)
+sialia currucoides
+colaptes rubiginosus
+chlorospingus flavopectus
+chlorostilbon canivetii
+meleagris gallopavo
+trachyphonus vaillantii
+quiscalus niger
+grus americana
+chlidonias niger
+dendrocygna javanica
+chaetura pelagica
+rallus crepitans
+phylloscopus collybita
+passerina cyanea
+glaucidium gnoma
+psilorhinus morio
+dendrocygna bicolor
+sterna striata
+aethopyga siparaja
+zenaida asiatica
+sitta pusilla
+dendrocoptes medius
+asio otus
+chloroceryle americana
+zenaida auriculata
+turdus falcklandii
+calypte costae (female, immature)
+anas diazi
+histrionicus histrionicus (male)
+gymnogyps californianus
+pooecetes gramineus
+anas crecca (male)
+baeolophus wollweberi
+catharus fuscescens
+chenonetta jubata
+ardea melanocephala
+geococcyx
+lophoceros alboterminatus
+turdus migratorius (juvenile)
+numenius phaeopus
+tyrannus savana
+sarcoramphus papa
+lanius collaris
+piranga ludoviciana (breeding male)
+zonotrichia albicollis
+toxostoma redivivum
+megarynchus pitangua
+piranga rubra (adult male)
+phainopepla nitens
+leiothlypis luciae
+apus apus
+larus heermanni
+zenaida aurita
+patagioenas flavirostris
+larus dominicanus
+euphagus carolinus
+hylocichla mustelina
+pyrocephalus rubinus
+vireo huttoni
+sylvia melanocephala
+cyanerpes cyaneus
+gallinula galeata (adult)
+gallinago delicata
+phalacrocorax varius
+archilochus colubris
+emberiza citrinella
+gavia pacifica (breeding)
+haemorhous purpureus (adult male)
+icterus spurius
+setophaga chrysoparia
+toxostoma rufum
+regulus regulus
+nectarinia famosa
+turdus pilaris
+larus californicus
+dendrocygna viduata
+passerina ciris
+cyanistes caeruleus
+melospiza georgiana
+alauda arvensis
+netta rufina
+oenanthe familiaris
+passerina amoena (female/juvenile)
+aythya americana
+passerella iliaca
+oriolus chinensis
+podiceps grisegena (nonbreeding/juvenile)
+leucosticte atrata
+numenius arquata
+tarsiger cyanurus
+himantopus leucocephalus
+basileuterus culicivorus
+carpodacus sibiricus
+piranga olivacea
+branta leucopsis
+calonectris diomedea
+motacilla cinerea
+fringilla montifringilla
+haemorhous mexicanus (female/immature)
+setophaga castanea (breeding male)
+tachycineta albilinea
+calidris maritima
+fulica ardesiaca
+calamospiza melanocorys (breeding male)
+sayornis saya
+oxyura jamaicensis (female/juvenile)
+phalacrocorax carbo (immature)
+sternula antillarum
+somateria mollissima
+larus crassirostris
+podiceps grisegena (breeding)
+aquila heliaca
+mareca americana
+pluvialis squatarola
+mareca strepera (breeding male)
+mergellus albellus
+urile pelagicus
+eudocimus albus (immature)
+circus hudsonius
+mimus longicaudatus
+aphelocoma woodhouseii
+sturnus vulgaris (nonbreeding adult)
+phainopepla nitens (male)
+egretta caerulea
+loxia leucoptera (adult male)
+dendrocygna autumnalis
+charadrius semipalmatus
+motacilla alba
+cardellina pusilla
+anas acuta
+calidris temminckii
+catherpes mexicanus
+mareca americana (female/eclipse male)
+perisoreus canadensis
+corvus corone
+bombycilla cedrorum
+calyptorhynchus funereus
+accipiter gentilis
+petroica longipes
+himantopus himantopus
+pheucticus chrysopeplus
+cygnus columbianus
+hylocharis leucotis
+larus glaucescens (immature)
+galbula ruficauda
+spatula cyanoptera
+myiodynastes luteiventris
+coccyzus erythropthalmus
+passerina cyanea (female/juvenile)
+lagopus lagopus
+phoenicurus ochruros
+callipepla squamata
+calyptorhynchus banksii
+calypte anna (female, immature)
+podiceps auritus
+pteroglossus castanotis
+cereopsis novaehollandiae
+penelope purpurascens
+aphelocoma wollweberi
+passerella iliaca (thick billed/slate colored)
+empidonax virescens
+porphyrio poliocephalus
+columba palumbus
+ramphocelus carbo
+tigrisoma mexicanum
+thalasseus sandvicensis
+vireo gilvus
+xanthocephalus xanthocephalus (female/immature male)
+treron calvus
+haliaeetus albicilla
+rostrhamus sociabilis
+buteo platypterus
+artemisiospiza belli
+gracupica contra
+calocitta formosa
+sitta carolinensis
+spinus tristis (female/nonbreeding male)
+icterus nigrogularis
+loxigilla noctis
+sula dactylatra
+motacilla citreola
+ardeola bacchus
+icterus cucullatus (adult male)
+oxyura jamaicensis
+setophaga coronata
+circus approximans
+tringa flavipes
+meliphaga lewinii
+surnia ulula
+podiceps auritus (nonbreeding/juvenile)
+lampornis clemenciae
+larus occidentalis (adult)
+buteo lagopus
+rallus obsoletus
+pycnonotus barbatus
+merops persicus
+nestor meridionalis
+turdus migratorius (adult)
+empidonax wrightii
+fulmarus glacialis
+spatula cyanoptera (male)
+haemorhous mexicanus
+ictinia mississippiensis
+streptopelia semitorquata
+nannopterum auritum (immature)
+calidris ferruginea
+corvus splendens
+dryoscopus cubla
+podiceps major
+tadorna variegata
+ciccaba virgata
+platalea alba
+buteogallus urubitinga
+passer domesticus (male)
+amazona finschi
+milvus milvus
+rallus limicola
+vanellus spinosus
+geococcyx californianus
+vireo atricapilla
+eurystomus orientalis
+coccyzus minor
+contopus virens
+eolophus roseicapilla
+acanthiza chrysorrhoa
+larus californicus (adult)
+charadrius leschenaultii
+aquila audax
+tyrannus tyrannus
+phylloscopus trochilus
+ptiliogonys cinereus
+rynchops niger
+dicrurus paradiseus
+anas acuta (breeding male)
+haemorhous cassinii (adult male)
+podilymbus podiceps
+cacatua tenuirostris
+delichon urbicum
+aythya collaris
+trogon citreolus
+haliastur indus
+chroicocephalus maculipennis
+pygochelidon cyanoleuca
+icterus spurius (female/juvenile)
+dendrocopos syriacus
+sporophila morelleti
+selasphorus platycercus
+agelaius phoeniceus (male)
+falco naumanni
+sialia sialis
+bubo virginianus
+anser fabalis
+anthochaera carunculata
+busarellus nigricollis
+periparus ater
+fregata magnificens
+platalea minor
+gallirallus philippensis
+saltator coerulescens
+coccothraustes coccothraustes
+tringa erythropus
+empidonax traillii
+tringa semipalmata
+amphispiza bilineata
+volatinia jacarina
+sayornis nigricans
+acanthorhynchus tenuirostris
+callipepla californica (female/juvenile)
+gavia stellata (breeding)
+platycercus elegans
+spatula discors (female/juvenile)
+larus heermanni (adult)
+elseyornis melanops
+anas poecilorhyncha
+carduelis carduelis
+muscicapa adusta
+bostrychia hagedash
+bucorvus leadbeateri
+larus pacificus
+artamus cyanopterus
+cathartes aura
+saxicola caprata
+phalacrocorax sulcirostris
+cyclarhis gujanensis
+tyrannus vociferans
+oriturus superciliosus
+luscinia megarhynchos
+icterus wagleri
+spiza americana
+brotogeris jugularis
+buphagus erythrorynchus
+polioptila californica
+taeniopygia bichenovii
+tringa glareola
+copsychus fulicatus
+streptopelia orientalis
+corvus monedula
+athene cunicularia
+leucophaeus atricilla (nonbreeding/immature)
+geothlypis tolmiei
+sphecotheres vieilloti
+bubo bubo
+sula leucogaster
+callipepla gambelii
+limosa lapponica
+accipiter striatus
+buteo jamaicensis
+spatula discors
+chordeiles acutipennis
+mycteria americana
+tyrannus forficatus
+cinclus mexicanus
+selasphorus platycercus (female, immature)
+aythya marila
+haematopus longirostris
+chroicocephalus novaehollandiae
+spizella passerina
+psittacara holochlorus
+sialia mexicana
+archilochus alexandri
+corythornis cristatus
+sayornis phoebe
+limnodromus scolopaceus
+crotophaga major
+hemiphaga novaeseelandiae
+empidonax fulvifrons
+mareca strepera
+cacicus cela
+falco berigora
+pheucticus ludovicianus (adult male)
+leiothlypis celata
+gelochelidon nilotica
+empidonax difficilis
+motacilla aguimp
+baeolophus inornatus
+spinus spinus
+cepphus columba (breeding)
+rupornis magnirostris
+somateria mollissima (adult male)
+petrochelidon fulva
+tolmomyias sulphurescens
+thryothorus ludovicianus
+cecropis abyssinica
+melanerpes rubricapillus
+phimosus infuscatus
+larus michahellis
+sitta europaea
+pinicola enucleator (adult male)
+ploceus capensis
+polioptila caerulea
+arenaria interpres
+glaucidium brasilianum
+pluvialis squatarola (nonbreeding/juvenile)
+larus marinus (adult)
+aythya collaris (breeding male)
+poecile gambeli
+porphyrio martinica (immature)
+phylloscopus sibilatrix
+turdus olivaceus
+egretta novaehollandiae
+falco femoralis
+buteo platypterus (adult)
+chaetura vauxi
+calidris melanotos
+rollandia rolland
+podiceps nigricollis (breeding)
+icterus parisorum
+phalacrocorax pelagicus
+cardinalidae
+thraupis sayaca
+stercorarius parasiticus
+melanerpes formicivorus
+vireo flavoviridis
+spinus tristis (breeding male)
+florisuga mellivora
+melanerpes carolinus
+falco rupicolus
+bubo africanus
+ortalis vetula
+setophaga palmarum
+passerina leclancherii
+vireo plumbeus
+aratinga nenday
+junco hyemalis (pink sided)
+setophaga townsendi
+anhinga novaehollandiae
+cuculus canorus
+amazilia tzacatl
+melospiza melodia
+quelea quelea
+colluricincla harmonica
+platycercus eximius
+nyctanassa violacea (immature)
+icterus prosthemelas
+haemorhous purpureus (female/immature)
+aplonis panayensis
+chamaea fasciata
+sula sula
