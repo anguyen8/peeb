@@ -40,8 +40,7 @@ We do not redistribute the datasets; we provide a ```metadata``` of the combined
 
 ### Training
 
-**Teacher logits**
-Before the training, we need to compute the teacher logits. Please make sure to finish all steps in [Data preparation](./Data_preparation.md) before starting training. 
+**Teacher logits** are required for the training. Please make sure to finish all steps in [Data preparation](./Data_preparation.md) before starting training. 
 
 #### Step 1: Set up PYTHONPATH environment
 * Before running experiments, we need to export the `PYTHONPATH` variable to the current directory and its sub-directories and change the directory to the `src` folder as follows.
