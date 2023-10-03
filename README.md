@@ -5,9 +5,9 @@ _**TLDR:** We proposed a part-based bird classifier that makes predictions based
 
 ### How is our method different from other methods?
 
-[Comparison between M&V (demo)](https://x-clip.auburn.edu:8086)
+[Comparison between M&V (demo)](http://x-clip.auburn.edu:8087)
 
-[Editable Demo](https://x-clip.auburn.edu:7076)
+[Editable Demo](http://x-clip.auburn.edu:7087)
 
 
 ### Model Card
