@@ -4,25 +4,13 @@ _**tldr:** We proposed a part-based bird classifier which make predictions based
 
 
 ### How our method is different from other methods?
-:start2: [Comparison between M&V (demo)](x-clip:auburn.edu:8086)
+[Comparison between M&V (demo)](x-clip:auburn.edu:8086)
 
-:start2: [Editable Demo](x-clip:auburn.edu:7076)
+[Editable Demo](x-clip:auburn.edu:7076)
 
 
 ### Model Card
-We provide our pre-trained models as well as all fine-tuned models used in this work.
-
-| Model                 | Fine-tune from   | Training Set      | Checkpoint       |
-|-----------------------|------------------|-------------------|------------------|
-| PEEB[-test]           | OWL-ViT[base]    | Bird-11K[-test]   | [Link]()|
-| PEEB[-CUB]            | OWL-ViT[base]    | Bird-11K[-CUB]    | [Link]()|
-| PEEB[-NAB]            | OWL-ViT[base]    | Bird-11K[-NAB]    | [Link]()|
-| PEEB[-test]^CUB       | PEEB[-test]      | CUB               | [Link]()|
-| PEEB[-cub]^Akata      | PEEB[-CUB]       | [akata2015label]  | [Link]()|
-| PEEB[-cub]^SCS        | PEEB[-CUB]       | CUB-SCS           | [Link]()|
-| PEEB[-cub]^SCE        | PEEB[-CUB]       | CUB-SCE           | [Link]()|
-| PEEB[-nab]^SCS        | PEEB[-NAB]       | NABirds-SCS       | [Link]()|
-| PEEB[-nab]^SCE        | PEEB[-NAB]       | NABirds-SCE       | [Link]()|
+We provide our pre-trained models as well as all fine-tuned models used in this work. See [here](./Model_card.md) for details.
 
 
 ### Prerequisite
@@ -59,26 +47,43 @@ Make the following changes to `src/config.py`:
 
 ### Prepare Dataset
 
-We do not redistribute the datasets, we provide a [meta data]() of the combined dataset. Please follow [Data preparation](./Data_preparation.md) to prepare for the data if you would like to train the model.
+We do not redistribute the datasets, we provide a ```metadata``` of the combined dataset. Please follow [Data preparation](./Data_preparation.md) to prepare for the data if you would like to train the model.
 
 
 ### Training
 
-#### Teacher logits
+**Teacher logits**
 Before the training, we need to compute the teacher logits. Please make sure to finish all steps in [Data preparation](./Data_preparation.md) before start training. 
 
+Our full training commands can be found [here](./scripts/).
 
 #### Pre-training
-Run the following script to start the pre-training:
+We have two steps in our pre-training,
 
+Step 1: **Part-text mapping**, e.g., for pre-traing at excluding test sets of CUB, NABirds and iNaturalist
 ```bash
-torchrun --nproc_per_node=2 train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 48 --batch_size_val 50 --save_freq 1 --num_workers 16 --devices 2,3 --epochs 64 --lr 0.0002 --project_name xclip_stage1_contrastive --loss_weights 0,0,0,0,1 --network_type contrastive --freeze_box_heads --logits_from_teacher --num_negatives_train 48 --num_negatives_val 50 --fold 1 --early_stopping 5
+python train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --batch_size_val 50 --save_freq 1 --num_workers 8 --devices 0 --epochs 32 --lr 0.0002 --weight_decay 0.01 --project_name stage1_pretraining --loss_weights 0,0,0,0,1 --network_type contrastive --freeze_box_heads --logits_from_teacher --num_negatives_train 48 --num_negatives_val 50 --early_stopping 5 --train_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/train_keep_child_a100_reindexed.h5" --val_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/val_keep_child_a100_reindexed.h5" --test_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/test_cub_reindexed.h5" --birdsoup_level 1 --note "stage1_pretraining_BIRD-11K_test"
 ```
+See [1st_training.sh](./scripts/1st_training.sh) for other commands.
+
+Step 2: **Box prediction calibration, e.g.,
+```bash
+python train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --batch_size_val 50 --save_freq 1 --num_workers 8 --devices 0 --epochs 32 --lr 0.00002 --weight_decay 0.01 --project_name stage2_pretraining --loss_weights 0,1,1,2,0 --network_type contrastive --train_box_heads_only --num_negatives_train 48 --num_negatives_val 50 --early_stopping 5 --train_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/train_keep_child_a100_reindexed.h5" --val_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/val_keep_child_a100_reindexed.h5" --test_file "../data/bird_11K/metadata/level_1_exclude_cub_nabirds_inat/test_cub_reindexed.h5" --best_model "" --birdsoup_level 1 --note "stage2_pretraining_BIRD-11K_test"
+```
+See [2nd_training.sh](./scripts/2nd_training.sh) for other commands.
+
 
 #### Fine-tuning
-Run the following script to start fine-tuning:
-
+To fine-tune the model on a specific downsteam dataset, e.g., CUB
+```bash
+python train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --save_freq 1 --num_workers 8 --devices 0 --epochs 30 --lr 0.00002 --weight_decay 0.001 --project_name finetuning --loss_weights 0,1,1,1,1 --network_type classification --classification_loss ce_loss --early_stopping 5 --train_file "../data/bird_11K/metadata/finetuning/cub_train_reindexed.h5" --val_file "../data/bird_11K/metadata/finetuning/cub_val_reindexed.h5" --test_file "../data/bird_11K/metadata/finetuning/cub_test_reindexed.h5" --best_model "" --birdsoup_level 1 --finetuning "vision_encoder_mlp" --note "all_components_cub_200"
+```
+See [3rd_training_cub_200.sh](./scripts/3rd_training_cub_200.sh) and [3rd_training_zeroshot.sh](./scripts/3rd_training_zeroshot.sh) for fine-tuning on CUB and other zeroshot dataset.
 
 
 ### Evaluation
-For evaluation only, consider run with the following scripts:
+For evaluation only, you may run the following script (for CUB):
+```bash
+python train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --num_workers 8 --devices 0 --loss_weights 0,1,1,1,1 --network_type classification --eval_test --no_log --test_file "../data/bird_11K/metadata/finetuning/cub_test_reindexed.h5" --best_model "" --birdsoup_level 1
+```
+Evalution commands of other test sets can be found in [here](./scripts/). 

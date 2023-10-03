@@ -9,6 +9,8 @@ We use data from 7 different datasets plus 55k images for eBird. You may downloa
 - [ImageNet-birds](https://www.image-net.org/) (birds only)
 - [BIRDS 525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species)
 - [Macaulay Library at the Cornell Lab of Ornithology](https://www.birds.cornell.edu/home/) (You may need to request for access for these images.)
+*Note: The full image list from Macaulay Library at the Cornell Lab of Ornithology can be find in this [spreadsheet](./data/metadata/macaulay_library_image_list.xlsx).
+
 
 Create a folder to store the data, and export the data path to enviroment:
 ```bash
