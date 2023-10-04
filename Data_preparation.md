@@ -17,8 +17,6 @@ Create a folder to store the data, and export the data path to enviroment:
 export DATA_PATH = PATH_TO_YOUR_DATA_FOLDER
 ```
 
-Move all downloaded images to ```DATA_PATH/images```.
-
 
 ### Step 2: Download metadata
 Download the following files from [Box.com](https://auburn.app.box.com/s/owiwf73yxurz3r2k2i6x0r2cg9mgglcc) and store them in the `DATA_PATH` folder.
@@ -35,7 +33,7 @@ tar -xvf metadata.tar.gz -C bird_soup/    # Use the latest metadata folder
 ### Step 3: Rename all files
 Rename all images with the following script:
 ```bash
-python rename_birdsoup_images.py --meta_path ${DATA_PATH}/metadata/bird_soup_uncased_v2.h5
+python src/rename_birdsoup_images.py --meta_path ${DATA_PATH}/metadata/bird_soup_uncased_v2.h5 --image_path ${DATA_PATH}/images
 ```
 
 ### Step 4: Compute teacher logits
