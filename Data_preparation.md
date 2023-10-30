@@ -8,11 +8,11 @@ We use data from 7 different datasets plus 55k images for eBird. You may downloa
 - [iNaturalist 2021-birds](https://www.kaggle.com/datasets/sharansmenon/inat2021birds) (birds only)
 - [ImageNet-birds](https://www.image-net.org/) (birds only)
 - [BIRDS 525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species)
-- [Macaulay Library at the Cornell Lab of Ornithology](https://www.birds.cornell.edu/home/) (You may need to request for access for these images.)
-*Note: The full image list from Macaulay Library at the Cornell Lab of Ornithology can be find in this [spreadsheet](./data/metadata/macaulay_library_image_list.xlsx). Or you can use the extracted assetID list from the json file [here](./data/macaulay_library_assetID.json).
+- [Macaulay Library at the Cornell Lab of Ornithology](https://www.birds.cornell.edu/home/) (You may need to request access to these images.)
+*Note: The full image list from Macaulay Library at the Cornell Lab of Ornithology can be found in this [spreadsheet](./data/metadata/macaulay_library_image_list.xlsx). Or you can use the extracted assetID list from the JSON file [here](./data/macaulay_library_assetID.json).
 
 
-Create a folder to store the data, and export the data path to enviroment:
+Create a folder to store the data, and export the data path to the environment:
 ```bash
 export DATA_PATH = PATH_TO_YOUR_DATA_FOLDER
 ```
@@ -31,7 +31,7 @@ tar -xvf metadata.tar.gz -C bird_soup/    # Use the latest metadata folder
 ```
 
 #### Images from Macaulay Library at the Cornell Lab of Ornithology.
-Since the iamges from Macaulay Library at the Cornell Lab of Ornithology is not publicly avalible, you need to request from their [website](https://www.birds.cornell.edu/) for acesse to download the images.
+Since the images from Macaulay Library at the Cornell Lab of Ornithology are not publicly available, you need to request from their [website](https://www.birds.cornell.edu/) for access to download the images.
 
 
 ### Step 3: Rename all files
@@ -44,7 +44,7 @@ If one wants to skip the images from Macaulay Library at the Cornell Lab of Orni
 ```bash
 python src/rename_birdsoup_images.py --meta_path ${DATA_PATH}/metadata/bird_soup_uncased_v2_no_ebird.h5 --image_path ${DATA_PATH}/images 
 ```
-Note that without the images from Macaulay Library at the Cornell Lab of Ornithology, the diversity of the dataset will be reduced and the performance of the model will be lower. We use column name `data_source` to indicate the source of the images. The value `ebird` indicates the images from Macaulay Library at the Cornell Lab of Ornithology, one can easly exclude these images by filtering the metafile with `'data_source' != 'ebird'` for the rest of the experiments. 
+Note that without the images from Macaulay Library at the Cornell Lab of Ornithology, the diversity of the dataset will be reduced, and the performance of the model will be lower. We use the column name `data_source` to indicate the source of the images. The value `ebird` indicates the images from Macaulay Library at the Cornell Lab of Ornithology; one can easily exclude these images by filtering the metafile with `'data_source' != 'ebird'` for the rest of the experiments. 
 
 
 ### Step 4: Compute teacher logits
