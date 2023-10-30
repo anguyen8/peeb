@@ -9,7 +9,7 @@ We use data from 7 different datasets plus 55k images for eBird. You may downloa
 - [ImageNet-birds](https://www.image-net.org/) (birds only)
 - [BIRDS 525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species)
 - [Macaulay Library at the Cornell Lab of Ornithology](https://www.birds.cornell.edu/home/) (You may need to request for access for these images.)
-*Note: The full image list from Macaulay Library at the Cornell Lab of Ornithology can be find in this [spreadsheet](./data/metadata/macaulay_library_image_list.xlsx).
+*Note: The full image list from Macaulay Library at the Cornell Lab of Ornithology can be find in this [spreadsheet](./data/metadata/macaulay_library_image_list.xlsx). Or you can use the extracted assetID list from the json file [here](./data/macaulay_library_assetID.json).
 
 
 Create a folder to store the data, and export the data path to enviroment:
@@ -30,11 +30,22 @@ tar boxes_no_logits.tar.gz
 tar -xvf metadata.tar.gz -C bird_soup/    # Use the latest metadata folder
 ```
 
+#### Images from Macaulay Library at the Cornell Lab of Ornithology.
+Since the iamges from Macaulay Library at the Cornell Lab of Ornithology is not publicly avalible, you need to request from their [website](https://www.birds.cornell.edu/) for acesse to download the images.
+
+
 ### Step 3: Rename all files
 Rename all images with the following script:
 ```bash
 python src/rename_birdsoup_images.py --meta_path ${DATA_PATH}/metadata/bird_soup_uncased_v2.h5 --image_path ${DATA_PATH}/images
 ```
+
+If one wants to skip the images from Macaulay Library at the Cornell Lab of Ornithology, we provide the metafile that excludes the corresponding images [here](https://auburn.box.com/s/9arivxicqkv52n9pajth3rbxyowuw0us). You can download the file and replace the original metafile. e.g.,
+```bash
+python src/rename_birdsoup_images.py --meta_path ${DATA_PATH}/metadata/bird_soup_uncased_v2_no_ebird.h5 --image_path ${DATA_PATH}/images 
+```
+Note that without the images from Macaulay Library at the Cornell Lab of Ornithology, the diversity of the dataset will be reduced and the performance of the model will be lower. We use column name `data_source` to indicate the source of the images. The value `ebird` indicates the images from Macaulay Library at the Cornell Lab of Ornithology, one can easly exclude these images by filtering the metafile with `'data_source' != 'ebird'` for the rest of the experiments. 
+
 
 ### Step 4: Compute teacher logits
 It takes around 60-90 minutes for one single NVIDIA A100-SXM40 GPU.
