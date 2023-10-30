@@ -33,9 +33,9 @@ python -m spacy download en_core_web_sm
 ```
 
 
-### Prepare Dataset
+### How to construct Bird-11K?
 
-We do not redistribute the datasets; we provide a ```metadata``` of the combined dataset. Please follow [Data preparation](./Data_preparation.md) to prepare the data if you would like to train the model.
+We do not redistribute the datasets; we provide a ```metadata``` of the combined dataset. To prepare the `Bird-11K` dataset, please follow [Data preparation](./Data_preparation.md) to prepare the data if you would like to train the model.
 
 
 ### Training
