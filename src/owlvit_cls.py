@@ -442,11 +442,8 @@ class OwlViTForClassification(nn.Module):
         input_ids = input_ids.reshape(batch_size, max_text_queries, input_ids.shape[-1])
         query_mask = input_ids[..., 0] > 0
 
-        # Store outputs for computing losses
-        loss_dict = {}
         # teacher_boxes_logits = torch.stack([target["logits"] for target in targets], dim=0)     # (bs, num_patches*num_patches, max_text_queries)
         teacher_boxes_logits = targets['logits']     # (bs, num_patches*num_patches, max_text_queries)
-
 
         if self.logits_from_teacher:
             pred_logits_parts = None
@@ -463,17 +460,23 @@ class OwlViTForClassification(nn.Module):
         pred_boxes = self.box_predictor(image_feats, feature_map)   # (bs, num_patches*num_patches, 4)
         pred_boxes_selected = torch.gather(pred_boxes, dim=1, index=topk_idxs.squeeze(1).unsqueeze(2).expand(*topk_idxs.squeeze(1).size(), pred_boxes.size(2)))
 
+        # Store outputs for computing losses
+        loss_dict = {}
         # ----------------------------------------------------------------------------------------
         #   Computing box + class (unnecessary) + symmetric losses for box selection
         # ----------------------------------------------------------------------------------------
-        outputs_loss = {}
-        outputs_loss["logits"] = teacher_boxes_logits if self.logits_from_teacher else pred_logits_parts    # Not necessary as of August 26, 2023
-        outputs_loss["pred_boxes"] = pred_boxes
-
+        
+        box_outputs = {
+            "logits": teacher_boxes_logits
+            if self.logits_from_teacher
+            else pred_logits_parts,
+            "pred_boxes": pred_boxes,
+        }
+        
         # Compute box + class losses
         if self.weight_dict["loss_ce"] > 0 or self.weight_dict["loss_bbox"] > 0 or self.weight_dict["loss_giou"] > 0:
             mapping_indices = [(selected_indices, torch.tensor(list(range(self.num_parts))).to(self.device)) for selected_indices in topk_idxs.squeeze(1)]
-            loss_dict = self.criterion(outputs_loss, targets, mapping_indices)
+            loss_dict = self.criterion(box_outputs, targets, mapping_indices)
 
         # For getting rid of the teacher model
         if self.weight_dict["loss_sym_box_label"] > 0 and not self.logits_from_teacher:
@@ -490,37 +493,63 @@ class OwlViTForClassification(nn.Module):
         # targets_cls = torch.tensor([target["targets_cls"] for target in targets]).unsqueeze(1).to(self.device)
         targets_cls = targets["targets_cls"].unsqueeze(1).to(self.device)
 
-        if self.weight_dict["loss_xclip"] > 0:
-            if self.network_type == "classification":
-                one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
+        # if self.weight_dict["loss_xclip"] > 0:
+        #     if self.network_type == "classification":
+        #         one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
 
-                # Compute CE loss
-                if self.classification_loss == "ce_loss":
-                    loss = self.ce_loss(pred_logits, one_hot)
+        #         # Compute CE loss
+        #         if self.classification_loss == "ce_loss":
+        #             loss = self.ce_loss(pred_logits, one_hot)
 
-                # OR Focal loss
-                elif self.classification_loss == "focal_loss":
-                    loss = self.focal_loss(pred_logits, targets_cls.squeeze(-1))
+        #         # OR Focal loss
+        #         elif self.classification_loss == "focal_loss":
+        #             loss = self.focal_loss(pred_logits, targets_cls.squeeze(-1))
 
-                    # Alternative implementation for the focal loss
-                    # CE = F.cross_entropy(input=pred_logits, target=one_hot, reduction="none")
-                    # prob = torch.gather(torch.softmax(input=pred_logits, dim=-1), 1, targets_cls.long()).squeeze(-1)
-                    # loss = (self.alpha * ((1 - prob) ** self.gamma) * CE).mean()
+        #             # Alternative implementation for the focal loss
+        #             # CE = F.cross_entropy(input=pred_logits, target=one_hot, reduction="none")
+        #             # prob = torch.gather(torch.softmax(input=pred_logits, dim=-1), 1, targets_cls.long()).squeeze(-1)
+        #             # loss = (self.alpha * ((1 - prob) ** self.gamma) * CE).mean()
 
-                else:
-                    raise f"Loss {self.classification_loss} is not supported"
+        #         else:
+        #             raise f"Loss {self.classification_loss} is not supported"
 
-                loss_dict["loss_xclip"] = loss
+        #         loss_dict["loss_xclip"] = loss
+        #     else:
+
+        #         # Compute symmetric loss for part-descriptor contrastive learning
+        #         logits_per_image = torch.softmax(image_text_logits, dim=0)
+        #         logits_per_text = torch.softmax(image_text_logits, dim=-1)
+        #         sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
+        #         loss_dict["loss_xclip"] = sym_loss
+
+        return pred_logits, image_text_logits, center_to_corners_format(pred_boxes_selected), loss_dict
+
+    def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_loigts: torch.Tensor, targets_cls: torch.Tensor):
+        if self.network_type == "classification":
+            one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
+
+            # Compute CE loss
+            if self.classification_loss == "ce_loss":
+                loss = self.ce_loss(pred_logits, one_hot)
+
+            # OR Focal loss
+            elif self.classification_loss == "focal_loss":
+                loss = self.focal_loss(pred_logits, targets_cls.squeeze(-1))
+                # Alternative implementation for the focal loss
+                # CE = F.cross_entropy(input=pred_logits, target=one_hot, reduction="none")
+                # prob = torch.gather(torch.softmax(input=pred_logits, dim=-1), 1, targets_cls.long()).squeeze(-1)
+                # loss = (self.alpha * ((1 - prob) ** self.gamma) * CE).mean()
             else:
+                raise f"Loss {self.classification_loss} is not supported"
+            return loss
+        else:
+            # Compute symmetric loss for part-descriptor contrastive learning
+            logits_per_image = torch.softmax(image_text_loigts, dim=0)
+            logits_per_text = torch.softmax(image_text_loigts, dim=-1)
+            sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
+            return sym_loss
 
-                # Compute symmetric loss for part-descriptor contrastive learning
-                logits_per_image = torch.softmax(image_text_logits, dim=0)
-                logits_per_text = torch.softmax(image_text_logits, dim=-1)
-                sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
-                loss_dict["loss_xclip"] = sym_loss
-
-        return pred_logits, center_to_corners_format(pred_boxes_selected), loss_dict
-
+        
     def loss_symmetric(self, text_logits: torch.Tensor, image_logits: torch.Tensor, targets: torch.Tensor, box_labels: torch.Tensor = None) -> torch.Tensor:
         # text/image logits (batch_size*num_boxes, num_classes*num_descs): The logits that softmax over text descriptors or boxes
         # targets (batch_size, 1): The ground truth label of box-text pair for classification OR

@@ -254,8 +254,13 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     else:
         desc_embeds = text_embeds
     
-    pred_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
-
+    pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
+    
+    # compute symmetric cross entropy loss (take out from the forward such that we can use DP to "increase batch size")
+    if weight_dict['loss_xclip'] > 0:
+        xclip_loss = model.module.compute_sce_loss(pred_logits, image_text_logits, target_cls)
+        loss_dict['loss_xclip'] = xclip_loss
+            
     # Compute total loss, as a weighted sum of the various losses (22.13GB)
     loss = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict)
 
