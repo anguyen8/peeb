@@ -19,7 +19,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # PRECOMPUTED_DIR = ''
 
 DATASET_DIR = '/home/lab/datasets'
-PRECOMPUTED_DIR = '/home/lab/xclip/part_boxes/owlvit-large-patch14_cub-12-parts'
+PRECOMPUTED_DIR = '/home/lab/xclip/owlvit_boxes'
 # ------------------------------------------
 
 CUB_DIR = os.path.join(DATASET_DIR, 'cub/CUB_200_2011')

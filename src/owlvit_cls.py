@@ -3,6 +3,7 @@ from typing import Optional, Tuple, Union, Any
 
 import torch
 import torch.nn.functional as F
+import torch.distributed as dist
 import numpy as np
 from torch import nn
 from transformers import OwlViTConfig
@@ -163,7 +164,7 @@ class OwlViTPredictionHead(nn.Module):
         image_text_logits_reshaped = image_text_logits.view(-1, image_text_logits.shape[-1])
 
         # Shape: (bs, num_classes * num_parts, num_boxes) --> (bs, num_classes, num_parts, num_boxes)
-        pred_logits = image_text_logits.swapaxes(axis0=1, axis1=2).view(batch_size, self.num_classes, n_parts, -1)
+        pred_logits = image_text_logits.swapaxes(axis0=1, axis1=2).reshape(batch_size, self.num_classes, n_parts, -1) # PEIJIE: Use reshape instead of view to avoid memory issues
         pred_logits = torch.diagonal(pred_logits, dim1=-2, dim2=-1)     # --> torch.Size([bs, num_classes, 12])
         pred_logits = torch.sum(pred_logits, dim=-1)
 
@@ -422,12 +423,13 @@ class OwlViTForClassification(nn.Module):
 
         return (pred_logits, image_class_embeds, query_mask)
 
-    def forward(self, image_inputs, text_inputs_parts, text_embeds, targets):
+    def forward(self, pixel_values, attention_mask, input_ids, text_embeds, targets):
 
         # Embed images and text queries
-        input_ids = text_inputs_parts["input_ids"]
-        text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=text_inputs_parts["attention_mask"],
-                                                                           pixel_values=image_inputs['pixel_values'])
+        # input_ids = text_inputs_parts["input_ids"]
+        # text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=text_inputs_parts["attention_mask"],
+        #                                                                    pixel_values=image_inputs['pixel_values'])
+        text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=attention_mask, pixel_values=pixel_values)
 
         batch_size, num_patches, num_patches, hidden_dim = feature_map.shape
         image_feats = torch.reshape(feature_map, (batch_size, num_patches * num_patches, hidden_dim))
@@ -442,7 +444,9 @@ class OwlViTForClassification(nn.Module):
 
         # Store outputs for computing losses
         loss_dict = {}
-        teacher_boxes_logits = torch.stack([target["logits"] for target in targets], dim=0)     # (bs, num_patches*num_patches, max_text_queries)
+        # teacher_boxes_logits = torch.stack([target["logits"] for target in targets], dim=0)     # (bs, num_patches*num_patches, max_text_queries)
+        teacher_boxes_logits = targets['logits']     # (bs, num_patches*num_patches, max_text_queries)
+
 
         if self.logits_from_teacher:
             pred_logits_parts = None
@@ -483,7 +487,8 @@ class OwlViTForClassification(nn.Module):
 
         # Predict image-level classes (batch_size, num_patches, num_queries)
         image_text_logits, pred_logits = self.cls_head(image_feats, text_embeds, topk_idxs)
-        targets_cls = torch.tensor([target["targets_cls"] for target in targets]).unsqueeze(1).to(self.device)
+        # targets_cls = torch.tensor([target["targets_cls"] for target in targets]).unsqueeze(1).to(self.device)
+        targets_cls = targets["targets_cls"].unsqueeze(1).to(self.device)
 
         if self.weight_dict["loss_xclip"] > 0:
             if self.network_type == "classification":
@@ -507,7 +512,7 @@ class OwlViTForClassification(nn.Module):
 
                 loss_dict["loss_xclip"] = loss
             else:
-                # TODO: Need a linear classifier for this approach
+
                 # Compute symmetric loss for part-descriptor contrastive learning
                 logits_per_image = torch.softmax(image_text_logits, dim=0)
                 logits_per_text = torch.softmax(image_text_logits, dim=-1)
@@ -522,14 +527,16 @@ class OwlViTForClassification(nn.Module):
         # targets (batch_size, all_boxes, num_parts): The ground truth label of box-text pair for box selection
         # box_labels (batch_size, num_boxes), 0 for no box, 1 for box
 
-        assert text_logits.shape == image_logits.shape
+        # to support DP, define local device
+        device = text_logits.device
+        assert text_logits.shape == image_logits.shape # should not assert this.
 
         # For image classification
         if image_logits.shape != targets.shape:
             batch_size = targets.shape[0]
 
             # get the matching labels (bs * 12, num_classes * num_parts)
-            default_box_labels = torch.kron(torch.ones(batch_size, self.num_classes), torch.eye(self.num_parts)).to(self.device)
+            default_box_labels = torch.kron(torch.ones(batch_size, self.num_classes), torch.eye(self.num_parts)).to(device)
             if box_labels is None:
                 box_labels = default_box_labels.clone()
             else:
@@ -537,8 +544,8 @@ class OwlViTForClassification(nn.Module):
                 box_labels = box_labels.view(-1, 1) * default_box_labels
 
             # Create one-hot encoding of targets; matching_labels shape: (bs * 12, num_classes * num_parts)
-            target_one_hot = torch.zeros(batch_size, self.num_classes).to(self.device).scatter(1, targets.view(-1, 1), 1)
-            target_one_hot = torch.kron(target_one_hot, torch.ones(self.num_parts, self.num_parts).to(self.device))
+            target_one_hot = torch.zeros(batch_size, self.num_classes).to(device).scatter(1, targets.reshape(-1, 1), 1)
+            target_one_hot = torch.kron(target_one_hot, torch.ones(self.num_parts, self.num_parts).to(device))
 
             matching_labels = target_one_hot * box_labels
         else:
@@ -546,8 +553,8 @@ class OwlViTForClassification(nn.Module):
             values, indices = torch.max(targets, dim=1)
             matching_labels = torch.zeros_like(targets).scatter(1, indices.unsqueeze(1), 1)
 
-        loss_i = F.cross_entropy(image_logits, matching_labels, reduction='mean')
-        loss_t = F.cross_entropy(text_logits, matching_labels, reduction='mean')
+        loss_i = F.cross_entropy(image_logits, matching_labels.to(device), reduction='mean')
+        loss_t = F.cross_entropy(text_logits, matching_labels.to(device), reduction='mean')
         sym_loss = (loss_i + loss_t).mean()
 
         return sym_loss
@@ -718,7 +725,12 @@ class DetrLoss(nn.Module):
         # target_classes[idx] = target_classes_o
 
         source_logits = source_logits[idx].view(len(indices), -1, self.num_parts)
-        target_classes = torch.stack([t["class_labels"][J] for t, (_, J) in zip(targets, indices)], dim=0)
+        # target_classes = torch.stack([t["class_labels"][J] for t, (_, J) in zip(targets, indices)], dim=0)
+        
+        # This will create a 1D tensor with the within_batch_indices from indices
+        within_batch_indices = torch.tensor([J for _, J in indices], device=source_logits.device)
+        # Now, index into the batched 'labels' tensor using these within_batch_indices
+        target_classes = targets['labels'][:, within_batch_indices]
 
         loss_ce = F.cross_entropy(source_logits.transpose(1, 2), target_classes, self.empty_weight)
         losses = {"loss_ce": loss_ce}
@@ -734,7 +746,7 @@ class DetrLoss(nn.Module):
         """
         logits = outputs["logits"]
         device = logits.device
-        target_lengths = torch.as_tensor([len(v["class_labels"]) for v in targets], device=device)
+        target_lengths = torch.as_tensor([len(targets["class_labels"])], device=device)
         # Count the number of predictions that are NOT "no-object" (which is the last class)
         card_pred = (logits.argmax(-1) != logits.shape[-1] - 1).sum(1)
         card_err = nn.functional.l1_loss(card_pred.float(), target_lengths.float())
@@ -758,7 +770,8 @@ class DetrLoss(nn.Module):
         # target_boxes = torch.cat([torch.tensor(t["boxes"]).to(device) for t in targets], dim=0)     # corner format
 
         source_boxes = outputs["pred_boxes"][idx]                                                     # center format
-        target_boxes = torch.cat([torch.tensor(t["boxes"]).to(device) for t in targets], dim=0)       # corner format
+        # target_boxes = torch.cat([torch.tensor(t["boxes"]).to(device) for t in targets], dim=0)       # corner format
+        target_boxes = targets['boxes'].reshape(-1, 4)                                                # corner format
         target_boxes = corners_to_center_format(target_boxes)                                         # center format
 
         losses = {}
@@ -847,7 +860,8 @@ class DetrLoss(nn.Module):
         # indices = self.matcher(outputs_without_aux, targets)
 
         # Compute the average number of target boxes across all nodes, for normalization purposes
-        num_boxes = sum(len(t["class_labels"]) for t in targets)
+        # num_boxes = sum(len(t["class_labels"]) for t in targets)
+        num_boxes = len(targets["class_labels"])
         num_boxes = torch.as_tensor([num_boxes], dtype=torch.float, device=outputs["pred_boxes"].device)
         # (Niels): comment out function below, distributed training to be added
         # if is_dist_avail_and_initialized():
@@ -969,4 +983,7 @@ def sigmoid_focal_loss(inputs, targets, num_boxes, alpha: float = 0.25, gamma: f
         loss = alpha_t * loss
 
     return loss.mean(1).sum() / num_boxes
+
+from torch.distributed import all_gather
+
 

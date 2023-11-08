@@ -30,7 +30,7 @@ def img_transform(n_px):
 
 
 def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc_type="sachit", part_based=False,
-                      target_classes: list[int] = None, descriptor_path: str = None):
+                      target_classes: list[int] = None, descriptor_path: str = None, unmute: bool = True):
     templated_descriptions, descriptions_mappings = {}, {}
 
     # ImageNet and ImageNet-v2 share the same list of descriptions
@@ -42,7 +42,8 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
         if dataset_to_load == "bird_11K":
             descriptor_path = descriptor_path.replace(dataset_to_load, f"{dataset_to_load}")
 
-    print("Using descriptors from: ", descriptor_path)
+    if unmute:
+        print("Using descriptors from: ", descriptor_path)
 
     with open(descriptor_path) as input_file:
         descriptions = json.load(input_file)
@@ -97,7 +98,7 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
             descriptions_mappings[class_name] = {templated_descriptor: descriptor for descriptor, templated_descriptor in zip(class_descriptors, templated_descriptors)}
 
             # Print an example for checking
-            if idx == 0:
+            if idx == 0 and unmute:
                 print(f"\nExample description for prompt type {prompt_type}: \"{templated_descriptions[class_name][0]}\"\n")
 
     return templated_descriptions, descriptions_mappings
