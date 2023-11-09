@@ -40,17 +40,25 @@ from utils import *
 
 nlp_spacy = spacy.load("en_core_web_sm")
 
-def add_extra_negatives(runtime, unique_class_ids, description_embeds, templated_descriptions, num_negatives, verbose: bool = False):
-    num_extra_negatives = num_negatives - len(unique_class_ids)
-    if num_extra_negatives > 0:
+def add_extra_negatives(runtime: str, unique_class_ids: set, description_embeds: torch.Tensor, all_cls_ids: set, num_negatives: int, targets_cls: torch.Tensor, verbose: bool = False):
+    if (num_extra_negatives := num_negatives - len(unique_class_ids)) > 0:
+        # all_cls_ids = set(range(len(templated_descriptions)))
+        all_negatives = all_cls_ids - unique_class_ids
+        all_negatives = list(all_negatives)
+        unique_class_ids = list(unique_class_ids)
         if verbose:
             print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
-        all_negatives = [class_id for class_id in range(len(templated_descriptions.keys())) if class_id not in unique_class_ids]
         unique_class_ids += random.sample(all_negatives, num_extra_negatives)
-
+    
     selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
     text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1])   #.to(device)
-    return text_desc_embeds
+    
+    # Update targets when the order of text_embeds is changed (reindexing the target classes)
+    # targets_cls = torch.tensor([unique_class_ids.index(class_id) for class_id in targets_cls.tolist()]).to(device) # this operation is O(n^2)
+    class_ids2target_cls = dict(zip(unique_class_ids, range(len(unique_class_ids))))
+    targets_cls = torch.tensor([class_ids2target_cls[class_id] for class_id in targets_cls.tolist()]).to(device)
+    
+    return text_desc_embeds, targets_cls
 
 def get_timestamp():
     local_tz = pytz.timezone("America/Chicago")
@@ -249,16 +257,17 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     input_ids = text_inputs_parts['input_ids']
     if isinstance(model, torch.nn.DataParallel):
         desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1, 1)
-    elif isinstance(model, DDP):
-        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1)
     else:
-        desc_embeds = text_embeds
+        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1)
     
     pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
     
     # compute symmetric cross entropy loss (take out from the forward such that we can use DP to "increase batch size")
     if weight_dict['loss_xclip'] > 0:
-        xclip_loss = model.module.compute_sce_loss(pred_logits, image_text_logits, target_cls)
+        if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+            xclip_loss = model.module.compute_sce_loss(pred_logits, image_text_logits, target_cls)
+        else:
+            xclip_loss = model.compute_sce_loss(pred_logits, image_text_logits, target_cls)
         loss_dict['loss_xclip'] = xclip_loss
             
     # Compute total loss, as a weighted sum of the various losses (22.13GB)
@@ -317,7 +326,10 @@ def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val
             start = i * args.batch_size
             end = (i+1) * args.batch_size
             text_inputs = processor(text=all_descriptions[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            text_embeds.append(model.module.owlvit.get_text_features(**text_inputs))
+            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+                text_embeds.append(model.module.owlvit.get_text_features(**text_inputs))
+            else:
+                text_embeds.append(model.owlvit.get_text_features(**text_inputs))
 
         text_embeds_val = []
         num_batches = math.ceil(len(all_descriptions_val) / args.batch_size)
@@ -325,8 +337,11 @@ def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val
             start = i * args.batch_size
             end = (i+1) * args.batch_size
             text_inputs_val = processor(text=all_descriptions_val[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            text_embeds_val.append(model.module.owlvit.get_text_features(**text_inputs_val))
-
+            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+                text_embeds_val.append(model.module.owlvit.get_text_features(**text_inputs_val))
+            else:
+                text_embeds_val.append(model.owlvit.get_text_features(**text_inputs_val))
+                
         text_embeds = torch.cat(text_embeds, dim=0).cpu().detach()
         text_embeds_val = torch.cat(text_embeds_val, dim=0).cpu().detach()
         
@@ -389,18 +404,28 @@ def train_loop(dataset: str,
     if load_boxes_base:
         df_cub_test = pd.read_hdf(args.test_file)
 
+    all_cls_ids = set(range(len(templated_descriptions)))
     for batch_idx, batch_data in tqdm(enumerate(data_loader), desc=f"{runtime} epoch {epoch}", total=len(data_loader)):
         if not precompute:
             raise NotImplementedError("Current Training script only support precomputed (boxes) mode")
 
         images, targets_cls, image_paths = batch_data
         images, targets_cls = images.to(device), targets_cls.to(device)
-        batch_size = len(image_paths)
+        # batch_size = len(image_paths)
 
         # Handle the last batch separately
-        if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
+        # if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size or images.pixel_values.shape[0]*total_descriptors_part != text_inputs_parts['input_ids'].shape[0]:
+        #     text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
+        #     text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+        
+        # Handle the last batch separately
+        batch_size = images.pixel_values.shape[0]
+        query_size = text_inputs_parts['input_ids'].shape[0]
+        if batch_size*total_descriptors_part != query_size:
+            print(f"Hanlde the last batch separately, query size: {query_size}, batch size: {batch_size}, input_ids size: {text_inputs_parts['input_ids'].shape}")
             text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
             text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+            print(f"New input_ids size: {text_inputs_parts['input_ids'].shape}")
 
         images['pixel_values'] = images['pixel_values'].squeeze(1).to(device)
 
@@ -409,19 +434,19 @@ def train_loop(dataset: str,
         # Increase/Reduce number of classes for contrastive learning
         # ------------------------------------------------------------------
         if args.network_type == "contrastive" and runtime in ["train", "val"]:
-            unique_class_ids = list(dict.fromkeys(targets_cls.tolist()).keys())
+            unique_class_ids = set(targets_cls.tolist())
 
             if args.contrastive_sampler in ["refilled_empty_classes", "removed_empty_classes"]:
                 assert len(unique_class_ids) == batch_size # why assert this?
                 
             # Select X from the remaining classes with X = num_negatives - unique_class_ids
-            text_desc_embeds = add_extra_negatives(runtime, unique_class_ids, text_embeds, templated_descriptions, num_negatives)
-
-            # Update targets when the order of text_embeds is changed
-            targets_cls = torch.tensor([unique_class_ids.index(class_id) for class_id in targets_cls.tolist()]).to(device)
+            text_desc_embeds, targets_cls = add_extra_negatives(runtime, unique_class_ids, text_embeds, all_cls_ids, num_negatives, targets_cls)
 
             # Also update number of classes in the model for contrastive loss in the upper branch
-            model.module.update_num_classes(len(unique_class_ids))
+            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+                model.module.update_num_classes(num_negatives)
+            else:
+                model.update_num_classes(num_negatives)
         else:
             text_desc_embeds = text_embeds.repeat(batch_size, 1)   #.to(device)
         # ------------------------------------------------------------------

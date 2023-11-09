@@ -435,7 +435,7 @@ class OwlViTForClassification(nn.Module):
         image_feats = torch.reshape(feature_map, (batch_size, num_patches * num_patches, hidden_dim))
 
         # Reshape from [batch_size * max_text_queries, hidden_dim] -> [batch_size, max_text_queries, hidden_dim]
-        max_text_queries = input_ids.shape[0] // batch_size
+        max_text_queries = input_ids.shape[0] // batch_size # last batch might not have max_text_queries
         text_embeds_parts = text_embeds_parts.reshape(batch_size, max_text_queries, text_embeds_parts.shape[-1])
 
         # If first token is 0, then this is a padded query [batch_size, num_queries].
