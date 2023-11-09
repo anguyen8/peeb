@@ -413,8 +413,8 @@ def train_loop(dataset: str,
         images, targets_cls = images.to(device), targets_cls.to(device)
         # batch_size = len(image_paths)
 
-        # Handle the last batch separately
-        # if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size or images.pixel_values.shape[0]*total_descriptors_part != text_inputs_parts['input_ids'].shape[0]:
+        # #Handle the last batch separately
+        # if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
         #     text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
         #     text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
         
@@ -422,10 +422,16 @@ def train_loop(dataset: str,
         batch_size = images.pixel_values.shape[0]
         query_size = text_inputs_parts['input_ids'].shape[0]
         if batch_size*total_descriptors_part != query_size:
-            print(f"Hanlde the last batch separately, query size: {query_size}, batch size: {batch_size}, input_ids size: {text_inputs_parts['input_ids'].shape}")
+            print(f"Batch size: {batch_size}, Query size: {query_size}, num descriptors: {total_descriptors_part}")
+            # drop some images to make sure the query size is a multiple of number of GPUs (for DP and DDP)
+            max_imgs = (batch_size // len(device_list)) * len(device_list)
+            images['pixel_values'] = images['pixel_values'][:max_imgs]
+            batch_size = images['pixel_values'].shape[0]
+            targets_cls = targets_cls[:batch_size]
+            image_paths = image_paths[:batch_size]
+            # change the query size to be a multiple of batch size
             text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
             text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
-            print(f"New input_ids size: {text_inputs_parts['input_ids'].shape}")
 
         images['pixel_values'] = images['pixel_values'].squeeze(1).to(device)
 
@@ -738,6 +744,11 @@ if __name__ == '__main__':
     train_dataset, val_dataset = load_training_dataset(args.dataset, args.sub_datasets, args.eval_size, transform=owlvit_det_processor, random_state=args.random_seed, zeroshot_split=args.zeroshot_split)
     target_classes = train_dataset.classes if hasattr(train_dataset, "classes") else train_dataset.dataset.classes
     target_classes_val = val_dataset.classes if hasattr(val_dataset, "classes") else val_dataset.dataset.classes
+    # ### for debugging ###
+    # # for testing purposes, sample 12345 images from train set
+    # from torch.utils.data import Subset
+    # sample_idxs = np.random.choice(len(train_dataset), 12345, replace=False)
+    # train_dataset = Subset(train_dataset, sample_idxs)
 
     test_dataset = None
     if args.eval_test:
