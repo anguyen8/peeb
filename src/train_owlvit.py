@@ -251,7 +251,7 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     target_cls = torch.stack([t["targets_cls"] for t in targets], dim=0)
     boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
     batched_targets = {'labels': class_labels, 'logits': logits, 'targets_cls': target_cls, 'boxes': boxes}
-    
+
     pixel_values = images['pixel_values']
     attention_mask = text_inputs_parts['attention_mask']
     input_ids = text_inputs_parts['input_ids']
@@ -259,24 +259,24 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
         desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1, 1)
     else:
         desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1)
-    
+
     pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
-    
+
     # compute symmetric cross entropy loss (take out from the forward such that we can use DP to "increase batch size")
     if weight_dict['loss_xclip'] > 0:
-        if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+        if hasattr(model, "module"):
             xclip_loss = model.module.compute_sce_loss(pred_logits, image_text_logits, target_cls)
         else:
             xclip_loss = model.compute_sce_loss(pred_logits, image_text_logits, target_cls)
         loss_dict['loss_xclip'] = xclip_loss
-            
+
     # Compute total loss, as a weighted sum of the various losses (22.13GB)
     loss = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict)
 
     target_boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
     base_boxes = torch.stack([torch.tensor(t["boxes_base"]) for t in targets], dim=0)
     pred_boxes = pred_boxes.detach().cpu()
-    
+
     # giou_scores = torch.diag(generalized_box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))).view(-1, 12)
     iou_scores = torch.diag(box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
     base_iou_scores = torch.diag(box_iou(base_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
@@ -326,7 +326,7 @@ def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val
             start = i * args.batch_size
             end = (i+1) * args.batch_size
             text_inputs = processor(text=all_descriptions[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+            if hasattr(model, "module"):
                 text_embeds.append(model.module.owlvit.get_text_features(**text_inputs))
             else:
                 text_embeds.append(model.owlvit.get_text_features(**text_inputs))
@@ -337,14 +337,14 @@ def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val
             start = i * args.batch_size
             end = (i+1) * args.batch_size
             text_inputs_val = processor(text=all_descriptions_val[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+            if hasattr(model, "module"):
                 text_embeds_val.append(model.module.owlvit.get_text_features(**text_inputs_val))
             else:
                 text_embeds_val.append(model.owlvit.get_text_features(**text_inputs_val))
-                
+
         text_embeds = torch.cat(text_embeds, dim=0).cpu().detach()
         text_embeds_val = torch.cat(text_embeds_val, dim=0).cpu().detach()
-        
+
     return text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part
 
 def train_loop(dataset: str,
@@ -411,27 +411,25 @@ def train_loop(dataset: str,
 
         images, targets_cls, image_paths = batch_data
         images, targets_cls = images.to(device), targets_cls.to(device)
-        # batch_size = len(image_paths)
 
-        # #Handle the last batch separately
-        # if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
-        #     text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
-        #     text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
-        
-        # Handle the last batch separately
         batch_size = images.pixel_values.shape[0]
         query_size = text_inputs_parts['input_ids'].shape[0]
-        if batch_size*total_descriptors_part != query_size:
+        #Handle the last batch separately
+        if isinstance(model, torch.nn.DataParallel) and batch_size*total_descriptors_part != query_size:
+            # drop some images to make sure the query size is a multiple of number of GPUs (for DP)
             print(f"Batch size: {batch_size}, Query size: {query_size}, num descriptors: {total_descriptors_part}")
-            # drop some images to make sure the query size is a multiple of number of GPUs (for DP and DDP)
             max_imgs = (batch_size // len(device_list)) * len(device_list)
             images['pixel_values'] = images['pixel_values'][:max_imgs]
-            batch_size = images['pixel_values'].shape[0]
             targets_cls = targets_cls[:batch_size]
             image_paths = image_paths[:batch_size]
             # change the query size to be a multiple of batch size
             text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
             text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+                
+        elif batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
+            text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
+            text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+        
 
         images['pixel_values'] = images['pixel_values'].squeeze(1).to(device)
 
@@ -901,6 +899,12 @@ if __name__ == '__main__':
     # compute the text embeddings 
     text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part = compute_text_embeds(model, owlvit_det_processor, all_descriptions, all_descriptions_val, args, device)
 
+    # TODO: try a different scheduler
+    # train_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6, last_epoch=-1)
+    # At https://github.com/openai/CLIP/issues/107
+    # The LR schedule didn't have restarts, the multiplier becomes (almost) 1.0 after warmup, and monotonically decreases 0.0 drawing a cosine curve over 32 epochs.
+    # A linear warmup was done over the first 2,000 iterations and is not dependent of the period of the cosine function.
+    
     # train loops
     if not args.eval_test:
         val_best_acc, val_best_loss, best_epoch = 0, 9999, 0
@@ -937,7 +941,7 @@ if __name__ == '__main__':
                 if not args.no_log:
                     wandb.log(train_log_dict | val_log_dict | train_od_epoch_loss_dict | val_od_epoch_loss_dict | {"epochs": epoch}, commit=False)
 
-                sd = model.module.state_dict() if world_size > 1 else model.state_dict()
+                sd = model.module.state_dict() if hasattr(model, "module") else model.state_dict()
                 if args.save_freq > 0 and epoch % args.save_freq == 0:
                     torch.save(sd, os.path.join(wandb.run.dir, f"e{epoch:04d}.pt"))
 

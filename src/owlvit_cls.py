@@ -168,7 +168,7 @@ class OwlViTPredictionHead(nn.Module):
         pred_logits = torch.diagonal(pred_logits, dim1=-2, dim2=-1)     # --> torch.Size([bs, num_classes, 12])
         pred_logits = torch.sum(pred_logits, dim=-1)
 
-        return (image_text_logits_reshaped, pred_logits)
+        return image_text_logits_reshaped, pred_logits
 
 
 class OwlViTForClassification(nn.Module):
@@ -423,7 +423,8 @@ class OwlViTForClassification(nn.Module):
 
         return (pred_logits, image_class_embeds, query_mask)
 
-    def forward(self, pixel_values, attention_mask, input_ids, text_embeds, targets):
+    # main forward function of PEEB
+    def forward(self, pixel_values: torch.Tensor, attention_mask: torch.Tensor, input_ids: torch.Tensor, text_embeds: torch.Tensor, targets: torch.Tensor):
 
         # Embed images and text queries
         # input_ids = text_inputs_parts["input_ids"]
@@ -434,21 +435,19 @@ class OwlViTForClassification(nn.Module):
         batch_size, num_patches, num_patches, hidden_dim = feature_map.shape
         image_feats = torch.reshape(feature_map, (batch_size, num_patches * num_patches, hidden_dim))
 
-        # Reshape from [batch_size * max_text_queries, hidden_dim] -> [batch_size, max_text_queries, hidden_dim]
-        max_text_queries = input_ids.shape[0] // batch_size # last batch might not have max_text_queries
-        text_embeds_parts = text_embeds_parts.reshape(batch_size, max_text_queries, text_embeds_parts.shape[-1])
-
-        # If first token is 0, then this is a padded query [batch_size, num_queries].
-        input_ids = input_ids.reshape(batch_size, max_text_queries, input_ids.shape[-1])
-        query_mask = input_ids[..., 0] > 0
-
-        # teacher_boxes_logits = torch.stack([target["logits"] for target in targets], dim=0)     # (bs, num_patches*num_patches, max_text_queries)
-        teacher_boxes_logits = targets['logits']     # (bs, num_patches*num_patches, max_text_queries)
-
         if self.logits_from_teacher:
+            # teacher_boxes_logits = torch.stack([target["logits"] for target in targets], dim=0)     # (bs, num_patches*num_patches, max_text_queries)
+            teacher_boxes_logits = targets['logits']     # (bs, num_patches*num_patches, max_text_queries)
             pred_logits_parts = None
             topk_scores, topk_idxs = torch.topk(teacher_boxes_logits, k=1, dim=1)
         else:
+            # Reshape from [batch_size * max_text_queries, hidden_dim] -> [batch_size, max_text_queries, hidden_dim]
+            max_text_queries = input_ids.shape[0] // batch_size # last batch might not have max_text_queries
+            text_embeds_parts = text_embeds_parts.reshape(batch_size, max_text_queries, text_embeds_parts.shape[-1])
+
+            # If first token is 0, then this is a padded query [batch_size, num_queries].
+            input_ids = input_ids.reshape(batch_size, max_text_queries, input_ids.shape[-1])
+            query_mask = input_ids[..., 0] > 0
             # Predict object classes [batch_size, num_patches, num_queries+1]
             pred_logits_parts, class_embeds, _ = self.class_predictor(image_feats, text_embeds_parts, query_mask)
 
@@ -490,37 +489,6 @@ class OwlViTForClassification(nn.Module):
 
         # Predict image-level classes (batch_size, num_patches, num_queries)
         image_text_logits, pred_logits = self.cls_head(image_feats, text_embeds, topk_idxs)
-        # targets_cls = torch.tensor([target["targets_cls"] for target in targets]).unsqueeze(1).to(self.device)
-        targets_cls = targets["targets_cls"].unsqueeze(1).to(self.device)
-
-        # if self.weight_dict["loss_xclip"] > 0:
-        #     if self.network_type == "classification":
-        #         one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
-
-        #         # Compute CE loss
-        #         if self.classification_loss == "ce_loss":
-        #             loss = self.ce_loss(pred_logits, one_hot)
-
-        #         # OR Focal loss
-        #         elif self.classification_loss == "focal_loss":
-        #             loss = self.focal_loss(pred_logits, targets_cls.squeeze(-1))
-
-        #             # Alternative implementation for the focal loss
-        #             # CE = F.cross_entropy(input=pred_logits, target=one_hot, reduction="none")
-        #             # prob = torch.gather(torch.softmax(input=pred_logits, dim=-1), 1, targets_cls.long()).squeeze(-1)
-        #             # loss = (self.alpha * ((1 - prob) ** self.gamma) * CE).mean()
-
-        #         else:
-        #             raise f"Loss {self.classification_loss} is not supported"
-
-        #         loss_dict["loss_xclip"] = loss
-        #     else:
-
-        #         # Compute symmetric loss for part-descriptor contrastive learning
-        #         logits_per_image = torch.softmax(image_text_logits, dim=0)
-        #         logits_per_text = torch.softmax(image_text_logits, dim=-1)
-        #         sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
-        #         loss_dict["loss_xclip"] = sym_loss
 
         return pred_logits, image_text_logits, center_to_corners_format(pred_boxes_selected), loss_dict
 
