@@ -526,9 +526,10 @@ class OwlViTForClassification(nn.Module):
 
         # to support DP, define local device
         device = text_logits.device
-        assert text_logits.shape == image_logits.shape # should not assert this.
+        assert text_logits.shape == image_logits.shape 
 
         # For image classification
+        # This is implementation is assuming the unique classes == batch size, if not, target_cls is used to adjust the matching labels
         if image_logits.shape != targets.shape:
             batch_size = targets.shape[0]
 

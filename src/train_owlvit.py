@@ -40,7 +40,8 @@ from utils import *
 
 nlp_spacy = spacy.load("en_core_web_sm")
 
-def add_extra_negatives(runtime: str, unique_class_ids: set, description_embeds: torch.Tensor, all_cls_ids: set, num_negatives: int, targets_cls: torch.Tensor, verbose: bool = False):
+def add_extra_negatives(runtime: str, description_embeds: torch.Tensor, all_cls_ids: set, num_negatives: int, targets_cls: torch.Tensor, verbose: bool = False):
+    unique_class_ids = set(targets_cls.tolist())
     if (num_extra_negatives := num_negatives - len(unique_class_ids)) > 0:
         # all_cls_ids = set(range(len(templated_descriptions)))
         all_negatives = all_cls_ids - unique_class_ids
@@ -49,16 +50,15 @@ def add_extra_negatives(runtime: str, unique_class_ids: set, description_embeds:
         if verbose:
             print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
         unique_class_ids += random.sample(all_negatives, num_extra_negatives)
-    
+
     selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
     text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1])   #.to(device)
     
     # Update targets when the order of text_embeds is changed (reindexing the target classes)
-    # targets_cls = torch.tensor([unique_class_ids.index(class_id) for class_id in targets_cls.tolist()]).to(device) # this operation is O(n^2)
     class_ids2target_cls = dict(zip(unique_class_ids, range(len(unique_class_ids))))
-    targets_cls = torch.tensor([class_ids2target_cls[class_id] for class_id in targets_cls.tolist()]).to(device)
+    reindexed_targets_cls = torch.tensor([class_ids2target_cls[class_id] for class_id in targets_cls.tolist()]).to(device)
     
-    return text_desc_embeds, targets_cls
+    return text_desc_embeds, reindexed_targets_cls
 
 def get_timestamp():
     local_tz = pytz.timezone("America/Chicago")
@@ -418,8 +418,8 @@ def train_loop(dataset: str,
         if isinstance(model, torch.nn.DataParallel) and batch_size*total_descriptors_part != query_size:
             # drop some images to make sure the query size is a multiple of number of GPUs (for DP)
             print(f"Batch size: {batch_size}, Query size: {query_size}, num descriptors: {total_descriptors_part}")
-            max_imgs = (batch_size // len(device_list)) * len(device_list)
-            images['pixel_values'] = images['pixel_values'][:max_imgs]
+            batch_size = (batch_size // len(device_list)) * len(device_list)
+            images['pixel_values'] = images['pixel_values'][:batch_size]
             targets_cls = targets_cls[:batch_size]
             image_paths = image_paths[:batch_size]
             # change the query size to be a multiple of batch size
@@ -440,11 +440,11 @@ def train_loop(dataset: str,
         if args.network_type == "contrastive" and runtime in ["train", "val"]:
             unique_class_ids = set(targets_cls.tolist())
 
-            if args.contrastive_sampler in ["refilled_empty_classes", "removed_empty_classes"]:
-                assert len(unique_class_ids) == batch_size # why assert this?
+            # if args.contrastive_sampler in ["refilled_empty_classes", "removed_empty_classes"]:
+            #     assert len(unique_class_ids) == batch_size 
                 
-            # Select X from the remaining classes with X = num_negatives - unique_class_ids
-            text_desc_embeds, targets_cls = add_extra_negatives(runtime, unique_class_ids, text_embeds, all_cls_ids, num_negatives, targets_cls)
+            # Select X from the remaining classes with X = num_negatives - set(targets_cls)
+            text_desc_embeds, targets_cls = add_extra_negatives(runtime, text_embeds, all_cls_ids, num_negatives, targets_cls)
 
             # Also update number of classes in the model for contrastive loss in the upper branch
             if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
@@ -671,6 +671,7 @@ def parse_arguments():
     parser.add_argument("--no_log", action='store_true', help="disable wandb logging.")
     parser.add_argument("--project_name", type=str, default="xclip", help="name of the wandb project.")
     parser.add_argument("--enable_dp", action="store_true", help="enable DataParallel for training. Note: Not efficient, but allow us to train with larger batch size.")
+    parser.add_argument("--run_name", type=str, default="", help="name of the wandb run.")
 
     args = parser.parse_args()
     return args
@@ -695,7 +696,10 @@ if __name__ == '__main__':
 
     wandbLogger = None
     if not args.no_log or args.eval_test:
-        run_name = f"{str(datetime.now().strftime('%m_%d_%Y-%H:%M:%S'))}_lr_{args.lr}_{args.epochs}ep_prompt{args.prompt_type}"
+        if args.run_name is None:
+            run_name = f"{str(datetime.now().strftime('%m_%d_%Y-%H:%M:%S'))}_lr_{args.lr}_{args.epochs}ep_prompt{args.prompt_type}" 
+        else:
+            run_name = args.run_name
         sub_dir = f"evaluation_{args.network_type}" if args.eval_test else f"training_{args.network_type}"
         if args.finetuning is not None:
             sub_dir = f"finetune_{args.network_type}/{args.finetuning}"
