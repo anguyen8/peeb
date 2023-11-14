@@ -50,7 +50,10 @@ def add_extra_negatives(runtime: str, description_embeds: torch.Tensor, all_cls_
         if verbose:
             print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
         unique_class_ids += random.sample(all_negatives, num_extra_negatives)
-
+    else:
+        unique_class_ids = list(unique_class_ids)
+    
+    
     selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
     text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1])   #.to(device)
     
