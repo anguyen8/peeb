@@ -746,6 +746,7 @@ class DetrLoss(nn.Module):
         device = logits.device
         target_lengths = torch.as_tensor([len(targets["class_labels"])], device=device)
         # Count the number of predictions that are NOT "no-object" (which is the last class)
+        # We do not have "no-object" class in our method
         card_pred = (logits.argmax(-1) != logits.shape[-1] - 1).sum(1)
         card_err = nn.functional.l1_loss(card_pred.float(), target_lengths.float())
         losses = {"cardinality_error": card_err}
@@ -770,7 +771,8 @@ class DetrLoss(nn.Module):
         source_boxes = outputs["pred_boxes"][idx]                                                     # center format
         # target_boxes = torch.cat([torch.tensor(t["boxes"]).to(device) for t in targets], dim=0)       # corner format
         target_boxes = targets['boxes'].reshape(-1, 4)                                                # corner format
-        target_boxes = corners_to_center_format(target_boxes)                                         # center format
+        target_boxes = corners_to_center_format(target_boxes)  # center format
+        target_boxes = target_boxes.to(device)
 
         losses = {}
 
@@ -859,7 +861,7 @@ class DetrLoss(nn.Module):
 
         # Compute the average number of target boxes across all nodes, for normalization purposes
         # num_boxes = sum(len(t["class_labels"]) for t in targets)
-        num_boxes = len(targets["class_labels"])
+        num_boxes = targets["class_labels"].shape[0] * targets["class_labels"].shape[1]
         num_boxes = torch.as_tensor([num_boxes], dtype=torch.float, device=outputs["pred_boxes"].device)
         # (Niels): comment out function below, distributed training to be added
         # if is_dist_avail_and_initialized():

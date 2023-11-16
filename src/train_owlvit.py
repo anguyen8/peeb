@@ -253,7 +253,7 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     logits = torch.stack([t["logits"] for t in targets], dim=0)
     target_cls = torch.stack([t["targets_cls"] for t in targets], dim=0)
     boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
-    batched_targets = {'labels': class_labels, 'logits': logits, 'targets_cls': target_cls, 'boxes': boxes}
+    batched_targets = {'class_labels': class_labels, 'logits': logits, 'targets_cls': target_cls, 'boxes': boxes}
 
     pixel_values = images['pixel_values']
     attention_mask = text_inputs_parts['attention_mask']
