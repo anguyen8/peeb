@@ -45,7 +45,7 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
     if unmute:
         print("Using descriptors from: ", descriptor_path)
 
-    with open(descriptor_path) as input_file:
+    with open(descriptor_path, 'r') as input_file:
         descriptions = json.load(input_file)
 
     if classes_to_load is not None:

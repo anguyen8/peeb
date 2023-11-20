@@ -25,10 +25,12 @@ PRECOMPUTED_DIR = '/home/lab/xclip/owlvit_boxes'
 CUB_DIR = os.path.join(DATASET_DIR, 'cub/CUB_200_2011')
 NABIRDS_DIR = os.path.join(DATASET_DIR, 'nabirds')
 BIRD_SOUP_DIR = os.path.join(DATASET_DIR, 'bird_soup')
+AWA_DIR = os.path.join(DATASET_DIR, 'awa2/Animals_with_Attributes2')
 
 DS_CUB = "cub"
 DS_NABIRDS = "nabirds"
 DS_BIRD_SOUP = "bird_soup"
+DS_AWA = "awa"
 
 # For updating boxes logits with DATASET_WRAPPER
 # BIRD_SOUP_META_PATH_ALL = f"{BIRD_SOUP_DIR}/metadata/bird_soup_uncased.h5"    # 343K
@@ -38,6 +40,7 @@ BIRD_SOUP_META_PATH_ALL = os.path.join(BIRD_SOUP_DIR, "metadata/bird_soup_uncase
 # BIRD_SOUP_META_PATH_TEST  = f"{BIRD_SOUP_DIR}/metadata/cub_test_reindexed.h5"
 # BIRD_SOUP_META_PATH_TEST  = f"{BIRD_SOUP_DIR}/metadata/nabirds_test_reindexed.h5"
 # BIRD_SOUP_META_PATH_TEST  = f"{BIRD_SOUP_DIR}/metadata/inaturalist_filtered.h5"
+AWA_META_PATH = f"{AWA_DIR}/awa.h5"
 
 # For BirdSoup-v2.1 (Level 1)
 BIRD_SOUP_META_PATH_TRAIN = f"{BIRD_SOUP_DIR}/metadata/level_1_exclude_cub_nabirds_inat/train_keep_child_a100_reindexed.h5"

@@ -170,18 +170,18 @@ class OwlViTPredictionHead(nn.Module):
 
         return image_text_logits_reshaped, pred_logits
 
-
 class OwlViTForClassification(nn.Module):
     config_class = OwlViTConfig
 
     def __init__(self, owlvit_det_model, num_classes, num_parts, weight_dict, device, freeze_box_heads=False,
                  train_box_heads_only=False, network_type=None, classification_loss=None, logits_from_teacher=False,
-                 finetuning=None, alpha=0.25, gamma=2.0):
+                 finetuning=None, alpha=0.25, gamma=2.0, attr_weights=None):
         super(OwlViTForClassification, self).__init__()
 
         self.config = owlvit_det_model.config
         self.num_classes = num_classes
         self.num_parts = num_parts
+        self.attr_weights = attr_weights
         self.device = device
 
         self.alpha = alpha
@@ -272,8 +272,9 @@ class OwlViTForClassification(nn.Module):
                 param.requires_grad = False
 
     def update_num_classes(self, num_classes):
-        self.num_classes = num_classes
-        self.cls_head.num_classes = num_classes
+        if num_classes is not None:
+            self.num_classes = num_classes
+            self.cls_head.num_classes = num_classes
 
     def image_text_embedder(self,
         input_ids: torch.Tensor,
@@ -542,7 +543,7 @@ class OwlViTForClassification(nn.Module):
                 box_labels = box_labels.view(-1, 1) * default_box_labels
 
             # Create one-hot encoding of targets; matching_labels shape: (bs * 12, num_classes * num_parts)
-            target_one_hot = torch.zeros(batch_size, self.num_classes).to(device).scatter(1, targets.reshape(-1, 1), 1)
+            target_one_hot = torch.zeros(batch_size, self.num_classes).scatter(1, targets.reshape(-1, 1).cpu(), 1).to(device)
             target_one_hot = torch.kron(target_one_hot, torch.ones(self.num_parts, self.num_parts).to(device))
 
             matching_labels = target_one_hot * box_labels
@@ -557,6 +558,26 @@ class OwlViTForClassification(nn.Module):
 
         return sym_loss
 
+    def compute_attr_loss(self, image_text_logits: torch.Tensor, targets: torch.Tensor, attribute_weights: torch.Tensor = None):
+        """
+        Compute the cross entroy loss based on attributes
+        Args:
+            image_text_logits: (bs * num_boxes, num_classes * num_attrs)
+            targets: (bs, )
+            attribute_weights: (num_attrs * num_classes)
+        Returns:
+            loss: scalar
+            pred_logits: (bs, num_classes)
+        """
+        if attribute_weights is None:
+            attribute_weights = self.attr_weights
+        
+        logits_reshaped = image_text_logits.view(-1, self.num_parts, self.num_classes, self.num_parts).swapaxes(axis0=1, axis1=2)
+        attr_logits = torch.diagonal(logits_reshaped, dim1=-2, dim2=-1)[:, 0, :]
+        pred_logits = attr_logits @ attribute_weights.float().to(attr_logits.device)
+        loss = F.cross_entropy(pred_logits, targets, reduction='mean')
+        
+        return loss, pred_logits
 
 class FocalLoss(nn.Module):
     def __init__(self, alpha=1.0, gamma=2.0, reduction='mean'):

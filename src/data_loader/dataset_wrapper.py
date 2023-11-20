@@ -8,6 +8,7 @@ from torch.utils.data import Subset
 from .cub import CUB
 from .nabirds import NABirdsDataset
 from .bird_soup import BirdSoup
+from .awa import AWA
 from configs import *
 
 
@@ -25,7 +26,7 @@ class DatasetWrapper(VisionDataset):
 
         self.dataset, self.n_classes = self.load_dataset(dataset_name, samples_per_class, random_seed)
 
-    def load_dataset(self, dataset_name, samples_per_class, random_seed: int = 42):
+    def load_dataset(self, dataset_name, samples_per_class, random_seed: int = 42, train: bool = True):
         random.seed(random_seed)
 
         if dataset_name == DS_IMAGENET:
@@ -45,6 +46,8 @@ class DatasetWrapper(VisionDataset):
         elif dataset_name == DS_BIRD_SOUP:
             meta_path = BIRD_SOUP_META_PATH_ALL   # BIRD_SOUP_META_PATH_ALL / BIRD_SOUP_META_PATH_TRAIN / BIRD_SOUP_META_PATH_TEST
             dataset = BirdSoup(BIRD_SOUP_DIR, transform=self.transform, train=False, return_path=False, meta_path=meta_path)
+        elif dataset_name == DS_AWA:
+            dataset = AWA(AWA_DIR, transform=self.transform, train=False, return_path=False, meta_path=AWA_META_PATH)
 
         n_classes = len(dataset.classes) if dataset_name != DS_IMAGENET_V2 else 1000
 

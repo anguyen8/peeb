@@ -23,7 +23,7 @@ from torch.utils.data.distributed import DistributedSampler
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from data_loader import CUB, NABirdsDataset, BirdSoup
+from data_loader import CUB, NABirdsDataset, BirdSoup, AWA
 import torch.multiprocessing as mp
 
 from functools import reduce
@@ -46,22 +46,24 @@ def add_extra_negatives(runtime: str, description_embeds: torch.Tensor, all_cls_
         # all_cls_ids = set(range(len(templated_descriptions)))
         all_negatives = all_cls_ids - unique_class_ids
         all_negatives = list(all_negatives)
-        unique_class_ids = list(unique_class_ids)
+        selected_class_ids = list(unique_class_ids)
         if verbose:
             print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
-        unique_class_ids += random.sample(all_negatives, num_extra_negatives)
+        selected_class_ids += random.sample(all_negatives, num_extra_negatives)
+        num_classes = num_negatives
+        unique_class_ids = set(selected_class_ids)
     else:
-        unique_class_ids = list(unique_class_ids)
+        selected_class_ids = targets_cls.tolist()
+        num_classes = None
     
-    
-    selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
+    selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[selected_class_ids]
     text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1])   #.to(device)
     
     # Update targets when the order of text_embeds is changed (reindexing the target classes)
     class_ids2target_cls = dict(zip(unique_class_ids, range(len(unique_class_ids))))
     reindexed_targets_cls = torch.tensor([class_ids2target_cls[class_id] for class_id in targets_cls.tolist()]).to(device)
     
-    return text_desc_embeds, reindexed_targets_cls
+    return text_desc_embeds, reindexed_targets_cls, num_classes
 
 def get_timestamp():
     local_tz = pytz.timezone("America/Chicago")
@@ -144,6 +146,14 @@ def load_training_dataset(dataset_name: str, sub_dataset_names: str, eval_size: 
             val_dataset = BirdSoup(BIRD_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, subset=sub_datasets)
         else:
             dataset = BirdSoup(BIRD_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, subset=sub_datasets)
+            val_dataset = None
+    
+    elif dataset_name == "awa":
+        if split != "test":
+            dataset_org = AWA(AWA_DIR, transform=transform, is_train=True, return_path=True, meta_path=AWA_META_PATH) 
+            dataset, val_dataset = get_data_split(dataset_org, labels=dataset_org.targets, eval_size=eval_size, random_state=random_state)
+        else:
+            dataset = AWA(AWA_DIR, transform=transform, is_train=False, return_path=True, meta_path=AWA_META_PATH)
             val_dataset = None
 
     return dataset, val_dataset
@@ -249,21 +259,28 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     #3160MB
     # remove unused information from targets
     # batch all inputs to support DP.
-    class_labels = torch.stack([t["class_labels"] for t in targets], dim=0)
-    logits = torch.stack([t["logits"] for t in targets], dim=0)
-    target_cls = torch.stack([t["targets_cls"] for t in targets], dim=0)
-    boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
+    class_labels = []
+    logits = []
+    boxes = []
+    target_cls = []
+    for item in targets:
+        class_labels.append(item["class_labels"])
+        logits.append(item["logits"])
+        boxes.append(torch.tensor(item["boxes"]))
+        target_cls.append(item["targets_cls"])
+    class_labels = torch.stack(class_labels, dim=0)
+    logits = torch.stack(logits, dim=0)
+    boxes = torch.stack(boxes, dim=0)
+    target_cls = torch.stack(target_cls, dim=0)
+    
     batched_targets = {'class_labels': class_labels, 'logits': logits, 'targets_cls': target_cls, 'boxes': boxes}
+    n_boxes = boxes.shape[1]
 
     pixel_values = images['pixel_values']
     attention_mask = text_inputs_parts['attention_mask']
     input_ids = text_inputs_parts['input_ids']
-    if isinstance(model, torch.nn.DataParallel):
-        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1, 1)
-    else:
-        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1)
 
-    pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
+    pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, text_embeds, batched_targets)
 
     # compute symmetric cross entropy loss (take out from the forward such that we can use DP to "increase batch size")
     if weight_dict['loss_xclip'] > 0:
@@ -273,6 +290,13 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
             xclip_loss = model.compute_sce_loss(pred_logits, image_text_logits, target_cls)
         loss_dict['loss_xclip'] = xclip_loss
 
+    if weight_dict['loss_attr'] > 0:
+        if hasattr(model, "module"):
+            attr_loss, pred_logits = model.module.compute_attr_loss(image_text_logits, target_cls)
+        else:
+            attr_loss, pred_logits = model.compute_attr_loss(image_text_logits, target_cls)
+        loss_dict['loss_attr'] = attr_loss
+
     # Compute total loss, as a weighted sum of the various losses (22.13GB)
     loss = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict)
 
@@ -280,9 +304,9 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     base_boxes = torch.stack([torch.tensor(t["boxes_base"]) for t in targets], dim=0)
     pred_boxes = pred_boxes.detach().cpu()
 
-    # giou_scores = torch.diag(generalized_box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))).view(-1, 12)
-    iou_scores = torch.diag(box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
-    base_iou_scores = torch.diag(box_iou(base_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
+    # giou_scores = torch.diag(generalized_box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))).view(-1, n_boxes)
+    iou_scores = torch.diag(box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, n_boxes)
+    base_iou_scores = torch.diag(box_iou(base_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, n_boxes)
 
     # loss_dict["giou_score"] = giou_scores.mean()
     loss_dict["iou_score"] = iou_scores.mean()
@@ -447,15 +471,20 @@ def train_loop(dataset: str,
             #     assert len(unique_class_ids) == batch_size 
                 
             # Select X from the remaining classes with X = num_negatives - set(targets_cls)
-            text_desc_embeds, targets_cls = add_extra_negatives(runtime, text_embeds, all_cls_ids, num_negatives, targets_cls)
+            text_desc_embeds, targets_cls, batch_num_classes = add_extra_negatives(runtime, text_embeds, all_cls_ids, num_negatives, targets_cls)
 
             # Also update number of classes in the model for contrastive loss in the upper branch
             if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
-                model.module.update_num_classes(num_negatives)
+                model.module.update_num_classes(batch_num_classes)
             else:
-                model.update_num_classes(num_negatives)
+                model.update_num_classes(batch_num_classes)
         else:
-            text_desc_embeds = text_embeds.repeat(batch_size, 1)   #.to(device)
+            text_desc_embeds = text_embeds.clone()
+        
+        if isinstance(model, torch.nn.DataParallel):
+            text_desc_embeds = text_desc_embeds.repeat(batch_size, 1, 1)
+        else:
+            text_desc_embeds = text_desc_embeds.repeat(batch_size, 1)
         # ------------------------------------------------------------------
         # 3160MB
         # Update targets for box and class losses in addition to the xclip loss
@@ -471,7 +500,11 @@ def train_loop(dataset: str,
                 if load_boxes_base:
                     ori_image_name = df_cub_test.loc[df_cub_test['new_image_name'] == image_id + ".jpg"]["org_image_name"].values[0]
                     boxes_dir_base = f"{PRECOMPUTED_DIR}/cub/test/owlvit-base-patch32_cub-12-parts/data/{ori_image_name.replace('.jpg', '.pth')}"
-
+            elif dataset == 'awa':
+                boxes_dir = f"/home/lab/xclip/owlvit_boxes/awa/owlvit-large-patch14_awa/data/{image_id}.pth"
+                key_boxes = "boxes_info"
+                key_logits = "logits_owlvit_base"
+            
             else:
                 boxes_dir = f"../pred_boxes/{dataset}/owl_vit_owlvit-large-patch14_descriptors_chatgpt_groundtruths/{image_id}.pth"
                 key_boxes = "boxes"
@@ -486,6 +519,7 @@ def train_loop(dataset: str,
                 info_boxes[key_logits] = info_boxes[key_logits][:, sel_part_indices]
 
             assert list(info_boxes[key_boxes].keys()) == all_parts
+            assert info_boxes[key_logits].shape[1] == len(all_parts)
 
             # Bounding box coordinates in corner format to [0, 1]
             bboxes = []
@@ -593,10 +627,11 @@ def parse_arguments():
     #   Must-check arguments for experiments but usually FIXED
     # ------------------------------------------------------------
     parser.add_argument('--model', help='select model', default="owlvit-large-patch14", choices=["owlvit-base-patch32", "owlvit-base-patch16", "owlvit-large-patch14"])
-    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup"])
+    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup", "awa"])
     parser.add_argument('--sub_datasets', help='select a group of datasets in Bird Soup', default="all")
     parser.add_argument('--distortion', help='select distortion type if using ImageNet-C', default="defocus_blur", choices=["defocus_blur", "glass_blur", "motion_blur", "zoom_blur", "shot_noise", "gaussian_noise", "impulse_noise"])
     parser.add_argument('--distortion_severity', type=int, help='select distortion severity if using ImageNet-C', default=1, choices=[1, 2, 3, 4, 5])
+    parser.add_argument('--is_train', help='only load the training set', action="store_true")
 
     parser.add_argument('--epochs', type=int, help='num epochs', default=50)
     parser.add_argument('--batch_size', type=int, help='num training batch size', default=32)
@@ -611,7 +646,7 @@ def parse_arguments():
     # ------------------------------------------------------------
     #   Must-check arguments for experiments: FREQUENTLY CHANGE
     # ------------------------------------------------------------
-    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt"])
+    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt", "awa"])
     parser.add_argument('--prompt_type', type=int, help='select prompt type', default=5)
     parser.add_argument('--owlvit_threshold', type=float, help='select threshold for owl_vit', default=-1)
     parser.add_argument('--owlvit_conf_scores', help='use owlvit scores as confidence scores', action="store_true")
@@ -796,6 +831,10 @@ if __name__ == '__main__':
 
         all_descriptions = [[descriptor for i, descriptor in enumerate(descriptors) if i in sel_part_indices] for descriptors in all_descriptions]
         all_descriptions_val = [[descriptor for i, descriptor in enumerate(descriptors) if i in sel_part_indices] for descriptors in all_descriptions_val]
+    elif args.descriptors == 'awa':
+        attributes = list(templated_descriptions.values())[0]
+        all_parts = attributes
+        part_names = attributes
 
     # TODO: For contrastive training, target classes of train and validation are the same EXCEPT FOR ablation study
     # Ablation study uses a separate validation set whose number of classes is different from the train set
@@ -807,7 +846,13 @@ if __name__ == '__main__':
     # Loss weights for training
     loss_weights = [float(weight) for weight in args.loss_weights.split(",")]
     weight_dict = {"loss_ce": loss_weights[0], "loss_bbox": loss_weights[1], "loss_giou": loss_weights[2],
-                   "loss_sym_box_label": loss_weights[3], "loss_xclip": loss_weights[4]}
+                   "loss_sym_box_label": loss_weights[3], "loss_xclip": loss_weights[4], "loss_attr": loss_weights[5]}
+
+    if args.eval_test:
+        attr_weights = test_dataset.att_weight if weight_dict['loss_attr'] > 0 else None
+    else:
+        attr_weights = train_dataset.dataset.att_weight if weight_dict['loss_attr'] > 0 else None
+        
 
     # Initialize OwlViT model for Classification
     model = OwlViTForClassification(owlvit_det_model=owlvit_det_model, num_classes=num_classes, num_parts=len(all_parts),
@@ -815,7 +860,10 @@ if __name__ == '__main__':
                                     network_type=args.network_type, classification_loss=args.classification_loss,
                                     weight_dict=weight_dict, logits_from_teacher=args.logits_from_teacher,
                                     finetuning=args.finetuning, alpha=args.alpha, gamma=args.gamma,
-                                    device=None if args.enable_dp else device,)
+                                    device=None if args.enable_dp else device,
+                                    attr_weights=attr_weights,
+                                    # attr_weights=train_dataset.dataset.att_weight_org if weight_dict['loss_attr'] > 0 else None,
+                                    )
 
     if rank in {-1, 0}:
         trained_params, frozen_params = 0, 0
@@ -973,9 +1021,11 @@ if __name__ == '__main__':
         print(f'Best val/val_loss top1: {val_best_acc:.4f}/{val_best_loss:.4f} at epoch {best_epoch}.')
         print(" ".join([f"{k}: {v:.5f}" for k, v in val_od_epoch_loss_dict.items()]))
     else:
-        test_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=test_loader,
-                                  num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
-                                  eval_only=True, weight_dict=weight_dict)
+        test_results = train_loop(dataset=args.dataset, model=model, data_loader=test_loader,
+                                    num_classes=num_classes, device=device, rank=rank,  wandbLogger=wandbLogger,
+                                    eval_only=True, weight_dict=weight_dict, is_dp=args.enable_dp,
+                                    text_inputs_parts=text_inputs_parts, total_descriptors_part=total_descriptors_part,
+                                    text_embeds=text_embeds_val, num_negatives=args.num_negatives_val, templated_descriptions=templated_descriptions_val)
 
         test_loss, test_top1, test_top5, test_od_epoch_loss_dict = test_results
 
