@@ -18,7 +18,7 @@ We provide our pre-trained models as well as all fine-tuned models used in this 
 
 #### Step 1: Clone this repo
 ```bash
-git clone https://github.com/ThangPM/xclip && cd xclip
+git clone https://github.com/{username}/xclip && cd xclip
 ```
 
 #### Step 2: Install environment
