@@ -492,7 +492,7 @@ class OwlViTForClassification(nn.Module):
 
         return pred_logits, image_text_logits, center_to_corners_format(pred_boxes_selected), loss_dict
 
-    def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_loigts: torch.Tensor, targets_cls: torch.Tensor):
+    def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_logits: torch.Tensor, targets_cls: torch.Tensor):
         if self.network_type == "classification":
             one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
 
@@ -512,8 +512,8 @@ class OwlViTForClassification(nn.Module):
             return loss
         else:
             # Compute symmetric loss for part-descriptor contrastive learning
-            logits_per_image = torch.softmax(image_text_loigts, dim=0)
-            logits_per_text = torch.softmax(image_text_loigts, dim=-1)
+            logits_per_image = torch.softmax(image_text_logits, dim=0)
+            logits_per_text = torch.softmax(image_text_logits, dim=-1)
             sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
             return sym_loss
 

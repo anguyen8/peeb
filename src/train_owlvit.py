@@ -441,11 +441,6 @@ def train_loop(dataset: str,
         # Increase/Reduce number of classes for contrastive learning
         # ------------------------------------------------------------------
         if args.network_type == "contrastive" and runtime in ["train", "val"]:
-            unique_class_ids = set(targets_cls.tolist())
-
-            # if args.contrastive_sampler in ["refilled_empty_classes", "removed_empty_classes"]:
-            #     assert len(unique_class_ids) == batch_size 
-                
             # Select X from the remaining classes with X = num_negatives - set(targets_cls)
             text_desc_embeds, targets_cls = add_extra_negatives(runtime, text_embeds, all_cls_ids, num_negatives, targets_cls)
 
@@ -455,7 +450,7 @@ def train_loop(dataset: str,
             else:
                 model.update_num_classes(num_negatives)
         else:
-            text_desc_embeds = text_embeds.repeat(batch_size, 1)   #.to(device)
+            text_desc_embeds = text_embeds.clone()
         # ------------------------------------------------------------------
         # 3160MB
         # Update targets for box and class losses in addition to the xclip loss
@@ -973,9 +968,15 @@ if __name__ == '__main__':
         print(f'Best val/val_loss top1: {val_best_acc:.4f}/{val_best_loss:.4f} at epoch {best_epoch}.')
         print(" ".join([f"{k}: {v:.5f}" for k, v in val_od_epoch_loss_dict.items()]))
     else:
-        test_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=test_loader,
-                                  num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
-                                  eval_only=True, weight_dict=weight_dict)
+        # test_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=test_loader,
+        #                           num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
+        #                           eval_only=True, weight_dict=weight_dict)
+        test_results = train_loop(dataset=args.dataset, model=model, data_loader=test_loader,
+                                    num_classes=num_classes, device=device, rank=rank,  wandbLogger=wandbLogger,
+                                    eval_only=True, weight_dict=weight_dict, is_dp=args.enable_dp,
+                                    text_inputs_parts=text_inputs_parts, total_descriptors_part=total_descriptors_part,
+                                    text_embeds=text_embeds_val, num_negatives=args.num_negatives_val, templated_descriptions=templated_descriptions_val)
+
 
         test_loss, test_top1, test_top5, test_od_epoch_loss_dict = test_results
 
