@@ -3,7 +3,6 @@ import gc
 import json
 import math
 import os.path
-import statistics
 from datetime import datetime
 
 import pytz
@@ -14,6 +13,8 @@ import spacy
 import torchvision
 import torchmetrics
 from sklearn.model_selection import train_test_split
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 import torch
 from torch.utils.data import DataLoader, Dataset, Subset
 from torch import nn
@@ -451,6 +452,7 @@ def train_loop(dataset: str,
                 model.update_num_classes(num_negatives)
         else:
             text_desc_embeds = text_embeds.clone()
+            
         # ------------------------------------------------------------------
         # 3160MB
         # Update targets for box and class losses in addition to the xclip loss
