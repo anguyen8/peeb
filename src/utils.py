@@ -55,15 +55,15 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
 
     if prompt_type is not None:
         for idx, (class_name, class_descriptors) in enumerate(descriptions.items()):
-            if target_classes is not None and \
-               (class_name.lower() not in target_classes or class_name.lower().replace("-", " ") not in target_classes):
+            if target_classes is not None and class_name not in target_classes and \
+               (class_name.lower() not in target_classes or class_name.lower().replace("-", " ") not in target_classes ):
                 continue
 
             if len(class_descriptors) == 0:
                 class_descriptors = ['']
 
-            class_name = wordify(class_name)
-
+            class_name = wordify(class_name) # replace '_' with ' '
+            
             # Sachit's prompt
             if prompt_type == 0:
                 templated_descriptors = class_descriptors

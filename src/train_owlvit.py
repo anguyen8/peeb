@@ -41,6 +41,10 @@ from utils import *
 
 nlp_spacy = spacy.load("en_core_web_sm")
 
+# add python path if not exist:
+# export PYTHONPATH=$(pwd):$(pwd)/src
+
+
 def add_extra_negatives(runtime: str, description_embeds: torch.Tensor, all_cls_ids: set, num_negatives: int, targets_cls: torch.Tensor, verbose: bool = False):
     unique_class_ids = set(targets_cls.tolist())
     if (num_extra_negatives := num_negatives - len(unique_class_ids)) > 0:
@@ -145,6 +149,14 @@ def load_training_dataset(dataset_name: str, sub_dataset_names: str, eval_size: 
             val_dataset = BirdSoup(BIRD_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, subset=sub_datasets)
         else:
             dataset = BirdSoup(BIRD_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, subset=sub_datasets)
+            val_dataset = None
+    
+    elif dataset_name == 'stanforddogs':
+        if split != 'test':
+            dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=True, return_path=True, meta_path=args.train_file, use_meta_dir=True)
+            val_dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, use_meta_dir=True)
+        else:
+            dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, use_meta_dir=True)
             val_dataset = None
 
     return dataset, val_dataset
@@ -468,7 +480,11 @@ def train_loop(dataset: str,
                 if load_boxes_base:
                     ori_image_name = df_cub_test.loc[df_cub_test['new_image_name'] == image_id + ".jpg"]["org_image_name"].values[0]
                     boxes_dir_base = f"{PRECOMPUTED_DIR}/cub/test/owlvit-base-patch32_cub-12-parts/data/{ori_image_name.replace('.jpg', '.pth')}"
-
+            elif dataset == 'stanforddogs':
+                boxes_dir = f"{PRECOMPUTED_DIR}/{dataset}/part_boxes/owlvit-large-patch14_stanforddog-6-parts-dog_dog_update_logits/{image_id}.pth"
+                key_boxes = "boxes_info"
+                key_logits = 'part_logits'
+                
             else:
                 boxes_dir = f"../pred_boxes/{dataset}/owl_vit_owlvit-large-patch14_descriptors_chatgpt_groundtruths/{image_id}.pth"
                 key_boxes = "boxes"
@@ -590,7 +606,7 @@ def parse_arguments():
     #   Must-check arguments for experiments but usually FIXED
     # ------------------------------------------------------------
     parser.add_argument('--model', help='select model', default="owlvit-large-patch14", choices=["owlvit-base-patch32", "owlvit-base-patch16", "owlvit-large-patch14"])
-    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup"])
+    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup", "stanforddogs"])
     parser.add_argument('--sub_datasets', help='select a group of datasets in Bird Soup', default="all")
     parser.add_argument('--distortion', help='select distortion type if using ImageNet-C', default="defocus_blur", choices=["defocus_blur", "glass_blur", "motion_blur", "zoom_blur", "shot_noise", "gaussian_noise", "impulse_noise"])
     parser.add_argument('--distortion_severity', type=int, help='select distortion severity if using ImageNet-C', default=1, choices=[1, 2, 3, 4, 5])
@@ -608,7 +624,7 @@ def parse_arguments():
     # ------------------------------------------------------------
     #   Must-check arguments for experiments: FREQUENTLY CHANGE
     # ------------------------------------------------------------
-    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt"])
+    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt", 'stanforddogs'])
     parser.add_argument('--prompt_type', type=int, help='select prompt type', default=5)
     parser.add_argument('--owlvit_threshold', type=float, help='select threshold for owl_vit', default=-1)
     parser.add_argument('--owlvit_conf_scores', help='use owlvit scores as confidence scores', action="store_true")
@@ -619,6 +635,7 @@ def parse_arguments():
     parser.add_argument('--scheduler_mode', type=str, help='select mode for scheduler', default="min")
     parser.add_argument('--scheduler_factor', type=float, help='select factor for scheduler', default=0.5)
     parser.add_argument('--scheduler_patience', type=int, help='select patience for scheduler', default=5)
+    parser.add_argument('--scheduler_verbose', action="store_true", help='print logs for scheduler')
 
     parser.add_argument('--num_negatives_train', type=int, help='number of train negatives for contrastive learning', default=32)
     parser.add_argument('--num_negatives_val', type=int, help='number of val negatives for contrastive learning', default=32)
@@ -768,6 +785,7 @@ if __name__ == '__main__':
     templated_descriptions_val, _ = load_descriptions(dataset_name=args.dataset, prompt_type=args.prompt_type, desc_type=args.descriptors, target_classes=target_classes_val, descriptor_path=args.descriptor_path, unmute=False)
 
     # Sorted the keys in templated_descriptions to match the order of classes in target_classes
+    assert set(templated_descriptions.keys()) == set(target_classes)
     templated_descriptions = {k: templated_descriptions[k] for k in sorted(templated_descriptions, key=target_classes.index)}
     templated_descriptions_val = {k: templated_descriptions_val[k] for k in sorted(templated_descriptions_val, key=target_classes_val.index)}
 
@@ -781,7 +799,7 @@ if __name__ == '__main__':
 
     # Use parts only for localization
     all_parts = []
-    if args.descriptors == "chatgpt":
+    if args.descriptors in {"chatgpt", "stanforddogs"}:
         all_parts = [[descriptor.split(":")[0] for descriptor in descriptors if ":" in descriptor] for descriptors in descriptions_only.values()][0]
         sel_part_indices = list(range(len(all_parts)))
 
@@ -898,7 +916,7 @@ if __name__ == '__main__':
     optimizer = torch.optim.AdamW(model.parameters(), lr=float(args.lr), weight_decay=float(args.weight_decay))
 
     # use plateau scheduler
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=args.scheduler_mode, factor=args.scheduler_factor, patience=args.scheduler_patience, verbose=args.verbose)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=args.scheduler_mode, factor=args.scheduler_factor, patience=args.scheduler_patience, verbose=args.scheduler_verbose)
 
     # compute the text embeddings 
     text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part = compute_text_embeds(model, owlvit_det_processor, all_descriptions, all_descriptions_val, args, device)
@@ -992,7 +1010,7 @@ if __name__ == '__main__':
     end_time = datetime.now()
 
     with open(f'{out_dir}/results.json', 'w') as f:
-        json.dump({f"Best Accuracy ({'val' if not args.eval_test else 'test'})": best_acc,
+        json.dump({f"Best Accuracy ({'test' if args.eval_test else 'val'})": best_acc,
                    "Best epoch": best_epoch,
                    "Number of examples": len(val_dataset),
                    "Start time": start_time.strftime("%d/%m/%Y %H:%M:%S"),

@@ -1,0 +1,988 @@
+{
+    "Chihuahua": [
+        "head: round, small size with a domed skull. likely the same color as the body, ranging from tan to black, or even multi-colored",
+        "ears: large, tall, erect ears that stand high atop the head, often with fur matching the body color",
+        "muzzle: short and pointed, with a black or self-colored nose. often covered in short, smooth fur that could be tan, black, or a different color entirely",
+        "body: small in size but well-muscled, with a level or slightly arched back. the fur on the body can vary depending on the specific variant, but is often short and smooth",
+        "legs: thin, but lean and muscular. the color of the fur on the legs often matches that of the body",
+        "tail: moderately long and positioned high. it features a sickle shape, often carried either up or over the back, with fur that matches the rest of the dog's coat"
+    ],
+    "Japanese spaniel": [
+        "head: round in shape, presenting an 'apple head' or a 'deer head' variety; characterized by big, round and wide-set eyes that are generally luminous black or ruby, and by a well-rounded skull, similar to that of a baseball",
+        "ears: large and erect, giving a bat-like appearance; remains standing even when the dog is relaxed; lined with sparse hairs, revealing the skin beneath",
+        "muzzle: moderately short and slightly pointed, blending smoothly with the rest of the skull; prominent chin with slightly flaring lips covered with a short layer of fur",
+        "body: compact with well-defined bone structure, covered by smooth or long-haired fur with a variety of colors and patterns; often including black, white, chocolate, and cream",
+        "legs: short, yet proportionate to the body; thin with a strong build, providing a fast and agile movement; color depends on the overall coat color",
+        "tail: moderately long and sickle or loop shaped, often carried high either curved or in a semi-circle with the tip pointing towards the lower back; matches the color of the body and often fluffier than the coat on the rest of the body"
+    ],
+    "Maltese dog": [
+        "head: small and apple-shaped, often with slightly protruding eyes",
+        "ears: large, triangle shaped and erected, often exceeding the size of the head in proportion",
+        "muzzle: short and slightly pointed, exhibiting a notable stop with a well-defined jawline",
+        "body: small but robust, with a level or slightly sloping croup and a strong, slightly arched neck",
+        "legs: slim yet muscular legs with somewhat elongated forearms, ending in tiny, round feet",
+        "tail: long and sickle-shaped, typically carried high and sometimes curled over the back",
+        "fur: varies from short and smooth to longer and wavy, often two-toned including colors like fawn, chocolate, black, white, red, cream, blue, and silver"
+    ],
+    "Pekinese": [
+        "head: small and round with large, bright eyes that are often dark in color",
+        "ears: large and bat-like, they stand erect and are extremely expressive",
+        "muzzle: short to medium length with a slightly pointed snout and generally dark colored nose",
+        "body: compact with a level back; the chest is deep with ribs rounded outwards",
+        "legs: thin and often delicate-looking but muscular. the front legs are straight and the back legs are well-muscled",
+        "tail: moderately long, usually curved over the back, with a fluffy appearance due to the thick fur"
+    ],
+    "Shih-Tzu": [
+        "head: small, round and apple-shaped; its forehead slightly arched",
+        "ears: large, flared, and always erect with a broad base. inner hair is thinner than outer hair",
+        "muzzle: short to medium-length, slightly pointed, adorned with short, fine fur",
+        "body: compact and well-defined muscles, covered in either short, smooth fur or long, softer fur; available in a wide spectrum of colors from solid black, white, fawn, chocolate, grey, and silver to tri-colored or brindled",
+        "legs: short but proportional, ending in tiny, dainty paws, which are generally covered in short fur",
+        "tail: moderately long and sickle-shaped with a plume of fur on the top or fully covered, depending on the coat type. it is either curled over the back or to the side when in action"
+    ],
+    "Blenheim spaniel": [
+        "head: rounded apple-shaped with prominent, large eyes that are usually dark or ruby colored",
+        "ears: large and always standing upright, being much larger in proportion to their tiny heads",
+        "muzzle: short and pointed with a distinct stop, usually matches the color of the coat",
+        "body: small but well muscled with a level back, ribs rounded and deep chest, normally covered with a short or long coat that could be in a variety of colors",
+        "legs: long and thin but strong enough to carry their lightweight body, usually the same color as their coat",
+        "tail: moderately long and carried sickle either up or out, also covered in the same type of fur as the body and often a darker color at the end"
+    ],
+    "papillon": [
+        "head: rounded, apple-shaped, with a domed forehead",
+        "ears: large, erect, and pointed, sitting high on the head",
+        "muzzle: short and pointed with a well-defined stop and somewhat flattened top",
+        "body: compact and sturdy with a slightly longer length than height; typically, the color varies between black, tan, fawn, or white",
+        "legs: thin and straight, proportionate to the body in length; the forelegs should be slightly shorter than the hind legs",
+        "tail: moderately long and tapering towards the end, usually carried high, either in a curve or a semi-circle; the color and fur are consistent with the rest of the body"
+    ],
+    "toy terrier": [
+        "head: small and rounded, usually featuring a distinct apple shape",
+        "ears: large, upright ears that are sharply pointed and wide set",
+        "muzzle: short and pointed muzzle with a medium length, slightly upturned nose",
+        "body: compact, with a length that is slightly longer than the height, accentuated by a level or slightly sloping backline",
+        "legs: gracefully thin, yet muscular, with oval-shaped feet",
+        "tail: long, thin and slightly curled, usually carried high or over the back with a furry fringe"
+    ],
+    "Rhodesian ridgeback": [
+        "head: typically rounded skull shape, sometimes appearing apple-shaped, with large expressive eyes that are usually dark in color",
+        "ears: especially prominent, large, and upright. ears are often seen in a 'bat ear' shape, furred but not heavy",
+        "muzzle: proportionally smaller compared to other dog breeds, often appears shortened with a distinct stop between the forehead and the nose. color varies based on coat",
+        "body: compact and small, usually measuring 5-8 inches in height at the shoulder. body is longer than it is tall, creating a rectangular proportion",
+        "legs: rather petite with the forelegs being straight and set under the body while the hind legs are muscular and longer in comparison",
+        "tail: moderate length and usually high-set, curling over the back or to the side in a semi-circle when the dog is relaxed or excited. carries a normal covering of fur",
+        "fur: smooth or long-coated varieties, colors can range from solid black, white, fawn to chocolate, or marked in these colors. the fur is often soft to the touch"
+    ],
+    "Afghan hound": [
+        "head: small, rounded skull with a soft spot (molera) on the top and large, expressive eyes that are usually brown or ruby",
+        "ears: large and triangularly shaped with a pointed tip, always sticking up, and covered with thin hair",
+        "muzzle: short and pointed, with a defined stop (the point where the forehead meets the snout), and often black or self-colored according to the coat",
+        "body: compact and small, reflecting its \"toy\" breed status, with a slightly arched neck and level or slightly sloping croup (rump",
+        "legs: fine-boned and slender, but still muscular, usually ending in small, delicate paws",
+        "tail: moderately long, carried either in a loop over the back or flat, with fur that may be slightly longer and more fluffy than the body's"
+    ],
+    "basset": [
+        "head: small and apple-shaped, often with wide, expressive eyes that are typically brown or hazel",
+        "ears: large and erect, adding a distinctive silhouette; often lined with soft, short hair",
+        "muzzle: slightly pointed and smaller in proportion to the head, but not extremely shortened; usually covered in short, soft fur",
+        "body: compact and well-toned, small in size but robust with a long, gently rounded back; coat varies from smooth to long hair in colors such as black, white, tan, chocolate, and more",
+        "legs: short but sturdy, often covered in short-haired fur matching the body, capable of quick and agile movement",
+        "tail: moderately long and sometimes curled over the back, usually covered in fur that matches the rest of the body"
+    ],
+    "beagle": [
+        "head: small with rounded apple shape, more prominent and large eyes, usually the same color as the coat",
+        "ears: large and bat-like, standing erect on the top of the head, with a light layer of fur",
+        "muzzle: short and slightly pointed with hairs sparser than on the rest of the body, housing small set of teeth",
+        "body: compact and well-proportioned with the length slightly longer than the height, usually covered in short or long, smooth furred coat that can be a variety of colors from fawn, red, cream, chocolate, blue, black, and white",
+        "legs: thin but muscular, normally covered with same coat as the body, proportional to the small size of the dog",
+        "tail: moderately long and slightly curled over the back or to the side, thickly covered with fur that matches the rest of the coat"
+    ],
+    "bloodhound": [
+        "head: small, round, domed and apple-shaped which creates a 'stop' between the forehead and snouts",
+        "ears: large, erect and is equivalently spaced which gives an \"alert\" expression",
+        "muzzle: pointy and short with a slight down-curve at the tip. nose is usually black, but can change color with weather variants",
+        "body: compact and well-balanced, shorter in length than height with a contrastingly broad chest, small neck and a strong loin",
+        "legs: thin, long and straight with the front legs being slightly shorter than the hind ones, ending in small, dainty but sturdy paws",
+        "tail: moderately long, high-set, carried either in an arc or curled over the back, with a plume of longer hair",
+        "fur: short, smooth and glossy, can be found in many colors including black, white, tan, red, blue, chocolate, and combination thereof"
+    ],
+    "bluetick": [
+        "head: round and apple-shaped, featuring large, expressive eyes that can be in varying hues from dark to light",
+        "ears: large and upright with pointy ends. a chihuahua's ears area a very distinct feature and are always on alert",
+        "muzzle: short and slightly pointed, leading to a small but often expressive mouth with sharp, little teeth",
+        "body: small but robust, often with either a smooth coat or a long-haired coat. it may come in various colours such as fawn, black, white, chocolate, and cream",
+        "legs: short and thin but strong for their size. paired with small, oval feet featuring soft pads",
+        "tail: moderately long and slightly curled with a feathering of fur if the chihuahua is a long-coat variety, short and sleek if it's a smooth coat. the tail usually points up and curls over their back or side when alert or active"
+    ],
+    "black-and-tan coonhound": [
+        "head: small and rounded with an apple-like shape",
+        "ears: large, upright ears, well rounded at the top",
+        "muzzle: short and slightly pointed with a well-defined stop",
+        "body: compact and lightweight with a slightly longer body than the height, giving it a rectangular appearance",
+        "legs: thin and short, with the front legs being straight and the hind legs being muscular",
+        "tail: moderately long, carried high either in a loop or curved over the back",
+        "coat: comes in either short haired which is soft and shiny or long haired which is flat or slightly curly with a frill on the neck",
+        "color: varies significantly from black, white, fawn, chocolate, and even spotted combinations"
+    ],
+    "Walker hound": [
+        "head: small and apple-shaped with a short, pointed snout, often covered in short, smooth fur",
+        "ears: large and bat-like, standing erect, often darker in shade compared to the rest of the body",
+        "muzzle: short and slightly pointed with a black or self-colored nose, typically covered in smooth, short fur",
+        "body: compact but well-muscled; covered in a coat that can range from smooth and glossy to long and fluffy; coat colors can vary widely including fawn, red, cream, chocolate, blue, black, and white",
+        "legs: short and slender but sturdy; fur type and color matches that of the body",
+        "tail: moderately long and carried either in an arc or loop over the back, with fur type and color that matches the body"
+    ],
+    "English foxhound": [
+        "head: round-apple shaped featuring large expressive eyes that are usually dark, but can also be lighter or ruby, which is rare",
+        "ears: large, bat-like ears standing upright, they are considered as one of the distinctive features of a chihuahua",
+        "muzzle: small and somewhat pointy, giving them a unique look compared to other dog breeds",
+        "body: compact, muscular and sturdy featuring a level or slightly sloping croup and strong, straight legs",
+        "legs: short and slender but strong enough to support their compact bodies; their feet are small and dainty",
+        "tail: moderately long, carried either in an arc or curve over the back. it is often curly, sometimes can be between the back legs or to the side"
+    ],
+    "redbone": [
+        "head: round and apple-shaped with large, expressive eyes that are typically dark in color",
+        "ears: large and erect, often wider at the base and tapering to a point, they give a chihuahua its distinctive alert and curious look",
+        "muzzle: short and slightly pointed, featuring a small, black or self-colored nose at the end",
+        "body: compact and small, with a well-sprung ribcage and level or slightly arched back",
+        "legs: short and straight, with dainty paws. the hind legs are slightly angled at rest while the forelegs are perpendicular to the ground",
+        "tail: moderately long and carried high, either curled over the back or in a loop. the tail is covered with thick fur",
+        "fur: smooth or long, if long it is soft and flat or slightly wavy. comes in various colors including fawn, black, and chocolate, to name a few"
+    ],
+    "borzoi": [
+        "head: small and apple-shaped with strong, pointed snout",
+        "ears: large in proportion to body size, bat-like in shape, erect and flared out to the sides",
+        "muzzle: short and slightly pointed, commonly coloured in shades of fawn, black, white, or brown",
+        "body: compact but sturdy; typically covered in a shiny, smooth short-haired coat, can be in various colours including black, fawn, white, or cream",
+        "legs: short and skinny with tiny paws; fur same as body",
+        "tail: long and slightly curled over the back, covered in fur that matches the rest of the dog's body"
+    ],
+    "Irish wolfhound": [
+        "head: small, round shape with apple or deer-like structure often covered in short or long, typically tan or cream colored fur",
+        "ears: large, erect ears which are significantly bigger in proportion to the head, usually featuring a thin layer of fur",
+        "muzzle: short and pointed muzzle with a black or self-colored nose at the end, often carrying short fur similar to the rest of the face",
+        "body: compact and slightly elongated body, featuring a level or slightly arched back, usually covered in short or long fur which may be of various colors including tan, cream, chocolate, blue, silver, and tricolor",
+        "legs: short, thin legs appropriate to the small size of the breed, typically covered with fur matching the rest of the body",
+        "tail: moderately long and slightly curled tail often carried high over the back or to the side; usually covered in fur consistent with the body, which can be either long or short"
+    ],
+    "Italian greyhound": [
+        "head: apple-shaped and oversized in comparison to the body, with dark, round eyes",
+        "ears: large and erect, they are always alert and add to the chihuahua's expressive nature",
+        "muzzle: short and slightly pointed, usually with a black or self-colored nose",
+        "body: compact and sturdy, often longer than it is tall",
+        "legs: short, slim and light, often giving an elegant appearance despite their small size",
+        "tail: moderately long and typically carried up or in a loop, adds to the overall balance of their physique. it may have thicker fur than the rest of the body"
+    ],
+    "whippet": [
+        "head: proportionately large, typically apple-shaped with a prominent forehead",
+        "ears: large and upright, shaped like bat ears, often darker at the tips",
+        "muzzle: moderately short and pointed; can be the same color as the body or slightly darker",
+        "body: compact and lightweight, typically covered in short, glossy fur that can range in color from black, white, fawn, chocolate, and even tricolor",
+        "legs: petite and delicate, they are also quite muscular and agile",
+        "tail: long and slightly curved, often feathered and held high or over the back, with the color matching the main body fur"
+    ],
+    "Ibizan hound": [
+        "head: small size, with a rounded apple-shaped cranium and a prominent, slightly turned-up snout",
+        "ears: large, erect and highly expressive, with short, thin, often tan or black fur coverage",
+        "muzzle: short and pointed with a smaller nose, often black or matching the fur color",
+        "body: compact and lightweight, covered in either short, smooth fur in tan, black, white or mixed colors, or a long, curly fur variety can be seen as well",
+        "legs: short and delicate but surprisingly agile, often covered in the same color of fur as the body",
+        "tail: long, usually curling over the back, thinly covered in fur that matches the rest of the body"
+    ],
+    "Norwegian elkhound": [
+        "head: round and apple-shaped with large, alert eyes that could be various shades from light brown to dark ruby",
+        "ears: oversized, standing erect, and slightly flared outwards; may have longer hair on the edges",
+        "muzzle: short and pointed, extending from a broad skull, ending in a self-colored or black nose; the lips might have darker coloration",
+        "body: compact and well-defined with a dome-shaped rib cage; the coat could be either short and smooth or long and slightly wavy, covering a range of colors like fawn, black, white, chocolate, and even tricolor",
+        "legs: rather thin but muscular and well-proportioned in comparison to the body; may have fluffy or smooth fur depending on the length of the coat",
+        "tail: moderately long, plume-like in long-haired breed members, and arched over the back or to the side; fur color matches the rest of the body"
+    ],
+    "otterhound": [
+        "head: typically round in shape and of a fair proportion to its body, with a softer spot in the skull (molera) that may or may not close completely",
+        "ears: large and stand erect, somewhat flared with a broad base, usually more extended when alert, offering it a distinctive butterfly-like appearance",
+        "muzzle: moderately short and slightly pointed, often the same color as the body; snub-nosed breeds have a prominent, broad, and deep, but short, muzzle",
+        "body: compact and lightweight with the length slightly longer than the height, well developed shoulders, and a level or slightly sloping croup",
+        "legs: thin and long in proportion to the body, a sturdy structure but are quite lightweight",
+        "tail: moderately long and set high, usually curled over the back or to the side in an arch. furry, but less so than on the body"
+    ],
+    "Saluki": [
+        "head: typically small in size with a rounded shape, often appearing larger in proportion to the body",
+        "ears: large and erect, set in an \"alert\" position; they might be covered with short or long hair depending on the type of chihuahua",
+        "muzzle: short and slightly pointed, with the area around the nose usually being darker than the rest of the face",
+        "body: compact and well-muscled, with a distinctive breasted appearance. the fur can be short or long and is often tan, black, white, or a combination",
+        "legs: short, yet strong and straight, typically having a medium bone density. the paw pads and nails often have a darker coloration",
+        "tail: moderately long and typically carried high, either in a loop or curled over the back. the coat on the tail usually matches the rest of the body"
+    ],
+    "Scottish deerhound": [
+        "head: relatively large compared to the body, with an apple-shaped skull and expressive, round eyes that are dark or ruby in color",
+        "ears: large, erect, and pointed which are always alert, covered with short, smooth fur",
+        "muzzle: short and pointed, blending symmetrically into the head, the majority of chihuahuas have a black or self-colored nose",
+        "body: compact and small, typically weigh 2-6 pounds, making them one of the smallest dog breeds",
+        "legs: short and slightly proportioned to the body, usually quick despite their size, and their paws are small and dainty",
+        "tail: moderately long and either looped over the back or carried to the side, covered with the same short, smooth fur as the rest of their body"
+    ],
+    "Weimaraner": [
+        "head: typically round and apple-shaped with large, wide-set eyes that are round and luminous",
+        "ears: extremely large relative to their head size, standing upright, and set wide apart",
+        "muzzle: moderately short and slightly pointed",
+        "body: compact but longer than it is tall, and ribs rounded and well sprung",
+        "legs: short and slim with the elbows that are set closely to the body",
+        "tail: long and typically curled over the back or to the side, sometimes with a slight kink"
+    ],
+    "Staffordshire bullterrier": [
+        "head: round skull shape with a distinctive \u2018apple head\u2019 feature, often tan or white in color",
+        "ears: large, upright ears that can be more than half the size of the head, typically covered with short, smooth fur",
+        "muzzle: small and slightly pointed, usually the same color as the rest of the body with short, smooth fur",
+        "body: compact and small, generally tan, black, white, or any combination of these with both short and long-haired varieties",
+        "legs: short and slender, covered in the same short or long, smooth coat as the body, occasionally marked with white \"socks",
+        "tail: moderately long and carried either in an arc or loop over the back, covered in fur that is the same color and texture as the body"
+    ],
+    "American Staffordshire terrier": [
+        "head: small and round in shape, often in proportion to the body, with a distinct apple shape being more preferred. usually in colors ranging from tan, cream, black, white, blue, and chocolate",
+        "ears: large and erect, resembling a fawn's ears. interior is usually hairless, while the exterior features short fur matching the color on the head",
+        "muzzle: short and pointed, displaying a powerful jawline. it is generally covered in short fur that can be either the same shade as the rest of the face, or it can be a different color, creating a distinct mask effect",
+        "body: compact with a distinct barrel shape. the fur on the body can be either short or long, depending on the variety of chihuahua, and can come in a vast array of colors and patterns",
+        "legs: short and thin, but sturdy. typically covered in short or long fur that matches the rest of the body. the feet are small and oval, featuring tough pads",
+        "tail: moderately long and carried either in an arc or loop over the back, with tip just touching the back. the tail is covered in fur that is in line with the rest of the chihuahua's coat, whether long or short, and often sports a fuller appearance towards the tip"
+    ],
+    "Bedlington terrier": [
+        "head: small and domed with eyes that are round and full, but not protruding",
+        "ears: large, standing upright, flared wide open and pointy in a v-shape, often darker in color than the rest of the body",
+        "muzzle: short and pointy, topped with a black or self-colored nose, mouth is small with teeth meeting in a scissors or level bite",
+        "body: well-rounded and longer than it is tall, the coat can be short or long and colors range from white, black, tan, cream to chocolate and even spotted",
+        "legs: thin and moderately long relative to body size; the front legs are straight while the hind legs are well muscled",
+        "tail: moderately long and sickle-shaped, often carried in a loop over the back, coated with long and lush fur"
+    ],
+    "Border terrier": [
+        "head: round and apple-shaped with a well-defined stop",
+        "ears: large and erect, shaped like an upside-down v",
+        "muzzle: short and pointed with a strong jawline",
+        "body: compact and well-balanced, slightly longer than it is tall",
+        "legs: fine and slightly elongated, with small, dainty paws",
+        "tail: long and slightly curved, often carried up or over the back",
+        "fur: short and smooth or long and wavy, comes in a wide variety of colors including fawn, chocolate, black, white, and mixtures of these"
+    ],
+    "Kerry blue terrier": [
+        "head: round and apple-shaped with a distinctive, large forehead",
+        "ears: large, upright in shape and slightly flared, typically a smooth light-to-dark tan color",
+        "muzzle: short and pointed, often the same color as the rest of the facial fur, which can vary from fawn to black",
+        "body: compact and small, often covered in short, glossy fur that varies in patterns and colors, including black, white, chestnut, and more",
+        "legs: slender and petite, often the same color as the body fur. front legs are straight while hind legs are muscled",
+        "tail: moderately long and gently curved, usually carried high and over the back or at a 45-degree angle; tends to be covered in fur that matches the rest of the body"
+    ],
+    "Irish terrier": [
+        "head: round-shaped with a prominent apple dome skull",
+        "ears: large, erect, and flared, with a furry interior",
+        "muzzle: short and pointed, often light brown or black",
+        "body: compact and well-proportioned, covered in either smooth or long, soft fur which can come in different shades from white, black, tan, and many other colors and combinations",
+        "legs: very thin and delicate but surprisingly strong, covered with the same fur as the body",
+        "tail: moderately long and curling over the back with a plume of fur, matching the body color"
+    ],
+    "Norfolk terrier": [
+        "head: round and apple-shaped, topped with large perky ears",
+        "ears: large, erect and shaped like a bat's ears to track sounds better",
+        "muzzle: short and pointy with strong jaws; lined by a set of tiny but sharp teeth",
+        "body: compact and small-sized, lightly muscled with a well-rounded rib cage and a prominent collar bone",
+        "legs: short, slender, and perfectly proportioned to its body; ending in dainty paws with cushioned pads",
+        "tail: moderately long and curly, often held high or slightly curled over the back",
+        "fur: may be smooth (short and glossy) or long (soft-textured coat with a fringed tail), usually solid or a mix of colors including black, white, fawn, chocolate, and gold"
+    ],
+    "Norwich terrier": [
+        "head: usually round, apple-shaped with a prominent forehead",
+        "ears: large, upright and widely spaced",
+        "muzzle: moderately short and slightly pointed",
+        "body: compact and slightly longer than it is tall, often covered with short or long, smooth or rough coat that can come in many different colors like fawn, red, cream, chocolate, blue, black and white, etc",
+        "legs: short and slender with fine bones",
+        "tail: moderately long, curved over the back or to the side, often with denser fur than the body"
+    ],
+    "Yorkshire terrier": [
+        "head: small and apple-shaped with round and luminous eyes, often varying colors such as brown or black",
+        "ears: large, round and always erect, typically have some furring",
+        "muzzle: short to medium-length with a slight point, discoloration is common depending on the overall coat color",
+        "body: compact and small, with a body slightly longer than it is tall. generally coated in short hair, but some can have a long, soft coat instead",
+        "legs: short and slender, but quite strong. fur often matches the rest of their body",
+        "tail: moderately long and either curling over the back or held in a loop, with a plume of fur that matches the rest of their body"
+    ],
+    "wire-haired fox terrier": [
+        "head: rounded apple-shaped skull with or without a soft spot on the crown",
+        "ears: large erect ears that stay alert, which can be quite wide at the base and taper towards pointy tips",
+        "muzzle: short to medium-length and slightly pointed, matching the overall angular appearance of the head",
+        "body: compact and slightly longer than tall, with a slightly curved back and broad, deep chest",
+        "legs: thin but strong and straight legs, with slightly longer hind than front legs, contributing to the curved backline",
+        "tail: moderately long tails, carried either in a loop over the back or flat when the dog is relaxed. the tail is usually covered in short to medium length fur, matching the coat of the rest of the body"
+    ],
+    "Lakeland terrier": [
+        "head: rounded apple-shaped skull with large, round eyes predominantly in dark or ruby color",
+        "ears: large and stand erect, mostly covered with short, smooth fur, usually darker than the rest of the body",
+        "muzzle: short and slightly pointed, carrying a small, self-colored or black nose at the end",
+        "body: compact, slightly longer than it is tall, with a level or slightly arched back, showing well-sprung ribs",
+        "legs: thin and long considering the size of the dog, front legs are straight and have a set square to the body",
+        "tail: moderately long and carried in an arc, either in a loop over the back or to the side when in action, with a lush covering of fur"
+    ],
+    "Sealyham terrier": [
+        "head: small, rounded with large, expressive eyes varying in colors such as luminous dark or ruby",
+        "ears: large and erect, maintaining a distinctively alert appearance",
+        "muzzle: short and pointed with a small black or self-colored nose at the end",
+        "body: compact and well-defined with a glossy, soft coat which could be short or long and come in a variety of colors (cream, fawn, chocolate, etc",
+        "legs: short yet sturdy, allowing for swift movement",
+        "tail: moderately long, either curled over the back or to the side with a plume of longer hair when the coat is long"
+    ],
+    "Airedale": [
+        "head: small, round skull with expressive eyes often dark or luminous ruby in color",
+        "ears: large, upright set ears flaring to the sides making them look like an \u2018open book",
+        "muzzle: short and slightly pointed, without any sign of snipiness",
+        "body: compact and well-structured, often either tan, black, white or mixed color with smooth or long fur depending on breed",
+        "legs: short yet nimble, ending with small, moderately long feet",
+        "tail: moderately long and slightly curved, usually held high, sometimes partially curled over the back with a full plume, covering the body with the same type of hair as the rest of the body"
+    ],
+    "cairn": [
+        "head: typically large in comparison to the body size, adorned with round, full and luminous dark colored eyes",
+        "ears: large and erect with a broad base and gradual narrowing towards the tip, enhancing their alert appearance",
+        "muzzle: short and somewhat pointed. it houses the sharp, strong teeth that are a standard feature for compact but powerful small dogs",
+        "body: compact and well-defined with a longer length than height, closely coated with either a short, smooth coat or a long coat with frills",
+        "legs: thin but muscular, slightly longer at the back, ending in small, dainty feet with cushioned pads",
+        "tail: moderately long and carried either in an arc or loop over the back, covered in a plume of long hair in long-coated varieties"
+    ],
+    "Australian terrier": [
+        "head: round and apple-shaped, often bigger in proportion to the body",
+        "ears: large and erect, giving an alert and attentive appearance",
+        "muzzle: short, slightly pointy, with a distinctive dark or black nose at the end",
+        "body: compact and well-muscled, covered in a short to long, sometimes wavy coat, which can come in a variety of colors such as tan, chocolate, cream, blue, and black",
+        "legs: short and slender but sturdy, often lighter in color compared to the body in some coat variations",
+        "tail: long and slightly curved, the fur on the tail can either be short or long like a plume, carried high or over the back when the dog is excited or moving"
+    ],
+    "Dandie Dinmont": [
+        "head: small, round head with dark, round eyes, often tan or cream-colored",
+        "ears: large and bat-like in shape, standing erect with inner fur typically lighter than the body",
+        "muzzle: short and pointed, darker at the nose with a slightly curved tail",
+        "body: compact and sturdy with a well-rounded chest, often covered with short or long, soft fur in a variety of colors including fawn, chocolate, black and white",
+        "legs: short and slender, with tiny, compact feet",
+        "tail: moderately long and carried high either looped or flat, often seen with the same color and type of fur as the body"
+    ],
+    "Boston bull": [
+        "head: slightly apple-shaped with large expressive eyes, usually brown or hazel",
+        "ears: large and triangular, standing erect for most times, making them look perky and attentive",
+        "muzzle: short and slightly pointed, featuring a small black or self-colored nose at the end",
+        "body: compact and well-built with a slightly arching neck, the length is a little longer than the height at the shoulder",
+        "legs: thin yet sturdy with small rounded paws, can be either short or long-legged type",
+        "tail: moderately long and high-set, carried sickle-shaped, either curled over the back or to the side, tail and body usually covered with short yet dense coat",
+        "fur: fine, smooth, shiny, and snug to the body, typically fawn or light brown, but can come in variety of colors or patterns like black, white, chocolate or tricolored"
+    ],
+    "miniature schnauzer": [
+        "head: small, round with the prominent apple-shaped feature, usually has tightly packed, short fur of various colors compliant with each specific breed",
+        "ears: large and upright, usually covered with thin, short fur; also can stay erect all the time due to their high muscle concentration",
+        "muzzle: short, pointed where the thin, light fur outlines the dark, shiny nose situated at the tip",
+        "body: compact, sturdy and well-muscled with denser fur maintaining a consistent color across the body",
+        "legs: thin, proportionate to the body, covered with short, thin fur fulfilling its role as agile, speedy little dogs",
+        "tail: moderately long, often curling over the back or to the side; fur varies from smooth to full, depending on the breed's fur type"
+    ],
+    "giant schnauzer": [
+        "head: rounded apple-shaped with large, bright eyes which are usually dark or ruby-colored",
+        "ears: large, erect, and wide-set that are noticeably more prominent than the size of the head",
+        "muzzle: moderately short, slightly pointed affair with a distinct stop, sporting a pair of either light or dark-colored nostrils",
+        "body: compact and small, with a well-sprung ribcage and a level or slightly arched back. coat color variations include black, white, chestnut, and sand",
+        "legs: relatively short but not too much that they appear out of proportion with the body, ending in delicate, dainty paws",
+        "tail: long and either slightly curled or looped over the back with a plume of long hair, can be of various colors matching the rest of the coat"
+    ],
+    "standard schnauzer": [
+        "head: small and apple-shaped with large, expressive eyes that are usually dark or ruby colored",
+        "ears: large, upright and wide open, and covered with thinner, velvety soft hair. dark pigments around the inner edges are common",
+        "muzzle: short and slightly pointed with a strong jawline with small, sharp teeth enclosed, the nose color often aligns with the coat's color",
+        "body: compact and slightly longer than it is tall, with a deep chest and ribs well-sprung, covered with either short, smooth hair or long, wavy hair",
+        "legs: short in length but quite muscular, with feet being quite small with cushioned pads. legs are covered with fur that is dense and either smooth or slightly wavy",
+        "tail: medium length and typically curves over the back or side when the dog is excited or in motion. covered with the same type of fur as the body, which can be either short and smooth or long and wavy"
+    ],
+    "Scotch terrier": [
+        "head: round in shape and often appears large in proportion to the body, adorned with short, soft fur",
+        "ears: large and upright, resembling a bat's ears, usually covered with a light coat of short hair",
+        "muzzle: short and pointed, covered in short, smooth fur, usually matching the overall color of the dog",
+        "body: compact and small, with a length slightly longer than its height. the fur may be soft and short or long, depending upon whether the chihuahua is a short hair or long hair variety",
+        "legs: thin and quite short, covered with the same fur as the body",
+        "tail: moderately long and held high, it\u2019s either curled over the back or in a shape of a semi-circle with the tip pointing towards the loin. its fur is the same as the body"
+    ],
+    "Tibetan terrier": [
+        "head: small and round with a slightly apple-shaped skull; often pointy at the top",
+        "ears: large, erect and bat-like; set at an angle on the head",
+        "muzzle: short and pointed with a turned-up snout; the nose is usually black or self-colored in blonde dogs",
+        "body: compact and small with ovular shape; covered with either short or long-coat fur which can be fawn, sand, chestnut, silver and steel blue, or variations in these colors",
+        "legs: thin and short; appearing fragile but surprisingly strong and sturdy",
+        "tail: moderately long and slightly curled, it is low-set and either flared out over the back or down with a slight curve"
+    ],
+    "silky terrier": [
+        "head: small and round, often with a soft spot, called molera, on the top, similar to a newborn baby",
+        "ears: large and upright with sharp points, enhancing their keen sense of hearing",
+        "muzzle: short, pointed, and a bit narrow, ending in a small black or self-colored nose",
+        "body: compact and lightweight, lending to their small overall size. often considered to be under 6 pounds",
+        "legs: short but proportionate to the body with tiny paws",
+        "tail: moderately long and carried high, either in an arc or loop, with the tip touching the back",
+        "fur: ranges from long and soft to short and shiny, comes in many colors such as fawn, red, cream, chocolate, blue, black, and white",
+        "eyes: full and round, very expressive, usually dark in color but can match or be lighter than the coat color"
+    ],
+    "soft-coated wheaten terrier": [
+        "head: relatively large compared to the body, round in shape with a sweeter expression",
+        "ears: large, erect ears, that are fully flared when alert, typically darker color than the rest of the body",
+        "muzzle: moderately short, slightly pointed, often lighter in color, tends to be less hairy",
+        "body: compact and small, body length slightly longer than height, usually covered in fawn, black, white, or any combination of these fur colors",
+        "legs: short, thin limbs, often with a lighter shade of fur than the rest of the body",
+        "tail: moderately long and slightly curled, fur-covered, usually held high or over the back when active"
+    ],
+    "West Highland white terrier": [
+        "head: small and apple-shaped with a round forehead and well-defined stop",
+        "ears: large and flared, standing erect with a broad base and tapering to a point",
+        "muzzle: short and slightly pointed, with a moderately defined stop",
+        "body: small but well-proportioned, typically covered in short, smooth, and shiny fur that can be various colors, including fawn, black, and chocolate",
+        "legs: short and thin yet muscular, ending with small, dainty feet",
+        "tail: moderately long and slightly curved, often carried high and either looped or flat, covered in the same short, smooth fur as the body"
+    ],
+    "Lhasa": [
+        "head: small and rounded, often described as apple-shaped; it possesses distinct, large round eyes that are often brown or black",
+        "ears: large and stand erect with a broad base and sharp pointy tips, providing a unique \"alert\" appearance",
+        "muzzle: short and slightly pointed with a black or self-colored nose, having a unique, soft, \u201cvelvety\u201d feel",
+        "body: compact and slightly longer than it is tall with a strong, curved neck, well-sprung ribs and a deep chest",
+        "legs: short but very sturdy, the front legs are straight and set wide apart, ending in small, round feet",
+        "tail: moderately long and carried either curled over the back or in a loop, often thickly furred, adding to the dramatic personality of the breed"
+    ],
+    "flat-coated retriever": [
+        "head: small and apple-shaped, often with dark, round, large eyes",
+        "ears: big and upright, making a 45-degree angle",
+        "muzzle: short and pointed with a small, black or self-colored nose at the end",
+        "body: compact and well-proportioned, usually covered in short or long fur, which can range in a variety of colors from tan, cream, chocolate, fawn, black, and white, either solid or mixed",
+        "legs: slim, yet muscular, that stand slightly apart, greatly contributing to the sprightly movements of the breed",
+        "tail: moderately long, sickle-shaped, commonly curled over the body and is covered with dense hair"
+    ],
+    "curly-coated retriever": [
+        "head: small, rounded skull typically characterized by bright, expressive eyes",
+        "ears: large, erect ears with slightly rounded tips, can sometimes be overly expressive when the dog is excited or alert",
+        "muzzle: short and pointed, slightly downturned at the end",
+        "body: compact and well-balanced, typically either slightly longer than tall or square in proportion",
+        "legs: slender yet sturdy, relatively shorter in proportion to the body",
+        "tail: long and sickle-shaped, often carried high and either curled over the back or to the side"
+    ],
+    "golden retriever": [
+        "head: typically round, dome-shaped or \"apple-headed\" with a hint of a molera or soft spot similar to human babies",
+        "ears: large, erect, and pointy ears, set wide apart giving them an alert appearance",
+        "muzzle: small and pointed with a well-defined stop where the muzzle meets the forehead",
+        "body: compact and lightweight with a well-rounded rib cage and strong, lean loin",
+        "legs: thin, lean legs that provide a moderate ground clearance and are proportionate to the small size of the dog",
+        "tail: moderately long and carried high either in a loop or curved upward, sometimes with a fluffy fur covering"
+    ],
+    "Labrador retriever": [
+        "head: small and round with the typical \"apple head\" shape, often with a soft spot on the top called a molera",
+        "ears: large and erect, standing straight up from the head, adding to their alert and expressive nature",
+        "muzzle: short and pointed, with a prominent stop (the change in angle between the snout and the forehead",
+        "body: compact and well-muscled, with a curving backline called a roach back and well-sprung ribs",
+        "legs: very short compared to the size of the body, often making the dog seem almost squat",
+        "tail: moderately long, set high, and either curled over the back or to the side, often with thick and long fur",
+        "fur: smooth coat type has a glossy and soft texture, whereas the long coat type is soft, flat, or slightly curled. colors can vary wildly, including black, white, fawn, chocolate, gray and silver"
+    ],
+    "Chesapeake Bay retriever": [
+        "head: round and apple-shaped with a well-defined, distinct stop",
+        "ears: large, erect, and flared, typically a black or dark brown color, often with short fur",
+        "muzzle: moderately short, slightly pointed, and narrower than the skull, typically colour matching the rest of the body",
+        "body: compact and well-proportioned, with a distinct waistline often covered with a coat that may vary in color from fawn, sand, chestnut, silver and steel blue to black, white, and multi-colored",
+        "legs: long and slender for its small size, with color matching the body and sometimes slightly longer fur on the back of the legs",
+        "tail: moderately long and slightly curled or arched, carried either in a loop over the back or flat but not tucked under, with fur that is typically the same length and consistency as the body coat"
+    ],
+    "German short-haired pointer": [
+        "head: small and apple-shaped, covered with short hair, giving them an alert appearance",
+        "ears: large and erect, coming to a slight point, usually darker in color than the rest of the body",
+        "muzzle: short in length, slightly pointed, with a small black or self-colored nose at the end",
+        "body: slightly longer than it is tall, with a level or slightly arched back, chest is ample and rounded",
+        "legs: short but well-muscled with oval-shaped paws, often lighter in color than body depending on coat color",
+        "tail: long and furry, usually curled over the back in a sickle shape, complementing the color of the body"
+    ],
+    "vizsla": [
+        "head: small and round with notable apple dome shape",
+        "ears: large and upright providing a bat-like appearance",
+        "muzzle: short and pointed, typically a warm brown, black or cream",
+        "body: compact and well-muscled, covered in either short, sleek fur or longhaired variety",
+        "legs: delicate yet strong, often a matching color with the body",
+        "tail: long and slightly curled, often flicked high over the body with fur varying from short to plume-like in the longer-haired variety"
+    ],
+    "English setter": [
+        "head: small and rounded, often light brown or black with short, soft fur. distinct feature is the \"apple head\" shape common to the chihuahua breed",
+        "ears: large, standing erect with a slight flare at the base; usually dark in color, covered with thin fur",
+        "muzzle: small and slightly pointed, often a darker shade of the overall coat color, such as black or brown, with short fur",
+        "body: compact and small, with either smooth or long fur in various colors such as fawn, chocolate, black, white, or tricolor (black, white, and tan",
+        "legs: short and delicate but muscular, often of the same color as the body and can be covered with either smooth or long fur",
+        "tail: thin and moderately long, arches over the back or to the side, covered with either smooth or long fur that matches the color of the body"
+    ],
+    "Irish setter": [
+        "head: small, round head with a distinctive apple shape, often a solid color or mix of two colors such as fawn or black",
+        "ears: large, upright ears that are often a darker shade than the rest of their fur and highly sensitive to sound",
+        "muzzle: short and pointed with a delicate jawline, often the same color as the rest of the dog's head",
+        "body: compact and small, with visible ribs and a rounded hindquarters. chihuahuas can be any color, include solid, marked, or splashed",
+        "legs: short, slender but strong legs that move quickly and agilely. the color usually matches the main color of the body",
+        "tail: moderately long, curved or semi-curled tail, well furred that adds to the breed's distinctive silhouette. common to have color mix similar to body"
+    ],
+    "Gordon setter": [
+        "head: slightly rounded, apple-shaped head embodying a short nose and eyes that are large and round, often dark or ruby",
+        "ears: large and bat-like, sticking straight up in a \"v\" shape, adding to their expressive look",
+        "muzzle: short and pointed, with a slightly upturned chin and mouth often closed",
+        "body: compact with a sturdy build, featuring a well-rounded chest and sloping shoulders; it's also longer than its height",
+        "legs: thin yet strong, and proportionately long when compared to body size",
+        "tail: moderately long and slightly curved, usually carried high either looped or flared and covered with short or long hair depending on the coat type",
+        "fur: chihuahuas have two types of coats a smooth coat which is soft, glossy, close-fitting, and a long coat that's soft texture, flat or slightly curly with an undercoat preferred",
+        "colour: they come in any color solid, marked, or splashed including black, white, fawn, chocolate, gray, cream, and more"
+    ],
+    "Brittany spaniel": [
+        "head: small and apple-shaped with a rounded top and a distinct stop that gives a \"90 degree\" angle from the forehead to the snout",
+        "ears: large, upright and wide-set, giving an alert expression; they are thin and have a slightly rounded tip",
+        "muzzle: shorter than the skull with a self-colored nose that matches the coat color",
+        "body: compact and well-balanced; slightly longer than it is tall and covered with a smooth or long coat that comes in a wide variety of colors and patterns",
+        "legs: thin but well-muscled, with the hind legs being slightly longer than the front ones; the feet are small and dainty",
+        "tail: moderately long and carried in a sickle shape, either curved over the back or to the side; it is covered with the same type of fur as the body"
+    ],
+    "clumber": [
+        "head: round and apple-shaped, with prominent and expressive eyes that are usually dark or ruby in color",
+        "ears: large and bat-like, standing up straight, providing a strongly attentive look",
+        "muzzle: short and pointed, often appearing small due to the overall size of the dog, usually the same color as the rest of the coat",
+        "body: compact and lightweight, usually weighing between 3 to 6 pounds, with a coat that can be short and smooth or long and soft",
+        "legs: thin but muscular, relatively short compared to body size, leading to a quick and agile movement",
+        "tail: moderately long and slightly curved, usually carried high and either flat or in a loop over the back, covered with fur matching the rest of the body"
+    ],
+    "English springer": [
+        "head: typically rounded skull with shining, vibrant eyes that are of larger size relative to their head",
+        "ears: large, bat-like ears that stand erect",
+        "muzzle: short and slightly pointed with a well-defined black or self-colored nose",
+        "body: compact and slightly longer than it is tall, covered with short or long hair in a variety of colors that can be solid, marked or splashed",
+        "legs: skinny, yet strong limbs, that move swiftly with a fast and agile trot",
+        "tail: moderately long, high-set tail that is either looped over the back or carried straight up, covered in a thick fur"
+    ],
+    "Welsh springer spaniel": [
+        "head: round apple-shaped skull in proportion with a small, compact body, with dark or ruby-colored eyes that are full but not protruding",
+        "ears: large, round, and upright standing high on the head, bat-like with a wide base tapering to a rounded point",
+        "muzzle: moderately short, slightly pointed, with a strong lower jaw, and a 'stop' that is well-defined, forming a near 90-degree angle",
+        "body: moderately longer than it is tall, compact, well-muscled, and petite, forming a rounded profile",
+        "legs: long and thin, yet sturdy, ending in small, dainty paws often with dark or light nails depending on the coat color",
+        "tail: moderately long, medium-high set, carried over the back or as a sickle horizontally, and tapering to a point, usually covered with thick, plume-like fur",
+        "fur: soft, smooth, shiny and close to the body, may be long or short depending on the variety, in various colors including black, tan, fawn, cream, white, blue, silver, chocolate, and even tri-color or brindle"
+    ],
+    "cocker spaniel": [
+        "head: round and apple-shaped, often larger in proportion compared to body size",
+        "ears: large, erect, and pointy, often flared outward, enhancing their alert expression",
+        "muzzle: short and slightly pointed, usually of the same color as the body",
+        "body: compact and small, giving them a distinct miniature appearance",
+        "legs: thin and relatively long, often covered in short, smooth fur",
+        "tail: long and slightly curled over the back, covered with short hair"
+    ],
+    "Sussex spaniel": [
+        "head: round apple-shaped skull, wide-set eyes that are round and sparkling",
+        "ears: large, erect ears that stand at a 45-degree angle out from the head. the inside is sometimes lighter than the body fur",
+        "muzzle: short and slightly pointed, with a black or self-colored nose",
+        "body: compact, with a well-rounded chest, well sprung ribs. coat can be short or long, and comes in many colors including black, tan, chocolate, blue, white, and more",
+        "legs: slender but strong, often appearing longer than they actually are due to the chihuahua's small size. may have lighter fur on the underside",
+        "tail: moderately long and carried high, either curved or in a semi-circle with the tip pointed towards the back. fur may be slightly longer than that on the body"
+    ],
+    "Irish water spaniel": [
+        "head: dome-shaped with a slightly pointed skull, making a noticeable angle with the muzzle",
+        "ears: large, stand upright, and rounded at the tips, fur may be short or long depending on the variant",
+        "muzzle: short and slightly pointed, generally similar in color to the rest of the body",
+        "body: compact and lightweight, fur may be either short and smooth or long-haired, with a range of color variations including fawn, red, cream, chocolate, blue, black, and white",
+        "legs: thin and relatively short in relation to the body, fur matches the rest of the body",
+        "tail: moderately long, curled over the back or to the side, with fur length that is consistent with the rest of the body"
+    ],
+    "kuvasz": [
+        "head: small size with a round, apple-shaped dome",
+        "ears: large, erect, and bat-like in proportion to the head",
+        "muzzle: short and slightly pointed with a noticeable stop",
+        "body: compact and well-balanced, slightly longer than it is tall",
+        "legs: fine-boned and lean, with the hind legs slightly longer than the front",
+        "tail: moderately long, carried high, either in a loop or curled over the back",
+        "fur: varies between short and long-coat versions, can come in a variety of colors such as fawn, black, white, and chocolate",
+        "eyes: large and round, usually dark and very expressive",
+        "nose: color varies with coat color, generally self-colored"
+    ],
+    "schipperke": [
+        "head: small and apple-shaped with round bright eyes, often brindle, fawn, cream, or black in color",
+        "ears: large and erect, with a broad base and slightly rounded tips, covered in short fine hair",
+        "muzzle: short and slightly pointed, often with a dark nose at the end",
+        "body: compact and well-muscled, appearing larger than it is due to a thick coat that can be either smooth or long",
+        "legs: thin and relatively long in relation to the body, with delicate bone structure and paw pads often darker than the main coat color",
+        "tail: long and feathered, often curled over the back or to the side, covered in same coat variety as the body"
+    ],
+    "groenendael": [
+        "head: small, round shape with apple or deer-like contours",
+        "ears: large and fully erect, with a wide-set base and tapering to a point",
+        "muzzle: short and slightly pointed with either a black or self-colored according to coat",
+        "body: compact and slight, with a well-rounded rib cage and strong, straight back",
+        "legs: long and slender, appearing slightly longer than the proportionate body size",
+        "tail: moderately long and sickle-shaped, usually carried up or over the back when excited"
+    ],
+    "malinois": [
+        "head: rounded skull with large, round and expressive, darkly colored eyes",
+        "ears: large and perkily erect, with slight flaring to sides in its normal state",
+        "muzzle: short and pointed, with a split at the end revealing a set of sharp tiny teeth",
+        "body: compact and well-defined with a curved neckline and a rounded slightly arched back, covered with either a short, smooth coat or a long, soft coat",
+        "legs: long and straight, relatively disproportioned to the tiny body, ending with tiny paws",
+        "tail: moderately long and slightly curling over the back or to the side, covered with long or short fur, matching the rest of the body"
+    ],
+    "briard": [
+        "head: small and round with a prominent apple-shaped dome",
+        "ears: large and erect, with a slightly flared shape similar to a bat's",
+        "muzzle: short and pointed, covered with short and smooth fur",
+        "body: compact but well proportioned, typically covered in short, smooth coat that can vary in color, including fawn, red, cream, chocolate, blue, and black",
+        "legs: short and slender with tiny, dainty paws",
+        "tail: moderately long and slightly curved, usually carried high and either looped or flared over the back, covered in a short-haired coat matching the rest of the body"
+    ],
+    "kelpie": [
+        "head: small in proportion to body, apple or deer-shaped with pronounced dark or light eyes",
+        "ears: erect and large relative to the head, sometimes floppy in puppies. inner side covered with fine fur",
+        "muzzle: moderately short and slightly pointed, contributing to the dog's expressive facial features",
+        "body: compact and well-proportioned with a slightly arched neck. coat can have short or long fur, most commonly in fawn, white, black, chocolate, or mixed colors",
+        "legs: short and sturdy with somewhat long, fine-boned feet. fur on legs can vary depending on whether the dog is short or long-haired",
+        "tail: moderately long, carried high either in a semicircle or loop over the back. thickly furred, irrespective of whether the dog is short or long-haired"
+    ],
+    "komondor": [
+        "head: dome-shaped with expressive, round eyes that are usually dark or ruby in color",
+        "ears: large and erect, spoon-shaped in appearance, have a medium to long coat of hair",
+        "muzzle: moderately short and slightly pointed, with a black or self-colored to match the coat in blue or chocolate dogs",
+        "body: compact and sturdy with a well-rounded rib cage, coats vary from smooth to long",
+        "legs: relatively short, delicate yet swift, coat varies from smooth to long",
+        "tail: moderately long, carried in an arc over the back in either a loop or sickle shape"
+    ],
+    "Old English sheepdog": [
+        "head: proportional to the body, semi-apple shaped with a sharper wedge towards the muzzle",
+        "ears: exceptionally large and constantly erect, creating the illusion of greater size",
+        "muzzle: moderately short, slightly pointed but not sharp, less wide than skull with a distinct stop",
+        "body: compact and small but well muscled, the body is longer than it is tall, with a leveled back",
+        "legs: thin but strong legs, well set under the body with a good reach and drive for high activity",
+        "tail: moderately long, carried up and either in a loop or curved over the back, with lush fur",
+        "fur: can be short or long haired, presenting in various colors including black, tan, fawn, cream and white. short haired chihuahuas have a smooth, shining coat while the long haired ones have fine, silky fur in a flat or slightly curly appearance",
+        "color: variety of colors and patterns including solid, marked or splashed, common ones being black, white, fawn, chocolate, gold, and cream",
+        "eyes: full round, large eyes providing an expressive look, luminous in dark or ruby color",
+        "nose: generally black but can be self-colored in lighter breeds (e.g., blue nose is acceptable in blue dogs"
+    ],
+    "Shetland sheepdog": [
+        "head: small, apple-shaped head with a prominent stop under large, wide-set eyes typically dark in color",
+        "ears: large, erect, bat-like ears that may perk up even more when the dog is alert",
+        "muzzle: moderately short and slightly pointed, with teeth meeting in a scissors bite",
+        "body: compact body that is shorter than it is tall, with a slightly arched loin and a level (neither sagging or roached) back",
+        "legs: long, thin legs with a fine bone structure and round, small feet often referred to as being 'dainty",
+        "tail: moderately long and high-set tail that is usually curled over the back or to the side, and sometimes has a small upwards hook at the end. covered in the same short, smooth fur as the rest of the body"
+    ],
+    "collie": [
+        "head: round and apple-shaped with wide, expressive eyes which usually are a dark or ruby color",
+        "ears: large, thin and upright in 'bat ear' shape that point upward and may flare out slightly",
+        "muzzle: short and slightly pointed with a black or self-colored nose, depending on the coat",
+        "body: well-rounded and compact, fairly short with the ribs well-sprung (oval",
+        "legs: thin, relatively long compared to their small body size, and straight",
+        "tail: moderately long, high set and typically curled over the back or to the side, often with fluffy fur"
+    ],
+    "Border collie": [
+        "head: small and apple-shaped with a short distance between the ears, often tan or black in color",
+        "ears: large, standing upright, triangular shape, slightly rounded tips, hair is generally short and smooth",
+        "muzzle: small, pointed, and slightly longer compared to the skull, typically the same color as the rest of the head",
+        "body: compact and small, with a slightly rounded back, fur color can range from white, black, tan, chocolate, and even blue or silver",
+        "legs: short, thin, and slightly out-turned, often the same color as the body with smooth short fur",
+        "tail: medium length, usually carried high with a curl towards the back, fur color matches the body"
+    ],
+    "Bouvier des Flandres": [
+        "head: rounded apple-shaped skull with a prominent, well-defined stop",
+        "ears: large, erect and splayed out at a 45-degree angle, resembling bat wings",
+        "muzzle: short and slightly pointed, with a prominent chin",
+        "body: compact and small, often covered in short, smooth fur that can range from white and tan to black and chocolate",
+        "legs: short and slender but muscular for their size, often featuring fine and soft fur",
+        "tail: long and plume-like, often curled over the back or to the side, covered in the same coat as the body"
+    ],
+    "Rottweiler": [
+        "head: small and round with a distinct \"apple-shaped\" dome",
+        "ears: large and bat-like, often standing erect",
+        "muzzle: shorter in length, slightly pointed",
+        "body: compact and well-proportioned, with a strong, slightly arched neck",
+        "legs: thin and delicate yet muscular with a length providing the body a slightly off-the-ground appearance",
+        "tail: moderately long, carried upward or over back with a smooth coat",
+        "fur: smooth or long, coming in a wide variety of colors including black, white, tan, chocolate, and more",
+        "eyes: full and round, very expressive, colors range from dark to ruby and luminous in color"
+    ],
+    "German shepherd": [
+        "head: small, apple-shaped with large, round eyes, often brown or hazel",
+        "ears: large and erect, forming an angle of 45 degrees, interior is hairy",
+        "muzzle: short and slightly pointed, with a soft black or brown nose at the end",
+        "body: compact and well-balanced with a slight arch to the back, covered in either short sleek or long hair that comes in many colors, including fawn, red, cream, chocolate, blue, black, and white",
+        "legs: short but proportionate to the body size, ending with small and dainty paws",
+        "tail: medium length, slightly curled over the back, often covered with the same type of fur as the body"
+    ],
+    "Doberman": [
+        "head: small and apple-shaped with a characteristic rounded crown",
+        "ears: large, erect, and bat-like, set wide apart at '10 and 2 o'clock",
+        "muzzle: short and slightly pointy, proportionate to the size of the head",
+        "body: compact and muscular, featuring a well-rounded chest and a tucked-up abdomen",
+        "legs: long and lean, possibly giving an appearance of being fragile",
+        "tail: moderately long, thin, and either curling over the back or carried in a sickle shape",
+        "fur: short and smooth, primarily found in colors like fawn, red, cream, chocolate, blue, and black. some chihuahuas exhibit a long coat variety that is soft and flat or slightly wavy"
+    ],
+    "miniature pinscher": [
+        "head: round and apple-shaped with an endearing expression",
+        "ears: large in size and stand upright, often considered a key characteristic of the breed",
+        "muzzle: short and slightly pointed, the fur is usually smooth and of a lighter color",
+        "body: compact and slightly longer than their height, usually a mix of white, tan, black, or fawn colors",
+        "legs: short and spindly, often covered in a smooth coat of fur",
+        "tail: moderately long and slightly curved, often held high with the same fur color as the body"
+    ],
+    "Greater Swiss Mountain dog": [
+        "head: typically a small, round apple-shaped head with large, round eyes predominantly dark or ruby in color",
+        "ears: large and erect, that can be more than half the size of the head giving a bat-like look",
+        "muzzle: short, slightly pointed muzzle that is shorter when compared to the skull",
+        "body: compact body with well-rounded ribs and a level back",
+        "legs: slim but muscular and sturdy legs proportional to the body size",
+        "tail: long and sickle-shaped tail, generally carried either up or over the back, covered in a dense coat of fur"
+    ],
+    "Bernese mountain dog": [
+        "head: small and apple-shaped, often with a pronounced stop (indentation bridging the snout and forehead",
+        "ears: large and triangular, normally standing upright, commonly covered with short, smooth fur",
+        "muzzle: short and slightly pointed but proportionate with overall size of the dog's head, featuring noticeable lips",
+        "body: compact and well-formed, slightly longer than it is tall; covered with either short, smooth fur or long, silky fur",
+        "legs: small but sturdy, generally proportional to the body; in some cases the front legs may slightly bow outwards",
+        "tail: medium-length, usually curled over the back or to the side. can be either short and fluffy or long and feathery, depending on the coat variant"
+    ],
+    "Appenzeller": [
+        "head: chihuahuas have a distinct apple-shaped head with a well-defined stop, giving them a 'baby-like' appearance",
+        "ears: they have large, upright, and pointed ears, often dark in color, which show alertness and are quite expressive",
+        "muzzle: chihuahuas sport a short, slightly pointed snout which is shorter than the skull. the color matches the dominant fur color of the dog",
+        "body: their bodies are small yet robust with a level or slightly arched back and ribs well sprung out from the spine",
+        "legs: chihuahuas have slim, muscular, and relatively long legs compared to their body size, often in a smooth coat of white, black, tan, or a mixture of these colors",
+        "tail: the tail is moderately long, high-set, and either in a curl over the back or carried up in a loop. it is usually covered in thick, rich fur matching the color of the body"
+    ],
+    "EntleBucher": [
+        "head: typically having a round, apple-shaped head",
+        "ears: large, erect ears in comparison to their small head. often dark in color",
+        "muzzle: short, often slightly pointed muzzle with dark eyes and a dark nose",
+        "body: small, compact with a slight arch to the back. typically a short-haired breed, but long-haired variants also exist",
+        "legs: thin and small in stature, muscular yet delicate in appearance. fur color may vary",
+        "tail: long and typically carried over their back or to the side with varying fur colors"
+    ],
+    "boxer": [
+        "head: relatively large compared to the body, often showcasing a soft, white, tan, or black coat",
+        "ears: large and erect, creating the shape of an alert triangle. they can have either short or long fur, which can vary in color",
+        "muzzle: short and somewhat sharp in shape, usually a solid color like black or sometimes matching the color of the body",
+        "body: petite and compact but quite strong. it is well-muscled and covered with a coat color that can vary from white, black, brown, cream, chocolate, gold, or fawn",
+        "legs: delicate but externally robust. fur can be short or long because of two types of chihuahuaslong coat and short coat",
+        "tail: moderately long and slightly curled, fluffy fur-covered tail carried either high or over the back, usually the same color as the body"
+    ],
+    "bull mastiff": [
+        "head: small and apple-shaped with a rounded top, often with dark eyes",
+        "ears: large and erect, usually in a v-shape, lined with short soft fur",
+        "muzzle: short and slightly pointed with a black or self-colored nose",
+        "body: compact and small, longer than it is tall, usually covered with short hair which could be any color, most commonly tan or black",
+        "legs: short and thin, their compact feet have cushioned pads",
+        "tail: moderately long, carried either in an arc or curled over the back, covered with the same type of fur as the body"
+    ],
+    "Tibetan mastiff": [
+        "head: small and round with a slight apple-dome shape, featuring full and luminous eyes that are usually dark in color",
+        "ears: large, wide set and erect in comparison to their small head, often black or matching the fur color",
+        "muzzle: moderately short and slightly pointed, tends to be lighter in color than the rest of the face",
+        "body: compact and small with a rounded rib cage and strong, lean muscles, usually covered in short, smooth fur in various shades such as fawn, black, white, silver and chocolate",
+        "legs: short, thin but well muscled, proportionate to the body size, with the color matching the body fur",
+        "tail: medium in length, usually carried high either looped or curled over the back, covered in the same short, smooth fur as the body, could be the same color or may vary"
+    ],
+    "French bulldog": [
+        "head: round and apple-shaped, with a characteristic dome known as a \"molera",
+        "ears: large and erect with slightly rounded tips, set wide apart for maximum alertness",
+        "muzzle: short and pointed, with a slight snoot, showcasing a strong jawline",
+        "body: compact and well-balanced with a well-rounded ribcage and strong, lean muscles, often covered with short or long fur, which may come in many color variations",
+        "legs: short and proportionality smaller relative to their body size, but agile, quite muscular and sturdy",
+        "tail: long and sickle-shaped, carried either looped over the back or straight, often covered with a plume of hair"
+    ],
+    "Great Dane": [
+        "head: often round or apple-shaped with wide-set eyes that are large and round, typically dark in color",
+        "ears: large and erect, which stands up when alert, gives them an alert and expressive appearance",
+        "muzzle: moderately short, slightly pointed and can be the same color as the coat or slightly darker",
+        "body: compact and dainty, with a fast tapering waist and a level back. the body color can range from fawn, sand, chestnut, silver and steel blue to black, and may often be marked or splashed with different colors",
+        "legs: short but well-muscled, usually with round, small feet that sometimes appear to turn out slightly, making their movements appear a bit sassy",
+        "tail: moderately long, carried up or over the back in a sickle shape and the fur is less dense than the rest of the body. tail color matches the primary color of the dog's coat"
+    ],
+    "Saint Bernard": [
+        "head: small and apple-shaped, with a rounded top and tapering towards the muzzle",
+        "ears: large and erect, able to swivel towards sources of sound, covered in short hair",
+        "muzzle: short and pointed with a noticeable stop, covered in short smooth fur",
+        "body: compact but slightly longer than tall, with a well-rounded chest and curved stomach",
+        "legs: fairly short and lean, coated in short, smooth fur, with small, dainty paws",
+        "tail: moderately long and slightly curved, carried high or over back, with fur similar to body"
+    ],
+    "Eskimo dog": [
+        "head: rounded apple-shaped with wide apart set eyes. usually covered with smooth, short-haired fur which is often in tanned or combined colors such as black and tan, white and tan, etc",
+        "ears: large, erect and flared out, may be in dark or lighter color depending on the overall fur color",
+        "muzzle: tapered and shorter in length with a dark or pinkish-black nose at the end of it",
+        "body: small, compact and longer than it is tall, covered in either short or long-haired fur in various color patterns",
+        "legs: fine-boned and lean, proportionate to the body size and covered with smooth fur, often matching the main body color",
+        "tail: long, sickle-shaped and either flared upwards or curled over the back. can be covered with short or long haired fur"
+    ],
+    "malamute": [
+        "head: typically, small and apple-shaped with bright, round eyes",
+        "ears: large and erect, in a bat-like shape and in alert position",
+        "muzzle: short and slightly pointed with a distinct stop, small or medium-sized black nose",
+        "body: compact and well-defined with a fast taper from chest to waist, typically covered in short or long, smooth or rough coat in a variety of colors including fawn, chocolate, white, black, and mixed",
+        "legs: slim but muscular, relative to body size with slightly longer hind legs",
+        "tail: moderately long, carried either in a loop over the back or down (never tucked between legs), and covered with a plume of long fur if it's a long-haired breed"
+    ],
+    "Siberian husky": [
+        "head: small, rounded with a well-defined stop(transition area from backskull to muzzle",
+        "ears: large, upright, and open-tipped, often described as 'bat-like",
+        "muzzle: moderately short, slightly pointed, wider than it is long with a level or scissor bite",
+        "body: cobby(body shorter than the legs), longer than it is tall with a level back",
+        "legs: long and fine-boned, they're set under the body rather than at the body's sides to allow freedom of movement",
+        "tail: long and carried in a loop over the back or to the side when excited or moving"
+    ],
+    "affenpinscher": [
+        "head: small, rounded dome-like shape with a prominent apple-shape, adorned with short and soft fur",
+        "ears: large and erect, have a wide base and a tapering, triangular shape, usually dark in color",
+        "muzzle: short and pointed. may be black or of the same primary coat color",
+        "body: compact and slightly longer than it is tall, covered in either a short, smooth coat or a longer, wavier one. coat color may range from black, white, tan, and other colors",
+        "legs: slender and relatively long compared to the overall size of the body, often leading to a sprightly gait. mostly covered in short fur of the same color as the body",
+        "tail: moderately long and carried either in an arc or loop over the back, features fur that is either smooth or slightly wavy, consistent with the primary coat style"
+    ],
+    "basenji": [
+        "head: small and rounded, often resembling an apple in shape",
+        "ears: exceptionally large and upright, with a broad base and tapering to a sharp point",
+        "muzzle: shorter snout area, often proportional to the size of their head",
+        "body: small and compact, sometimes described as cobby or sturdy",
+        "legs: short and slender, seen as delicate but surprisingly strong",
+        "tail: moderately long and carried up or in a loop, often fluffed with longer fur"
+    ],
+    "pug": [
+        "head: small and apple-shaped with bright, alert eyes. they are typically covered in short, soft fur that can vary in color",
+        "ears: large and ears stand erect. they are notably pointed and sensitive which makes them excellent listeners",
+        "muzzle: their muzzle is short and slightly pointed. the fur may be a little lighter or darker than the rest of the body",
+        "body: the body of a chihuahua is longer than it is tall. the fur is typically short but there are long-coat varieties. chihuahuas come in many different color combinations, from solid black to spotted to brindle",
+        "legs: the legs are very small and thin, often with a lighter color fur on the underside. legs often appear to be slightly bowed due to their narrowed chest",
+        "tail: their tail is moderately long and carried high, either curved or in a semi-circle with the tip touching the back. covered with the same type of fur as the rest of body, which can vary in color"
+    ],
+    "Leonberg": [
+        "head: small, rounded with prominent dark-colored eyes",
+        "ears: large and erect, forming an 'a' shape; often exceeding the width of the head",
+        "muzzle: short and slightly pointed, with a black or pinkish nose at the tip",
+        "body: compact and slightly longer than it is tall, boasting a clear, white or tan-colored coat",
+        "legs: short and sturdy with tiny, cushioned paws",
+        "tail: long and slightly curved, either held high or arched over the back with a feathered appearance and same color as body fur"
+    ],
+    "Newfoundland": [
+        "head: small and rounded with a distinct apple-shape, covered in short glossy fur",
+        "ears: large, upright, and bat-like, these are a distinctive feature for any chihuahua with their inner parts usually having less fur",
+        "muzzle: short and slightly pointed, with a small nose that can be any color from black to pink, covered in short and smooth fur",
+        "body: compact and small, slightly long compared to their height, often covered in either short or long, ranging from light to dark color in hair, depending on the type of chihuahua",
+        "legs: short and fine, but strong and straight, coated with short to semi-long fur",
+        "tail: long and furry, usually curled over the back or to the side, adds to their unique silhouette"
+    ],
+    "Great Pyrenees": [
+        "head: small head size with round or apple-shaped skull",
+        "ears: large and erect with a wide base, which are either fully upright or flipped like a rose",
+        "muzzle: short and slightly pointed with a well-defined jawline",
+        "body: well-muscled and compact with a sturdy build, typically covered with short or long fur that can vary in color from fawn, chocolate, black, and white",
+        "legs: short, yet proportionate to the body, with the front legs being straight and the back legs being well-muscled",
+        "tail: moderately long, high-set, and either looped over the back or held in a sickle shape. it may be feathered depending on the coat type"
+    ],
+    "Samoyed": [
+        "head: small and round with a high domed skull, often with tan or white markings",
+        "ears: large and upright, shaped like an inverted v, often a solid or darker color than the body",
+        "muzzle: short and slightly pointed, with a distinctive black or dark brown nose at the end",
+        "body: compact and well-muscled, typically covered in short hair which can be a variety of colors, including black, white, sable, fawn, chocolate, and silver",
+        "legs: short and slender but sturdy, often with darker or thicker fur at the paws",
+        "tail: thin and curly, with longer fur than the rest of the body, color often matches the body"
+    ],
+    "Pomeranian": [
+        "head: a small, rounded shape featuring prominent, bright eyes and often bearing a color similar to the body, typically tan, fawn, chocolate, or cream",
+        "ears: large and erect, often disproportionately so in comparison to the size of the head, the insides thickly furred and the outsides possibly containing patches of color that match or contract with the body's",
+        "muzzle: proportional to the face, not too long or short. the fur is usually short and the color can vary depending on the dog\u2019s coat color",
+        "body: small and compact with a curved back. the color of the fur can range from fawn, chocolate, cream, or tri-color, and the fur itself can be either short, long, or medium in length",
+        "legs: short, slender, but well-muscled, typically matching the color of the body and perhaps slightly darker shading along the back",
+        "tail: moderately long, curling up over the back or to the side, with fur matching in color and length to the body"
+    ],
+    "chow": [
+        "head: small and round in shape, often with a slightly domed skull, and distinctive large apple-shaped eyes that are either black or dark brown in color",
+        "ears: large and erect, look disproportionately big due to the small size of the head. often covered with short, smooth fur",
+        "muzzle: short and slightly pointed without a pronounced stop, with a black or self-colored nose according to the coat",
+        "body: compact and slightly longer than tall, sturdy with well-sprung ribs. covered with a short and smooth or long and wavy coat that comes in many colors, from solid to marked or splashed",
+        "legs: straight and proportionately short, ending with round small feet. the fur on the legs matches the body",
+        "tail: moderately long and normally curve over the back, but not touching it, feathered with longer hair if the chihuahua has long coat, or sleek if short-haired"
+    ],
+    "keeshond": [
+        "head: rounded skull with expressive, light to dark brown eyes",
+        "ears: large, erect ears which are wider at the base and pointy at the tops",
+        "muzzle: short nose with a slight point, usually black in color",
+        "body: compact and small with a well-rounded rib cage and firm, lean physique",
+        "legs: long and slender but extremely sturdy, usually covered with short fur",
+        "tail: moderately long and sickle-shaped, usually carried either curled over the back or in a loop"
+    ],
+    "Brabancon griffon": [
+        "head: usually has a round and well-domed shape, also known as an \"apple head\", with a slightly shorter distance from the stop to the nose",
+        "ears: large in comparison to the head and stand up straight, creating an alert, curious look",
+        "muzzle: short and slightly pointed, the skin is often tight and shows no wrinkles",
+        "body: compact and small, the body is longer than it is tall and covered with smooth or long-hair fur that varies in colors, including fawn, red, cream, chocolate, black, and white",
+        "legs: thin and relatively long considering the small frame, ending in tiny, dainty paws",
+        "tail: moderately long and carried either in an arc or curled over the back, covered with the same type of fur as the body"
+    ],
+    "Pembroke": [
+        "head: small with a wide, rounded skull often referred to as 'apple shaped",
+        "ears: large, triangularly shaped ears that stand erect",
+        "muzzle: short and somewhat pointed, featuring a distinctively black nose",
+        "body: compact and small, yet sturdy, with a well-rounded chest",
+        "legs: small and delicate but muscular, with the hind quarters being slightly longer than the forequarters",
+        "tail: moderately long and carried either in a loop over the back or flat but not tucked under",
+        "fur: varies between short and smooth or long and wavy; comes in various colors including fawn, red, cream, chocolate, blue, black, and white. some chihuahuas may have solid, marked, or splashed coat patterns"
+    ],
+    "Cardigan": [
+        "head: round and apple-shaped with large, expressive eyes that are usually dark or ruby-colored",
+        "ears: very large and open, standing erect making them look like bat ears",
+        "muzzle: moderately short and slightly pointed, accentuated by a strong jawline",
+        "body: compact and small, fur is smooth or long-haired, and can be found in many different colors and patterns, including black, tan, fawn, chocolate, blue, white, and brindle",
+        "legs: short and thin, but sturdy enough to support their lightweight bodies",
+        "tail: moderately long and carried either in a loop over the back, or flat with only the tip deviating slightly. the tail is covered in a plume of long hair in the long coat variety"
+    ],
+    "toy poodle": [
+        "head: small with a well-rounded apple shape, often covered with short, coarse fur, colors range from fawn, cream, chocolate, and black",
+        "ears: large and erect, resembling a bat, lined with short, thin fur, usually darker on the edges",
+        "muzzle: short and slightly pointed, covered with short fur matching the rest of the head's color",
+        "body: compact and dainty, covered with either short, smooth fur or long, wavy fur, comes in various colors such as fawn, cream, chocolate, black, and multicolored",
+        "legs: thin, delicate and proportionally short compared to the body, also covered with short or long fur depending on the type of chihuahua",
+        "tail: moderately long, carried looped over the back or to the side, covered in fur of the same length and texture as the body"
+    ],
+    "miniature poodle": [
+        "head: small and rounded with well-defined, expressive, round, dark eyes",
+        "ears: large in comparison to their heads, erect, and wide at the base",
+        "muzzle: short and slightly pointed, with a keen, bright expression",
+        "body: compact and well balanced, often appearing slightly longer than they are tall",
+        "legs: short but proportionately balanced with the body, often with dainty feet",
+        "tail: moderately long and carried either looped over the back or as a wave, covered with a plume of long hair"
+    ],
+    "standard poodle": [
+        "head: chihuahuas have a rounded, apple-shaped head, which is a unique characteristic of the breed",
+        "ears: the ears are large, alert, and held erect. they are often wider at the base and taper to a point, resembling the shape of a fawn's ear",
+        "muzzle: the muzzle is shorter and somewhat pointed, but balanced in proportion to the overall head shape",
+        "body: the body of the chihuahua is smaller than most breeds but compact, and slightly longer than it is tall. they come in many colors including fawn, black, white, tan, and more",
+        "legs: the legs are short, but well muscled and slightly elongated in proportion to their body size",
+        "tail: the tail is moderately long, typically carried high either looped or curled over the back, with hair that is slightly longer than that of the rest of the body"
+    ],
+    "Mexican hairless": [
+        "head: small apple-shaped head with prominent, rounded skull",
+        "ears: large, erect ears often pointed at the tips, typically fawn or black in color",
+        "muzzle: short, pointed muzzle with a little black or pink nose at the end",
+        "body: compact body that's longer than it is tall, with a chest slightly deep, wide and well sprung",
+        "legs: thin and long legs with dainty paws, often white or the same color as the body",
+        "tail: moderately long and sickle-shaped tail, most commonly fawn or black, usually carried high either curved or looped over the back with a tip just touching the back"
+    ],
+    "dingo": [
+        "head: small size, slightly round shaped with a large forehead",
+        "ears: large, erect and pointed, always alert and active",
+        "muzzle: short and pointed, slightly elongating from the face",
+        "body: compact and muscular, usually coated with tan, black, or white fur",
+        "legs: short and slender, giving a quick and lively movement",
+        "tail: long and thin, carried high either looped or straight"
+    ],
+    "dhole": [
+        "head: broad and domed, often bigger than other breeds in proportion to body size",
+        "ears: large and erect, bat-like shape, covered in short, fine fur",
+        "muzzle: short and slightly pointed with a prominent black/brown nose at the end",
+        "body: compact and well-muscled with a lighter fur color along the belly",
+        "legs: very lean and fragile-looking, often covered with short, smooth fur",
+        "tail: long and either straight or slightly curled, covered with a line of thin, soft fur"
+    ],
+    "African hunting dog": [
+        "head: small, round with large darkly colored eyes that have a luminous glow it",
+        "ears: large and upright, typically in a computational shape",
+        "muzzle: short and pointed with a slightly upturned nose, often black or self-colored depending on the dog's coat",
+        "body: compact and well-proportioned with a distinctive apple or deer-shaped form",
+        "legs: short and slender but proportionate to the body's length, usually ending in small paws",
+        "tail: moderately long and slightly curled, often carried high either in an arch or loop over the back. covered in a fluffy coat of fur"
+    ]
+}

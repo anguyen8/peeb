@@ -57,6 +57,10 @@ class BirdSoup(Dataset):
         ])
     
     def _load_meta(self,):
+        # hot fix, remove underscore in class_name if keyword `stanford` in root.
+        if 'stanford' in self.root_dir:
+            self.meta_df['class_name'] = self.meta_df['class_name'].apply(lambda x: x.replace('_', ' '))
+        
         data_sources = []
         if 'data_source' in self.meta_df.columns:
             data_sources = self.meta_df['data_source'].unique().tolist()
@@ -74,14 +78,22 @@ class BirdSoup(Dataset):
 
         self.targets = self.meta_df['class_id'].values.tolist()
         if self.use_meta_dir:
-            image_paths = self.meta_df['abs_path'].values.tolist()
+            if 'abs_path' in self.meta_df.columns:
+                image_paths = self.meta_df['abs_path'].values.tolist()
+            else:
+                # combine `image_path` with root
+                image_paths = self.meta_df['image_path'].apply(lambda x: os.path.join(self.root_dir, x)).values.tolist()
             self.samples = list(zip(image_paths, self.targets))
         else:
             self.meta_df['new_image_path'] = self.meta_df['new_image_name'].apply(lambda x: os.path.join(self.root_dir, "images", x))
             self.samples = list(zip(self.meta_df['new_image_path'].values.tolist(), self.targets))
 
-        self.birdsoup_image_name = self.meta_df['new_image_name'].values.tolist()
-
+        # if has "new_iamge_name" column, use it as the image name otherwise use base name of image_path
+        if 'new_image_name' in self.meta_df.columns:
+            self.birdsoup_image_name = self.meta_df['new_image_name'].values.tolist()
+        else:
+            self.birdsoup_image_name = self.meta_df['image_path'].apply(lambda x: os.path.basename(x)).values.tolist()
+        
         # Note: The unique() function returns the unique elements of the dataframe in top-bottom order.
         #      The order of the unique elements in the returned array generally preserves the original ordering.
         self.idx2class = dict(zip(self.meta_df['class_id'].unique(), self.meta_df['class_name'].unique()))

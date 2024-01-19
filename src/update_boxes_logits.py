@@ -1,3 +1,8 @@
+"""
+Deprecated script. Use `precompute_boxes.py` with `--save_logits` instead.
+"""
+
+
 import argparse
 import os
 from datetime import datetime

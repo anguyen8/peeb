@@ -350,7 +350,7 @@ class OwlViTForClassification(nn.Module):
 
     def normalize_grid_corner_coordinates(self, feature_map: torch.FloatTensor):
         # Computes normalized xy corner coordinates from feature_map.
-        if not feature_map.ndim == 4:
+        if feature_map.ndim != 4:
             raise ValueError("Expected input shape is [batch_size, num_patches, num_patches, hidden_dim]")
 
         device = feature_map.device
@@ -494,6 +494,8 @@ class OwlViTForClassification(nn.Module):
 
     def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_logits: torch.Tensor, targets_cls: torch.Tensor):
         if self.network_type == "classification":
+            if targets_cls.dim() == 1:
+                targets_cls = targets_cls.unsqueeze(1)
             one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
 
             # Compute CE loss

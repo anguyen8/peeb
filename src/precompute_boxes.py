@@ -74,20 +74,39 @@ if __name__ == '__main__':
     parser.add_argument('--owl_threshold', type=float, help='OwlViT threshold, recommand set to 0, so we can filter later.', default=0.0)
     parser.add_argument('--shuffle', action='store_true', help='Shuffle the dataset')
     parser.add_argument('--save_logits', action='store_true', help='Save logits')
+    parser.add_argument('--dataset', type=str, help='Dataset name', default="bird_11K")
+    parser.add_argument('--logit_dir', type=str, help='Logit directory', default="/home/lab/xclip/owlvit_boxes")
+    parser.add_argument("--image_root", type=str, default=None, help="root path to the images.")
+    parser.add_argument("--update_logits", action="store_true", help="update logits to the model we use for training")
+    parser.add_argument("--metadata_folder", type=str, default=None, help="metadata folder for update logits")
+    
 
     args = parser.parse_args()
 
     if args.owl_prompt_type == "cub-12-parts":
         prompts = ["bird", "back", "beak", "belly", "breast", "crown", "forehead", "eyes", "legs", "wings", "nape", "tail", "throat"]
+    elif args.owl_prompt_type == "stanforddog-6-parts":
+        prompts = ["head", "ears", "muzzle", "body", "legs","tail"]
+    elif args.owl_prompt_type == "stanforddog-6-parts-dog":
+        prompts = ["dog head", "dog ears", "dog muzzle", "dog body", "dog legs","dog tail"]
+        
     else:
         raise NotImplementedError(f"Prompt type {args.owl_prompt_type} is not implemented")
 
-    boxes_dir = f"../data/bird_11K/part_boxes/{args.owl_model}_{args.owl_prompt_type}"
+    if args.update_logits and args.metadata_folder is None:
+        raise ValueError("metadata_folder is required for update logits")
+
+    if not args.update_logits:
+        boxes_dir = f"{args.logit_dir}/{args.dataset}/part_boxes/{args.owl_model}_{args.owl_prompt_type}"
+    else:
+        boxes_dir = f"{args.metadata_folder}_update_logits"
+        
     if args.output_subfix is not None:
         boxes_dir = f"{boxes_dir}_{args.output_subfix}"
 
     os.makedirs(boxes_dir, exist_ok=True)
-    os.makedirs(args.image_output_dir, exist_ok=True)
+    if args.save_img:
+        os.makedirs(args.image_output_dir, exist_ok=True)
     device = args.device
 
     # Load model
@@ -98,7 +117,7 @@ if __name__ == '__main__':
 
     # Load dataset and prepare data loader
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
-    dataset = BirdSoup(root=None, meta_path=args.meta_path, use_meta_dir=True, transform=processor)
+    dataset = BirdSoup(root=args.image_root, meta_path=args.meta_path, use_meta_dir=True, transform=processor)
     dataloader = DataLoader(dataset, args.batch_size, shuffle=args.shuffle, num_workers=args.num_workers, pin_memory=True)
 
     # Prepare text embeddings
@@ -141,59 +160,82 @@ if __name__ == '__main__':
 
             top1_scores, top1_idxs = torch.topk(scores_, k=1, dim=1)
 
-            # derive the boxes of the bird
-            bird_box_lower_bound = args.filter_size ** 2 if args.filter_size is not None else 0
-            bird_scores = top1_scores[:, 0, 0]
-            bird_idxs = top1_idxs[:, 0, 0]
-
-            # filter out bird boxes that are too small
-            bird_boxes = all_boxes[torch.arange(len(all_boxes)), bird_idxs]
-
-            # calculate the area of the bird boxes, and remove birds that are too small
-            areas = (bird_boxes[:, 2] - bird_boxes[:, 0]) * (bird_boxes[:, 3] - bird_boxes[:, 1])
-
             if args.filter_size is not None:
+                # derive the boxes of the bird
+                bird_box_lower_bound = args.filter_size ** 2 
+                bird_scores = top1_scores[:, 0, 0]
+                bird_idxs = top1_idxs[:, 0, 0]
+
+                # filter out bird boxes that are too small
+                bird_boxes = all_boxes[torch.arange(len(all_boxes)), bird_idxs]
+
+                # calculate the area of the bird boxes, and remove birds that are too small
+                areas = (bird_boxes[:, 2] - bird_boxes[:, 0]) * (bird_boxes[:, 3] - bird_boxes[:, 1])
                 score_keep = bird_scores > args.owl_threshold
                 box_keep = areas > bird_box_lower_bound
                 keep = score_keep & box_keep & torch.tensor(keep_missing)
+
+                # drop the first box (bird/target box)
+                part_scores = top1_scores[:, 0, 1:]
+                part_idxs = top1_idxs[:, 0, 1:]
+                part_logits = scores_[keep][:, :, 1:].cpu()
+                part_names = prompts[1:]
+                bird_boxes = bird_boxes[keep]
+                bird_scores = bird_scores[keep]
+                
             else:
                 keep = [True] * len(all_boxes)
-
-            part_scores = top1_scores[:, 0, 1:]
-            part_idxs = top1_idxs[:, 0, 1:]
+                part_scores = top1_scores
+                part_idxs = top1_idxs
+                part_logits = scores_[keep].cpu()
+                if args.owl_prompt_type == "stanforddog-6-parts-dog":
+                    part_names = [part_name.replace("dog ", "") for part_name in prompts]
+                part_names = prompts
+                bird_boxes = [None]*len(all_boxes)
+                bird_scores = [None]*len(all_boxes)
 
             # filter by keep
             part_scores = part_scores[keep]
-            part_idxs = part_idxs[keep]
-            bird_scores = bird_scores[keep]
-            bird_boxes = bird_boxes[keep]
-            part_logits = scores_[keep][:, :, 1:].cpu()
-
+            if len(part_idxs.shape) == 3:
+                part_idxs = part_idxs[keep].squeeze(1)
+            else:
+                part_idxs = part_idxs[keep]
+            
+            
             # choose boxes per query and store class-wise per image
             for i, (boxes, part_idx, part_score, part_logit, bird_box, bird_score) in enumerate(zip(all_boxes, part_idxs, part_scores, part_logits, bird_boxes, bird_scores)):
                 
                 part_boxes = boxes[part_idx]
                 part_boxes = bound_boxes(boxes=part_boxes, img_sizes=img_sizes[i].repeat(len(part_boxes), 1))
 
+                assert len(part_boxes) == len(part_names)
                 img_pred_dict = {
                     part_name: box.cpu().tolist()
-                    for part_name, box in zip(prompts[1:], part_boxes)
+                    for part_name, box in zip(part_names, part_boxes)
                 }
 
-                torch.save({"image_id": image_ids[i],
-                            "image_path": output_image_paths[i],
-                            "org_image_path": paths[i],
-                            "image_size": img_sizes[i].tolist()[::-1], # in (w, h)
-                            "class_name": idx2name[class_labels[i].item()],
-                            "boxes_info": img_pred_dict, # previous key should be 'part_boxes', keep it for consistency for Thang's code
-                            "part_scores": part_score.tolist(),
-                            "part_logits": part_logit if args.save_logits else None,
-                            
+                if args.update_logits:
+                    output_dict = torch.load(f"{args.metadata_folder}/{image_ids[i]}.pth")
+                    output_dict["part_logits"] = part_logit
+                
+                else:
+                    output_dict = {"image_id": image_ids[i],
+                                "image_path": output_image_paths[i],
+                                "org_image_path": paths[i],
+                                "image_size": img_sizes[i].tolist()[::-1], # in (w, h)
+                                "class_name": idx2name[class_labels[i].item()],
+                                "boxes_info": img_pred_dict, # previous key should be 'part_boxes', keep it for consistency for Thang's code
+                                "part_scores": part_score.tolist(),
+                                "part_logits": part_logit if args.save_logits else None,}
+                    
+                    if args.filter_size is not None:
+                        output_dict.update({
                             "bird_boxes": bird_box.tolist(),
                             "bird_score": bird_score.item(),
                             "bird_areas": areas[i].item(),
                             "bird_ratio": (areas[i].item() / (img_sizes[i][0] * img_sizes[i][1])).item(),
-                            }, f"{boxes_dir}/{image_ids[i]}.pth")
+                        })
+                torch.save(output_dict, f"{boxes_dir}/{image_ids[i]}.pth")
                 
                 if args.save_img:
                     shutil.copy(paths[i], output_image_paths[i])
