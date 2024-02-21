@@ -67,14 +67,26 @@ class BirdSoup(Dataset):
 
         if self.subset is not None:
             # TODO: CHECK RE_INDEXING OF CLASS_ID FOR SUB_CLASSES
-            if "all" not in self.subset and set(self.subset).issubset(set(data_sources)):
-                self.meta_df = self.meta_df[self.meta_df['data_source'].isin(self.subset)]
+            if isinstance(self.subset, str):
+                if "all" not in self.subset and set(self.subset).issubset(set(data_sources)):
+                    self.meta_df = self.meta_df[self.meta_df['data_source'].isin(self.subset)]
 
-                # SORT dataframe by class_id
-                self.meta_df = self.meta_df.sort_values(by=['class_id'])
+                    # SORT dataframe by class_id
+                    self.meta_df = self.meta_df.sort_values(by=['class_id'])
 
-                # and RE-INDEX the class_ids
-                self.meta_df['class_id'] = self.meta_df['class_id'].astype('category').cat.codes
+                    # and RE-INDEX the class_ids
+                    self.meta_df['class_id'] = self.meta_df['class_id'].astype('category').cat.codes
+                else:
+                    # use code '0010' to represent the first 10% of the data. First two digits are the percentage of starting index, and last two digits are the percentage of ending index.
+                    # split the code into two parts, the first two digits and the last two digits
+                    start_percentage = int(self.subset[:2])
+                    end_percentage = int(self.subset[2:])
+                    if end_percentage == 0:
+                        end_percentage = 100
+                    start_index = int(self.meta_df.shape[0] * start_percentage / 100)
+                    end_index = int(self.meta_df.shape[0] * end_percentage / 100)
+                    self.meta_df = self.meta_df.iloc[start_index:end_index]
+                    
 
         self.targets = self.meta_df['class_id'].values.tolist()
         if self.use_meta_dir:

@@ -166,3 +166,6 @@ cython_debug/
 /results/
 
 temp.py
+temp_data/
+common_crawl_query.py
+src/cc/
