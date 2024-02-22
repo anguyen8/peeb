@@ -159,6 +159,15 @@ def load_training_dataset(dataset_name: str, sub_dataset_names: str, eval_size: 
             dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, use_meta_dir=True)
             val_dataset = None
 
+    elif dataset_name == 'dog_soup':
+        if split != 'test':
+            dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=True, return_path=True, meta_path=args.train_file, use_meta_dir=False)
+            val_dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, use_meta_dir=False)
+        else:
+            dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, use_meta_dir=False)
+            val_dataset = None
+        
+
     return dataset, val_dataset
 
 
@@ -484,6 +493,10 @@ def train_loop(dataset: str,
                 boxes_dir = f"{PRECOMPUTED_DIR}/{dataset}/part_boxes/owlvit-large-patch14_stanforddog-6-parts-dog_dog_update_logits/{image_id}.pth"
                 key_boxes = "boxes_info"
                 key_logits = 'part_logits'
+            elif dataset == 'dog_soup':
+                boxes_dir = f"/home/lab/xclip/owlvit_boxes/dogsoup_v1/part_boxes/owlvit-large-patch14_stanforddog-6-parts-dog_update_logits/{image_id}.pth"
+                key_boxes = "boxes_info"
+                key_logits = 'part_logits'
                 
             else:
                 boxes_dir = f"../pred_boxes/{dataset}/owl_vit_owlvit-large-patch14_descriptors_chatgpt_groundtruths/{image_id}.pth"
@@ -606,7 +619,7 @@ def parse_arguments():
     #   Must-check arguments for experiments but usually FIXED
     # ------------------------------------------------------------
     parser.add_argument('--model', help='select model', default="owlvit-large-patch14", choices=["owlvit-base-patch32", "owlvit-base-patch16", "owlvit-large-patch14"])
-    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup", "stanforddogs"])
+    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup", "stanforddogs", "dog_soup"])
     parser.add_argument('--sub_datasets', help='select a group of datasets in Bird Soup', default="all")
     parser.add_argument('--distortion', help='select distortion type if using ImageNet-C', default="defocus_blur", choices=["defocus_blur", "glass_blur", "motion_blur", "zoom_blur", "shot_noise", "gaussian_noise", "impulse_noise"])
     parser.add_argument('--distortion_severity', type=int, help='select distortion severity if using ImageNet-C', default=1, choices=[1, 2, 3, 4, 5])
@@ -786,6 +799,7 @@ if __name__ == '__main__':
 
     # Sorted the keys in templated_descriptions to match the order of classes in target_classes
     assert set(templated_descriptions.keys()) == set(target_classes)
+    assert set(templated_descriptions_val.keys()) == set(target_classes_val)
     templated_descriptions = {k: templated_descriptions[k] for k in sorted(templated_descriptions, key=target_classes.index)}
     templated_descriptions_val = {k: templated_descriptions_val[k] for k in sorted(templated_descriptions_val, key=target_classes_val.index)}
 
@@ -831,6 +845,10 @@ if __name__ == '__main__':
                                     weight_dict=weight_dict, logits_from_teacher=args.logits_from_teacher,
                                     finetuning=args.finetuning, alpha=args.alpha, gamma=args.gamma,
                                     device=None if args.enable_dp else device,)
+    # # check if pytorch version is > 2.0
+    # if int(torch.__version__.split('.')[0]) >= 2:
+    #     model = torch.compile(model, mode = "default")
+    
 
     if rank in {-1, 0}:
         trained_params, frozen_params = 0, 0

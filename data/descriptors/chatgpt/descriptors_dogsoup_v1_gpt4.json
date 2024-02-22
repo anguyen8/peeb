@@ -1,0 +1,1139 @@
+{
+    "King Charles Spaniel": [
+      "head: small and well-proportioned with a gentle roundness",
+      "ears: long, set low, framing the face with feathering",
+      "muzzle: relatively short, well-defined but not snub",
+      "body: compact, slightly longer than tall, with a level back",
+      "legs: straight and of moderate length, with some feathering",
+      "tail: typically docked (where legal), carried level with the back"
+    ],
+    "Welsh Terrier": [
+      "head: flat, rectangular shape, with a distinct stop",
+      "ears: small, V-shaped, folding forward",
+      "muzzle: strong and square, with a wiry beard",
+      "body: compact, sturdy, slightly longer than tall",
+      "legs: straight, muscular, with a moderate amount of feathering",
+      "tail: set high, carried upright but not curled over the back"
+    ],
+    "Chow Chow": [
+      "head: broad and flat, with a prominent skull",
+      "ears: small, thick, slightly rounded at the tips",
+      "muzzle: broad and deep, with a distinctive blue-black tongue",
+      "body: strong, square in profile, with a straight back",
+      "legs: straight and muscular, with good bone structure",
+      "tail: high-set, carried close over the back"
+    ],
+    "Bluetick Coonhound": [
+      "head: domed, with a pronounced stop and a slightly drooping lip",
+      "ears: long, thin, set low, reaching to the nose",
+      "muzzle: square and long, with strong jaws",
+      "body: muscular and sleek, with a deep chest",
+      "legs: long and lean, with strong bones",
+      "tail: medium length, carried high with a slight curve"
+    ],
+    "Flat Coated Retriever": [
+      "head: long and lean, with a moderate stop",
+      "ears: small and close to the head",
+      "muzzle: long and strong, capable of carrying game",
+      "body: balanced and well-proportioned, with a deep chest",
+      "legs: straight and strong with good bone density",
+      "tail: straight, well-feathered, carried happily"
+    ],
+    "English Foxhound": [
+      "head: broad and slightly domed, with a pronounced brow",
+      "ears: set low and hanging close to the cheeks",
+      "muzzle: long and strong, with a square outline",
+      "body: muscular, with a level back and deep chest",
+      "legs: long and straight, with good bone structure",
+      "tail: set moderately high, carried gaily but not curled over the back"
+    ],
+    "Schnauzer": [
+      "head: strong and rectangular, with bushy eyebrows and a distinctive beard",
+      "ears: set high, either cropped to a point or naturally folded",
+      "muzzle: strong and square, with a bristly mustache",
+      "body: robust and squarely built, with a strong back",
+      "legs: straight and muscular, with dense fur",
+      "tail: traditionally docked, carried erect"
+    ],
+    "Black and Tan Coonhound": [
+      "head: clean-cut and well-proportioned, with a gentle expression",
+      "ears: extremely long, reaching past the nose when drawn out",
+      "muzzle: long and tapered, with a black nose",
+      "body: well-muscled, with a level topline",
+      "legs: strong and straight, with a moderate amount of bone",
+      "tail: set slightly below the natural line of the back, carried freely"
+    ],
+    "Scottish Terrier": [
+      "head: long and distinctive, with a pronounced stop and erect ears",
+      "ears: small, pointed, and erect, set well up on the skull",
+      "muzzle: long and powerful, with a sharp expression",
+      "body: compact, sturdy, with a deep chest and a level back",
+      "legs: short and muscular, with a strong bone structure",
+      "tail: medium length, thicker at the base and tapering to the tip, carried erect"
+    ],
+    "Tibetan Terrier": [
+      "head: medium size, with a strong jaw and a black nose",
+      "ears: pendant, set high and well-feathered",
+      "muzzle: medium length, with a slight stop",
+      "body: square and compact, with a level back",
+      "legs: medium length, well-muscled and straight",
+      "tail: medium length, set high and curled over the back"
+    ],
+    "Wirehaired Pointing Griffon": [
+      "head: medium size, rounded with a prominent stop and a rough, wiry coat",
+      "ears: medium length, set high and lying flat against the head",
+      "muzzle: square and strong, covered with a wiry beard",
+      "body: slightly longer than tall, well-muscled with a straight back",
+      "legs: straight and strong, covered in wiry fur",
+      "tail: typically docked to about half its length, carried horizontally"
+    ],
+    "Dandie Dinmont Terrier": [
+      "head: large and distinctive with a domed top; covered in soft, silky fur",
+      "ears: small, hanging close to the cheeks, covered with feathering",
+      "muzzle: strong and deep, blending smoothly into the skull",
+      "body: long and low, with a flexible, muscular back",
+      "legs: short and sturdy, with tufts of fur at the feet",
+      "tail: thick at the base, tapering to a point, carried in a gentle curve"
+    ],
+    "Lhasa Apso": [
+      "head: well-proportioned to the body, with a heavy beard and mustache",
+      "ears: pendant, heavily feathered, fitting closely to the head",
+      "muzzle: medium length, straight, with a black nose",
+      "body: longer than tall, strong and sturdy",
+      "legs: straight and well-boned, covered in feathering",
+      "tail: well-feathered, carried over the back in a screw"
+    ],
+    "Plott": [
+      "head: medium size, with a broad skull and well-defined muscles",
+      "ears: medium in size, soft and hanging close to the cheeks",
+      "muzzle: long and strong, with a well-defined stop",
+      "body: athletic and slightly longer than tall, with a deep chest",
+      "legs: muscular and of medium length, showing strength without heaviness",
+      "tail: medium length, carried freely, with a slight curve"
+    ],
+    "Dobermann": [
+      "head: long and dry, resembling a blunt wedge in both frontal and profile views",
+      "ears: often cropped to stand erect (where legal); otherwise, they're medium-sized and hanging",
+      "muzzle: strong and well filled under the eyes",
+      "body: compact, muscular, and powerfully built",
+      "legs: perfectly straight, strong, and well-balanced",
+      "tail: usually docked (where legal); otherwise, it is medium length and carried low"
+    ],
+    "Irish Wolfhound": [
+      "head: long and narrow, well-balanced, not too broad",
+      "ears: small, rose-shaped, carried back against the head",
+      "muzzle: long and moderately pointed",
+      "body: very tall and commanding, muscular back slightly arched",
+      "legs: long and strong, giving an appearance of great power",
+      "tail: long and slightly curved, carried with an upward sweep"
+    ],
+    "Bouvier des Flandres": [
+      "head: massive, with a broad, rounded skull and a strong muzzle",
+      "ears: set high, can be cropped or natural, but always upright",
+      "muzzle: broad and powerful with a bushy mustache and beard",
+      "body: compact, powerful, and well-muscled with a broad chest",
+      "legs: strong and straight with dense bone",
+      "tail: typically docked to about 3-4 inches in length, carried high"
+    ],
+    "Bloodhound": [
+      "head: noble and dignified, with loose skin and a furrowed brow",
+      "ears: extremely long, set low, and falling in graceful folds",
+      "muzzle: long and deep, with a strong jaw",
+      "body: powerful build, with a deep chest and well-sprung ribs",
+      "legs: solid and muscular, with a good amount of bone",
+      "tail: long, carried high in a gentle curve"
+    ],
+    "Mastiff": [
+      "head: massive, broad, and square, with a short, well-filled muzzle",
+      "ears: small and dark, set wide apart",
+      "muzzle: short and broad, typically darker in color",
+      "body: impressive and powerful, with a deep, broad chest",
+      "legs: strong and straight, well apart, giving stability",
+      "tail: high-set, reaching to the hocks, hanging straight in repose"
+    ],
+    "Yorkshire Terrier": [
+      "head: small and flat on top, with a medium-sized muzzle",
+      "ears: small, V-shaped, carried erect and not too far apart",
+      "muzzle: not too long, with a black nose",
+      "body: compact and well-proportioned, with a level back",
+      "legs: straight, with fine bone, and covered in rich, golden tan fur",
+      "tail: docked to a medium length, carried slightly higher than the level of the back"
+    ],
+    "Chesapeake Bay Retriever": [
+        "head: broad and round with a medium stop",
+        "ears: small, set well up on the head, hanging loosely",
+        "muzzle: medium length, not too pointed nor too square",
+        "body: slightly longer than tall, muscular, with a deep chest",
+        "legs: straight with good bone, moderate in length",
+        "tail: medium length, thick at the base tapering to a point"
+    ],
+    "Clumber Spaniel": [
+        "head: large, square, with a deep muzzle",
+        "ears: large, vine-leaf shaped, set low with slight feathering",
+        "muzzle: broad and deep with a well-defined stop",
+        "body: long, heavy, with a deep chest and well-sprung ribs",
+        "legs: short, straight, strong with heavy bone",
+        "tail: docked, carried low"
+    ],
+    "Cavalier King Charles Spaniel": [
+        "head: small, well-proportioned with a slight dome",
+        "ears: long, set high, with abundant feathering",
+        "muzzle: well tapered, not too long",
+        "body: small, compact, with a level topline",
+        "legs: moderate length, straight, with some feathering",
+        "tail: set and carried high, moderate length, with feathering"
+    ],
+    "Bernese Mountain Dog": [
+        "head: strong, with a flat skull and a well-defined stop",
+        "ears: medium size, set high, triangular",
+        "muzzle: strong and straight",
+        "body: large, with a broad chest and a straight back",
+        "legs: straight, strong, with round, arched toes",
+        "tail: bushy, carried low"
+    ],
+    "Fox Terrier (Wire)": [
+        "head: flat skull, tapering towards the eyes",
+        "ears: small, V-shaped, folding forwards",
+        "muzzle: strong jaws, black nose",
+        "body: back short, compact, with a deep chest",
+        "legs: straight and muscular with round feet",
+        "tail: high set, carried gaily but not over back"
+    ],
+    "Deerhound": [
+        "head: long, flat, and broad between the ears",
+        "ears: set high, folded back in repose",
+        "muzzle: long and pointed",
+        "body: deep chest, well-sprung ribs, long and level back",
+        "legs: straight and strong, with broad thighs",
+        "tail: long, close, and set on slightly below the level of the back"
+    ],
+    "Canadian Eskimo Dog": [
+        "head: wedge-shaped, broad at the ears and narrowing to the eyes",
+        "ears: triangular, medium size, erect",
+        "muzzle: of medium length, tapering to the nose",
+        "body: compact, powerful, with a deep chest",
+        "legs: muscular, with strong bones",
+        "tail: bushy, carried over the back when alert"
+    ],
+    "Poodle": [
+        "head: well-proportioned, with a rounded skull and a slight peak",
+        "ears: long, hanging close to the head, with dense, curly fur",
+        "muzzle: long and straight",
+        "body: square build, with a level topline",
+        "legs: straight and parallel, with rounded, tight feet",
+        "tail: docked, set high, carried erect"
+    ],
+    "Dalmatian": [
+        "head: fairly long, flat on top, with a pronounced stop",
+        "ears: set high, of moderate size, gradually tapering towards the tip",
+        "muzzle: long and powerful",
+        "body: balanced, muscular, with a level back and a deep chest",
+        "legs: straight, strong, and evenly boned",
+        "tail: reaching to the hock, not curled or carried over the back"
+    ],
+    "Belgian Shepherd Dog": [
+        "head: long, with a flat skull and a well-defined stop",
+        "ears: erect, triangular, set high on the head",
+        "muzzle: long and lean",
+        "body: square profile, athletic, with a level topline",
+        "legs: straight, strong, with oval bone structure",
+        "tail: long, set low, reaching at least to the hock"
+    ],
+    "West Highland White Terrier": [
+        "head: small, round with a deep skull, bright eyes",
+        "ears: small, pointed, and carried erect",
+        "muzzle: short with a deep jaw, black nose",
+        "body: compact, strong back, deep chest",
+        "legs: short, muscular with strong bones",
+        "tail: medium length, carried jauntily but not curled over the back"
+    ],
+    "Greyhound": [
+        "head: long and narrow, well-proportioned to the body",
+        "ears: small, fine texture, folded back",
+        "muzzle: long and powerful, slight stop",
+        "body: deep chest, long lean neck, muscular back",
+        "legs: long, straight, well-muscled",
+        "tail: long, thin, slightly curved"
+    ],
+    "Greater Swiss Mountain Dog": [
+        "head: large, flat on top with a gentle stop",
+        "ears: medium-sized, triangular, hanging close to the head",
+        "muzzle: strong, straight, in proportion to the skull",
+        "body: muscular, broad chest, level back",
+        "legs: strong, straight with good bone structure",
+        "tail: bushy, carried low when at rest"
+    ],
+    "Entlebucher Mountain Dog": [
+        "head: strong, proportionate to the body, with a flat skull",
+        "ears: small, triangular, set high and hanging",
+        "muzzle: strong and straight, with a black nose",
+        "body: compact, strong and muscular with a straight back",
+        "legs: strong, straight with compact feet",
+        "tail: long, set low, carried in a curve"
+    ],
+    "Maltese": [
+        "head: rounded skull, with a black button nose and dark eyes",
+        "ears: drop, set low with long hair",
+        "muzzle: medium length, fine and tapered",
+        "body: compact, equal length to height, covered in long, silky white fur",
+        "legs: short, straight, fine-boned",
+        "tail: long, covered in dense fur, curves over the back"
+    ],
+    "Irish Water Spaniel": [
+        "head: large, domed skull with a long, strong muzzle",
+        "ears: long, lobular, covered in curly hair",
+        "muzzle: long, square, with a liver-colored nose",
+        "body: strong, deep-chested, slightly arched loin",
+        "legs: covered in tight curls, except below the hocks",
+        "tail: 'rat tail', thick at the base tapering to a fine point"
+    ],
+    "Komondor": [
+        "head: broad and large, with a distinctive beard and mustache",
+        "ears: medium, blending into the coat",
+        "muzzle: short compared to the head, blunt",
+        "body: robust, deep chest, straight back",
+        "legs: straight, well-boned, covered in cords",
+        "tail: long, fully covered with dense cords"
+    ],
+    "Keeshond": [
+        "head: wedge-shaped, medium size, with spectacles markings",
+        "ears: small, triangular, erect",
+        "muzzle: medium length, well-proportioned to the head",
+        "body: compact, short-coupled, well-balanced",
+        "legs: medium length, straight in front view",
+        "tail: plumed, carried over the back"
+    ],
+    "Shih Tzu": [
+        "head: round, wide between the eyes",
+        "ears: large, drooping, covered with abundant hair",
+        "muzzle: square, short, unwrinkled",
+        "body: longer than tall, sturdy, with a proud carriage",
+        "legs: short, muscular, straight",
+        "tail: heavily plumed, carried curled over the back"
+    ],
+    "Great Pyrenees": [
+        "head: wedge-shaped, not too broad, with a slightly rounded crown",
+        "ears: small to medium, V-shaped, set at eye level",
+        "muzzle: about the same length as the back skull, slightly tapering",
+        "body: powerful, slightly longer than tall, with a strong bone structure",
+        "legs: straight and well-boned, with feathering along the back of the legs",
+        "tail: long, well-feathered, carried low in repose and over the back when alert"
+    ],
+    "Pointer": [
+        "head: oval-shaped, with a pronounced stop and a long muzzle",
+        "ears: set high, medium length, hanging close to the head",
+        "muzzle: long and pointed, with wide nostrils",
+        "body: athletic build, with a level back and deep chest",
+        "legs: long and lean, showing great speed and agility",
+        "tail: medium length, tapering to a point, carried level with the back"
+    ],
+    "Old English Sheepdog": [
+        "head: large and square, with a well-defined stop",
+        "ears: small and carried flat to the head, covered with long hair",
+        "muzzle: square and strong",
+        "body: compact and muscular, with a broad chest and well-sprung ribs",
+        "legs: straight and strong, with plenty of bone",
+        "tail: either docked or naturally short, not visible beyond the coat"
+    ],
+    "Great Dane": [
+        "head: rectangular, distinguished, with a deep muzzle",
+        "ears: medium size, folded forward or cropped to stand erect",
+        "muzzle: deep and broad, with a pronounced stop",
+        "body: tall and statuesque, with a strong, muscular back",
+        "legs: long and straight, well-boned",
+        "tail: long, reaching to the hocks, carried low"
+    ],
+    "Affenpinscher": [
+        "head: round and domed, with a short muzzle and prominent chin",
+        "ears: small, set high, either cropped or naturally pointed",
+        "muzzle: short and stubby",
+        "body: compact and sturdy, square-proportioned",
+        "legs: straight and short, giving a jaunty gait",
+        "tail: set high and carried curved over the back"
+    ],
+    "Ibizan Hound": [
+        "head: long and narrow, almost cone-shaped",
+        "ears: large, pointed, and erect, very mobile",
+        "muzzle: elongated, with a slight stop",
+        "body: slender, athletic build with a slight arch over the loin",
+        "legs: long, fine-boned, and strong",
+        "tail: long, set low, carried in a sickle shape"
+    ],
+    "Pug": [
+        "head: large, round, not apple-headed, with deep wrinkles",
+        "ears: thin, small, soft like black velvet",
+        "muzzle: short, blunt, square, but not upfaced",
+        "body: compact, with well-developed muscles",
+        "legs: very strong, straight, of moderate length",
+        "tail: high-set, tightly curled over the hip"
+    ],
+    "American Staffordshire Terrier": [
+        "head: medium length, broad skull, very pronounced cheek muscles",
+        "ears: set high, can be cropped or uncropped",
+        "muzzle: medium length, rounded on upper side",
+        "body: muscular, with a back of medium length",
+        "legs: set wide apart, with well-developed muscles",
+        "tail: short in comparison to size, low set, tapering to a fine point"
+    ],
+    "Norfolk Terrier": [
+        "head: slightly rounded, with a strong, wide skull",
+        "ears: small, V-shaped, dropping forward close to the cheek",
+        "muzzle: strong, wedge-shaped",
+        "body: compact, short back, and broad chest",
+        "legs: straight, with good bone structure",
+        "tail: medium set, carried erectly, straight"
+    ],
+    "Irish Terrier": [
+        "head: long, flat, and narrow, not too much stop",
+        "ears: small and V-shaped, carried forward close to the head",
+        "muzzle: powerful",
+        "body: moderately long, very muscular and strong",
+        "legs: moderately long, well-boned but not too heavy",
+        "tail: docked, carried gaily but not over the back"
+    ],
+    "Pomeranian": [
+        "head: small, resembling a fox with a distinct stop and deep skull",
+        "ears: small, mounted high and carried erect",
+        "muzzle: short, straight, and fine",
+        "body: compact, short-backed, with a fluffy double coat",
+        "legs: medium length, straight and well-feathered",
+        "tail: high set, with profuse feathering, forming a plume"
+    ],
+    "Boxer": [
+        "head: square and muscular with a pronounced stop",
+        "ears: set high, can be cropped or left natural",
+        "muzzle: short, broad, and powerful",
+        "body: compact, muscular, with a square build",
+        "legs: strong and straight, with good bone structure",
+        "tail: typically docked, carried high"
+      ],
+      "Briard": [
+        "head: long and strong with a slight beard",
+        "ears: high set and may be cropped or natural",
+        "muzzle: strong and square",
+        "body: tall, muscular, with a level back",
+        "legs: well-boned and muscular",
+        "tail: long and feathered, carried low with a slight hook"
+      ],
+      "Boston Terrier": [
+        "head: square, flat on top with a wrinkle-free forehead",
+        "ears: small, erect, and rounded at the tips",
+        "muzzle: short, square, and wide",
+        "body: compact, with a short back and a broad chest",
+        "legs: straight and muscular",
+        "tail: short, set low"
+      ],
+      "Welsh Springer Spaniel": [
+        "head: refined, with a slightly domed skull",
+        "ears: set moderately low, feathered",
+        "muzzle: of medium length, fairly square",
+        "body: slightly longer than tall, strong and muscular",
+        "legs: straight with good bone and feathering",
+        "tail: set low, never docked, feathered"
+      ],
+      "English Cocker Spaniel": [
+        "head: arched, with a pronounced stop and square muzzle",
+        "ears: lobular, set low and hanging close to the cheeks",
+        "muzzle: square, medium length",
+        "body: compact, with a deep chest and well-sprung ribs",
+        "legs: strong and muscular with good angulation",
+        "tail: typically docked, carried level with the back"
+      ],
+      "American Water Spaniel": [
+        "head: broad and round with a moderate stop",
+        "ears: wide, set at eye level, close to the cheeks",
+        "muzzle: medium length, wide and strong",
+        "body: muscular, slightly longer than tall",
+        "legs: medium length, strong, with webbed feet",
+        "tail: moderately long, feathered, carried slightly curved"
+      ],
+      "Norwich Terrier": [
+        "head: small, rounded, with a strong, wedge-shaped muzzle",
+        "ears: erect, medium size, pointed at the tip",
+        "muzzle: strong, not too long",
+        "body: compact, short and sturdy",
+        "legs: straight, with medium bone",
+        "tail: medium length, set high, carried erect"
+      ],
+      "Welsh Corgi (Pembroke)": [
+        "head: foxy in shape and appearance",
+        "ears: erect, medium size, slightly rounded at the tip",
+        "muzzle: in proportion to the head, tapering slightly",
+        "body: long and low, strong, without being heavy",
+        "legs: short, strong, and straight",
+        "tail: docked short, in line with the body"
+      ],
+      "Shetland Sheepdog": [
+        "head: refined, with a gentle taper from skull to muzzle",
+        "ears: small, set high, three-quarters erect with the tips folding forward",
+        "muzzle: of medium length, tapering to the nose",
+        "body: slightly longer than tall, with a level topline",
+        "legs: straight and muscular",
+        "tail: long, set low, with abundant feathering"
+      ],
+      "Italian Greyhound": [
+        "head: long and narrow, skull slightly wider in the cheek area",
+        "ears: small, folded back along the head, then raised when alert",
+        "muzzle: fine and long",
+        "body: slender, with a slight arch over the loin",
+        "legs: long and slender",
+        "tail: slim, with a slight curve"
+      ],     
+      "Chihuahua": [
+        "head: round, small size with a domed skull, often the same color as the body",
+        "ears: large, tall, erect, standing high atop the head, often matching the body color",
+        "muzzle: short and pointed, with a black or self-colored nose, often covered in smooth fur",
+        "body: small but well-muscled, with a level or slightly arched back, fur often short and smooth",
+        "legs: thin, but lean and muscular, fur color often matches the body",
+        "tail: moderately long, positioned high, with a sickle shape, fur matches the rest of the coat"
+      ],
+      "Miniature Pinscher": [
+        "head: small, elongated with a strong skull, dark eyes",
+        "ears: high set, erect, or cropped to stand erect",
+        "muzzle: strong, ending in a blunt wedge, dark nose",
+        "body: compact, slightly longer than tall, robust back",
+        "legs: straight, well-boned, firm stance",
+        "tail: high set, docked, carried erect"
+      ],
+      "Otterhound": [
+        "head: large, with a broad skull, deep set eyes",
+        "ears: long, pendulous, set low",
+        "muzzle: strong, square, covered with a distinctive beard",
+        "body: muscular, deep-chested, strong loin",
+        "legs: robust, well-boned, with webbed feet for swimming",
+        "tail: thick at the base, tapering, carried gaily but not curled over the back"
+      ],
+      "Border Terrier": [
+        "head: like that of an otter, broad skull, short muzzle",
+        "ears: small, V-shaped, dropping forward close to the cheek",
+        "muzzle: short, strong jaws",
+        "body: compact, with a deep chest and narrow waist",
+        "legs: moderate length, strong, capable of quick movement",
+        "tail: moderately short, thick at the base, carried gaily"
+      ],
+      "Australian Silky Terrier": [
+        "head: small, slightly longer than wide, with a flat skull",
+        "ears: small, erect, set high on the head",
+        "muzzle: medium length, fine but strong",
+        "body: slightly longer than tall, with a level topline",
+        "legs: straight, fine-boned, well placed under the body",
+        "tail: docked, carried high, but not over the back"
+      ],
+      "Staffordshire Bull Terrier": [
+        "head: short, broad, with a pronounced cheek muscles",
+        "ears: rose or half-pricked, not large",
+        "muzzle: short, broad, with a distinct stop",
+        "body: close-coupled, with a broad chest and well-sprung ribs",
+        "legs: straight, set well apart, with strong bones",
+        "tail: medium length, low set, tapering to a point"
+      ],
+      "Curly Coated Retriever": [
+        "head: wedge-shaped, with a moderate stop, covered in tight curls",
+        "ears: small, set slightly above the eyes",
+        "muzzle: strong, equal in length to the skull",
+        "body: strong, well-muscled, with a deep chest",
+        "legs: straight, with well-defined muscles, covered in curls",
+        "tail: straight, covered in tight curls, carried level with the back"
+      ],
+      "French Bulldog": [
+        "head: square shaped, with a flat skull, prominent cheek muscles",
+        "ears: 'bat ears', large, erect, rounded at the tips",
+        "muzzle: broad, deep, with a well-defined stop",
+        "body: compact, muscular, with a short, smooth coat",
+        "legs: short, stout, slightly bowed",
+        "tail: short, either straight or corkscrew"
+      ],
+      "English Springer Spaniel": [
+        "head: medium size, with a fairly broad skull",
+        "ears: long, set low, hanging close to the cheeks",
+        "muzzle: of medium length, fairly broad",
+        "body: compact, with a deep chest, level back",
+        "legs: straight, with good bone and feathering",
+        "tail: typically docked, carried level with the back, in constant motion"
+      ],
+      "Bull Terrier": [
+        "head: long, strong, and deep, with a unique egg-shaped profile",
+        "ears: small, thin, close together, and erect",
+        "muzzle: strong and deep, with a full mouth",
+        "body: well-rounded, with a deep chest and strong shoulders",
+        "legs: muscular, with strong, round bones",
+        "tail: short, carried horizontally"
+      ],
+      "Skye Terrier": [
+        "head: long with a powerful jaw, covered with a profuse topknot",
+        "ears: pendant or prick, depending on the variety, set high and feathered",
+        "muzzle: strong and full, tapering slightly to the nose",
+        "body: long and low, twice as long as high, with a level back",
+        "legs: short, muscular, with strong bones",
+        "tail: long, feathered, carried level or slightly curved"
+      ],
+      "Tibetan Mastiff": [
+        "head: broad, heavy, and well furnished with a mane",
+        "ears: medium size, triangular, dropping forward",
+        "muzzle: square, blunt, with a fair amount of wrinkles",
+        "body: powerful, slightly longer than tall, with a strong, straight back",
+        "legs: well-boned, fairly long, with substantial feathering",
+        "tail: medium length, bushy, curled over the back"
+      ],
+      "Fox Terrier (Smooth)": [
+        "head: flat, moderately narrowing to the eyes",
+        "ears: small, V-shaped, dropping forward",
+        "muzzle: strong, tapering to the black nose",
+        "body: back short, muscular, and strong",
+        "legs: straight and parallel, with good bone density",
+        "tail: set high, carried gaily but not over the back"
+      ],
+      "Malinois": [
+        "head: flat, almond-shaped eyes, with a sharp, intelligent expression",
+        "ears: erect, triangular, set high on the head",
+        "muzzle: long, strong, and ending in a point",
+        "body: athletic, with a sleek outline, a level topline, and a tucked abdomen",
+        "legs: straight, with oval bones, ending in round, cat-like feet",
+        "tail: long, reaching at least to the hock, carried low with a slight curve"
+      ],
+      "Norwegian Elkhound Grey": [
+        "head: broad and wedge-shaped, with a proud expression",
+        "ears: medium size, erect, pointed at the tips",
+        "muzzle: of equal length to the skull, ending in a black nose",
+        "body: compact, muscular, with a strong back and deep chest",
+        "legs: straight, with good bone structure, ending in hard, cat-like paws",
+        "tail: thick, tightly curled, carried over the back"
+      ],
+      "American Foxhound": [
+        "head: long and slightly domed, expressing character and intelligence",
+        "ears: set low and wide, hanging in graceful folds",
+        "muzzle: long and slightly curved, with a scissor bite",
+        "body: long, muscular, with a slightly arched loin",
+        "legs: straight, with rounded thighs and strong hocks",
+        "tail: set moderately high, carried gaily but not over the back"
+      ],
+      "Irish Setter": [
+        "head: long and lean, with a marked stop and a refined expression",
+        "ears: set low, well back, and hanging in neat folds",
+        "muzzle: moderately deep, not snipy, ending in a pink or black nose",
+        "body: of moderate length, with a sloping topline and a deep chest",
+        "legs: long and lean, showing quality and strength",
+        "tail: of moderate length, proportionate, carried level with the back"
+      ],
+      "Dachshund": [
+        "head: elongated, with a pronounced stop and alert expression",
+        "ears: long, hanging close to the cheek, rounded at the tips",
+        "muzzle: long and full, with robust jaws",
+        "body: low-slung, elongated without being weedy",
+        "legs: short, strong, with a firm stance",
+        "tail: continuation of the spine, without kinks, carried in line with the body"
+      ],
+      "Treeing Walker Coonhound": [
+        "head: clean and well proportioned, with a keen expression",
+        "ears: set moderately low, reaching to the nose when drawn out",
+        "muzzle: long, broad, and deep, with a square profile",
+        "body: muscular, with a deep chest and a level back",
+        "legs: long and sinewy, with compact, cat-like feet",
+        "tail: set slightly below the line of the back, carried upright in a curve"
+      ],
+      "Basenji": [
+        "head: finely wrinkled when alert, with a flat skull",
+        "ears: small, erect, and slightly hooded",
+        "muzzle: short, ending in a dark nose",
+        "body: balanced, with a short back and a deep chest",
+        "legs: straight, ending in small, compact feet",
+        "tail: high set, tightly curled, lying to one side"
+      ],
+      "Soft Coated Wheaten Terrier": [
+        "head: long, rectangular, with a gentle expression",
+        "ears: small, breaking level with the skull, slightly feathered",
+        "muzzle: strong, not too long, proportionate to the head",
+        "body: compact, square in silhouette, with a strong back",
+        "legs: straight, well-boned, covered with soft, silky hair",
+        "tail: docked where legal, carried erect"
+      ],
+      "Siberian Husky": [
+        "head: medium size, slightly rounded on top, with a fox-like expression",
+        "ears: medium, triangular, close together, and erect",
+        "muzzle: medium length, tapering to the nose, with a scissor bite",
+        "body: moderately compact, with a deep chest and well-sprung ribs",
+        "legs: parallel and straight, medium length, with oval feet",
+        "tail: brush-like, carried over the back in a sickle curve"
+      ],
+      "Brittany": [
+        "head: slightly rounded skull, medium length muzzle, with an alert expression",
+        "ears: set high, short, triangular, with slightly rounded tips",
+        "muzzle: medium length, tapering towards the nose",
+        "body: nearly square in profile, solid without being heavy",
+        "legs: medium length, straight, strong, with slight feathering",
+        "tail: short, either naturally short or docked, carried horizontally"
+      ],
+      "Border Collie": [
+        "head: well-proportioned, with a wide skull and pronounced stop",
+        "ears: medium size, may be erect or semi-erect",
+        "muzzle: tapering to the nose, with a strong jaw",
+        "body: athletic, showing strength and agility, with a deep chest",
+        "legs: straight when viewed from the front, with round, arched feet",
+        "tail: moderate length, set low, with an upward swirl at the end"
+      ],
+      "Newfoundland": [
+        "head: massive, broad skull, with a slightly arched crown",
+        "ears: small, triangular, set well back and close to the head",
+        "muzzle: square, short, and deep",
+        "body: strong, muscular, with a broad deep chest",
+        "legs: straight and strong, with large webbed feet for swimming",
+        "tail: long, thick at the base, carried low"
+      ],
+      "Papillon (Continental Toy Spaniel)": [
+        "head: small, rounded between the ears, with an alert, intelligent expression",
+        "ears: large, with rounded tips, resembling the wings of a butterfly",
+        "muzzle: short, fine but not snipy",
+        "body: small, slightly longer than tall, compact",
+        "legs: fine-boned, straight, with dainty feet",
+        "tail: long, set high, arched over the body with long, flowing feathering"
+      ],
+      "English Setter": [
+        "head: elegant, oval, with a mild expression",
+        "ears: set well back and low, close to the head",
+        "muzzle: medium length, fairly square",
+        "body: slightly longer than tall, with a level back and deep chest",
+        "legs: straight, with fine feathering",
+        "tail: of medium length, slightly curved, with feathering"
+      ],
+      "Kerry Blue Terrier": [
+        "head: long, with a flat skull and a slight stop",
+        "ears: small to medium, V-shaped, carried forward",
+        "muzzle: strong, well-developed, not snipy",
+        "body: compact, with a straight back and well-developed chest",
+        "legs: straight and muscular",
+        "tail: set high, carried erect"
+      ],
+      "Rottweiler": [
+        "head: broad, with a rounded forehead",
+        "ears: medium-sized, triangular, hanging forward",
+        "muzzle: broad and deep",
+        "body: powerful, with a deep chest and well-muscled back",
+        "legs: straight and strong, with well-arched toes",
+        "tail: naturally short, carried horizontally"
+      ],
+      "Field Spaniel": [
+        "head: noble, well-chiseled, with a moderate stop and long muzzle",
+        "ears: set low, moderately long, with slight feathering",
+        "muzzle: long and lean, without lippiness",
+        "body: slightly longer than tall, with a level back and deep chest",
+        "legs: medium length, straight, with good bone",
+        "tail: docked to a suitable length, carried low"
+      ],
+      "Hungarian Vizsla (Short-Haired)": [
+        "head: moderately wide with a slightly domed skull and a distinct stop. The color is usually the same as the body, a golden rust",
+        "ears: set low, hanging close to the cheeks, thin and silky",
+        "muzzle: moderately pointed, matching the coat color with a slightly darker nose",
+        "body: medium size, muscular with a slight tuck-up, covered in short, dense, golden rust-colored fur",
+        "legs: straight and muscular with the same golden rust color",
+        "tail: carried horizontally, docked to two-thirds in some countries, with fur that matches the body"
+        ],
+        "Pekingese": [
+            "head: large, wide skull with a flat face and no visible nose bridge. Fur often forms a mane",
+            "ears: heart-shaped, long, with heavy feathering, set level with the eye",
+            "muzzle: very short, broad, and flat. The area around the muzzle is usually lighter or white",
+            "body: compact, stocky, slightly longer than tall. Covered in long, straight, and flowing fur",
+            "legs: short, thick with heavy bone, covered in feathered fur",
+            "tail: high-set, carried over the back with abundant feathering"
+        ],
+        "Afghan Hound": [
+            "head: long, refined, with a prominent occiput and a slight stop. Covered in long, silky fur",
+            "ears: set low, close to the head, covered in long, silky fur",
+            "muzzle: long, fine but not pointed, with a black nose",
+            "body: tall, slender, with a level back. The coat is long, fine, and silky, especially on the ribs, forequarters, and hindquarters",
+            "legs: long, straight, and well-covered with long, silky fur",
+            "tail: not too short, forming a ring at the end, with a fine, silky feathering"
+        ],
+        "Basset Hound": [
+            "head: large, domed with a pronounced occiput. The skin forms loose folds",
+            "ears: extremely long, low set, reaching beyond the tip of the nose when drawn forward, very velvety",
+            "muzzle: deep and heavy with a pronounced dewlap. The nose is usually black",
+            "body: long, low to the ground, with a deep chest and prominent sternum. The back is straight and the skin is loose and elastic",
+            "legs: short, powerful, with a heavy bone structure. The front legs may turn slightly outward",
+            "tail: long, carried high in a sabre-like manner, with a slight curve"
+        ],
+        "Appenzeller Sennenhund": [
+            "head: strong and broad with a flat skull and a slight stop. The muzzle is strong and straight",
+            "ears: small to medium-sized, high set, triangular in shape, hanging close to the head",
+            "muzzle: medium length, strong and straight, usually black",
+            "body: medium size, almost square, muscular, covered in thick, shiny, and hard fur. The coat is tri-colored: black, tan, and white",
+            "legs: straight, strong, with compact feet. The fur is shorter on the legs",
+            "tail: medium length, carried rolled on the back when alert"
+        ],
+        "Leonberger": [
+            "head: large, elongated, with a gentle expression. The skull is slightly domed",
+            "ears: medium-sized, hanging close to the head, covered with long fur",
+            "muzzle: long, slightly pointed with a black mask",
+            "body: large, muscular, with a level back. The coat is long, dense, and water-resistant, lion-yellow, red, reddish-brown, or sand",
+            "legs: strong, straight, with feathered fur",
+            "tail: very long, reaching at least to the hocks, with abundant feathering"
+        ],
+        "Cairn Terrier": [
+            "head: small, proportionate to body with a well-defined stop and a strong muzzle",
+            "ears: small, pointed, carried erect",
+            "muzzle: strong, with a black nose. The fur on the face can be slightly longer, forming a rough appearance",
+            "body: compact, with a deep chest and level back. The coat is weather-resistant, with a hard outer coat and soft undercoat",
+            "legs: proportionate, with a medium bone structure, covered in rough fur",
+            "tail: short, carried gaily but not curled over the back, with a dense coat"
+        ],
+        "Labrador Retriever": [
+                "head: broad with a pronounced stop, and a clean-cut skull. Friendly eyes with an intelligent and gentle expression",
+            "ears: medium-sized, hanging down close to the head",
+            "muzzle: wide, with a black or brown nose, depending on the coat color",
+            "body: strong and muscular, with a level top line and a broad, deep chest. The coat is dense, short, and weather-resistant",
+            "legs: straight and strong, with webbed feet that aid in swimming",
+            "tail: thick at the base, gradually tapering towards the tip, known as an 'otter' tail"
+        ],
+        "Sealyham Terrier": [
+            "head: broad and powerful with a distinct stop and a long, square muzzle",
+            "ears: medium-sized, folding level with the top of the skull",
+            "muzzle: the same length as the skull, giving a balanced appearance",
+            "body: slightly longer than tall, with a strong, level back and a deep chest. The coat is weather-resistant, with a soft undercoat and a hard, wiry outer coat",
+            "legs: short and strong, with a thick bone structure",
+            "tail: medium length, carried upright but not over the back"
+        ],
+        "Miniature Schnauzer": [
+            "head: rectangular, with a bushy beard and eyebrows. The skull is long and the muzzle ends in a blunt shape",
+            "ears: set high and can be cropped or uncropped, forming a V shape",
+            "muzzle: strong and ends in a blunt shape with a prominent beard",
+            "body: square-shaped, with a deep chest and a level back. The coat is double with a soft undercoat and a wiry outer coat",
+            "legs: straight and muscular, with fur that may be trimmed shorter than the body fur",
+            "tail: docked and carried high"
+        ],
+        "Saluki": [
+            "head: long and narrow with a moderately wide skull and a slight stop",
+            "ears: long, hanging close to the head, covered with silky fur",
+            "muzzle: long and narrow, ending in a black or liver-colored nose",
+            "body: graceful, with a deep chest and a slight tuck-up. The coat can be smooth or feathered",
+            "legs: long and slender, with feathering on the back of the thighs",
+            "tail: long, carried low with a curve, and feathered"
+        ],
+        "Rough Collie": [
+            "head: elongated with a flat skull and a pronounced stop, covered in abundant fur",
+            "ears: semi-erect with the tips folding forward, covered in fur",
+            "muzzle: strong and tapered, with a black nose",
+            "body: slightly longer than tall, with a deep chest. The coat is long and dense, especially around the neck and chest",
+            "legs: straight and muscular, with feathering",
+            "tail: long, with abundant fur, carried with a slight upward curve"
+        ],
+        "Alaskan Malamute": [
+            "head: broad and deep with a slightly rounded skull",
+            "ears: medium-sized, triangular, and erect",
+            "muzzle: large and bulky, ending in a black nose",
+            "body: powerful, with a deep chest and strong back. The coat is thick and coarse",
+            "legs: strong and muscular, with large feet equipped for snow",
+            "tail: plume-like, carried over the back when alert"
+        ],
+        "Weimaraner": [
+            "head: long and aristocratic with a moderate stop and light amber or blue-gray eyes",
+            "ears: long and lobular, set high and folded",
+            "muzzle: strong and powerful, with a gray nose",
+            "body: athletic, with a short, sleek coat in shades of gray",
+            "legs: long and straight, with webbed feet for swimming",
+            "tail: traditionally docked to a third in some countries, otherwise long and tapering"
+        ],
+        "Schipperke": [
+            "head: fox-like with a broad skull and no pronounced stop",
+            "ears: small, triangular, and erect",
+            "muzzle: short and pointed, with a black nose",
+            "body: small but sturdy, with a dense double coat that is black and forms a ruff around the neck",
+            "legs: straight and strong for the size",
+            "tail: docked or naturally short in some specimens, otherwise medium and carried high"
+        ],
+        "Giant Schnauzer": [
+            "head: strong and rectangular with bushy eyebrows and a distinct beard",
+            "ears: medium-sized, set high, and can be cropped to stand erect",
+            "muzzle: long and robust, with a black nose",
+            "body: large and muscular, with a dense, wiry coat that is usually black or salt and pepper",
+            "legs: straight and strong, with dense fur",
+            "tail: traditionally docked, carried erect"
+        ],
+        "Sussex Spaniel": [
+            "head: massive and broad with a heavy brow and a deep stop",
+            "ears: large, lobular, set low, and close to the head, covered in silky fur",
+            "muzzle: short and broad, with a liver-colored nose",
+            "body: long, low, and muscular, with a rich golden liver coat that is thick and wavy",
+            "legs: short and strong, with feathering",
+            "tail: moderately long, thick at the base and tapering to a point, carried low"
+        ],
+        "German Shepherd Dog": [
+            "head: noble and proportionate to the body, with a pronounced stop and intelligent, keen eyes",
+            "ears: large, erect, and open at the front",
+            "muzzle: long and strong, with a black nose",
+            "body: muscular, longer than tall, with a dense, straight, or slightly wavy coat",
+            "legs: strong and straight, with well-developed muscles",
+            "tail: bushy, reaching at least to the hock, carried low"
+        ],
+        "Harrier": [
+            "head: moderate in size with a broad skull and a clear stop",
+            "ears: medium-sized, V-shaped, and hanging close to the cheeks",
+            "muzzle: strong and square, with a black nose",
+            "body: medium-sized, with a strong back and a short, hard coat that is usually tri-colored",
+            "legs: muscular and straight, with rounded bones",
+            "tail: medium length, carried high but not over the back"
+        ],
+        "German Shorthaired Pointer": [
+            "head: broad and rounded with a moderate stop and a powerful jaw",
+            "ears: set high, broad, and hanging close to the head, with short, soft fur",
+            "muzzle: long and strong, with a brown nose",
+            "body: medium to large size, with a short, thick, water-repellent coat that is usually liver (brown) or liver and white in color",
+            "legs: straight and strong, with webbed feet for swimming",
+            "tail: docked to about 40% of its original length in countries where docking is permitted, otherwise long, carried horizontally or slightly upwards"
+        ],
+        "Brussels Griffon": [
+            "head: large and round with a domed forehead and a short, pug nose",
+            "ears: small and set high, can be cropped or natural",
+            "muzzle: very short, with a distinctive beard and mustache",
+            "body: compact and sturdy, with a rough or smooth coat that comes in red, black and tan, or black",
+            "legs: straight and of medium length",
+            "tail: high set, docked to a third in countries where docking is permitted, otherwise left natural"
+        ],
+        "Brussels Griffon": [
+            "head: large, round eyes, short, wide muzzle",
+            "ears: small, high set, may be cropped or natural",
+            "muzzle: very short, with distinctive beard",
+            "body: compact, square-shaped",
+            "legs: straight, well-muscled",
+            "tail: high set, typically docked"
+          ],
+          "Manchester Terrier": [
+            "head: narrow, wedge-shaped",
+            "ears: v-shaped, erect or semi-erect",
+            "muzzle: long and tight-skinned",
+            "body: smooth, muscular, slightly arched back",
+            "legs: slender, straight",
+            "tail: short, tapering to a point"
+          ],
+          "Russian Hunting Sighthound": [
+            "head: long, narrow, slightly domed skull",
+            "ears: small, thin, set high",
+            "muzzle: long, pointed",
+            "body: lean, well-muscled, deep chested",
+            "legs: long, straight, strong",
+            "tail: long, curved, carried low"
+          ],
+          "Whippet": [
+            "head: long, lean, refined appearance",
+            "ears: rose-shaped, small, set high",
+            "muzzle: long, fine, tapering",
+            "body: graceful, balanced, muscular",
+            "legs: long, slender",
+            "tail: long, tapering, carried low"
+          ],
+          "Samoyed": [
+            "head: strong, wedge-shaped",
+            "ears: thick, furry, triangular",
+            "muzzle: medium length, tapering",
+            "body: sturdy, muscular, deep chested",
+            "legs: straight, well-feathered",
+            "tail: long, curled over the back"
+          ],
+          "Beagle": [
+            "head: broad, slightly domed",
+            "ears: long, pendant, set low",
+            "muzzle: square, medium length",
+            "body: compact, muscular",
+            "legs: straight, medium length",
+            "tail: medium length, carried high"
+          ],
+          "Gordon Setter": [
+            "head: deep, rather than broad",
+            "ears: large, set back, close to head",
+            "muzzle: long, square-cut",
+            "body: heavy-boned, muscular",
+            "legs: straight, well-boned",
+            "tail: medium length, slightly curved"
+          ],
+          "Bullmastiff": [
+            "head: large, wrinkled, broad, short skull",
+            "ears: v-shaped, set wide apart",
+            "muzzle: short, broad",
+            "body: powerful, stocky, well-muscled",
+            "legs: strong, straight",
+            "tail: set high, thick at base"
+          ],
+          "St. Bernard": [
+            "head: massive, wide, deep muzzle",
+            "ears: medium-sized, set high, hanging close",
+            "muzzle: short, broad",
+            "body: very large, muscular, broad chest",
+            "legs: muscular, large paws",
+            "tail: long, heavy, hanging low"
+          ],
+          "Rhodesian Ridgeback": [
+            "head: flat skull, broad between ears",
+            "ears: medium size, set high, hanging close",
+            "muzzle: long, powerful",
+            "body: muscular, sleek, distinctive ridge along back",
+            "legs: strong, straight",
+            "tail: long, tapering, gentle curve"
+          ],
+          "Redbone Coonhound": [
+            "head: clean, well-proportioned",
+            "ears: long, down to the nose",
+            "muzzle: broad, deep",
+            "body: muscular, slightly arched loins",
+            "legs: straight, well-boned",
+            "tail: medium length, carried high"
+          ],
+          "Redbone Coonhound": [
+            "head: broad and lean, with a facial expression showing intelligence and eagerness. The skin is tight and the skull well-proportioned to the body, with a reddish-brown color",
+            "ears: long and hanging, reaching nearly to the nose when drawn out, with a thin texture and set low, complementing the head's shape",
+            "muzzle: square, medium length, and well proportioned to the head, with a straight nose bridge and a black or brown nose",
+            "body: muscular and well-defined, showcasing strength and agility. The back is strong and straight, leading to a slightly tucked abdomen",
+            "legs: straight and well-boned, proportionate to the body size, with a powerful build that aids in swift movement",
+            "tail: medium length, thick at the base and tapering towards the end, carried high in excitement but otherwise resting lower"
+        ],
+        "Welsh Corgi (Cardigan)": [
+            "head: fox-like in shape and appearance, with a wide skull and distinct stop. The expression is alert and intelligent",
+            "ears: medium-sized, slightly rounded at the tip, and set wide apart. Ears stand erect when alert",
+            "muzzle: in balance with the skull, tapering slightly, with a black nose. The overall length is shorter than the skull",
+            "body: long in proportion to height, with a strong back and deep chest. The body is robust and muscular, showcasing the breed's herding background",
+            "legs: short but very strong, with moderate bone, enabling agility and endurance",
+            "tail: long and bushy, set in line with the body, and carried low"
+        ],
+        "Xoloitzcuintli": [
+            "head: sleek and elegant, with a pronounced stop and a sharp, intelligent expression. The skin is tight over the skull, which is wedge-shaped",
+            "ears: large, bat-like, and very expressive, standing erect when the dog is alert",
+            "muzzle: lean and fitting smoothly into the wedge of the skull, with a straight nasal bridge and usually a dark nose",
+            "body: graceful with a smooth outline, showing a slight tuck-up beneath the loin. The skin can be tight or slightly wrinkled, and the breed may be hairless or coated",
+            "legs: long, slender, and well-muscled, contributing to the breed's elegant appearance and agile movement",
+            "tail: long and slender, tapering to a point, and carried low or in a loop"
+        ],
+        "Airedale Terrier": [
+            "head: long and flat, with a well-defined stop and a keen, intelligent expression. The skull is not too broad",
+            "ears: small to medium in size, V-shaped, and carried forward close to the cheeks",
+            "muzzle: deep and powerful, not too long or too short, with a black nose. The jaws are strong, with a scissor bite",
+            "body: well-proportioned, showing a straight back with a slight downward slope from shoulders to tail. The chest is deep and not too broad",
+            "legs: straight and well-boned, with good muscle development, showing the breed's agility and power",
+            "tail: set high, of good strength, and carried gaily but not curled over the back"
+        ],
+        "Australian Kelpie": [
+            "head: fox-like, with a broad skull and pronounced cheek muscles. The eyes are almond-shaped, showing intelligence and alertness",
+            "ears: pricked, medium size, and set wide apart, enhancing their alert and attentive expression",
+            "muzzle: proportional to the head, with a moderate stop and a black nose. The jaws are strong, capable of firm gripping",
+            "body: compact and muscular, showcasing the breed's strength and stamina. The back is slightly arched, contributing to its agility",
+            "legs: strong and straight, with well-developed muscles, designed for speed and endurance",
+            "tail: moderately long, carried low, and with a slight curve, indicating the breed's balance and agility"
+        ],
+        "Australian Terrier": [
+            "head: small and oval-shaped, with a strong, long skull and a keen expression. The eyes are small, dark, and sparkling",
+            "ears: small, pointed, and erect, set high on the head, contributing to their lively expression",
+            "muzzle: strong and of medium length, with a black nose. The jaws should show strength without coarseness",
+            "body: longer than tall, with a level back and a well-sprung ribcage. The breed appears sturdy and well-built",
+            "legs: straight and strong, with good bone. The hindquarters are particularly powerful, aiding in quick, agile movement",
+            "tail: set high and docked, providing good balance and strength. The tail is carried with a slight curve, but not over the back"
+        ],
+        "Kuvasz": [
+            "head: strong and noble, with a slightly arched skull and a well-defined stop. The eyes are almond-shaped, dark, expressing intelligence and dignity",
+            "ears: medium-sized, triangular, and set moderately low, flopping close to the cheeks",
+            "muzzle: neither too long nor too short, fitting well with the head's proportions, with a black nose and strong jaws",
+            "body: slightly longer than tall, with a well-built, muscular frame. The back is level, leading to a well-tucked abdomen, showcasing the breed's power and agility",
+            "legs: straight and strong, with good bone structure. The hindquarters are particularly powerful, contributing to the breed's impressive movement",
+            "tail: long, reaching at least to the hock, carried low with a slight curve upwards at the end"
+        ],
+        "Golden Retriever": [
+            "head: broad and well-proportioned, with a kindly expression and intelligent eyes. The skull is wide without being coarse",
+            "ears: medium-sized, set well apart, and hanging close to the head, complementing the facial expression",
+            "muzzle: powerful, wide, and deep, with a scissor bite and well-developed jaws. The nose should be black",
+            "body: balanced and symmetrical, with a level topline and deep chest. The breed is known for its powerful, smooth gait",
+            "legs: straight and well-boned, with good muscle development. The breed moves with a smooth, powerful stride",
+            "tail: thick at the base and tapering to the tip, carried with a merry action, level with the back"
+        ],
+        "Lakeland Terrier": [
+            "head: small and workmanlike, with a keen, intelligent expression. The skull is moderately broad with a defined stop",
+            "ears: small, V-shaped, and folding forward close to the cheek, giving them a lively expression",
+            "muzzle: strong and well-proportioned to the head, with a black nose. The jaws are capable of a strong grip",
+            "body: compact and squarely built, with a level back and a deep chest, showing the breed's strength and agility",
+            "legs: straight and muscular, with a moderate length, allowing for quick, agile movements",
+            "tail: docked, set high, and carried erect, giving a balanced appearance"
+        ],
+        "Rat Terrier": [
+            "head: elegant and strong, with a broad skull and a slight stop. The expression is alert and intelligent",
+            "ears: erect when alert, triangular in shape, and proportionate to the head, contributing to their keen expression",
+            "muzzle: strong, with a straight bridge and ending in a black nose. The jaws are strong with a scissor bite",
+            "body: compact and muscular, with a slightly arched loin and a level back. The build is sturdy yet sleek",
+            "legs: straight and strong, with good muscle definition, designed for speed and agility",
+            "tail: can be long or docked, carried in various positions but typically with a slight curve"
+        ],
+        "Bulldog": [
+            "head: large and square, with a flat, wrinkled face and a broad, black nose. The cheeks are rounded and protrude sideways",
+            "ears: small, thin, and set high on the head, known as 'rose' ears, complementing the facial structure",
+            "muzzle: short, broad, and turned upwards, with distinctive folds and a deep, wide-set jaw",
+            "body: stocky, wide, and compact, with a short, strong back and a broad chest. The skin may have folds and wrinkles",
+            "legs: short, stout, and set wide apart, with a muscular build that supports the body's hefty frame",
+            "tail: naturally short, set low, either straight or screwed, but not carried over the back"
+        ],
+        "Japanese Chin": [
+            "head: large, wide with a rounded forehead. The facial expression is soft and aristocratic, often with a distinctive white and black color pattern",
+            "ears: small, V-shaped, set wide apart and high on the head, with long feathering that blends into the hair of the neck",
+            "muzzle: short, broad, and well cushioned with a pronounced stop. The nose is black or self-colored in accordance with the coat",
+            "body: compact, square, and well-muscled with a level back. The coat is long, silky, and flowing, often white with black or red patches",
+            "legs: fine-boned and straight, proportionate to the body, with feathering on the hind legs",
+            "tail: set high, carried over the back in a plume of long, flowing hair"
+        ],
+        "Bedlington Terrier": [
+            "head: distinctive, shaped like a lamb's. The top of the skull is rounded with no stop, leading to a unique appearance",
+            "ears: low-set, triangular, with rounded tips, covered in fine, silky hair",
+            "muzzle: long, tapering to the nose, with a strong jaw and a black or liver-colored nose",
+            "body: lithe and muscular, slightly longer than tall. The coat is a mixture of hard and soft hair, curly and distinctive",
+            "legs: long and tapering, showing grace and speed, with the front legs straight",
+            "tail: moderate in length, set low, tapering to a point and carried scimitar-like"
+        ],
+        "English Toy Terrier": [
+            "head: long, narrow, and wedge-shaped, with a distinctively elegant appearance. The eyes are small, dark, and almond-shaped",
+            "ears: large, candle-flame shaped, set high on the head, contributing to their alert expression",
+            "muzzle: well defined, tapering to a black nose. The jaws are strong with a perfect, regular scissor bite",
+            "body: compact, giving an impression of grace and high breeding. The coat is glossy, close, and fine",
+            "legs: slender, straight, and well placed under the body, with delicate bone structure",
+            "tail: low-set, reaching to the hock, thin, and tapering to a point"
+        ],
+        "Toy Poodle": [
+            "head: rounded with a slight but definite stop. The cheeks are well chiseled beneath the eyes, and the coat may be curly or corded",
+            "ears: long, hanging close to the head, covered with long, fine, wavy hair",
+            "muzzle: fine, straight, and long, with a delicate but well-defined chin",
+            "body: well-proportioned, slightly longer than tall, with a straight and level back. The coat is dense, curly, and naturally harsh",
+            "legs: straight and parallel, with a moderate amount of bone. The feet are small, oval, and compact",
+            "tail: set high, carried up, docked to a length that gives a balanced outline"
+        ],
+        "Miniature Poodle": [
+            "head: well-proportioned, with a slight peak at the skull and a moderate stop. The facial expression is alert and intelligent",
+            "ears: hanging close to the head, long and wide, with a feathering that matches the body's coat",
+            "muzzle: straight and fine, with a slight but distinct chiseling under the eyes. The nose color matches the coat",
+            "body: squarely built, with a well-sprung ribcage and a level back. The coat is profuse, curly, and of uniform texture",
+            "legs: strong and straight, with a good amount of bone and muscle. The hindquarters are powerful and well angulated",
+            "tail: set high, carried proudly, docked to a length that ensures a balanced silhouette"
+        ],
+        "Standard Poodle": [
+            "head: refined and elegant, with a straight profile and a slight but noticeable stop. The eyes are dark and oval-shaped",
+            "ears: wide at the base, hanging close to the head, with long, dense feathering",
+            "muzzle: long, straight, and fine, with well-developed nostrils. The nose is typically black or brown, matching the coat color",
+            "body: squarely built, with a strong, muscular back and a deep chest. The coat is dense, curly, and can be styled in various traditional clips",
+            "legs: straight and strong, with well-defined muscles. The feet are small and oval, with arched toes",
+            "tail: set high, carried erect or slightly curved, docked to a length that maintains balance with the body"
+        ],
+        "Dingo": [
+            "head: broad, flat skull, and slightly rounded, indicative of its alert and cautious nature. The eyes are almond-shaped, with a keen and intelligent look",
+            "ears: medium-sized, erect, and triangular, indicating the dingo's high alertness and ability to listen for prey and danger",
+            "muzzle: long, strong, and pointed, with a black nose, suited for hunting and scavenging in diverse environments",
+            "body: lean and muscular, showcasing the dingo's adaptability and stamina for long distances. The coat color varies from sandy to red or brindle",
+            "legs: long and strong, built for speed and agility, with the ability to traverse various terrains effortlessly",
+            "tail: thick and bushy, carried in a relaxed curve, indicative of the dingo's wild nature and balance"
+        ],
+        "Dhole": [
+            "head: broad and domed, with a straight profile and a clear expression of intelligence and alertness",
+            "ears: rounded and set high on the head, contributing to the dhole's keen sense of hearing",
+            "muzzle: strong and slightly tapering, equipped with powerful jaws for hunting. The nose is usually black",
+            "body: compact and muscular, reflecting the dhole's agility and strength. The coat is reddish-brown, with variations in shade",
+            "legs: moderately long, with well-developed muscles for running and leaping",
+            "tail: long and bushy, used for communication among pack members and for balance while running"
+        ],
+        "African wild dog": [
+            "head: large and rounded with a broad skull, marked by large, rounded ears that facilitate heat dissipation and sound localization",
+            "ears: very large and rounded, set wide apart, making them one of the most distinctive features of the breed",
+            "muzzle: long, powerful, and ending in a black nose, designed for endurance hunting and strong biting grip",
+            "body: slim and muscular, with a broad chest and a narrow waist, showcasing the animal's high endurance and speed. The coat is mottled in patches of red, black, brown, white, and yellow",
+            "legs: long and slender, perfectly designed for endurance running at high speeds over long distances",
+            "tail: long and bushy, with a white tip, serving as a flagging signal when hunting in tall grass"
+        ]
+}
+    

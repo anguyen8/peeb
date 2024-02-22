@@ -15,6 +15,7 @@ from torch.utils.data.distributed import DistributedSampler
 from collections import defaultdict, deque
 import copy
 
+from transformers import OwlViTProcessor
 
 class BirdSoup(Dataset):
 
@@ -134,7 +135,10 @@ class BirdSoup(Dataset):
             sample = self.tri_aug(sample)
 
         if self.transform is not None:
-            sample = self.transform(images=sample, return_tensor='pt')
+            if type(self.transform) == OwlViTProcessor:
+                sample = self.transform(images=sample, return_tensor='pt')
+            else:
+                sample = self.transform(sample)
 
         if self.return_path:
             return sample, target, image_path

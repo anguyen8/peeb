@@ -89,7 +89,7 @@ if __name__ == '__main__':
     elif args.owl_prompt_type == "stanforddog-6-parts":
         prompts = ["head", "ears", "muzzle", "body", "legs","tail"]
     elif args.owl_prompt_type == "stanforddog-6-parts-dog":
-        prompts = ["dog head", "dog ears", "dog muzzle", "dog body", "dog legs","dog tail"]
+        prompts = ["dog", "dog head", "dog ears", "dog muzzle", "dog body", "dog legs","dog tail"]
 
     else:
         raise NotImplementedError(f"Prompt type {args.owl_prompt_type} is not implemented")
@@ -191,12 +191,14 @@ if __name__ == '__main__':
                 part_scores = top1_scores
                 part_idxs = top1_idxs
                 part_logits = scores_[keep].cpu()
-                if args.owl_prompt_type == "stanforddog-6-parts-dog":
-                    part_names = [part_name.replace("dog ", "") for part_name in prompts]
-                else:
-                    part_names = prompts
                 object_boxes = [None]*len(all_boxes)
                 object_scores = [None]*len(all_boxes)
+                part_names = prompts
+
+            if args.owl_prompt_type == "stanforddog-6-parts-dog":
+                part_names = [part_name.replace("dog ", "") for part_name in part_names]
+            else:
+                part_names = prompts
 
             # filter by keep
             part_scores = part_scores[keep]

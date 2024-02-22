@@ -26,11 +26,13 @@ CUB_DIR = os.path.join(DATASET_DIR, 'cub/CUB_200_2011')
 NABIRDS_DIR = os.path.join(DATASET_DIR, 'nabirds')
 BIRD_SOUP_DIR = os.path.join(DATASET_DIR, 'bird_soup')
 STANFORDDOGS_DIR = os.path.join(DATASET_DIR, 'stanford_dogs')
+DOG_SOUP_DIR = os.path.join(DATASET_DIR, 'dogsoup')
 
 DS_CUB = "cub"
 DS_NABIRDS = "nabirds"
 DS_BIRD_SOUP = "bird_soup"
 DS_STANFORD_DOGS = "stanford_dogs"
+DS_DOG_SOUP = "dogsoup"
 
 # For updating boxes logits with DATASET_WRAPPER
 # BIRD_SOUP_META_PATH_ALL = f"{BIRD_SOUP_DIR}/metadata/bird_soup_uncased.h5"    # 343K
@@ -66,6 +68,11 @@ BIRD_SOUP_META_PATH_TEST  = f"{BIRD_SOUP_DIR}/metadata/level_1_exclude_cub_nabir
 STANFORDDOG_META_PATH_TRAIN = f"{STANFORDDOGS_DIR}/train.h5"
 STANFORDDOG_META_PATH_VAL = f"{STANFORDDOGS_DIR}/val.h5"
 STANFORDDOG_META_PATH_TEST = f"{STANFORDDOGS_DIR}/test.h5"
+
+# For DogSoup v1
+DOG_SOUP_META_PATH_TRAIN = f"{DOG_SOUP_DIR}/v1_train.h5"
+DOG_SOUP_META_PATH_VAL = f"{DOG_SOUP_DIR}/v1_val.h5"
+DOG_SOUP_META_PATH_TEST = f"{DOG_SOUP_DIR}/v1_test.h5"
 
 thousand_k_to_200 = {0: -1, 1: -1, 2: -1, 3: -1, 4: -1, 5: -1, 6: 0, 7: -1, 8: -1, 9: -1, 10: -1, 11: 1, 12: -1,
                      13: 2, 14: -1, 15: 3, 16: -1, 17: 4, 18: -1, 19: -1, 20: -1, 21: -1, 22: 5, 23: 6, 24: -1,

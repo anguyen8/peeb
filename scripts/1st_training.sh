@@ -15,3 +15,4 @@ python train_owlvit.py --model owlvit-base-patch32 --dataset bird_soup --sub_dat
 python train_owlvit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --batch_size_val 50 --save_freq 1 --num_workers 8 --devices 2 --epochs 32 --lr 0.0002 --weight_decay 0.001 --project_name stage1_pretraining --loss_weights 0,0,0,0,1 --network_type contrastive --freeze_box_heads --logits_from_teacher --num_negatives_train 48 --num_negatives_val 50 --early_stopping 10 --train_file "../data/bird_11K/metadata/level_3_exclude_nabirds/train_keep_child_a100_reindexed.h5" --val_file "../data/bird_11K/metadata/level_3_exclude_nabirds/val_keep_child_a100_reindexed.h5" --test_file "../data/bird_11K/metadata/level_3_exclude_nabirds/super_category_split/easy_test_reindexed.h5" --birdsoup_level 3 --note "stage1_pretraining_BIRD-11K_NABirds"
 
 
+

@@ -24,7 +24,7 @@ git clone https://github.com/ThangPM/xclip && cd xclip
 #### Step 2: Install environment
 
 ```bash
-conda create -n xclip python=3.9
+conda create -n xclip python=3.10
 conda activate xclip
 
 pip install -r requirements.txt
