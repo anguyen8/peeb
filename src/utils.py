@@ -160,4 +160,17 @@ def check_device_availability(devices: list[int or str] or int or str):
             raise ValueError(f"Device {device} is not available. Available devices are {available_list}")
 
 
+def closest_string(target, strings_list):
+    """
+    Find the string in the list with the closest Levenshtein distance to the target string.
+    """
+    closest_str = None
+    closest_distance = float('inf')
 
+    for s in strings_list:
+        distance = levenshtein_distance(target, s)
+        if distance < closest_distance:
+            closest_str = s
+            closest_distance = distance
+
+    return closest_str, closest_distance

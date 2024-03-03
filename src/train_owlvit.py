@@ -262,7 +262,7 @@ def reduce_losses(loss: torch.Tensor, batch_size: int):
     loss /= (dist.get_world_size() * batch_size)  # Average the loss values
     return loss
 
-def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weight_dict, visualize_batch_count=0, store_path=None):
+def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weight_dict, visualize_batch_count=0, store_path=None, runtime:str = "train"):
     '''
         image_embeds.shape = {Size} torch.Size([10, 60, 60, 1024])
         text_embeds.shape = {Size} torch.Size([10, 2400, 768])
@@ -298,9 +298,9 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     # Compute total loss, as a weighted sum of the various losses (22.13GB)
     loss = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict)
 
+    pred_boxes = pred_boxes.detach().cpu()
     target_boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
     base_boxes = torch.stack([torch.tensor(t["boxes_base"]) for t in targets], dim=0)
-    pred_boxes = pred_boxes.detach().cpu()
 
     # giou_scores = torch.diag(generalized_box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))).view(-1, 12)
     iou_scores = torch.diag(box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
@@ -337,19 +337,19 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
     loss = loss / images['pixel_values'].shape[0] # average over batch size
     return pred_logits, loss, loss_dict
 
-def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val, args, device):
+def compute_text_embeds(model: callable, processor: callable, all_descriptions: list[str], all_descriptions_val: list[str], batch_size: int, device: str):
     print("")
     with torch.no_grad():
         text_inputs_parts = processor(text=all_parts, padding="max_length", truncation=True, return_tensors="pt").to(device)
         total_descriptors_part = text_inputs_parts['input_ids'].shape[0]
-        text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'].repeat(args.batch_size, 1)
-        text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'].repeat(args.batch_size, 1)
+        text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'].repeat(batch_size, 1)
+        text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'].repeat(batch_size, 1)
 
         text_embeds = []
-        num_batches = math.ceil(len(all_descriptions) / args.batch_size)
+        num_batches = math.ceil(len(all_descriptions) / batch_size)
         for i in range(num_batches):
-            start = i * args.batch_size
-            end = (i+1) * args.batch_size
+            start = i * batch_size
+            end = (i+1) * batch_size
             text_inputs = processor(text=all_descriptions[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
             if hasattr(model, "module"):
                 text_embeds.append(model.module.owlvit.get_text_features(**text_inputs))
@@ -357,10 +357,10 @@ def compute_text_embeds(model, processor, all_descriptions, all_descriptions_val
                 text_embeds.append(model.owlvit.get_text_features(**text_inputs))
 
         text_embeds_val = []
-        num_batches = math.ceil(len(all_descriptions_val) / args.batch_size)
+        num_batches = math.ceil(len(all_descriptions_val) / batch_size)
         for i in range(num_batches):
-            start = i * args.batch_size
-            end = (i+1) * args.batch_size
+            start = i * batch_size
+            end = (i+1) * batch_size
             text_inputs_val = processor(text=all_descriptions_val[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
             if hasattr(model, "module"):
                 text_embeds_val.append(model.module.owlvit.get_text_features(**text_inputs_val))
@@ -785,7 +785,7 @@ if __name__ == '__main__':
     test_dataset = None
     if args.eval_test:
         test_dataset, _ = load_training_dataset(args.dataset, args.sub_datasets, 1.0, transform=owlvit_det_processor, random_state=args.random_seed, zeroshot_split=args.zeroshot_split, split="test")
-        target_classes = test_dataset.classes if hasattr(test_dataset, "classes") else test_dataset.dataset.classes
+        target_classes_val = test_dataset.classes if hasattr(test_dataset, "classes") else test_dataset.dataset.classes
 
     if args.dataset == "bird_soup":
         target_classes = [c.lower().replace("-", " ").replace("'s", "") for c in target_classes]
@@ -937,7 +937,7 @@ if __name__ == '__main__':
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=args.scheduler_mode, factor=args.scheduler_factor, patience=args.scheduler_patience, verbose=args.scheduler_verbose)
 
     # compute the text embeddings 
-    text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part = compute_text_embeds(model, owlvit_det_processor, all_descriptions, all_descriptions_val, args, device)
+    text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part = compute_text_embeds(model, owlvit_det_processor, all_descriptions, all_descriptions_val, args.batch_size, device)
 
     # TODO: try a different scheduler
     # train_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6, last_epoch=-1)
@@ -1006,9 +1006,6 @@ if __name__ == '__main__':
         print(f'Best val/val_loss top1: {val_best_acc:.4f}/{val_best_loss:.4f} at epoch {best_epoch}.')
         print(" ".join([f"{k}: {v:.5f}" for k, v in val_od_epoch_loss_dict.items()]))
     else:
-        # test_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=test_loader,
-        #                           num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
-        #                           eval_only=True, weight_dict=weight_dict)
         test_results = train_loop(dataset=args.dataset, model=model, data_loader=test_loader,
                                     num_classes=num_classes, device=device, rank=rank,  wandbLogger=wandbLogger,
                                     eval_only=True, weight_dict=weight_dict, is_dp=args.enable_dp,

@@ -171,3 +171,5 @@ common_crawl_query.py
 src/cc/
 download_cc_images.py
 src/temp.py
+paper_plots.py
+src/paper_plots.py

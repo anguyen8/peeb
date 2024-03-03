@@ -8,8 +8,8 @@ from torchvision.transforms import Compose
 from torch.utils.data import Dataset
 from torchvision.datasets.folder import default_loader
 
-from src.data_loader.augmentation import TrivialAugmentation
-from src.data_loader.nabirds_horn import load_bounding_box_annotations, load_part_annotations, load_part_names, load_class_names, \
+from .augmentation import TrivialAugmentation
+from .nabirds_horn import load_bounding_box_annotations, load_part_annotations, load_part_names, load_class_names, \
      load_image_labels, load_image_paths, load_image_sizes, load_hierarchy, load_photographers, load_train_test_split
 
 import random

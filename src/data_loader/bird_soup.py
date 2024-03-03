@@ -109,7 +109,8 @@ class BirdSoup(Dataset):
         
         # Note: The unique() function returns the unique elements of the dataframe in top-bottom order.
         #      The order of the unique elements in the returned array generally preserves the original ordering.
-        self.idx2class = dict(zip(self.meta_df['class_id'].unique(), self.meta_df['class_name'].unique()))
+        unique_classes = self.meta_df['class_id'].unique()
+        self.idx2class = {i: self.meta_df[self.meta_df['class_id'] == i]['class_name'].iloc[0] for i in unique_classes}
         self.class2idx = {v: k for k, v in self.idx2class.items()}
 
         if len(list(self.meta_df['class_id'].unique())) != len(list(self.meta_df['class_name'].unique())):

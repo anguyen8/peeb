@@ -8,7 +8,7 @@ from torch.utils.data import Subset
 from .cub import CUB
 from .nabirds import NABirdsDataset
 from .bird_soup import BirdSoup
-from configs import *
+from src.configs import *
 
 
 class DatasetWrapper(VisionDataset):
