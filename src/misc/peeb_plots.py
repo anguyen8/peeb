@@ -34,7 +34,7 @@ PART_COLORS_INT = {part: COLORS_INT[i] for i, part in enumerate(ORDERED_PARTS)}
 # use light blue for all descriptors for sachit (in float)
 SACHIT_COLOR = (0.2549019607843137, 0.4117647058823529, 0.8823529411764706)
 SACHIT_COLOR_HTML = "#ADD8E6"
-XCLIP_GTP4_DESC = json.load(open('data/class_lists/descriptors_bird_soup_v21.json', 'r'))
+# XCLIP_GTP4_DESC = json.load(open('data/class_lists/descriptors_bird_soup_v21.json', 'r'))
 DESCRIPTION_PART_ORDER = ['back', 'beak', 'belly', 'breast', 'crown', 'forehead', 'eyes', 'legs', 'wings', 'nape', 'tail', 'throat']
 HTML_COLORS = {part: rgb_to_hex(COLORS_INT[i]) for i, part in enumerate(ORDERED_PARTS)}
 
@@ -578,7 +578,7 @@ def get_exp_overlay2(ax, descriptions: list[str], scores: list[float], fontsize:
         bar_scale_factor = 0.80
     else:  # 'auto'
         ax.set_xlim(0, 1)
-        bar_scale_factor = 0.9
+        bar_scale_factor = 0.95
     ax.set_ylim(-0.5, len(descriptions) - 0.5)
     ax.invert_yaxis()
 
@@ -599,7 +599,8 @@ def get_exp_overlay2(ax, descriptions: list[str], scores: list[float], fontsize:
     max_desc_length = max(map(len, descriptions))
     if max_desc_length > max_text_length:
         fontsize -= (max_desc_length - max_text_length) * 0.1
-
+  
+    max_text_length = max_desc_length // 2
     # Ensure font size doesn't get too small
     fontsize = max(fontsize, 8)
 
@@ -607,14 +608,18 @@ def get_exp_overlay2(ax, descriptions: list[str], scores: list[float], fontsize:
     for i, desc in enumerate(descriptions):
         # Check for long descriptions and split them into two parts
         if len(desc) > max_text_length:
-            split_index = desc.rfind(' ', 0, max_text_length)  # Find the last space before max_text_length
-            if split_index == -1:  # No space found, split at max_text_length
-                split_index = max_text_length
-            part1 = desc[:split_index]
-            part2 = desc[split_index + 1:]
+            # Search forward for the next space after max_text_length
+            split_index = desc.find(' ', max_text_length)
+            if split_index == -1:  # No space found, use the whole string
+                split_index = len(desc)
+            
+            part1 = desc[:split_index].rstrip()
+            part2 = desc[split_index:].lstrip()
             desc = part1 + '\n' + part2
 
         ax.text(0, i, desc, color='black', va='center', ha='left', fontsize=fontsize, multialignment='left')
+
+
 
 
 html_response_style = f"""

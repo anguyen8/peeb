@@ -1,4 +1,9 @@
+import copy
+
+import PIL
 import torch
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
 from matplotlib import cm
 
 def center_to_corners_format_torch(bboxes_center: "torch.Tensor") -> "torch.Tensor":
@@ -9,6 +14,12 @@ def center_to_corners_format_torch(bboxes_center: "torch.Tensor") -> "torch.Tens
         dim=-1,
     )
     return bbox_corners
+
+def draw_box(img, box, color='red', width=3):
+    new_img = copy.deepcopy(img)
+    draw = ImageDraw.Draw(new_img, mode="RGBA")
+    draw.rectangle(box, outline=color, width=width)
+    return new_img
 
 def get_pre_define_colors(num_classes, cmap_set: list[str] = None, in_rgb: bool = True, is_float: bool = False):
     if cmap_set is None:
@@ -35,17 +46,71 @@ def get_pre_define_colors(num_classes, cmap_set: list[str] = None, in_rgb: bool 
 
     return colors
 
+def draw_text(img, text_list, text_size=14, text_color=None, inside=False):
+    try:
+        ft = ImageFont.truetype("/home/thang/Projects/factCheck/src/arial.ttf", text_size)
+    except Exception:
+        ft = ImageFont.truetype("arial.ttf", text_size)
+    # else:
+    #     raise FileNotFoundError("No font file found")
+
+    # ft = ImageFont.truetype("/Library/fonts/Arial.ttf", 14)
+    img_width, img_height = img.size
+    reformated_lines = []
+    text_lines_height = []
+
+    scale = 2.5 if img_width < 700 or img_height < 700 else 2
+    new_img_width = int(img_width * scale) if img_width <= img_height else img_width
+    new_img_height = int(img_height * scale) if img_height < img_width else img_height
+    compared_width = new_img_width - img_width if new_img_width > img_width else img_width
+
+    for line in text_list:
+        line_width, line_height = ft.getsize(line)
+        if line_width > compared_width:  # wrap text to multiple lines
+            character_width = line_width/(len(line))
+            characters_per_line = round(compared_width/character_width) - 2
+            sperate_lines = textwrap.wrap(line, characters_per_line)
+            line = '\n'.join(sperate_lines)
+            text_lines_height.append(len(sperate_lines))
+        else:
+            text_lines_height.append(1)
+        reformated_lines.append(line)
+
+    total_lines = sum(text_lines_height)
+    if inside:
+        text_img = Image.new('RGB', (img_width, line_height*total_lines+10), (255, 255, 255))
+        img.paste(text_img, (0, 0, img_width, line_height*total_lines+10))
+        new_img = img
+        draw = ImageDraw.Draw(new_img)
+        y_text = 0
+    else:
+        # new_img = Image.new('RGB', (img_width, img_height+line_height*total_lines+10), (255, 255, 255))
+        new_img = Image.new('RGB', (new_img_width, new_img_height), (255, 255, 255))
+        new_img.paste(img, (0, 0, img_width, img_height))
+        draw = ImageDraw.Draw(new_img)
+        x_text = img_width + 3 if img_width <= img_height else 3
+        y_text = img_height + 3 if img_height < img_width else 3
+
+    for idx, (line, color) in enumerate(zip(reformated_lines, text_color)):
+        draw.text((x_text, y_text), line, color, font=ft)
+        y_text += (line_height+2) * text_lines_height[idx]
+
+    return new_img
 
 class Drawer:
     @staticmethod
     def draw_boxes(image, boxes, colors, tags=None, alpha=0.8, width=1, text_size=12, loc='above'):
         if tags is not None:
             try:
-                font = ImageFont.truetype("/home/thang/Projects/factCheck/src/arial.ttf", text_size)
+                font = ImageFont.truetype("src/arial.ttf", text_size)
             except Exception:
                 font = ImageFont.truetype("arial.ttf", text_size)
             if len(boxes) != len(tags):
                 raise ValueError('boxes and tags must have same length')
+
+        new_img = copy.deepcopy(image)
+        draw = ImageDraw.Draw(new_img, mode="RGBA")
+        
 
         for idx, box in enumerate(boxes):
             # If there are duplicated boxes, slightly adjust x and y for better visualization
@@ -54,7 +119,7 @@ class Drawer:
                 box[1] += np.random.randint(-10, 10) * 0.1
 
             color_rgba = colors[idx] + (int(alpha * 255),)
-            image = draw_box(image, box, color=color_rgba, width=width)
+            draw.rectangle(box, outline=color_rgba, width=width)
 
             if tags is not None:
                 tag = tags[idx]
@@ -71,7 +136,7 @@ class Drawer:
                 draw.rectangle(textbb_loc, fill=color_rgba)
                 draw.text(text_loc, tag, fill='white', font=font)
 
-        return image
+        return new_img
 
     @staticmethod
     def draw_text(image, text_list): # draw text as extra box in image

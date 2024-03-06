@@ -8,7 +8,7 @@ from PIL import Image
 from torch.nn import functional as F
 import torchvision.transforms as transforms
 
-from configs import *
+from .configs import *
 
 
 ''' CLIP TRANSFORM

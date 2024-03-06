@@ -11,17 +11,19 @@ import pandas as pd
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 from tqdm import tqdm
+
 from torch.utils.data import Dataset, DataLoader
 import torchvision
 from torchvision import transforms
-
 from transformers import OwlViTProcessor, OwlViTForObjectDetection, OwlViTModel
-from src.owlvit_inference import OwlViTForClassification
-from data_loader import BirdSoup
 
-from misc.plot_tools import center_to_corners_format_torch, get_pre_define_colors
-from utils import load_descriptions
-from configs import BIRD_SOUP_DIR, STANFORDDOGS_DIR, DOG_SOUP_DIR
+
+from .owlvit_inference import OwlViTForClassification
+from .data_loader import BirdSoup
+from .misc.plot_tools import center_to_corners_format_torch, get_pre_define_colors
+from .utils import load_descriptions
+
+from .configs import BIRD_SOUP_DIR, STANFORDDOGS_DIR, DOG_SOUP_DIR
 
 ORG_PART_ORDER = ['back', 'beak', 'belly', 'breast', 'crown', 'forehead', 'eyes', 'legs', 'wings', 'nape', 'tail', 'throat']
 COLORS_INT = get_pre_define_colors(12, is_float=False, cmap_set=['Set2', 'tab10'])
@@ -251,7 +253,7 @@ def eval_xclip(model: torch.nn.Module,
                     boxes = boxes * torch.tensor([max_width, max_height, max_width, max_height])
                     # remove negatives in the box
                     boxes = torch.clamp(boxes, min=0).int().tolist()
-                    part_boxes = dict(zip(ORG_PART_ORDER, boxes))
+                    part_boxes = dict(zip(part_names, boxes))
                     pred_boxes.append(part_boxes)
 
 
@@ -277,8 +279,12 @@ def eval_xclip(model: torch.nn.Module,
                         output_dict = output_dict | {'pred_boxes': boxes[inbatch_idx]}
                     if descriptions is not None:
                         desc = descriptions[pred_name]
-                        desc = {"descriptions":{k: v for k, v in zip(ORG_PART_ORDER, desc)}}
+                        desc = {"pred_descriptions":{desc_.split(":")[0]: desc_.split(":")[1] for desc_ in desc}}
                         output_dict = output_dict | desc
+                        
+                        gt_desc = descriptions[gt_name]
+                        gt_desc = {"gt_descriptions":{desc_.split(":")[0]: desc_.split(":")[1] for desc_ in gt_desc}}
+                        output_dict = output_dict | gt_desc
                         
                     if save_everything:
                         all_data = {}
@@ -288,7 +294,7 @@ def eval_xclip(model: torch.nn.Module,
                             pred_scores = part_logits[inbatch_idx][i].tolist()
                             pred_scores = dict(zip(part_names, pred_scores))
                             class_descriptions = descriptions[class_name]
-                            all_data[class_name] = {"softmax_score": softmaxed_score, "pred_scores": pred_scores, "descriptions": {k: v for k, v in zip(ORG_PART_ORDER, class_descriptions)}}
+                            all_data[class_name] = {"softmax_score": softmaxed_score, "pred_scores": pred_scores, "descriptions": {k: v for k, v in zip(part_names, class_descriptions)}}
                         output_dict = output_dict | {"all_data": all_data}
                         
                     pred_list.append(output_dict)
