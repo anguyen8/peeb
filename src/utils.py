@@ -8,7 +8,7 @@ from PIL import Image
 from torch.nn import functional as F
 import torchvision.transforms as transforms
 
-from configs import *
+from .configs import *
 
 
 ''' CLIP TRANSFORM
@@ -30,7 +30,7 @@ def img_transform(n_px):
 
 
 def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc_type="sachit", part_based=False,
-                      target_classes: list[int] = None, descriptor_path: str = None):
+                      target_classes: list[int] = None, descriptor_path: str = None, unmute: bool = True):
     templated_descriptions, descriptions_mappings = {}, {}
 
     # ImageNet and ImageNet-v2 share the same list of descriptions
@@ -42,7 +42,8 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
         if dataset_to_load == "bird_11K":
             descriptor_path = descriptor_path.replace(dataset_to_load, f"{dataset_to_load}")
 
-    print("Using descriptors from: ", descriptor_path)
+    if unmute:
+        print("Using descriptors from: ", descriptor_path)
 
     with open(descriptor_path) as input_file:
         descriptions = json.load(input_file)
@@ -54,15 +55,15 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
 
     if prompt_type is not None:
         for idx, (class_name, class_descriptors) in enumerate(descriptions.items()):
-            if target_classes is not None and \
-               (class_name.lower() not in target_classes or class_name.lower().replace("-", " ") not in target_classes):
+            if target_classes is not None and class_name not in target_classes and \
+               (class_name.lower() not in target_classes or class_name.lower().replace("-", " ") not in target_classes ):
                 continue
 
             if len(class_descriptors) == 0:
                 class_descriptors = ['']
 
-            class_name = wordify(class_name)
-
+            class_name = wordify(class_name) # replace '_' with ' '
+            
             # Sachit's prompt
             if prompt_type == 0:
                 templated_descriptors = class_descriptors
@@ -97,7 +98,7 @@ def load_descriptions(dataset_name, classes_to_load=None, prompt_type=None, desc
             descriptions_mappings[class_name] = {templated_descriptor: descriptor for descriptor, templated_descriptor in zip(class_descriptors, templated_descriptors)}
 
             # Print an example for checking
-            if idx == 0:
+            if idx == 0 and unmute:
                 print(f"\nExample description for prompt type {prompt_type}: \"{templated_descriptions[class_name][0]}\"\n")
 
     return templated_descriptions, descriptions_mappings
@@ -159,4 +160,17 @@ def check_device_availability(devices: list[int or str] or int or str):
             raise ValueError(f"Device {device} is not available. Available devices are {available_list}")
 
 
+def closest_string(target, strings_list):
+    """
+    Find the string in the list with the closest Levenshtein distance to the target string.
+    """
+    closest_str = None
+    closest_distance = float('inf')
 
+    for s in strings_list:
+        distance = levenshtein_distance(target, s)
+        if distance < closest_distance:
+            closest_str = s
+            closest_distance = distance
+
+    return closest_str, closest_distance

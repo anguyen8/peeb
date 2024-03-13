@@ -15,6 +15,7 @@ from torch.utils.data.distributed import DistributedSampler
 from collections import defaultdict, deque
 import copy
 
+from transformers import OwlViTProcessor
 
 class BirdSoup(Dataset):
 
@@ -57,34 +58,59 @@ class BirdSoup(Dataset):
         ])
     
     def _load_meta(self,):
+        # hot fix, remove underscore in class_name if keyword `stanford` in root.
+        if 'stanford' in self.root_dir:
+            self.meta_df['class_name'] = self.meta_df['class_name'].apply(lambda x: x.replace('_', ' '))
+        
         data_sources = []
         if 'data_source' in self.meta_df.columns:
             data_sources = self.meta_df['data_source'].unique().tolist()
 
         if self.subset is not None:
             # TODO: CHECK RE_INDEXING OF CLASS_ID FOR SUB_CLASSES
-            if "all" not in self.subset and set(self.subset).issubset(set(data_sources)):
-                self.meta_df = self.meta_df[self.meta_df['data_source'].isin(self.subset)]
+            if isinstance(self.subset, str):
+                if "all" not in self.subset and set(self.subset).issubset(set(data_sources)):
+                    self.meta_df = self.meta_df[self.meta_df['data_source'].isin(self.subset)]
 
-                # SORT dataframe by class_id
-                self.meta_df = self.meta_df.sort_values(by=['class_id'])
+                    # SORT dataframe by class_id
+                    self.meta_df = self.meta_df.sort_values(by=['class_id'])
 
-                # and RE-INDEX the class_ids
-                self.meta_df['class_id'] = self.meta_df['class_id'].astype('category').cat.codes
+                    # and RE-INDEX the class_ids
+                    self.meta_df['class_id'] = self.meta_df['class_id'].astype('category').cat.codes
+                else:
+                    # use code '0010' to represent the first 10% of the data. First two digits are the percentage of starting index, and last two digits are the percentage of ending index.
+                    # split the code into two parts, the first two digits and the last two digits
+                    start_percentage = int(self.subset[:2])
+                    end_percentage = int(self.subset[2:])
+                    if end_percentage == 0:
+                        end_percentage = 100
+                    start_index = int(self.meta_df.shape[0] * start_percentage / 100)
+                    end_index = int(self.meta_df.shape[0] * end_percentage / 100)
+                    self.meta_df = self.meta_df.iloc[start_index:end_index]
+                    
 
         self.targets = self.meta_df['class_id'].values.tolist()
         if self.use_meta_dir:
-            image_paths = self.meta_df['abs_path'].values.tolist()
+            if 'abs_path' in self.meta_df.columns:
+                image_paths = self.meta_df['abs_path'].values.tolist()
+            else:
+                # combine `image_path` with root
+                image_paths = self.meta_df['image_path'].apply(lambda x: os.path.join(self.root_dir, x)).values.tolist()
             self.samples = list(zip(image_paths, self.targets))
         else:
             self.meta_df['new_image_path'] = self.meta_df['new_image_name'].apply(lambda x: os.path.join(self.root_dir, "images", x))
             self.samples = list(zip(self.meta_df['new_image_path'].values.tolist(), self.targets))
 
-        self.birdsoup_image_name = self.meta_df['new_image_name'].values.tolist()
-
+        # if has "new_iamge_name" column, use it as the image name otherwise use base name of image_path
+        if 'new_image_name' in self.meta_df.columns:
+            self.birdsoup_image_name = self.meta_df['new_image_name'].values.tolist()
+        else:
+            self.birdsoup_image_name = self.meta_df['image_path'].apply(lambda x: os.path.basename(x)).values.tolist()
+        
         # Note: The unique() function returns the unique elements of the dataframe in top-bottom order.
         #      The order of the unique elements in the returned array generally preserves the original ordering.
-        self.idx2class = dict(zip(self.meta_df['class_id'].unique(), self.meta_df['class_name'].unique()))
+        unique_classes = self.meta_df['class_id'].unique()
+        self.idx2class = {i: self.meta_df[self.meta_df['class_id'] == i]['class_name'].iloc[0] for i in unique_classes}
         self.class2idx = {v: k for k, v in self.idx2class.items()}
 
         if len(list(self.meta_df['class_id'].unique())) != len(list(self.meta_df['class_name'].unique())):
@@ -110,7 +136,10 @@ class BirdSoup(Dataset):
             sample = self.tri_aug(sample)
 
         if self.transform is not None:
-            sample = self.transform(images=sample, return_tensor='pt')
+            if type(self.transform) == OwlViTProcessor:
+                sample = self.transform(images=sample, return_tensor='pt')
+            else:
+                sample = self.transform(sample)
 
         if self.return_path:
             return sample, target, image_path

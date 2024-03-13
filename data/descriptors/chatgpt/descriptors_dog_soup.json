@@ -1,0 +1,1122 @@
+{
+    "King Charles Spaniel": [
+        "head: slightly rounded and proportionate to the body, with a distinctive spot in the center of the skull called the \"blenheim spot\" in chestnut and white variants",
+        "ears: long, set high on the head and heavily feathered, often in chestnut color contrasting with the rest of the coat",
+        "muzzle: short and tapered, with a black or brown nose depending on the color of the coat",
+        "body: compact and muscular, with a deep chest and level back, often covered in long, silky fur that can come in four different color patterns: blenheim (chestnut and white), tricolor (black, white, and tan), black and tan, and ruby",
+        "legs: short, straight, and well-boned, often feathered like the ears, with color matching the rest of the coat",
+        "tail: medium length, set slightly above the level of the back, often with feathering and carried happily but never much above the level of the back"
+    ],
+    "Welsh Terrier": [
+        "head: small, rounded skull with a distinctive \"dome\" shape, often in a rich chestnut color",
+        "ears: long, pendulous, and feathered, often darker in color than the rest of the body, usually in a rich chestnut or black",
+        "muzzle: short and square-shaped with a black, button-like nose at the end, typically surrounded by a white fur",
+        "body: compact and well-proportioned with a deep chest, often covered with a silky, wavy coat that ranges in color from white, black, and tan to a rich chestnut",
+        "legs: short and straight, often covered in the same silky fur as the body, which can be white, tan or a rich chestnut color",
+        "tail: usually docked to leave about one-third to one-half of its original length, covered with the same silky, wavy fur as the body, often in a rich chestnut color or a combination of white, black and tan"
+    ],
+    "Chow Chow": [
+        "head: slightly rounded, not domed or flat, with a distinct stop midway between the tip of the nose and the back of the skull",
+        "ears: long, feathered, and set low, hanging close to the head with the tips nearly reaching the end of the nose when pulled forward",
+        "muzzle: well-developed but not too long or pointed, with a black, fully-pigmented nose",
+        "body: compact but well-proportioned, with a level topline and a deep chest",
+        "legs: straight, with moderate bone, and well-feathered, especially on the back legs",
+        "tail: well-feathered, carried happily but never much above the level of the back, and not docked"
+    ],
+    "Bluetick Coonhound": [
+        "head: round and slightly domed with a well-defined stop, featuring a rich dark-brown color",
+        "ears: long, set high, and adorned with plenty of long, silky, feathering fur of chestnut on white color",
+        "muzzle: short with a black, fully pigmented nose, the fur on the muzzle is typically white or chestnut",
+        "body: compact and well-proportioned, typically a rich, chestnut color on a pearly white background",
+        "legs: moderate bone structure, well-feathered with chestnut and white fur, adding to the breed's elegance",
+        "tail: slightly curved, carried happily but never much above the level of the back, with abundant feathering of chestnut and white fur"
+    ],
+    "Flat Coated Retriever": [
+        "head: rounded with a slightly flattened skull, often covered with long, silky fur",
+        "ears: large and set low, heavily feathered with long fur, usually in chestnut brown or black color",
+        "muzzle: short and wide, typically with a black or dark brown nose at the end",
+        "body: compact and well-proportioned, usually covered with a coat of long, silky fur that can be a mix of white, black, and tan colors",
+        "legs: moderately short but strong, often covered in the same long, silky fur as the rest of the body",
+        "tail: set high and carried happily but never much above the level of the back, covered with abundant feathering"
+    ],
+    "English Foxhound": [
+        "head: round and well-proportioned with a slightly rounded skull",
+        "ears: set low, long and heavily feathered, framing the face",
+        "muzzle: medium length and well-formed, with a black or brown nose at the end",
+        "body: compact and well-balanced, with a slightly curved back and a deep chest",
+        "legs: straight and moderately boned, featuring feathered fur",
+        "tail: often docked, set low and adorned with feathery fur; wagging when in motion"
+    ],
+    "Schnauzer": [
+        "head: slightly rounded with a flat top, adorned with long, silky fur that often has a chestnut or black and white coloring",
+        "ears: set low, long and heavily feathered with the same silky fur as the head, usually in the same color",
+        "muzzle: moderately short and square, with a black or brown, well-developed nose at the end",
+        "body: compact and well-balanced with a deep chest, covered with a smooth or slightly wavy coat that comes in black & tan, tricolor, ruby, and blenheim (chestnut and white",
+        "legs: moderate bone structure, with the front legs being straight while the back legs are muscular, all covered with the same silky fur as the body",
+        "tail: well-feathered, usually docked to two-thirds its original length, carried happily but never much above the level of the back"
+    ],
+    "Black and Tan Coonhound": [
+        "head: rounded, with a slight dome shape, often covered in long, wavy fur that is usually white with patches of tan, black, or ruby",
+        "ears: large, long and pendulous, set low and close to the head, covered with abundant, feather-like fur often in a darker shade like black or tan",
+        "muzzle: moderate length, squared-off, with black pigment on the lips and nose, typically covered in short, smooth fur that is white or lighter colored",
+        "body: small, compact, and well-proportioned with a level back, covered in long, silky fur that can be white, tan, black, or ruby",
+        "legs: moderately boned, straight, and well-set under the body, covered with long, silky fur that matches the body color",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, covered in feathered fur that matches the body color"
+    ],
+    "Scottish Terrier": [
+        "head: round and domed, featuring a well-defined stop between forehead and muzzle",
+        "ears: set low and long, covered with ample feathering and hanging close to the cheeks",
+        "muzzle: square in appearance, shorter than the skull, with a black or brown nose at the end",
+        "body: compact and well-proportioned, featuring a level topline from the withers to the tail",
+        "legs: moderate length, strong and straight, with feathering on the back of the forelegs and thighs",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, with moderate feathering"
+    ],
+    "Tibetan Terrier": [
+        "head: proportionate to the body with a slightly rounded shape, covered with long, silky fur often in combinations of white, black, and brown",
+        "ears: long, drooping and well feathered, their fur is typically a rich chestnut color, framing the face attractively",
+        "muzzle: short and conical, often with a black or brown nose at the end; surrounded by fur that is slightly lighter than the rest of the body",
+        "body: compact and well-proportioned with a deep chest, sporting a silky, wavy coat that can be blenheim (chestnut and white), tricolor (black, white, and tan), black and tan, or ruby",
+        "legs: relatively short and straight, with paws that are compact, feathered and cushioned; they are covered in the same silky fur as the body, often in a slightly lighter shade",
+        "tail: of medium length and typically carried happily aloft, the tail is covered with long, feathered fur that matches the color of the body. some are naturally short or are docked to a reasonable length"
+    ],
+    "Wirehaired Pointing Griffon": [
+        "head: slightly rounded, comparatively small, and proportionate to the body with a distinct stop halfway between the tip of the nose and the back of the skull",
+        "ears: long, set high and adorned with rich, silky fur that's often chestnut on the outside and lighter on the inside, with plenty of feathering",
+        "muzzle: moderately short, square, not pointed, with a black or ruby nose. the lips should be well-developed but not pendulous, covering the lower jaw on each side",
+        "body: compact and well-proportioned with a level topline, deep chest and well-sprung ribs",
+        "legs: straight with good bone structure, covered with feathered fur that varies from white, black, tan or ruby",
+        "tail: of medium length, set neither high nor low, carried happily but never much above the level of the back, with feathering in harmony with the rest of the coat. it could be white, black, tan or ruby"
+    ],
+    "Dandie Dinmont Terrier": [
+        "head: round shaped with a slightly flat top, often covered in silky, wavy fur that can range in color from black, tan, or chestnut to white",
+        "ears: long, pendulous and set low, covered in profuse feathering fur, often in a rich chestnut color against a pearly white background",
+        "muzzle: square-shaped, proportionate to the size of the head, with a black or brown button-like nose at the end",
+        "body: compact, balanced, with a deep chest and slightly arched back, covered in a silky, wavy coat that can be bicolor (blenheim), tricolor (prince charles), black and tan (king charles), or ruby",
+        "legs: moderate in length but well-boned, often covered in the same silky fur as the rest of the body, may have feathering on the lower half",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, covered in long, feathered fur"
+    ],
+    "Lhasa Apso": [
+        "head: round in shape with a slightly flat top, covered in silky, medium-length fur",
+        "ears: long, feathery, and floppy, covered in long, glossy fur that often matches the color of the coat",
+        "muzzle: short and tapered, covered in short fur; the nose is usually black",
+        "body: compact and muscular with a well-proportioned chest, covered in a silky, medium-length coat that is commonly seen in combinations of black, white, and tan",
+        "legs: short and sturdy, covered in medium-length fur, often slightly lighter in color than the rest of the body",
+        "tail: moderately long and usually carried aloft, covered in long, feathered fur that matches the color of the body"
+    ],
+    "Plott": [
+        "head: relatively round shape with a slightly flat top, covered with silky, long and wavy fur, often in a mix of white, black, and brown colors",
+        "ears: long, set low and close to the head, heavily covered with long, silky, wavy fur that is often a mix of white, black, and brown colors",
+        "muzzle: medium length, tapered and covered with shorter, smooth fur, often in black or brown color",
+        "body: compact and well-balanced with a deep chest, covered with long, silky, wavy fur that is often a mix of white, black, and brown colors",
+        "legs: medium length, straight and well-muscled, covered with long, silky, wavy fur that is often a mix of white, black, and brown colors",
+        "tail: medium length, set slightly lower than the body line, carried happily but never much above the level of the back, covered with long, silky, wavy fur that is often a mix of white, black, and brown colors"
+    ],
+    "Dobermann": [
+        "head: round in shape with a slightly flat top, covered in soft, silky fur that can range from chestnut, black, or a mix of white and chestnut/black",
+        "ears: long and droopy, set low, covered with long, silky fur that can be chestnut, black, or a mix of white and chestnut/black",
+        "muzzle: short and squarish, with a prominent black nose and surrounded by medium-length fur that matches the color of the rest of the coat",
+        "body: compact and well-balanced, covered in long, silky fur that can be chestnut, black, white, or a mixture of these colors",
+        "legs: short, sturdy with strong bone structure, covered in silky fur that matches the rest of the coat",
+        "tail: moderately long, usually carried aloft, covered in long, silky fur that matches the rest of the coat"
+    ],
+    "Irish Wolfhound": [
+        "head: round with a slightly flat top, covered with long, silky fur usually in white, black, or chestnut",
+        "ears: long, droopy, and heavily feathered, usually in black or chestnut color, that hang down close to the cheeks",
+        "muzzle: short, square-shaped, and well-developed, covered in short fur that is typically white or black",
+        "body: compact and well-balanced, covered in a slightly wavy, silky coat that can be white, black, or chestnut",
+        "legs: short and straight, covered with feathered fur that matches the color of the body, often white, black, or chestnut",
+        "tail: medium length, usually carried happily but never much above the level of the back, covered in long, feathered fur that is white, black, or chestnut"
+    ],
+    "Bouvier des Flandres": [
+        "head: slightly rounded and proportionate to the body, with a distinctive stop between the eyes",
+        "ears: set high and close to the head, they are long and feathered, usually in a darker shade compared to the body",
+        "muzzle: short and tapered, with a black or brown nose, depending on the coat color",
+        "body: compact and well-balanced with a deep chest, covered in a silky, wavy coat that comes in four varieties: blenheim (chestnut and white), tricolor (black, white, and tan), black and tan, and ruby (solid red",
+        "legs: moderately long and straight, with a good amount of feathering, ending in compact, cushioned feet",
+        "tail: well-feathered and usually docked to two-thirds of its original length, carried happily but not much higher than the level of the back"
+    ],
+    "Bloodhound": [
+        "head: rounded and compact with a well-defined stop in between the forehead and the muzzle",
+        "ears: long, set low and well-covered with hair, framing the face with a feathered appearance",
+        "muzzle: square and medium-length, often black or brown, with a well-defined stop",
+        "body: compact and well-proportioned, with a moderately deep chest and well-sprung ribs",
+        "legs: strong and fairly straight, with moderate bone density, covered in feathered fur",
+        "tail: set slightly below the line of the back, often docked to about one-third, feathered with long hair"
+    ],
+    "Mastiff": [
+        "head: round and proportionate to the body, with a slight dome on top",
+        "ears: long and feathered, hanging down on either side of the head, usually in a black or brown color",
+        "muzzle: squared-off and moderate in length, black in color with a well-defined stop",
+        "body: compact and well-proportionate, usually covered in a chestnut and white, black and tan, or ruby-colored coat that's silky and slightly wavy",
+        "legs: moderate in length and strong, with feathering on the front legs and heavier feathering on the hind legs, matching the color of the body coat",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, coated with a silky fur that matches the body color"
+    ],
+    "Yorkshire Terrier": [
+        "head: the head is slightly rounded with a well-defined stop. it has a distinctively domed skull with a black and tan color pattern",
+        "ears: they have long, silky and pendulous ears that are set low and close to the head, often with a feathered appearance. they are usually darker than the coat color",
+        "muzzle: the muzzle is square and proportionate to the size of the dog. it is usually a darker shade than the rest of the body",
+        "body: compact and well-proportioned, the body is typically covered in a chestnut on white, black and tan, or tricolor coat. the coat is long, silky, and often slightly wavy",
+        "legs: the legs are relatively short and straight, with the front legs being feathered. they are well-boned and muscular",
+        "tail: the tail is generally docked to a length that ensures a balanced appearance. it is covered with long, feathered fur and is carried happily but never much above the level of the back"
+    ],
+    "Chesapeake Bay Retriever": [
+        "head: slightly rounded and compact with a well-defined stop",
+        "ears: long, droopy, feathered and set low, often with darker coloration than the body",
+        "muzzle: short, tapered and often darker in color, with a black, well-developed nose",
+        "body: compact, balanced and slightly longer than tall, with a deep chest and ribs well sprung",
+        "legs: moderate bone, straight and parallel when viewed from the front; hind legs are muscular",
+        "tail: feathers, set to be in line with the body, often docked to one-third of its original length"
+    ],
+    "Clumber Spaniel": [
+        "head: rounded with a full, slightly domed skull, often covered in long, silky fur",
+        "ears: long, set high, and heavily feathered, hanging down close to the head",
+        "muzzle: short and wide, with a well-defined stop between the skull and the nose",
+        "body: compact and well-balanced with a short, straight back and deep chest, covered in a silky, wavy coat which can be blenheim (chestnut and white), tricolor (black, white, and tan), black and tan, or ruby",
+        "legs: short and straight with moderate bone, often covered in feathered fur, particularly on the front legs",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, feathered with long, silky fur"
+    ],
+    "Cavalier King Charles Spaniel": [
+        "head: small and round with a flat skull, usually covered in long, silky fur that is typically chestnut and white or black and tan in color",
+        "ears: long and pendulous, set low on the head and heavily feathered with fur that is usually chestnut, black or tan",
+        "muzzle: short and wide with a well-defined stop, covered in short fur that is typically white, black or tan, with a black nose at the end",
+        "body: compact but well-balanced, covered in a long, silky coat that can be chestnut and white, black and tan, or ruby",
+        "legs: short and straight with a moderate amount of bone, covered in long, feathered fur that usually matches the rest of the body",
+        "tail: docked to be in line with the body and carried happily, covered in long, feathered fur that matches the rest of the coat"
+    ],
+    "Bernese Mountain Dog": [
+        "head: slightly rounded with a well-defined stop (the point where the muzzle meets the forehead",
+        "ears: long, set low, with heavy feathering, and hang down close to the head",
+        "muzzle: medium length, square-shaped, and the same color as the rest of the coat",
+        "body: compact with a level topline, deep chest, and well-sprung ribs",
+        "legs: straight, well-boned, and covered with feathering fur",
+        "tail: well-feathered, carried happily but never much above the level of the back"
+    ],
+    "Fox Terrier (Wire)": [
+        "head: round shaped, often black or brown, with a prominent forehead",
+        "ears: long and droopy, covered with silky, wavy fur, usually the same color as the coat",
+        "muzzle: short and tapered, often black, with a well-defined stop between the forehead and nose",
+        "body: compact and well-balanced, with a silky, wavy coat that comes in various colors, including chestnut and white, black and tan, ruby, and tricolor",
+        "legs: medium-length, straight and well-boned, with feathered fur that matches the color of the coat",
+        "tail: medium length, set high and carried happily but never much above the level of the back, covered in feathered fur"
+    ],
+    "Deerhound": [
+        "head: round and often proportionate to the body, with a prominent forehead",
+        "ears: long, silky and set low, framing the face and often a darker color than the rest of the coat",
+        "muzzle: square with a well-defined stop, typically the same color as the coat, may be slightly darker",
+        "body: compact and muscular, often covered in a coat that is white with patches of black, tan, or red",
+        "legs: moderate length, sturdy and well-boned, often covered in a coat that matches the body",
+        "tail: feathered, typically carried happily but never much above the level of the back"
+    ],
+    "Canadian Eskimo Dog": [
+        "head: round with a flat skull and well-defined stop, usually covered with long, silky, often wavy hair",
+        "ears: set low, long, with heavy feathering, hanging close to the head, usually in a dark brown or black color",
+        "muzzle: short, square, proportionate to the size of the dog, often covered with short, smooth hair, nose is black or dark in color",
+        "body: compact, well-proportioned, with a noticeable 'tuck-up' at the waist. the fur is long, silky and often chestnut and white or black and tan",
+        "legs: short and straight, often well feathered, especially the front legs, which are usually a slightly lighter shade than the body",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, often with a white tip, covered with long, silky fur"
+    ],
+    "Poodle": [
+        "head: round with a prominent forehead, displaying a soft, gentle expression",
+        "ears: long, set high and adorned with lavish feathering, usually a rich chestnut color",
+        "muzzle: squared with a well-defined stop, typically a black or dark brown color",
+        "body: compact and well-balanced with a deep chest, covered in a long, silky coat that can be blenheim (red and white), tricolor, black and tan, or ruby",
+        "legs: moderate length, straight, with well-developed muscles under a layer of feathered fur, often matching the body's color",
+        "tail: docked to two-thirds of its original length, carried slightly above the horizontal line, feathered and usually in the same color as the body's fur"
+    ],
+    "Dalmatian": [
+        "head: round with a domed skull, surrounded by long, silky fur, typically a rich chestnut color",
+        "ears: long and pendulous, heavily covered in feathers of long and silky fur which is usually chestnut colored",
+        "muzzle: short and flat, typically black, with full lips and a well-developed, square jaw",
+        "body: compact and muscular, covered in a coat of long, silky fur which may be chestnut and white (blenheim variety) or black and tan (king charles variety",
+        "legs: short and straight, fairly muscular, covered in long, silky fur that matches the body's color",
+        "tail: moderately long, sometimes docked, carried happily but never much above the level of the back, covered in long, silky fur"
+    ],
+    "Belgian Shepherd Dog": [
+        "head: rounded with a slightly flat top, covered in silky, medium-length fur, usually in a mix of white, black, and tan colors",
+        "ears: long and feathered, hanging down alongside the head, covered in soft, wavy fur that can be black, tan, or chestnut",
+        "muzzle: short and slightly squared, covered in short fur that can be black, tan, or white, with a black nose at the end",
+        "body: compact and well-proportioned, covered in wavy, medium-length fur, usually in a mix of white, black, and tan colors",
+        "legs: short, yet rather muscular, covered in medium-length fur that can be feathered, usually in a mix of white, black, and tan colors",
+        "tail: feathered and slightly curved, usually kept at the level of the back, covered in long, silky fur, often in a mix of white, black, and tan colors"
+    ],
+    "West Highland White Terrier": [
+        "head: slightly rounded, adorned with long, silky fur often in a blend of black, white, and tan",
+        "ears: long and set low, covered with abundant feathery fur, usually darker in color",
+        "muzzle: short, square and deep, with a prominent black nose at the end",
+        "body: compact and well-proportioned, often covered in a coat of richly colored fur which can be black, white, tan, and ruby",
+        "legs: short and straight, with the front legs being slightly bowed, covered with long, feathery fur",
+        "tail: moderately long, set low, curving upwards and carried slightly above the line of the back, covered in feathered fur"
+    ],
+    "Greyhound": [
+        "head: rounded and compact with a slightly flattened skull",
+        "ears: long and feathered, hanging down close to the cheeks",
+        "muzzle: short and tapered with a black, well-developed nose",
+        "body: compact and well-proportioned, covered in silky, wavy fur",
+        "legs: short and straight with feathered fur, strong and muscular",
+        "tail: slightly curved, often docked to maintain balance with the body, covered in feathery fur"
+    ],
+    "Greater Swiss Mountain Dog": [
+        "head: rounded shape with a well-defined stop (where the muzzle meets the forehead), often featuring a rich, chestnut color framed by white fur",
+        "ears: long, droopy and set low, adorned with silky, feather-like fur, often a rich, chestnut color",
+        "muzzle: short and squared off in shape, with a black or brown nose, surrounded by white fur with potential chestnut markings",
+        "body: compact and well-balanced, covered with a luxuriously silky coat of white and chestnut, or sometimes black and tan",
+        "legs: short and straight with moderate bone structure, feathered with long, silky fur",
+        "tail: usually docked, carried happily but not much higher than the level of the back, featuring white fur with chestnut or black markings"
+    ],
+    "Entlebucher Mountain Dog": [
+        "head: rounded with a slightly flat top, covered in glossy, silky fur that varies in color from blenheim (chestnut and white), tricolor (black, white, and tan), ruby (solid red), and black and tan",
+        "ears: long, set high on the head, heavily feathered with silky fur that can be one of the colors mentioned above, hang down close to the head",
+        "muzzle: short and tapered, with dark round eyes and a black nose, the fur is usually lighter in color than the body, often tan or white",
+        "body: compact and well-proportioned, covered in silky, wavy fur that's often white with patches of the other colors",
+        "legs: relatively short and straight, covered with the same type of fur as the body, often feathered",
+        "tail: generally docked to half its length, carried happily but never much above the level of the back, covered in wavy, feathered fur that matches the body's coloration"
+    ],
+    "Maltese": [
+        "head: rounded and slightly flat between the ears, often marked by a distinctive spot called \"blenheim spot\" in some varieties",
+        "ears: long, set high, and heavily feathered, they hang down close to the head, giving a distinctive droopy appearance",
+        "muzzle: short and slightly tapered, often dark or black in color with a well-defined stop",
+        "body: compact and well-proportioned with a short, straight back, giving the dog a square profile",
+        "legs: short and straight with a moderate amount of bone, often covered in a coat of silky, wavy fur",
+        "tail: typically docked to two-thirds of its original length, carried happily but never much above the level of the back"
+    ],
+    "Irish Water Spaniel": [
+        "head: round with a well-defined stop, usually covered in long, silky fur that is often chestnut, black, or white in color",
+        "ears: set low, long and pendulous, covered with abundant feathering, often dark in color",
+        "muzzle: short and tapered, with a black or deep brown nose at the end",
+        "body: compact and well-balanced, usually covered with a smooth coat of white, black, tan, or mixed colors",
+        "legs: medium length, straight, and well-muscled, often feathered, matching the color of the body",
+        "tail: set slightly below the line of the back, usually docked to two-thirds of its natural length, and covered in feathery fur"
+    ],
+    "Komondor": [
+        "head: round with a domed skull, usually in white with patches of brown, black, or tan",
+        "ears: long, set low, and heavily feathered, often in a darker shade than the head",
+        "muzzle: short and wide with a black or brown nose, surrounded by a thick coat of fur",
+        "body: compact, yet well-proportioned, covered with a silky, wavy coat that can be a combination of white, black, brown, or tan",
+        "legs: short but strong, covered with a medium-length, silky coat",
+        "tail: usually docked to enhance their distinctive silhouette, covered with a long, feathered coat"
+    ],
+    "Keeshond": [
+        "head: rounded with a slightly domed skull, featuring a distinctive \"stop\" midway between the eyes and the nose",
+        "ears: long, set low, and heavily feathered, often with a darker color than the rest of the body",
+        "muzzle: short and slightly tapered, with a black or deep brown nose",
+        "body: compact and well-balanced, with a deep chest and ribs well sprung",
+        "legs: moderate length, well-boned, and feathered with fur, typically a shade lighter than the body",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back"
+    ],
+    "Shih Tzu": [
+        "head: round with a slightly domed skull, featuring a pronounced stop (the point at which the forehead meets the muzzle",
+        "ears: long, pendulous, set low on the head and heavily feathered with fur, typically chestnut brown or black",
+        "muzzle: tapered, with characteristic smushed appearance, fur often lighter or blending into the color of the body",
+        "body: compact but well-proportioned, often featuring a richly colored, silky coat which can be chestnut and white (blenheim), black and tan (king charles), ruby (solid red), or tricolor (prince charles",
+        "legs: medium length, straight, and well-feathered with fur, color typically matches the body",
+        "tail: moderately long, set slightly lower than the backline, carried happily but never much above the level of the back, often trimmed and with feathering that matches the body color"
+    ],
+    "Great Pyrenees": [
+        "head: dome-shaped with a distinct stop halfway between the tip of the nose and the back of the skull",
+        "ears: long and feathered, set low and hanging close to the face, usually dark brown or black in color",
+        "muzzle: short and tapered, with a black or brown nose at the end",
+        "body: compact and well-balanced, covered in a silky, wavy coat that can be blenheim (chestnut and white), tricolor (black, white, and tan), ruby (solid red), or black and tan",
+        "legs: short and straight, with the front legs set wide apart, covered in the same silky fur as the body",
+        "tail: naturally long and feathered, often wagging, but sometimes docked to a medium length"
+    ],
+    "Pointer": [
+        "head: round, slightly domed with large dark eyes that express sweetness and intelligence",
+        "ears: long, silky, and set high, hanging down alongside the head with a slight wave or curl",
+        "muzzle: square and moderate in length with a black nose",
+        "body: compact and well-balanced, with a deep chest and slightly arched back",
+        "legs: strong and straight, with compact feet and well-arched toes",
+        "tail: carried happily but never much above the level of the back, often docked to a reasonable length"
+    ],
+    "Old English Sheepdog": [
+        "head: round and domed, with a full, well-defined stop",
+        "ears: set low and long, reaching at least to the nose, covered with long, luxurious, silky fur, often dark or chestnut in color",
+        "muzzle: square, medium length, with a black, well-developed nose",
+        "body: compact and well-proportioned, with a deep chest and well-sprung ribs",
+        "legs: short and straight, with strong bone structure, covered in thick, often white or cream fur",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, covered with abundant feathering"
+    ],
+    "Great Dane": [
+        "head: small, slightly rounded with a distinct stop (indentation between the eyes",
+        "ears: set high on the head, long, pendulous, and well feathered, often in a darker color than body fur",
+        "muzzle: short, square-shaped, covered in a combination of white and tan fur, with characteristic dark, round eyes and a black nose",
+        "body: compact and muscular, often covered in a glossy coat that can be black and tan, tricolor, ruby, or blenheim (red and white",
+        "legs: short and straight, with four well-feathered, sturdy, and proportionate legs",
+        "tail: docked to a medium length, carried slightly higher than the level of the back, feathered with the same glossy coat as the body"
+    ],
+    "Affenpinscher": [
+        "head: round in shape with a slightly domed skull; has a distinctive spot in the center, known as 'lozenge mark",
+        "ears: long and set low, covered with lush, silky fur that's often chestnut in color",
+        "muzzle: medium in length, square-shaped, topped with a black nose",
+        "body: compact and well-proportioned, often covered in white fur with chestnut or black patches",
+        "legs: short to medium length, strong, often covered with white fur",
+        "tail: moderately long, carried happily but never much above the level of the back, covered with feathered fur"
+    ],
+    "Ibizan Hound": [
+        "head: round with a slightly flat skull and a prominent forehead, typically covered in chestnut, black or tan fur",
+        "ears: long, set high and close to the head, well feathered with long silky fur, usually in chestnut or black color",
+        "muzzle: moderate length, tapered, with a shallow stop, usually covered in fur that matches the color of the head",
+        "body: compact and well-balanced, covered in long, silky fur that can be chestnut, black, white or tan",
+        "legs: short but strong and muscular, covered in long, silky fur that matches the body color",
+        "tail: docked to a length that shows off the body balance, usually carried slightly higher than the level of the back, covered with abundant feathers and fur that matches the body color"
+    ],
+    "Pug": [
+        "head: slightly rounded and not domed, with a distinct stop between the forehead and muzzle",
+        "ears: long, silky, and set low, hanging down against the sides of the head",
+        "muzzle: square, wide, and deep, with a well-defined stop and black nose",
+        "body: compact and well-proportioned, with a level back and well-sprung ribs",
+        "legs: short and straight, with well-feathered fur and cat-like feet",
+        "tail: well-feathered, often docked to about half its length, carried happily but never much above the level of the back"
+    ],
+    "American Staffordshire Terrier": [
+        "head: rounded with a slightly flat top, usually covered in a mix of white and chestnut or black fur",
+        "ears: long, floppy and set low, well covered with long, silky fur, often in a chestnut or black color",
+        "muzzle: short and wide, the fur is normally shorter here and can be a mix of white, chestnut or black",
+        "body: compact and well-proportioned, covered in a silky, long coat that can be in combinations of white, chestnut, black or even tricolor",
+        "legs: short and straight, well-covered in the same long, silky fur as the body, usually in matching color",
+        "tail: usually docked to half its length, the tail is set level with the back and is covered in long, silky fur"
+    ],
+    "Norfolk Terrier": [
+        "head: rounded with a high domed forehead, typically covered in long, silky fur",
+        "ears: long, set high on the head, heavily feathered, and hang down, often in a shade of rich chestnut or black",
+        "muzzle: short and conical, with a black or brown nose at the end",
+        "body: compact and well-balanced, with a deep chest and ribs that are well sprung. the fur on the body is usually chestnut, black, white, or a mix of these colors",
+        "legs: moderately long with well-boned forelegs, often covered in sleek, silky fur matching the body's colors",
+        "tail: slightly curved, carried above the level of the back, typically covered in feathered fur that wags when the dog is excited or happy"
+    ],
+    "Irish Terrier": [
+        "head: slightly rounded, but without a dome or incline between the eyes, featuring a characteristic \"stop\" mid-skull",
+        "ears: long, set low, and covered in abundant feathering, usually dark or matching the rest of the coat",
+        "muzzle: squared off and deep, with a well-developed, black nose",
+        "body: compact, with a well-sprung ribcage, and a level back",
+        "legs: short and straight, with large, feathered feet",
+        "tail: usually docked to two-thirds its length, carried happily but never much above the level of the back, with moderate feathering"
+    ],
+    "Pomeranian": [
+        "head: rounded with a slightly flattened skull, often covered in long, silky, chestnut on white fur",
+        "ears: long and set low, heavily covered in flowing fur that is often a rich chestnut color",
+        "muzzle: square and somewhat short, with a black nose and fur that may be white or chestnut, matching the rest of the face",
+        "body: compact with a level topline, covered in long, silky fur that can be blenheim (chestnut on white), tricolor (black and white with tan markings), ruby (solid rich red), or black and tan",
+        "legs: medium length and straight, with long, silky fur that is often chestnut on white or matches the rest of the body",
+        "tail: well feathered, carried happily but never much above the level of the back, and covered in flowing fur that matches the color of the body"
+    ],
+    "Boxer": [
+        "head: round and well-proportioned with a slight indentation between the eyes",
+        "ears: long and pendulous, set high on the head, covered with long silky fur, usually darker than the rest of the body",
+        "muzzle: short and square, with a distinct stop, the nose is black or dark in color",
+        "body: compact and well-balanced, the chest is deep with well-sprung ribs, the back is level",
+        "legs: straight, well-boned and muscular, the feet are compact with well-arched toes",
+        "tail: docked to two-thirds of the original length, carried slightly above the level of the back, covered with feathered fur"
+    ],
+    "Briard": [
+        "head: rounded with a slight dome shape, covered in silky fur that can range from black and tan to ruby or chestnut and white",
+        "ears: long, low-set, and heavily feathered with fur that can be black, tan, ruby, or chestnut and white, giving them a distinctive droopy appearance",
+        "muzzle: proportionate to the head with a black or brown nose at the end, covered in short fur that can be black, tan, ruby, or chestnut and white",
+        "body: compact with a level topline, covered in long, silky fur that can range from black and tan to ruby or chestnut and white",
+        "legs: short and straight, covered in long, silky fur that can be black, tan, ruby, or chestnut and white",
+        "tail: set slightly below the level of the back, often docked to two-thirds of its natural length and covered in thick, feathered fur that matches the body's color"
+    ],
+    "Boston Terrier": [
+        "head: round in shape with a slightly dome-shaped skull, covered in a variety of fur colors including black, tan, ruby, and blenheim (white with chestnut markings",
+        "ears: long, set low and covered in thick, silky fur that is often chestnut or black in color, giving a droopy appearance",
+        "muzzle: short and wide, often darker in color, and covered with shorter fur than the rest of the face",
+        "body: small, but well-proportioned and muscular, covered in a silky, medium-length coat that can be a variety of colors (black, tan, ruby, and blenheim",
+        "legs: short and straight, often covered in the same silky fur as the body, with the colors matching the rest of the coat",
+        "tail: moderately long, carried happily but never much above the level of the back, and covered in long, silky fur that often matches the rest of the coat"
+    ],
+    "Welsh Springer Spaniel": [
+        "head: small, slightly rounded and adorned with long, silky fur; typically in shades of blenheim (chestnut and white), black and tan, or ruby",
+        "ears: long, set low and well covered with feathers; they are usually the same color as the head or darker",
+        "muzzle: square, proportionate to the head, and covered in short fur; the nose is usually black",
+        "body: compact, well-balanced with a level topline; typically covered in a coat of long, silky fur that can be solid or mixed colors",
+        "legs: moderate length, straight and well-boned; covered in the same long, silky fur as the body",
+        "tail: natural length, often slightly curved and well feathered; usually the same color as the body fur, and typically carried happily but not much above the level of the back"
+    ],
+    "English Cocker Spaniel": [
+        "head: round and slightly domed with a well-defined stop (the point at which the muzzle meets the forehead",
+        "ears: long and feathered, set high on the head and drooping down, often black or brown",
+        "muzzle: short and well balanced, with the top lips completely covering the lower lips",
+        "body: compact and well-proportioned with a deep chest, often covered in a coat of chestnut and white, black and tan, or ruby",
+        "legs: straight and moderately boned, covered in the same fur as the body",
+        "tail: set level with the back and usually docked, covered in long, flowing fur"
+    ],
+    "American Water Spaniel": [
+        "head: slightly rounded, proportionate to the body, with a well-defined stop between the forehead and muzzle",
+        "ears: long and feathered, set low and hanging close to the cheeks, giving the characteristic 'droopy' appearance",
+        "muzzle: medium length, narrower than the skull but well-proportioned, with a black or brown nose at the end",
+        "body: compact and muscular, with a deep chest and well-sprung ribs",
+        "legs: straight and well-boned, with feathered fur, ending in small, compact paws",
+        "tail: natural or slightly docked, set level with the back, usually wagging or in motion, feathered fur"
+    ],
+    "Norwich Terrier": [
+        "head: round, slightly domed with dark expressive eyes, giving them a sweet, gentle expression",
+        "ears: set high, long, feathered, and drooping, covering the ears completely and framing the face",
+        "muzzle: moderately short and tapered, featuring a black, well-developed nose",
+        "body: compact and well-proportioned, with a level top line and a deep chest",
+        "legs: moderately boned, straight legs with feathering down to the toes",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, covered with abundant silky fur"
+    ],
+    "Welsh Corgi (Pembroke)": [
+        "head: rounded with a slightly flat top, often covered in white and chestnut fur",
+        "ears: long, droopy, and feathered with silky fur, usually chestnut or black",
+        "muzzle: short and broad with a black, rounded nose at the end",
+        "body: compact and muscular, with a short spine and well-sprung ribs, usually covered in white fur with chestnut or black spots",
+        "legs: short and sturdy, with feathered fur that is usually white, chestnut, or black",
+        "tail: natural or slightly docked, carried happily but never much above the level of the back, covered in feathered fur that often matches the color of the ears"
+    ],
+    "Shetland Sheepdog": [
+        "head: relatively small, rounded shape with a pronounced forehead",
+        "ears: long, silky, and set low, hanging down past the chin, often a darker shade of brown or black",
+        "muzzle: short and tapered, with a black or deep brown nose at the end, often has slightly lighter fur than the rest of the face",
+        "body: compact and well-proportioned, often covered in chestnut, black, or white fur, which can be wavy or straight",
+        "legs: short to medium length, strong and straight, often covered in fur matching the main body color",
+        "tail: traditionally docked to a length of 3-4 inches, covered in feathery fur that matches the rest of the coat"
+    ],
+    "Italian Greyhound": [
+        "head: round with a slightly flattened skull, often covered in long, silky fur",
+        "ears: long, drooping, and set low, covered with heavy feathering",
+        "muzzle: moderate length, well tapered and often darker in color than the rest of the body",
+        "body: compact and well-balanced with a deep chest and slightly arched back, covered in silky, wavy fur",
+        "legs: short yet strong, with feathering on the back of the legs",
+        "tail: often docked to two-thirds its original length, carried slightly above the level of the back and covered in feathered fur"
+    ],
+    "Chihuahua": [
+        "head: round and domed, with a distinctive spot in the middle of the skull known as the \"blenheim spot",
+        "ears: long, set high and close to the head, covered with abundant feathering",
+        "muzzle: medium length, straight and well-proportioned in relation to the rest of the head, with a black, fully pigmented nose",
+        "body: compact and well-balanced, with a deep chest and well-sprung ribs",
+        "legs: short and straight, with a well-formed hindquarter that provides power for movement",
+        "tail: well-feathered, usually docked to two-thirds of its original length, carried happily but never much above the level of the back"
+    ],
+    "Miniature Pinscher": [
+        "head: round skull with a distinct indentation between the eyes, usually covered in silky, wavy fur that is often chestnut, black, white, or a mix",
+        "ears: long, low-set, and heavily feathered with fur, often in chestnut or black color",
+        "muzzle: short and refined with a black or brown nose at the end, covered in shorter fur than the rest of the body, typically in white or lighter shades",
+        "body: compact and well-balanced with a deep chest and slightly arched back, covered in long, silky fur that can range from chestnut, black, and white or a mix",
+        "legs: moderate bone structure with well-feathered fur, often in lighter shades like white, often leading to compact, cushioned feet",
+        "tail: usually docked to no more than half its length, carried happily but never much above the level of the back, covered with plentiful, feathered fur that typically matches the color of the body"
+    ],
+    "Otterhound": [
+        "head: small, slightly rounded with a well-defined stop between eyes and muzzle",
+        "ears: long, set high and close to the head, heavily feathered with long silky fur",
+        "muzzle: moderate length, tapered and well proportioned to the head, with a black nose",
+        "body: compact, well-balanced with a deep chest and slightly arched back",
+        "legs: straight, moderately boned with well-feathered fur, leading to small, compact, cushioned feet",
+        "tail: tends to be slightly longer, carried happily but never much above the level of the back, typically adorned with moderate feathering"
+    ],
+    "Border Terrier": [
+        "head: slightly rounded, proportionate to the body, with a prominent forehead",
+        "ears: long and feathered, set high and hanging flat against the cheeks. usually a glossy black or rich chestnut color",
+        "muzzle: short and tapered, with a black or deep brown nose and expressive, round eyes often dark brown in color",
+        "body: compact and well-balanced, with a deep chest and level back. the fur is often a mix of white, black, and brown, with a silky texture",
+        "legs: moderate length, straight with a good amount of bone, covered in the same silky fur as the body",
+        "tail: carried happily but not much above the level of the back, covered in feathered fur, often with white at the tip"
+    ],
+    "Australian Silky Terrier": [
+        "head: slightly rounded, compact with a soft, gentle expression",
+        "ears: long, feathered, and set low, hanging close to the head",
+        "muzzle: medium length, square-shaped with a black or deep brown nose at the end",
+        "body: compact, well-balanced with a deep chest and well-sprung ribs",
+        "legs: short, well-boned with feathered fur on the lower half",
+        "tail: docked to about half its length, covered in feathered fur and carried happily but never much above the level of the back"
+    ],
+    "Staffordshire Bull Terrier": [
+        "head: small and round with a slight flatness on top, usually covered in silky, wavy fur that varies in color from black and tan, ruby, blenheim (chestnut on white), or tricolor (black, white, and tan",
+        "ears: long and pendulous, covered in feathering hair, typically in the same color as the head, sometimes darker",
+        "muzzle: short and a bit snubbed, usually the same color as the rest of the face, typically adorned with a black, moist nose at the end",
+        "body: compact and muscular with a deep chest and well-sprung ribs, covered in a coat of long, silky fur that is often a combination of white with chestnut, black, or tan markings",
+        "legs: short and straight, with the front legs being slightly shorter than the back legs, covered in the same silky fur as the body, often with feathering on the lower half",
+        "tail: moderately long and usually carried happily aloft, covered in feathered fur that matches the body's color and pattern"
+    ],
+    "Curly Coated Retriever": [
+        "head: round shaped with a slightly domed skull and a distinctive stop between the eyes, typically covered in silky fur",
+        "ears: long and set low, covered in abundant feathering fur, usually dark in color",
+        "muzzle: relatively short and wide, often lighter in color than the rest of the face, ending with a black, round nose",
+        "body: compact but well-proportioned, with a deep chest, covered in a coat of long, silky fur that can be blenheim (chestnut and white), tricolor (black, white, and tan), ruby (solid red), or black and tan",
+        "legs: moderately boned, straight and muscular, with a good amount of feathering fur that matches the body's color",
+        "tail: set slightly below the line of the back, usually docked to half its length, covered in a long, feathered fur that wags enthusiastically"
+    ],
+    "French Bulldog": [
+        "head: round and slightly domed with a distinctive \"stop\" mid-brow, often covered in a silky, wavy coat of fur",
+        "ears: long, low-set, and heavily feathered, often black or brown, giving them a droopy appearance",
+        "muzzle: short and broad, usually in the same color as the body fur, with a black, shiny nose at the end",
+        "body: compact and well-proportioned, covered in a shiny, wavy, and silky coat of fur, commonly in shades of blenheim (chestnut and white), tricolor (black/white/tan), ruby (solid red), and black and tan",
+        "legs: short, straight, and well-boned, with feathered fur matching the body's color",
+        "tail: well-feathered and often left long, carried happily but never much above the level of the back. it can be slightly docked in some countries"
+    ],
+    "English Springer Spaniel": [
+        "head: rounded with a pronounced forehead; usually has a white and tan or black and tan color scheme",
+        "ears: long, drooping and feathered with fur; usually dark brown or black",
+        "muzzle: short and squared off; often a lighter color than the rest of the face",
+        "body: compact but well-proportioned; covered in long, silky fur that can be white, black, tan or a combination",
+        "legs: short and straight with feathered fur; color usually matches the body",
+        "tail: moderately long and feathered; often held aloft and wagging, color typically matches the body"
+    ],
+    "Bull Terrier": [
+        "head: round and slightly flat between the ears, with a distinct stop midway between the base of the skull and the tip of the nose",
+        "ears: set high on the head and long, with flowing hair that creates a feathered appearance. often dark brown or black in color",
+        "muzzle: short, flat, and square, with the nose being black or dark in color. the breed is known for its 'butterfly' look due to the dark coloration around the nose and eyes",
+        "body: compact and well-proportioned, with a level topline. the chest is deep and the ribcage well sprung. the fur is silky and may be white with black and tan markings, known as tricolor; or rich chestnut on a pearly white background, known as blenheim",
+        "legs: medium length and straight, with the front legs being slightly shorter than the back. the fur on the legs is often feathered and may match or contrast with the body color",
+        "tail: moderately long and set high, usually carried happily but not above the level of the back. the tail is often feathered and may be the same color as the body or have contrasting markings"
+    ],
+    "Skye Terrier": [
+        "head: slightly rounded and proportionate to the body, featuring a well-defined stop between the forehead and muzzle",
+        "ears: long, set high and adorned with feather-like fur, often dark in color, framing the face",
+        "muzzle: square and well-proportioned with the rest of the face, typically covered with shorter, lighter-colored fur",
+        "body: compact, with a level top line and well-sprung ribs, covered with a silky, wavy coat that can range in color from blenheim (chestnut and white), tricolor, black and tan, to ruby",
+        "legs: moderate length, straight, and well-boned, featuring feathering along the back of the forelegs and hind legs",
+        "tail: typically docked to two-thirds of its original length, carried happily but never much above the level of the back, covered with a fan of feathered fur"
+    ],
+    "Tibetan Mastiff": [
+        "head: rounded with a slightly flattened skull, often covered with long, silky fur",
+        "ears: set high and long, with plentiful feathery fur, often a chestnut or black color",
+        "muzzle: medium-length, straight, and well-defined, with the same color as the rest of the face, often covered with short, smooth fur",
+        "body: compact and well-balanced with a short, straight back, typically covered in glossy, silky fur that can be a mix of white, chestnut, black, or tricolor",
+        "legs: short to medium-length, well-boned, and straight, often covered in the same silky fur as the body",
+        "tail: usually docked to be in line with the body, carried happily but never much above the level of the back, covered in the same type of fur as the body"
+    ],
+    "Fox Terrier (Smooth)": [
+        "head: slightly rounded, proportionate to the body with dark, expressive eyes",
+        "ears: long, silky and set high, they hang down and frame the face",
+        "muzzle: proportionately short with a well-defined stop, houses a black or dark brown nose",
+        "body: compact with well-sprung ribs, giving a slightly barrelled appearance",
+        "legs: straight, well-boned, and muscular, covered with feathered fur",
+        "tail: naturally short or sometimes docked, carried slightly above the level of the back, covered with feathered fur"
+    ],
+    "Malinois": [
+        "head: round and slightly flat between the ears, often a rich chestnut color mixed with white",
+        "ears: long, drooping, set low, heavily covered with long silky hair, traditionally black and tan or ruby-colored",
+        "muzzle: square, moderate length with a deep stop, nose is usually black with wide nostrils",
+        "body: compact and well-proportioned, often comes in four colors: blenheim (chestnut and white), tricolor (black, white, and tan), black and tan (black with tan markings), and ruby (solid red",
+        "legs: moderate bone, front legs are straight, hind legs are well muscled, all four often covered in white fur with chestnut, black, or ruby patches",
+        "tail: docked to two-thirds of its original length, carried happily but never much above the level of the back, fur is usually white with patches that match the rest of the body"
+    ],
+    "Norwegian Elkhound Grey": [
+        "head: slightly domed with a distinct stop, usually covered with wavy, silky fur of white, black, tan or a combination of these colors",
+        "ears: long, set low and close to the skull, heavily covered with the same long, silky fur that often mingles with the coat on the neck",
+        "muzzle: square, moderate in length, with a black nose, often framed by long, wispy strands of fur",
+        "body: compact and well-balanced, with a deep chest and straight back, usually covered with glossy, medium-length fur that can be white, black, tan or a mix",
+        "legs: moderate in length, straight and well-feathered with long, silky fur, creating a skirt-like appearance",
+        "tail: kept at level with the back, sometimes slightly curved, covered with long, silky fur, often wagging enthusiastically"
+    ],
+    "American Foxhound": [
+        "head: round, slightly domed with a distinct stop between the eyes, covered in silky, wavy fur",
+        "ears: long, set high and close to the head, heavily feathered with silky fur, hanging down beside the cheeks",
+        "muzzle: squared, medium length, black nose with wide-open nostrils, surrounded by fur of the same color as the body",
+        "body: compact and well-balanced, with a straight back and deep chest, covered in silky, wavy fur. the color can be black and tan, ruby, blenheim (white and chestnut), or tricolor (white, black, and tan",
+        "legs: straight and muscular with small, compact, and cushioned paws, covered with medium-length fur",
+        "tail: nicely feathered, not too long, usually carried happily but never much above the level of the back"
+    ],
+    "Irish Setter": [
+        "head: rounded and slightly larger in proportion, featuring a prominent forehead and a well-defined stop (the point where the forehead meets the muzzle",
+        "ears: long, set low and covered in thick, silky hair. they hang down close to the cheeks, resembling the shape of a pendant",
+        "muzzle: short, slightly snubbed with a black, wide and well-opened nostril",
+        "body: compact and well-balanced with a deep chest, allowing for good heart and lung capacity",
+        "legs: sturdy and muscular with well-feathered, medium-length fur. hind legs may be somewhat longer than the front legs",
+        "tail: medium length, often docked to about half its original size, covered in thick, wavy fur and carried happily but not much above the level of the back"
+    ],
+    "Dachshund": [
+        "head: rounded with a slightly flat top, usually covered with wavy, silky white fur with patches of red, black, or brown",
+        "ears: long, droopy and set low, covered in thick, feathered fur usually in shades of red, black, or brown",
+        "muzzle: short and square-shaped, often black in color with a slight roundness to the sides",
+        "body: compact and well-balanced, covered in a coat of silky, wavy fur that comes in combinations of white, black, brown, and red",
+        "legs: short and straight, with paws that are compact and feathered with the same silky fur as the body",
+        "tail: often docked to a moderate length, covered in feathered fur and carried level with the back"
+    ],
+    "Treeing Walker Coonhound": [
+        "head: rounded with a slightly domed skull, proportionate to the size of the body; typically covered in a short and silky coat, often in a rich chestnut color",
+        "ears: set low, hanging long and close to the face, covered in profuse, long, silky fur that can be chestnut, black, or white",
+        "muzzle: slightly flattened and tapered, the same length as the skull; typically covered in short, silky fur, often chestnut or black",
+        "body: compact and well-proportioned with a level topline; covered in a silky, wavy coat that can be a mix of white, black, and chestnut",
+        "legs: moderate length with compact, cushioned feet, often covered in feathered fur that matches the color of the body",
+        "tail: length can be varied, some are naturally short (docked), others have a long, feathered tail that is usually carried happily but never much above the level of the back; covered in a long, silky coat that matches the color of the body"
+    ],
+    "Basenji": [
+        "head: round in shape with a gentle, sweet, and expressive facial expression",
+        "ears: long, feathered, and set low, hanging down close to the head",
+        "muzzle: short in length, well tapered, and covered with a beard-like fringe",
+        "body: compact, well-proportioned with a marked arch over the loin, creating a slightly raised rear",
+        "legs: strong and sturdy, moderately boned, and covered with feathering",
+        "tail: nicely feathered, carried happily but never much above the level of the back"
+    ],
+    "Soft Coated Wheaten Terrier": [
+        "head: rounded with a slightly flat top, covered with soft, shiny fur, typically in colors of black, tan, or white",
+        "ears: long, pendulous, set low, covered with rich, silky fur which often has a darker shade than the rest of the body",
+        "muzzle: short and conical, the fur is generally lighter or darker than the rest of the body, often with a black or brown \"mask",
+        "body: compact but well-proportioned with a level topline, covered with medium-length, silky fur, commonly in a mix of black, tan, and white",
+        "legs: moderately long, straight, and well-boned, usually covered with fur that matches the body, with some feathering on the lower parts",
+        "tail: docked to two-thirds of its length, carried happily but never above the level of the back, covered with feathered fur of same color as the body"
+    ],
+    "Siberian Husky": [
+        "head: small and rounded with a slightly domed skull, often covered in chestnut or black and white fur",
+        "ears: long, set high on the head, and heavily feathered, usually in chestnut or black and white fur",
+        "muzzle: well-developed but not too long or pointed, covered in short fur that could be chestnut, black, or white",
+        "body: compact and well-proportioned, covered in silky, wavy fur that comes in combinations of white, black, and chestnut",
+        "legs: short with moderate bone structure, covered in long, feathered fur that matches the body\u2019s color",
+        "tail: often docked to two-thirds of its original length, covered in feathered fur, usually chestnut or black and white, and carried cheerfully but never much above the level of the back"
+    ],
+    "Brittany": [
+        "head: round in shape, typically white with brown or black patches",
+        "ears: long, droopy, and feathered, usually brown or black in color",
+        "muzzle: medium in length, black nose, often brown fur, but can be white or mix with the head's color",
+        "body: compact, well-balanced with chest slightly deeper than wide, covered in silky, wavy fur, usually white with brown or black patches",
+        "legs: short to medium length, strong and straight, covered in white, brown or black fur matching the body",
+        "tail: medium length, carried happily but never much above the level of the back, covered with feathered fur, color usually matches the body"
+    ],
+    "Border Collie": [
+        "head: slightly rounded, in proportion to the dog's body, adorned with long, silky fur",
+        "ears: set low, long, and heavily feathered, usually dark brown or black, framing the face",
+        "muzzle: medium length, black or brown, with a tapered snout and well-developed nostrils",
+        "body: compact and well-balanced, covered with a dense coat of glossy fur that comes in shades of black and tan, ruby, or blenheim (white with chestnut markings",
+        "legs: short to medium in length, sturdy with dark or white feathered fur, depending on the body color",
+        "tail: usually docked to two-thirds of its original length, carried happily but never much above the level of the back, covered with abundant feathers"
+    ],
+    "Newfoundland": [
+        "head: round shaped with a prominent forehead, the head of a king charles spaniel often displays a rich, chestnut color against the white of its body",
+        "ears: these are set high and are long, with a feathery texture. the ears are often the same chestnut color as the patches on the body",
+        "muzzle: the muzzle is short and tapered with a black nose at the end. the area around the muzzle may be white or chestnut, depending on the specific coloring of the dog",
+        "body: compact and well-proportioned, the body of a king charles spaniel is often a mix of white and chestnut, with the chestnut appearing as patches. the fur is silky and slightly wavy",
+        "legs: short and straight, with the front legs having a slight curve. the legs are often white with chestnut patches and the fur is feathered, especially at the paws",
+        "tail: the tail is usually docked to maintain a specific length and is carried happily but never much above the level of the back. it's covered with silky, feathered fur which can be white, chestnut or a mix of both"
+    ],
+    "Papillon (Continental Toy Spaniel)": [
+        "head: round with a distinct \"dome\" shape, often covered in long, silky fur that can vary in color from black, brown, or white",
+        "ears: long, floppy, and heavily feathered, usually in deep chestnut brown or black, often hang down past the jawline",
+        "muzzle: short and tapered, usually the same color as the body fur, with a black or brown nose at the end",
+        "body: compact and well-balanced, covered in silky fur that can be a blend of white, black, and brown",
+        "legs: short and straight, often covered in feathered fur that matches the body color, paws are small and compact",
+        "tail: medium-length, often covered in feathered fur, usually carried aloft but not above the level of the back"
+    ],
+    "English Setter": [
+        "head: rounded and compact with a slight indentation between the eyes, covered with silky fur",
+        "ears: long and feathered, set close to the head, covered in thick, wavy fur",
+        "muzzle: moderately short and tapered, with a black nose and significant fur coverage",
+        "body: compact and well balanced, with a predominantly white, brown or black silky coat, often with distinct patches or spots",
+        "legs: medium length, strong and straight with feathering, covered in a silky coat",
+        "tail: generally docked to two-thirds of its original length, covered with a dense feathering of fur, carried slightly above the level of the back"
+    ],
+    "Kerry Blue Terrier": [
+        "head: round and well-proportioned with a gentle curve between large, round eyes",
+        "ears: long, set high on the head, and heavily feathered, often black or brown",
+        "muzzle: square and medium-length, usually in a black tone with a black, well-developed nose",
+        "body: compact, with a level topline and well-sprung ribs, covered in a silky, wavy coat that's often ruby, blenheim, black & tan, or tricolor",
+        "legs: short and straight with well-feathered thighs and toes, matching the color of the body",
+        "tail: well-feathered, usually docked to two-thirds of its original length, carried happily but never much above the level of the back"
+    ],
+    "Rottweiler": [
+        "head: rounded with a flat top, usually covered in a mix of white and chestnut fur",
+        "ears: long, droopy, and set low, usually chestnut in color and covered in silky fur",
+        "muzzle: squarely shaped and proportionate to the size of the head, the muzzle is usually covered in white fur with a black nose at the end",
+        "body: compact and muscular, often covered in a mix of white, chestnut, and sometimes black fur",
+        "legs: short and straight, legs are usually white or chestnut, with feathered fur that matches the body",
+        "tail: traditionally docked to two-thirds of its original length, the tail is usually covered in feathered fur that matches the body color"
+    ],
+    "Field Spaniel": [
+        "head: rounded with a slightly protruding forehead, often displaying a rich chestnut color",
+        "ears: long, droopy, and heavily feathered, usually darker in color than the rest of the fur",
+        "muzzle: short and slightly upturned, with a black nose at the end",
+        "body: short and compact, with a well-sprung ribcage and typically covered in silky, wavy fur of chestnut and white",
+        "legs: short and straight with feathering along the length, usually the same color as the body",
+        "tail: usually docked to half its length, carried cheerfully aloft and covered in thick, wavy fur"
+    ],
+    "Hungarian Vizsla (Short-Haired)": [
+        "head: small and round with a slightly domed skull, often covered with silky, wavy fur",
+        "ears: long, set low, heavily feathered with a lot of fur, often a deep chestnut color against a pearly white background",
+        "muzzle: short and slightly flattened with a black, well-developed nose",
+        "body: compact and well-balanced with a deep chest, often covered with a rich, silky, and long coat. the fur is often a mix of chestnut and white (\"blenheim\" pattern), black and tan, or ruby",
+        "legs: moderate length, straight and well-boned, with feathered fur matching the rest of the body",
+        "tail: docked to be in line with the body, carried happily but never much above the level of the back, covered with abundant feathering"
+    ],
+    "Pekingese": [
+        "head: round and domed, giving a \"doll-like\" appearance",
+        "ears: long, set high and adorned with feather-like fur, often darker than the rest of the body",
+        "muzzle: short and snub-nosed, with a black or brown color",
+        "body: compact and well-balanced, typically covered in a coat of white, black and tan, or ruby",
+        "legs: short, but strong and muscular, often covered with a lighter shade of fur",
+        "tail: normally kept at back level, covered in long, feathered fur and usually darker in the tip"
+    ],
+    "Afghan Hound": [
+        "head: round with a slightly flat top, often covered with long, silky fur",
+        "ears: long, drooping, set low and covered in beautiful, wavy fur",
+        "muzzle: short and well-defined, giving the breed its characteristic \"pouty\" look",
+        "body: compact and well-balanced, fully covered in wavy, silky coat often in shades of black, tan, or white",
+        "legs: moderately long and straight, often with feathering fur, strong enough to support their active nature",
+        "tail: usually docked and carried slightly above the level of the back, covered in abundant feathering fur"
+    ],
+    "Basset Hound": [
+        "head: round in shape with a prominent forehead, covered in silky, wavy fur that can be black and tan, ruby, blenheim (chestnut and white), or tricolor",
+        "ears: long, set high and close to the head, heavily feathered with the same silky fur as the rest of the body",
+        "muzzle: moderate length, square shaped, covered with short fur, and usually the same color as the rest of the body",
+        "body: compact and well-proportioned, covered in long, silky fur, which can be black and tan, ruby, blenheim, or tricolor",
+        "legs: short and straight with moderate bone, covered in silky fur, the same color as the rest of the body",
+        "tail: set high, slightly curved, but not carried above the back, covered in long, silky fur, usually the same color as the rest of the body"
+    ],
+    "Appenzeller Sennenhund": [
+        "head: slightly rounded with a well-defined stop, typically covered with glossy, silky fur",
+        "ears: set low, long and pendulous, densely covered with long hair that often forms feathering",
+        "muzzle: fairly squared and deep, usually black or dark brown with a slight taper towards the nose",
+        "body: compact and well-proportioned, covered with a long, silky, wavy coat, typically in black and tan, tricolor, ruby or blenheim (chestnut and white) colors",
+        "legs: moderately boned, straight and proportionate to the body, covered with feathered fur",
+        "tail: docked to two-thirds of its original length, carried slightly above the level of the back, covered with abundant fur"
+    ],
+    "Leonberger": [
+        "head: round and well-proportioned with a slightly domed skull, usually covered with long, silky fur that can vary in color from black and tan, tricolor (black, white, and tan), to ruby (rich red",
+        "ears: long and set low, heavily covered with feather-like, silky fur that often matches or complements the color of the head",
+        "muzzle: short and well-defined, covered with short, often lighter-colored fur. the nose is black, regardless of the main body color",
+        "body: well-built and compact with a straight back, covered with silky, wavy fur that can come in black and tan, tricolor, ruby, or blenheim (red and white) colors",
+        "legs: moderately long with a strong bone structure, covered with feathered fur that matches the color of the body. paws are compact and well-cushioned",
+        "tail: set high, but not carried over the body, often docked to less than half its length. covered in feathered, wavy fur that matches the body's color"
+    ],
+    "Cairn Terrier": [
+        "head: round with a slightly domed skull and a distinct stop",
+        "ears: set high on the head, long and feathered, hanging down close to the cheeks",
+        "muzzle: square and proportionate to the head with a black nose",
+        "body: compact and balanced, with a deep chest and well sprung ribs",
+        "legs: straight and well-boned with moderate feathering, ending in small, compact, cat-like feet",
+        "tail: docked to two-thirds of its original length, carried level with the back, and adorned with moderate feathering"
+    ],
+    "Labrador Retriever": [
+        "head: round with a slightly flattened skull, usually covered in silky, wavy fur of white, black, tan, or a mix of these colors",
+        "ears: long, set high on the head and heavily feathered, commonly in black or tan color",
+        "muzzle: short and tapering, with a black or brown nose at the end",
+        "body: compact and muscular, often covered in a blend of white, black, and tan fur, with a deep chest",
+        "legs: short and straight, proportionate to the size of the body, covered in feathered fur that matches the rest of the coat",
+        "tail: typically docked to two-thirds its length, carried happily but never much above the level of the back, covered in feathered fur"
+    ],
+    "Sealyham Terrier": [
+        "head: small, slightly round with a distinctive dome shape, often covered in silky fur that can vary in colors from black, tan, white to a mix of these",
+        "ears: long, set high and droop down, covered with thick, wavy fur that is often black, tan, or chestnut on the outside",
+        "muzzle: short, flat, and wide with a black or brown nose at the end, surrounded with fur that matches the rest of the body color",
+        "body: compact and muscular, covered in a long, silky coat that can be a mix of white, black, and tan",
+        "legs: short and strong, also covered in long, straight or wavy fur that can be black, brown, or white",
+        "tail: fairly long, carried happily but never much above the level of the back, covered in long, silky fur that matches the rest of the body color"
+    ],
+    "Miniature Schnauzer": [
+        "head: rounded with a slightly flat top, usually covered in glossy, silky fur that can be black, tan, or white",
+        "ears: long, feathered, and set low, hanging down past the chin, typically in a dark color",
+        "muzzle: short and slightly upturned, with a black nose at the end, usually surrounded by fur that is lighter than the rest of the body",
+        "body: compact and well-balanced, covered in long, silky fur that could be white, black, or tan, often with chestnut markings",
+        "legs: short to medium length, well-muscled but not overly so, covered in the same long, silky fur as the body",
+        "tail: docked to be about half its natural length, continuously wagging, covered in feathered fur that is usually darker than the rest of the body"
+    ],
+    "Saluki": [
+        "head: rounded with a slightly flat top, adorned with long, silky fur",
+        "ears: long, set high, feathered with long, silky fur, hanging close to the cheeks",
+        "muzzle: proportionally short, square-shaped with dark, round eyes, and a black or brown nose",
+        "body: compact and well-balanced with a deep chest, covered in wavy, silky fur, commonly in shades of black, tan, white, or a combination",
+        "legs: moderate length with strong bones, covered in medium to long fur, ending with compact, cushioned paws",
+        "tail: docked to two-thirds its original length, carried slightly above the level of the back, covered in feathered fur"
+    ],
+    "Rough Collie": [
+        "head: round with a well-defined stop and a slightly flat skull",
+        "ears: long, set low and adorned with plenty of featherings; color ranges from blenheim (chestnut markings on a white background), black and tan, ruby (solid rich red) to tricolor (black and white with tan markings",
+        "muzzle: short with a tapered finish, covered in soft fur, usually the same color as the ears",
+        "body: compact and well-proportioned with a deep chest, covered in a silky, wavy coat; coat colors can be black and tan, tricolor, blenheim, or ruby",
+        "legs: strong, straight, and of moderate length with the front legs being slightly shorter than the hind legs; covered with the same silky fur as the body",
+        "tail: well-feathered and typically left long, although it may be docked; it is usually carried happily but not much above the level of the back"
+    ],
+    "Alaskan Malamute": [
+        "head: round and well-proportioned with a slightly domed skull",
+        "ears: long, silky, and set low, framing the face with a feathered appearance",
+        "muzzle: square, proportionate to the head with a black or brown nose",
+        "body: compact and well-proportioned, slightly longer than it is tall",
+        "legs: moderate length with richly feathered fur, providing a sense of elegance",
+        "tail: docked in some regions, but naturally it's long, carried happily but never much above the level of the back, with abundant feathering"
+    ],
+    "Weimaraner": [
+        "head: rounded with a well-defined stop, usually tan or black colored",
+        "ears: set low, long and well feathered, typically black or tan",
+        "muzzle: square, deep, and well proportioned with a black or brown nose at the end",
+        "body: compact and well-balanced, fur is usually chestnut on a pearly white background",
+        "legs: moderate bone, straight, muscular and well feathered, generally white or chestnut",
+        "tail: docked to one-third its length, carried happily but never much above the level of the back, covered in dense feathers, white or chestnut"
+    ],
+    "Schipperke": [
+        "head: rounded with a slightly indented forehead, covered in silky, wavy fur that is typically chestnut and white, black and tan, or ruby in color",
+        "ears: long and feathered, hanging down close to the head and covered in the same silky, wavy fur as the head, often in a darker shade",
+        "muzzle: short and snub, with a black nose at the end and surrounded by a short beard of wavy fur, often slightly darker than the rest of the head",
+        "body: compact and well-balanced with a deep chest, covered in a glossy, silky coat that can be chestnut and white, black and tan, or ruby",
+        "legs: short and straight, with a moderate amount of bone, covered in the same silky, wavy fur as the rest of the body",
+        "tail: usually docked to a length where the tip of the tail is level with the back of the skull, lightly feathered with the same silky fur and often wagging energetically"
+    ],
+    "Giant Schnauzer": [
+        "head: round with a slightly domed skull, featuring a well-defined stop (transition area from backskull to muzzle",
+        "ears: set low, long and feathered, they hang close to the head, giving a regal appearance",
+        "muzzle: square and well-proportioned in relation to the skull, not too long or short",
+        "body: compact and muscular, with a level topline and deep chest, giving a sturdy and balanced appearance",
+        "legs: straight and well-boned, with feathering on the lower half, giving a fluffy and elegant appearance",
+        "tail: set low, carried level with the back, and slightly curved, featuring thick feathering which gives a fan-like appearance"
+    ],
+    "Sussex Spaniel": [
+        "head: slightly rounded with a well-defined stop, adorned with long, silky fur, often in a shade of blenheim (a mix of white and chestnut), black and tan, ruby or tricolor",
+        "ears: large, droopy, and set low, covered in long, silky fur that's often chestnut, black, tan, or white",
+        "muzzle: square-shaped with a black nose at the end, surrounded by fur that matches the color of the ears",
+        "body: compact with a well-rounded chest, covered in long, silky fur in a range of color patterns including blenheim, black and tan, ruby, or tricolor",
+        "legs: short and straight, with the paws being compact and feathered with long, silky fur, often in matching color with the body",
+        "tail: docked to two-thirds of its original length, carried high but not over the back, covered in long, silky fur, color-coordinated with the body"
+    ],
+    "German Shepherd Dog": [
+        "head: round and relatively small in size, with a well-defined stop between forehead and muzzle",
+        "ears: long, set high, and drooping, covered in silky fur and often a darker color than the rest of the body",
+        "muzzle: short, square-shaped, and deep, with a black or brown nose at the end",
+        "body: compact and well-proportioned, with a noticeable waist and a deep chest",
+        "legs: short and straight, with feathered fur and cat-like feet",
+        "tail: usually docked to no less than one-third its length, covered in feathered fur and carried happily but never much above the level of the back"
+    ],
+    "Harrier": [
+        "head: round and well-defined with a slightly domed skull",
+        "ears: long, set high on the head, heavily covered with long silky fur",
+        "muzzle: square-shaped, often black or dark colored",
+        "body: compact, with a well sprung ribcage and slightly arched back",
+        "legs: straight, with small, compact, cushioned feet",
+        "tail: docked to two-thirds of its natural length, carried happily but not excessively high, covered with long feathered fur"
+    ],
+    "German Shorthaired Pointer": [
+        "head: rounded with a slightly flat skull, usually covered in silky fur",
+        "ears: long, droopy and set low, often feathered with long, soft fur, usually darker in color than the body",
+        "muzzle: short and conical in shape, featuring a black or brown nose",
+        "body: compact and well-proportioned, covered in long, silky fur that can range from light to dark in color, often with chestnut or black markings",
+        "legs: short to medium length, sturdy and usually covered in fur that's lighter in color, with feathering on the lower parts",
+        "tail: set slightly above the line of the back, covered in feathered fur, often curled over the back when the dog is excited or moving"
+    ],
+    "Brussels Griffon": [
+        "head: round and well proportioned with a slightly domed skull",
+        "ears: long, set low, with abundant feathering",
+        "muzzle: square and deep, with a well-defined stop, color usually black",
+        "body: compact, with a level topline and well-sprung ribs",
+        "legs: strong and straight, with dewclaws usually removed",
+        "tail: well feathered, typically docked but can be left long, carried happily but never high"
+    ],
+    "Manchester Terrier": [
+        "head: round with a slightly flat top, often covered with silky, wavy fur that may be tan, black, or white",
+        "ears: long, set high and drooping, covered with feathered fur usually matching the color of the head",
+        "muzzle: moderately short and tapered, with a black or brown nose at the end",
+        "body: compact and well-proportioned, covered in a silky, wavy coat that can come in various color combinations, including blenheim (chestnut and white), tricolor (black, white, and tan), ruby (solid red), and black and tan",
+        "legs: relatively short and straight, with the front legs being slightly shorter than the hind legs; typically covered in the same silky fur as the body",
+        "tail: medium length and feathered, usually carried happily aloft but never much above the level of the back"
+    ],
+    "Russian Hunting Sighthound": [
+        "head: small, domed with a well-defined stop between the forehead and muzzle",
+        "ears: set high on the head, long, and heavily feathered, often black or brown",
+        "muzzle: moderate length and not too pointed, typically the same color as the body or darker",
+        "body: compact and well-proportioned with a deep chest and level back, usually white with black, brown, or red patches",
+        "legs: straight, well-boned, and feathered, matching the color of the body",
+        "tail: typically docked to two-thirds its length and carried happily but never much above the level of the back, feathered and the same color as the body"
+    ],
+    "Whippet": [
+        "head: rounded with a slightly domed skull, featuring a distinctive spot in the middle known as the \"blenheim spot",
+        "ears: long, set high on the head and heavily feathered, usually in a chestnut color against a pearly white background",
+        "muzzle: short and tapered with a well-developed, black nose",
+        "body: compact and well-proportioned with a level topline, typically covered in a silky, wavy coat that can be blenheim (chestnut and white), tricolor (black, white and tan), black and tan, or ruby",
+        "legs: straight, proportionate to the body with a moderate bone structure, usually covered in the same silky coat as the body",
+        "tail: set high, slightly longer than the hocks, usually left undocked, and carried happily but not much above the level of the back"
+    ],
+    "Samoyed": [
+        "head: round and well-proportioned with a distinctive indentation between the eyes (stop",
+        "ears: long, set low and well feathered with fur, often black or brown",
+        "muzzle: short and square-shaped, usually the same color as the body but can have a black or brown nose",
+        "body: compact and well-balanced with a deep chest, often with a mix of white, black, and brown fur",
+        "legs: short and straight with thick feathering, usually the same color as the body",
+        "tail: set low, slightly curved and well feathered, often docked to no more than 4 inches long"
+    ],
+    "Beagle": [
+        "head: round with a distinct dome shape, often a mix of white and brown or black fur",
+        "ears: long, droopy and feathered, usually colored in rich brown or black, framing each side of the face",
+        "muzzle: short and slightly tapered, covered in short brown, black, or white fur, with a black nose at the end",
+        "body: compact and muscular, covered in a silky, wavy coat that can be a mix of white, brown, black and tan",
+        "legs: short to medium length and straight, with feathered fur that matches the color of the body",
+        "tail: medium length, often docked, covered in feathered fur, carried happily but never much above the level of the back"
+    ],
+    "Gordon Setter": [
+        "head: slightly rounded with a proportionate size to the body, covered in soft, silky fur, and usually in a blend of white with black, brown, or ruby tones",
+        "ears: long, low-set, and heavily feathered, often in black or brown color, they are distinctive due to their length and the silky fur that covers them",
+        "muzzle: medium length, tapered, and covered in short fur that matches the color of the ears. the nose is black, adding a stark contrast to the lighter colors of the fur",
+        "body: compact and well-balanced, covered in long, silky, and often wavy fur in colors that can range from chestnut on a pearly white background to black and tan",
+        "legs: moderately boned and relatively short, covered in long, silky fur that may be feathered, matching the overall color scheme of the dog",
+        "tail: set at the level of the back, sometimes docked to a specific length, with feathering that matches the rest of the body's fur. it is usually wagging due to the dog's friendly and cheerful disposition"
+    ],
+    "Bullmastiff": [
+        "head: broad and flat, displaying a slightly rounded shape with a deep stop between the eyes",
+        "ears: long and floppy, set low on the head and heavily feathered with fur",
+        "muzzle: short and well tapered with a black nose and dark expressive eyes",
+        "body: compact and well balanced with a deep chest, displaying a silky, wavy fur that is often in shades of black, tan, white, or red",
+        "legs: moderately long and straight, with a good amount of feathering on the hind legs",
+        "tail: medium in length, carried happily and elegantly but never much above the level of the back, also feathered"
+    ],
+    "St. Bernard": [
+        "head: rounded with a slight dome, often covered in medium length, silky fur that can range in color from black and tan to ruby or blenheim (chestnut and white",
+        "ears: long and set high, heavily feathered with long silky fur that can match or contrast the color of the head, often black, tan, ruby or blenheim",
+        "muzzle: short and well-defined, typically covered in short fur that can be black, tan, ruby or blenheim, often blending with the colors of the head and ears",
+        "body: compact and muscular, covered in silky fur that can range from black and tan to ruby or blenheim, often with a white chest in blenheim variety",
+        "legs: medium in length, strong and well-boned, covered in medium length, silky fur that can range from black and tan to ruby or blenheim, often feathered in the back legs",
+        "tail: moderately long and well-feathered with silky fur, usually carried happily but never much above the level of the back, color can range from black and tan to ruby or blenheim"
+    ],
+    "Rhodesian Ridgeback": [
+        "head: round with a slightly flattened skull, often covered in long, silky fur",
+        "ears: set low, covered in long, silky hair, and hang down close to the head",
+        "muzzle: short and tapered with a black or brown nose at the end",
+        "body: compact but well-proportioned, usually covered in a variety of color combinations including black and tan, ruby, blenheim (red and white), and tricolor (black, white, and tan",
+        "legs: short and straight with rounded paws, often covered in feathered fur",
+        "tail: set level with the back, usually wagging, and often covered in feathered fur"
+    ],
+    "Redbone Coonhound": [
+        "head: rounded skull with a slight stop, often covered in silky, wavy chestnut on white fur",
+        "ears: long, set high, droopy and well-feathered with chestnut-colored fur, framing the face",
+        "muzzle: moderately short and rounded, usually white with patches of chestnut",
+        "body: compact but well-proportioned with a level topline, covered in wavy, silky fur that's usually white with chestnut patches",
+        "legs: medium length, often covered in white fur that may have chestnut patches, and adorned with feathering on the back of the thighs",
+        "tail: moderate length, carried happily but never much above the level of the back, often covered in white fur with chestnut patches, feathering present"
+    ],
+    "Welsh Corgi (Cardigan)": [
+        "head: slightly rounded, proportionate to the body size with a distinct stop between the eyes",
+        "ears: long, set high on the head, heavily feathered with fur, drooping down and framing the face",
+        "muzzle: medium length, well-proportionate with the head, with a well-defined black nose at the end",
+        "body: compact and well-proportionate, with a level topline and deep chest",
+        "legs: moderate length, straight and well-boned, covered with a moderate amount of feathering",
+        "tail: length varies, usually docked to leave two-thirds, carried slightly above the level of the back, with a good amount of feathering"
+    ],
+    "Xoloitzcuintli": [
+        "head: round and slightly flat between the ears, often tan or black with a well-defined stop",
+        "ears: long, set high on the head, and heavily feathered, typically black or tan in color",
+        "muzzle: short, square and deep, often black with a slight underbite",
+        "body: compact and well-proportioned, with a rich, glossy coat that can be black, tan, white, or a combination thereof",
+        "legs: short and straight, with fur that is often feathered and matches the color of the body",
+        "tail: curved, set high, and carried happily but never much above the level of the back, covered in feathered fur that matches the body color"
+    ],
+    "Airedale Terrier": [
+        "head: round and flat in between the ears, with a slight stop and a well-defined muzzle",
+        "ears: long, set high and adorned with abundant feathering, framing the face",
+        "muzzle: moderate in length, wider at the base tapering slightly to the nose, with long, luxurious hair",
+        "body: compact and well-proportioned, with a level top line and well-sprung ribs, usually covered in a silky, wavy coat that can be ruby, black and tan, tricolor, or blenheim (white with chestnut markings",
+        "legs: moderate bone, well-muscled, straight and parallel when viewed from the front, with feathering on the lower legs",
+        "tail: set to be in line with the body, usually docked to two-thirds of its original length, carried happily but never much above the level of the back, with feathering"
+    ],
+    "Australian Kelpie": [
+        "head: compact with a slightly rounded skull and a well-defined stop",
+        "ears: long, feathered, and set low, hanging close to the cheeks",
+        "muzzle: short, square and well proportioned with a black or brown nose at the end",
+        "body: compact and well-balanced with a level topline",
+        "legs: muscular and straight with feathered fur, ending in compact, cushioned feet",
+        "tail: medium length, carried happily but never much above the level of the back, with feathered fur"
+    ],
+    "Australian Terrier": [
+        "head: rounded with a flat skull, often with a rich chestnut or black color, featuring long, silky fur",
+        "ears: set low, long and feathered, often dark in color, hanging down close to the head",
+        "muzzle: short and square, usually colored in black with a well-developed nose",
+        "body: compact and well-balanced, covered with a silky, wavy coat of various colors including blenheim (chestnut and white), tricolor (black, white, and tan), ruby (solid red), and black and tan",
+        "legs: short and straight, well-boned with the front legs slightly bowed, covered in long, silky fur",
+        "tail: usually docked to two-thirds of its natural length, carried happily but never much above the level of the back, covered with abundant feathering"
+    ],
+    "Kuvasz": [
+        "head: round, with a slightly flattened skull and well-defined stop between the forehead and muzzle",
+        "ears: long, feathered and pendulous, set low and hanging close to the face, typically black or brown",
+        "muzzle: short and slightly pointed, with a black or brown nose and dark brown eyes",
+        "body: compact and muscular, with a deep chest and level back, typically covered in a coat of white, black, brown or ruby",
+        "legs: short, straight and well-boned, usually covered in a coat of white, black, brown or ruby, with feathering on the lower half",
+        "tail: slightly curved, of moderate length, and often feathered, color matching the rest of the body's coat"
+    ],
+    "Golden Retriever": [
+        "head: slightly rounded but without a dome or peak, featuring a well-defined stop halfway between the tip of the nose and the back of the skull",
+        "ears: set low, long, and well feathered with silky fur, they're usually the same color as the coat or darker",
+        "muzzle: square, medium length, with a black or brown nose depending on the coat color",
+        "body: compact and well-proportioned with a level topline",
+        "legs: short and straight, well-feathered with fur. the paws are compact with cushioned pads",
+        "tail: the tail is usually docked and carried happily but never much above the level of the back. it's covered with abundant feathering"
+    ],
+    "Lakeland Terrier": [
+        "head: small, slightly rounded with a distinctive \"dome\" shape, typically covered in long, silky fur ranging from reddish-brown to black and white",
+        "ears: long, droopy and set low, lavishly covered with long, soft and feather-like fur, usually dark brown or black",
+        "muzzle: short and tapered, with a black or brown nose at the end, surrounded by short, often lighter colored fur",
+        "body: compact and well-proportioned, covered in a dense, silky coat which can be a mix of white, black, and tan",
+        "legs: moderately long and straight, usually with feathered fur which can match or contrast the body color",
+        "tail: carried high but not curled over the back, covered in long, feathered fur, usually dark brown or black"
+    ],
+    "Rat Terrier": [
+        "head: round and well-proportioned with a slightly rounded forehead, not too big but well balanced with the rest of the body",
+        "ears: long and set low, covered in rich, silky fur that forms a beautiful frame around the face",
+        "muzzle: short and square, with well-developed nostrils which are usually black in color",
+        "body: compact and well-proportioned, with a deep chest and a level, straight back",
+        "legs: short and strong, with well-boned forelegs that are straight and parallel when viewed from the front",
+        "tail: usually docked to a medium length, carried cheerfully but never much above the level of the back, covered in silky, wavy fur"
+    ],
+    "Bulldog": [
+        "head: round and well balanced with a slightly rounded skull, often covered in a rich chestnut or black and white fur",
+        "ears: long, set high on the head and heavily feathered, typically a chestnut or black and white color matching the rest of the body",
+        "muzzle: short in length, square in shape, with a deep stop between the eyes, covered in short, soft fur",
+        "body: compact, well-proportioned with a level topline, and often covered in long, silky fur that can be chestnut and white (blenheim), ruby, black and tan, or tri-color",
+        "legs: short and straight with moderate bone, typically covered in long, silky, chestnut or black and white fur",
+        "tail: often docked, carried cheerfully but never much above the level of the back, covered in long, feathered fur that matches the rest of the body"
+    ],
+    "Japanese Chin": [
+        "head: slightly rounded, proportionate in size to the body, with a clear stop between the eyes",
+        "ears: long, set high and close to the head, heavily feathered, giving a characteristic droopy look",
+        "muzzle: medium length, square-shaped, with a black or brown nose at the end",
+        "body: compact and well-balanced, with a deep chest, and a level back",
+        "legs: moderate length, straight and parallel when viewed from the front, with feathered fur",
+        "tail: usually docked, carried happily but never much above the level of the back, covered with abundant fur"
+    ],
+    "Bedlington Terrier": [
+        "head: slightly rounded and proportionate to the body, often covered with long, silky fur",
+        "ears: set low, long with abundant feathering, often dark in color with fur that is straight and silky",
+        "muzzle: medium length, tapered, and often covered in short, smooth fur of varying colors, including brown, black, or white",
+        "body: compact and well-balanced with a noticeable chest, often covered in long, silky fur of varying color combinations such as white with chestnut patches",
+        "legs: medium length, straight and well-boned, often with feathering on the lower half, matching the color of the body fur",
+        "tail: usually docked, carried level with the back, and covered in long, silky fur that matches the rest of the body"
+    ],
+    "English Toy Terrier": [
+        "head: round with a slightly flattened skull, usually with a rich chestnut or black coloration",
+        "ears: long, set low and close to the head, covered in abundant feathering, usually dark brown or black",
+        "muzzle: moderate length, deep, and well defined, usually chestnut or black, often with a smudge of white fur",
+        "body: compact and well-proportioned, covered in silky, wavy fur that can be chestnut, black, white, or a mix of these",
+        "legs: moderate length, straight and with good bone structure, covered in the same silky fur as the body, often white or lighter than the body",
+        "tail: usually docked, carried happily but never much above the level of the back, covered in feathered fur matching the body color"
+    ],
+    "Toy Poodle": [
+        "head: round, small with a soft, gentle expression",
+        "ears: long, set high, feathered and hanging close to the head",
+        "muzzle: short, square, and deep with a well-defined stop",
+        "body: compact but well-proportioned with a level topline",
+        "legs: moderate length, straight and with well-feathered fur",
+        "tail: docked, carried level with the back and adorned with feathered fur"
+    ],
+    "Miniature Poodle": [
+        "head: round with a slightly flat top, covered with soft, moderately long fur, usually in a combination of white, black, and brown colors",
+        "ears: long, droopy, and heavily feathered with silky fur, commonly in a tan or chestnut color, framing the face",
+        "muzzle: short and slightly snub with a black or brown button-shaped nose at the end, covered with short, smooth fur",
+        "body: compact and well-proportioned with a deep chest, covered with long, silky fur which is often white with large patches of black, brown, or chestnut",
+        "legs: short and sturdy with a moderate amount of feathering, particularly on the hind legs, matching the color palette of the body",
+        "tail: moderately long, carried cheerfully aloft, covered with feathered fur that can be white, black, brown, or a combination of these. it is often slightly curved but not curled over the back"
+    ],
+    "Standard Poodle": [
+        "head: small, rounded with a well-defined stop",
+        "ears: long, set low, heavily feathered and hang close to the head",
+        "muzzle: moderate length, with a black, fully pigmented nose",
+        "body: compact, with a level topline and well-sprung ribs",
+        "legs: short, straight, and well-boned with large, round, well-padded feet",
+        "tail: well-feathered, usually docked to two-thirds of its original length, carried happily but not much above the level of the back"
+    ],
+    "Dingo": [
+        "head: rounded with a slightly flat top, often a light tan or white color",
+        "ears: long, set low, and heavily feathered, often in a deep chestnut color",
+        "muzzle: short and slightly pointed, often a light tan or white color with a black or brown nose at the end",
+        "body: compact and well-balanced, often coated with a mix of white, tan, and chestnut fur",
+        "legs: short to medium length, heavy-boned, and often covered with a mix of white, tan, and chestnut fur",
+        "tail: medium length, often carried happily but never much above the level of the back, often feathered in a mix of white, tan, and chestnut fur"
+    ],
+    "Dhole": [
+        "head: rounded in shape with a distinctive spot in the middle of the skull known as \"blenheim spot",
+        "ears: long, set low, heavily covered with long silky fur, and tend to be dark in color",
+        "muzzle: short, tapered, and often darker in color, with a black or brown nose at the end",
+        "body: compact and well-proportioned, usually covered in a silky, wavy coat that can be white, black, tan, or a mix of these colors",
+        "legs: relatively short and straight, typically covered in the same silky fur as the body",
+        "tail: moderately long and usually carried happily but not much above the level of the back, often covered in long, silky fur"
+    ],
+    "African wild dog": [
+        "head: rounded with a slight dome shape, often covered with long, silky fur that can be black, tan, white, or a combination of these colors",
+        "ears: long and pendulous, covered with a profusion of feathered fur, often in a darker shade than the rest of the body",
+        "muzzle: short and tapered, often featuring a black or dark brown nose, surrounded by fur that is slightly shorter than the rest of the body",
+        "body: compact and well-proportioned, covered with long, silky fur that can vary in color, including black, tan, and white",
+        "legs: short and straight, with fur slightly feathered, often slightly lighter in color than the body",
+        "tail: medium length, typically carried high but not curled over the back, featuring heavily feathered fur that can match or contrast with the body color"
+    ]
+}

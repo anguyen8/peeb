@@ -3,7 +3,7 @@ import torch
 from torchvision import datasets
 from torchvision import transforms
 from torchvision.transforms import Resize, InterpolationMode, ToTensor, Compose
-from src.data_loader.augmentation import TrivialAugmentation
+from .augmentation import TrivialAugmentation
 
 import random
 

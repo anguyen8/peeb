@@ -1,19 +1,16 @@
 import copy
-from typing import Optional, Tuple, Union, Any
 
 import torch
 import torch.nn.functional as F
-import torch.distributed as dist
 import numpy as np
 from torch import nn
 from transformers import OwlViTConfig
-from transformers.models.owlvit.modeling_owlvit import OwlViTVisionTransformer
 from transformers.models.detr.modeling_detr import generalized_box_iou, center_to_corners_format
 from transformers.image_transforms import corners_to_center_format
 
 from scipy.optimize import linear_sum_assignment
 from transformers.utils import requires_backends
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional, Tuple
 from torch import Tensor, nn
 
 
@@ -141,7 +138,7 @@ class OwlViTPredictionHead(nn.Module):
     ) -> Tuple[torch.FloatTensor]:
 
         # Get class predictions: topk_idxs (batch_size, n_parts, 1), one_hot (batch_size, n_parts, n_patches*n_patches)
-        topk_idxs = torch.swapaxes(topk_idxs, 1, 2)
+        topk_idxs = torch.swapaxes(topk_idxs, 1, 2).to(image_embeds.device)
         one_hot = torch.zeros(topk_idxs.shape[0], topk_idxs.shape[1], image_embeds.shape[1]).to(image_embeds.device).scatter_(2, topk_idxs, 1)
         batch_size, n_parts = one_hot.shape[0], one_hot.shape[1]
 
@@ -159,6 +156,11 @@ class OwlViTPredictionHead(nn.Module):
         # Send query_embeds to the same device as image_embeds
         query_embeds = query_embeds.to(image_embeds.device)
 
+        # # for ablation study: shuffle the part_embeddings before computing the logits
+        # print("On ablation study, random shuffling the part embeddings")
+        # # e.g., tensor with shape (b, 12, m) --> shuffling the second dimension --> (b, 12, m)
+        # image_embeds = image_embeds[:, torch.randperm(image_embeds.shape[1]), :]
+
         # Shape: torch.Size([bs, num_boxes, num_classes * num_parts])
         image_text_logits = torch.einsum('bnd, bid -> bni', image_embeds, query_embeds)
         image_text_logits_reshaped = image_text_logits.view(-1, image_text_logits.shape[-1])
@@ -166,9 +168,9 @@ class OwlViTPredictionHead(nn.Module):
         # Shape: (bs, num_classes * num_parts, num_boxes) --> (bs, num_classes, num_parts, num_boxes)
         pred_logits = image_text_logits.swapaxes(axis0=1, axis1=2).reshape(batch_size, self.num_classes, n_parts, -1) # PEIJIE: Use reshape instead of view to avoid memory issues
         pred_logits = torch.diagonal(pred_logits, dim1=-2, dim2=-1)     # --> torch.Size([bs, num_classes, 12])
-        pred_logits = torch.sum(pred_logits, dim=-1)
+        final_logits = torch.sum(pred_logits, dim=-1)
 
-        return image_text_logits_reshaped, pred_logits
+        return image_text_logits_reshaped, final_logits, pred_logits
 
 
 class OwlViTForClassification(nn.Module):
@@ -350,7 +352,7 @@ class OwlViTForClassification(nn.Module):
 
     def normalize_grid_corner_coordinates(self, feature_map: torch.FloatTensor):
         # Computes normalized xy corner coordinates from feature_map.
-        if feature_map.ndim != 4:
+        if not feature_map.ndim == 4:
             raise ValueError("Expected input shape is [batch_size, num_patches, num_patches, hidden_dim]")
 
         device = feature_map.device
@@ -423,14 +425,16 @@ class OwlViTForClassification(nn.Module):
 
         return (pred_logits, image_class_embeds, query_mask)
 
-    # main forward function of PEEB
-    def forward(self, pixel_values: torch.Tensor, attention_mask: torch.Tensor, input_ids: torch.Tensor, text_embeds: torch.Tensor, targets: torch.Tensor):
+    def forward(self, pixel_values, attention_mask, input_ids, text_embeds, targets):
 
         # Embed images and text queries
         # input_ids = text_inputs_parts["input_ids"]
         # text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=text_inputs_parts["attention_mask"],
         #                                                                    pixel_values=image_inputs['pixel_values'])
-        text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=attention_mask, pixel_values=pixel_values)
+        if input_ids is None:
+            feature_map, outputs = self.image_embedder(pixel_values=pixel_values)
+        else:
+            text_embeds_parts, feature_map, outputs = self.image_text_embedder(input_ids=input_ids, attention_mask=attention_mask, pixel_values=pixel_values)
 
         batch_size, num_patches, num_patches, hidden_dim = feature_map.shape
         image_feats = torch.reshape(feature_map, (batch_size, num_patches * num_patches, hidden_dim))
@@ -443,11 +447,11 @@ class OwlViTForClassification(nn.Module):
         else:
             # Reshape from [batch_size * max_text_queries, hidden_dim] -> [batch_size, max_text_queries, hidden_dim]
             max_text_queries = input_ids.shape[0] // batch_size # last batch might not have max_text_queries
-            text_embeds_parts = text_embeds_parts.reshape(batch_size, max_text_queries, text_embeds_parts.shape[-1])
 
             # If first token is 0, then this is a padded query [batch_size, num_queries].
             input_ids = input_ids.reshape(batch_size, max_text_queries, input_ids.shape[-1])
             query_mask = input_ids[..., 0] > 0
+            text_embeds_parts = text_embeds_parts.reshape(batch_size, max_text_queries, text_embeds_parts.shape[-1])
             # Predict object classes [batch_size, num_patches, num_queries+1]
             pred_logits_parts, class_embeds, _ = self.class_predictor(image_feats, text_embeds_parts, query_mask)
 
@@ -455,9 +459,14 @@ class OwlViTForClassification(nn.Module):
             scores = self.sigmoid(pred_logits_parts)
             topk_scores, topk_idxs = torch.topk(scores, k=1, dim=1)
 
+        # # for ablation study, randomly choose 12 embeddings, e.g., set topk_idxs to random values between 0-scores.shape[1]
+        # print("On ablation study, random select the part embeddings")
+        # topk_idxs = torch.randint(0, scores.shape[1], (scores.shape[0], 1, scores.shape[2]))
+
         # Predict object boxes (cxcywh) --> Select 12 part boxes out of 576 predicted boxes
         pred_boxes = self.box_predictor(image_feats, feature_map)   # (bs, num_patches*num_patches, 4)
-        pred_boxes_selected = torch.gather(pred_boxes, dim=1, index=topk_idxs.squeeze(1).unsqueeze(2).expand(*topk_idxs.squeeze(1).size(), pred_boxes.size(2)))
+        pred_boxes = pred_boxes.cpu()
+        pred_boxes_selected = torch.gather(pred_boxes, dim=1, index=topk_idxs.cpu().squeeze(1).unsqueeze(2).expand(*topk_idxs.squeeze(1).size(), pred_boxes.size(2)))
 
         # Store outputs for computing losses
         loss_dict = {}
@@ -488,14 +497,13 @@ class OwlViTForClassification(nn.Module):
         # ----------------------------------------------------------------------------------------
 
         # Predict image-level classes (batch_size, num_patches, num_queries)
-        image_text_logits, pred_logits = self.cls_head(image_feats, text_embeds, topk_idxs)
+        image_text_logits, pred_logits, part_logits = self.cls_head(image_feats, text_embeds, topk_idxs)
+        # targets_cls = torch.tensor([target["targets_cls"] for target in targets]).unsqueeze(1).to(self.device)
 
-        return pred_logits, image_text_logits, center_to_corners_format(pred_boxes_selected), loss_dict
+        return pred_logits, image_text_logits, part_logits, center_to_corners_format(pred_boxes_selected), loss_dict
 
-    def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_logits: torch.Tensor, targets_cls: torch.Tensor):
+    def compute_sce_loss(self, pred_logits: torch.Tensor, image_text_loigts: torch.Tensor, targets_cls: torch.Tensor):
         if self.network_type == "classification":
-            if targets_cls.dim() == 1:
-                targets_cls = targets_cls.unsqueeze(1)
             one_hot = torch.zeros_like(pred_logits).scatter(1, targets_cls, 1).to(self.device)
 
             # Compute CE loss
@@ -514,8 +522,8 @@ class OwlViTForClassification(nn.Module):
             return loss
         else:
             # Compute symmetric loss for part-descriptor contrastive learning
-            logits_per_image = torch.softmax(image_text_logits, dim=0)
-            logits_per_text = torch.softmax(image_text_logits, dim=-1)
+            logits_per_image = torch.softmax(image_text_loigts, dim=0)
+            logits_per_text = torch.softmax(image_text_loigts, dim=-1)
             sym_loss = self.loss_symmetric(logits_per_image, logits_per_text, targets_cls)
             return sym_loss
 
@@ -528,10 +536,9 @@ class OwlViTForClassification(nn.Module):
 
         # to support DP, define local device
         device = text_logits.device
-        assert text_logits.shape == image_logits.shape 
+        assert text_logits.shape == image_logits.shape # should not assert this.
 
         # For image classification
-        # This is implementation is assuming the unique classes == batch size, if not, target_cls is used to adjust the matching labels
         if image_logits.shape != targets.shape:
             batch_size = targets.shape[0]
 
@@ -748,7 +755,6 @@ class DetrLoss(nn.Module):
         device = logits.device
         target_lengths = torch.as_tensor([len(targets["class_labels"])], device=device)
         # Count the number of predictions that are NOT "no-object" (which is the last class)
-        # We do not have "no-object" class in our method
         card_pred = (logits.argmax(-1) != logits.shape[-1] - 1).sum(1)
         card_err = nn.functional.l1_loss(card_pred.float(), target_lengths.float())
         losses = {"cardinality_error": card_err}
@@ -773,8 +779,7 @@ class DetrLoss(nn.Module):
         source_boxes = outputs["pred_boxes"][idx]                                                     # center format
         # target_boxes = torch.cat([torch.tensor(t["boxes"]).to(device) for t in targets], dim=0)       # corner format
         target_boxes = targets['boxes'].reshape(-1, 4)                                                # corner format
-        target_boxes = corners_to_center_format(target_boxes)  # center format
-        target_boxes = target_boxes.to(device)
+        target_boxes = corners_to_center_format(target_boxes)                                         # center format
 
         losses = {}
 
@@ -863,7 +868,7 @@ class DetrLoss(nn.Module):
 
         # Compute the average number of target boxes across all nodes, for normalization purposes
         # num_boxes = sum(len(t["class_labels"]) for t in targets)
-        num_boxes = targets["class_labels"].shape[0] * targets["class_labels"].shape[1]
+        num_boxes = len(targets["class_labels"])
         num_boxes = torch.as_tensor([num_boxes], dtype=torch.float, device=outputs["pred_boxes"].device)
         # (Niels): comment out function below, distributed training to be added
         # if is_dist_avail_and_initialized():

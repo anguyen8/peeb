@@ -1,14 +1,14 @@
 import random
 
 from torchvision.datasets.folder import default_loader
-from torchvision.datasets import ImageFolder, VisionDataset, ImageNet, Places365, EuroSAT, DTD, Food101, OxfordIIITPet
-from imagenetv2_pytorch import ImageNetV2Dataset as ImageNetV2
+from torchvision.datasets import ImageFolder, VisionDataset, ImageNet, Places365
+# from imagenetv2_pytorch import ImageNetV2Dataset as ImageNetV2
 from torch.utils.data import Subset
 
 from .cub import CUB
 from .nabirds import NABirdsDataset
 from .bird_soup import BirdSoup
-from configs import *
+from src.configs import *
 
 
 class DatasetWrapper(VisionDataset):

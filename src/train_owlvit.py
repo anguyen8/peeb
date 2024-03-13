@@ -3,7 +3,6 @@ import gc
 import json
 import math
 import os.path
-import statistics
 from datetime import datetime
 
 import pytz
@@ -14,6 +13,8 @@ import spacy
 import torchvision
 import torchmetrics
 from sklearn.model_selection import train_test_split
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 import torch
 from torch.utils.data import DataLoader, Dataset, Subset
 from torch import nn
@@ -34,12 +35,38 @@ from PIL import Image, ImageDraw, ImageFont
 from transformers.image_transforms import corners_to_center_format
 from transformers.models.detr.modeling_detr import generalized_box_iou, center_to_corners_format, box_iou
 
-from src.owlvit_cls_plus import OwlViTForClassification
+from src.owlvit_cls import OwlViTForClassification
 
 from utils import *
 
 nlp_spacy = spacy.load("en_core_web_sm")
 
+# add python path if not exist:
+# export PYTHONPATH=$(pwd):$(pwd)/src
+
+
+def add_extra_negatives(runtime: str, description_embeds: torch.Tensor, all_cls_ids: set, num_negatives: int, targets_cls: torch.Tensor, verbose: bool = False):
+    unique_class_ids = set(targets_cls.tolist())
+    if (num_extra_negatives := num_negatives - len(unique_class_ids)) > 0:
+        # all_cls_ids = set(range(len(templated_descriptions)))
+        all_negatives = all_cls_ids - unique_class_ids
+        all_negatives = list(all_negatives)
+        unique_class_ids = list(unique_class_ids)
+        if verbose:
+            print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
+        unique_class_ids += random.sample(all_negatives, num_extra_negatives)
+    else:
+        unique_class_ids = list(unique_class_ids)
+    
+    
+    selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
+    text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1])   #.to(device)
+    
+    # Update targets when the order of text_embeds is changed (reindexing the target classes)
+    class_ids2target_cls = dict(zip(unique_class_ids, range(len(unique_class_ids))))
+    reindexed_targets_cls = torch.tensor([class_ids2target_cls[class_id] for class_id in targets_cls.tolist()]).to(device)
+    
+    return text_desc_embeds, reindexed_targets_cls
 
 def get_timestamp():
     local_tz = pytz.timezone("America/Chicago")
@@ -123,6 +150,23 @@ def load_training_dataset(dataset_name: str, sub_dataset_names: str, eval_size: 
         else:
             dataset = BirdSoup(BIRD_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, subset=sub_datasets)
             val_dataset = None
+    
+    elif dataset_name == 'stanforddogs':
+        if split != 'test':
+            dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=True, return_path=True, meta_path=args.train_file, use_meta_dir=True)
+            val_dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, use_meta_dir=True)
+        else:
+            dataset = BirdSoup(STANFORDDOGS_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, use_meta_dir=True)
+            val_dataset = None
+
+    elif dataset_name == 'dog_soup':
+        if split != 'test':
+            dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=True, return_path=True, meta_path=args.train_file, use_meta_dir=False)
+            val_dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.val_file, use_meta_dir=False)
+        else:
+            dataset = BirdSoup(DOG_SOUP_DIR, transform=transform, train=False, return_path=True, meta_path=args.test_file, use_meta_dir=False)
+            val_dataset = None
+        
 
     return dataset, val_dataset
 
@@ -213,23 +257,51 @@ def visualize_bbox(image_path, gt_bboxes,
         # Save the output image
         image.save(store_path + "/" + image_path.split("/")[-1].replace(".jpg", ".png"))
 
+def reduce_losses(loss: torch.Tensor, batch_size: int):
+    dist.all_reduce(loss, op=dist.ReduceOp.SUM)
+    loss /= (dist.get_world_size() * batch_size)  # Average the loss values
+    return loss
 
-def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weight_dict, visualize_batch_count=0, store_path=None):
+def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weight_dict, visualize_batch_count=0, store_path=None, runtime:str = "train"):
     '''
         image_embeds.shape = {Size} torch.Size([10, 60, 60, 1024])
         text_embeds.shape = {Size} torch.Size([10, 2400, 768])
         owlvit_logits.shape = {Size} torch.Size([10, 3600, 12])
     '''
+    #3160MB
+    # remove unused information from targets
+    # batch all inputs to support DP.
+    class_labels = torch.stack([t["class_labels"] for t in targets], dim=0)
+    logits = torch.stack([t["logits"] for t in targets], dim=0)
+    target_cls = torch.stack([t["targets_cls"] for t in targets], dim=0)
+    boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
+    batched_targets = {'class_labels': class_labels, 'logits': logits, 'targets_cls': target_cls, 'boxes': boxes}
 
-    pred_logits, pred_boxes, loss_dict = model(images, text_inputs_parts, text_embeds, targets)
+    pixel_values = images['pixel_values']
+    attention_mask = text_inputs_parts['attention_mask']
+    input_ids = text_inputs_parts['input_ids']
+    if isinstance(model, torch.nn.DataParallel):
+        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1, 1)
+    else:
+        desc_embeds = text_embeds.repeat(pixel_values.shape[0], 1)
 
-    # Compute total loss, as a weighted sum of the various losses
+    pred_logits, image_text_logits, pred_boxes, loss_dict = model(pixel_values, attention_mask, input_ids, desc_embeds, batched_targets)
+
+    # compute symmetric cross entropy loss (take out from the forward such that we can use DP to "increase batch size")
+    if weight_dict['loss_xclip'] > 0:
+        if hasattr(model, "module"):
+            xclip_loss = model.module.compute_sce_loss(pred_logits, image_text_logits, target_cls)
+        else:
+            xclip_loss = model.compute_sce_loss(pred_logits, image_text_logits, target_cls)
+        loss_dict['loss_xclip'] = xclip_loss
+
+    # Compute total loss, as a weighted sum of the various losses (22.13GB)
     loss = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict)
 
+    pred_boxes = pred_boxes.detach().cpu()
     target_boxes = torch.stack([torch.tensor(t["boxes"]) for t in targets], dim=0)
     base_boxes = torch.stack([torch.tensor(t["boxes_base"]) for t in targets], dim=0)
-    pred_boxes = pred_boxes.detach().cpu()
-    
+
     # giou_scores = torch.diag(generalized_box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))).view(-1, 12)
     iou_scores = torch.diag(box_iou(pred_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
     base_iou_scores = torch.diag(box_iou(base_boxes.view(-1, 4), target_boxes.view(-1, 4))[0]).view(-1, 12)
@@ -257,12 +329,52 @@ def forward_inputs(model, images, text_inputs_parts, text_embeds, targets, weigh
 
             visualize_bbox(image_path, gt_bbox, base_bbox, base_bbox_loss, base_giou_loss, base_iou_score, pred_bbox, bbox_loss, giou_loss, iou_score, store_path=store_path)
 
+    # # reduce loss if DDP
+    # if dist.is_initialized():
+    #     loss = reduce_losses(loss, images['pixel_values'].shape[0])
+    # else:
+    #     loss = loss / images['pixel_values'].shape[0]
+    loss = loss / images['pixel_values'].shape[0] # average over batch size
     return pred_logits, loss, loss_dict
 
+def compute_text_embeds(model: callable, processor: callable, all_descriptions: list[str], all_descriptions_val: list[str], batch_size: int, device: str):
+    print("")
+    with torch.no_grad():
+        text_inputs_parts = processor(text=all_parts, padding="max_length", truncation=True, return_tensors="pt").to(device)
+        total_descriptors_part = text_inputs_parts['input_ids'].shape[0]
+        text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'].repeat(batch_size, 1)
+        text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'].repeat(batch_size, 1)
+
+        text_embeds = []
+        num_batches = math.ceil(len(all_descriptions) / batch_size)
+        for i in range(num_batches):
+            start = i * batch_size
+            end = (i+1) * batch_size
+            text_inputs = processor(text=all_descriptions[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
+            if hasattr(model, "module"):
+                text_embeds.append(model.module.owlvit.get_text_features(**text_inputs))
+            else:
+                text_embeds.append(model.owlvit.get_text_features(**text_inputs))
+
+        text_embeds_val = []
+        num_batches = math.ceil(len(all_descriptions_val) / batch_size)
+        for i in range(num_batches):
+            start = i * batch_size
+            end = (i+1) * batch_size
+            text_inputs_val = processor(text=all_descriptions_val[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
+            if hasattr(model, "module"):
+                text_embeds_val.append(model.module.owlvit.get_text_features(**text_inputs_val))
+            else:
+                text_embeds_val.append(model.owlvit.get_text_features(**text_inputs_val))
+
+        text_embeds = torch.cat(text_embeds, dim=0).cpu().detach()
+        text_embeds_val = torch.cat(text_embeds_val, dim=0).cpu().detach()
+
+    return text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part
 
 def train_loop(dataset: str,
                model: callable,
-               processor: callable,
+            #    processor: callable,
                data_loader: DataLoader,
                device: str,
                optimizer: torch.optim.Optimizer = None,
@@ -274,16 +386,23 @@ def train_loop(dataset: str,
                wandbLogger: wandb.wandb_sdk.wandb_run.Run = None,
                precompute: bool = True,
                eval_only: bool = False,
-               weight_dict: dict = None):
-
+               weight_dict: dict = None,
+               is_dp: bool = False,
+               text_embeds: torch.Tensor = None,
+               text_inputs_parts: dict = None,
+               total_descriptors_part: int = None,
+               num_negatives: int = None,
+               templated_descriptions: dict = None,
+               ):
+    
     # to pretend training script as evaluation script, need separate evaluation script for faster inference.
     runtime = 'val' if eval_only else 'train'
     if args.eval_test:
         runtime = 'test'
 
     model.train()
-    model.to(device)
-    local_model = model.module if world_size > 1 else model
+    #BUG: when using DDP or DP, model should be wrapped by DDP or DP module, taking it out will make DDP or DP not working.
+    # local_model = model.module if world_size > 1 or is_dp else model
 
     epoch_loss = 0
     batch_losses = []
@@ -292,34 +411,11 @@ def train_loop(dataset: str,
     accuracy_dict = {f"{runtime}/top1(%)": 100 * 0, f"{runtime}/top5(%)": 100 * 0}
     obj_det_epoch_loss_dict = {}
 
+    #1620MB
     # feed parts' names to OwlViT for localization
-    with torch.no_grad():
-        text_inputs_parts = processor(text=all_parts, padding="max_length", truncation=True, return_tensors="pt").to(device)
-        total_descriptors_part = text_inputs_parts['input_ids'].shape[0]
-        text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'].repeat(args.batch_size, 1)
-        text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'].repeat(args.batch_size, 1)
-
-        text_embeds = []
-        num_batches = math.ceil(len(all_descriptions) / args.batch_size)
-        for i in range(num_batches):
-            start = i * args.batch_size
-            end = (i+1) * args.batch_size
-            text_inputs = processor(text=all_descriptions[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            text_embeds.append(local_model.owlvit.get_text_features(**text_inputs))
-
-        text_embeds_val = []
-        num_batches = math.ceil(len(all_descriptions_val) / args.batch_size)
-        for i in range(num_batches):
-            start = i * args.batch_size
-            end = (i+1) * args.batch_size
-            text_inputs_val = processor(text=all_descriptions_val[start:end], padding="max_length", truncation=True, return_tensors="pt").to(device)
-            text_embeds_val.append(local_model.owlvit.get_text_features(**text_inputs_val))
-
-        text_embeds = torch.cat(text_embeds, dim=0).cpu().detach()
-        text_embeds_val = torch.cat(text_embeds_val, dim=0).cpu().detach()
-
     torch.autograd.set_detect_anomaly(True)
 
+    # 3152MB 
     store_path = None
     visualize_batch_count = 0
     if args.visualize > 0:
@@ -333,61 +429,53 @@ def train_loop(dataset: str,
     if load_boxes_base:
         df_cub_test = pd.read_hdf(args.test_file)
 
+    all_cls_ids = set(range(len(templated_descriptions)))
     for batch_idx, batch_data in tqdm(enumerate(data_loader), desc=f"{runtime} epoch {epoch}", total=len(data_loader)):
         if not precompute:
             raise NotImplementedError("Current Training script only support precomputed (boxes) mode")
 
         images, targets_cls, image_paths = batch_data
         images, targets_cls = images.to(device), targets_cls.to(device)
-        batch_size = len(image_paths)
 
-        # Handle the last batch separately
-        if batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
+        batch_size = images.pixel_values.shape[0]
+        query_size = text_inputs_parts['input_ids'].shape[0]
+        #Handle the last batch separately
+        if isinstance(model, torch.nn.DataParallel) and batch_size*total_descriptors_part != query_size:
+            # drop some images to make sure the query size is a multiple of number of GPUs (for DP)
+            print(f"Batch size: {batch_size}, Query size: {query_size}, num descriptors: {total_descriptors_part}")
+            batch_size = (batch_size // len(device_list)) * len(device_list)
+            images['pixel_values'] = images['pixel_values'][:batch_size]
+            targets_cls = targets_cls[:batch_size]
+            image_paths = image_paths[:batch_size]
+            # change the query size to be a multiple of batch size
             text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
             text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+                
+        elif batch_idx == len(data_loader) - 1 or batch_size != args.batch_size:
+            text_inputs_parts['input_ids'] = text_inputs_parts['input_ids'][:total_descriptors_part].repeat(batch_size, 1)
+            text_inputs_parts['attention_mask'] = text_inputs_parts['attention_mask'][:total_descriptors_part].repeat(batch_size, 1)
+        
 
         images['pixel_values'] = images['pixel_values'].squeeze(1).to(device)
 
+        # 3160MB
         # ------------------------------------------------------------------
         # Increase/Reduce number of classes for contrastive learning
         # ------------------------------------------------------------------
         if args.network_type == "contrastive" and runtime in ["train", "val"]:
-            unique_class_ids = list(dict.fromkeys(targets_cls.tolist()).keys())
-
-            # Select X from the remaining classes with X = num_negatives - unique_class_ids
-            if runtime == "train":
-                if args.contrastive_sampler in ["refilled_empty_classes", "removed_empty_classes"]:
-                    assert len(unique_class_ids) == batch_size
-
-                num_extra_negatives = args.num_negatives_train - len(unique_class_ids)
-                description_embeds = text_embeds
-
-                if num_extra_negatives > 0:
-                    print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
-                    all_negatives = [class_id for class_id in range(len(templated_descriptions.keys())) if class_id not in unique_class_ids]
-                    unique_class_ids += random.sample(all_negatives, num_extra_negatives)
-
-            else:
-                num_extra_negatives = args.num_negatives_val - len(unique_class_ids)
-                description_embeds = text_embeds_val
-
-                if num_extra_negatives > 0:
-                    print(f"Adding {num_extra_negatives} extra negatives to the batch for {runtime}")
-                    all_negatives = [class_id for class_id in range(len(templated_descriptions_val.keys())) if class_id not in unique_class_ids]
-                    unique_class_ids += random.sample(all_negatives, num_extra_negatives)
-
-            selected_text_embeds = description_embeds.view(-1, len(all_parts), description_embeds.shape[-1])[unique_class_ids]
-            text_desc_embeds = selected_text_embeds.view(-1, description_embeds.shape[-1]).repeat(batch_size, 1)   #.to(device)
-
-            # Update targets when the order of text_embeds is changed
-            targets_cls = torch.tensor([unique_class_ids.index(class_id) for class_id in targets_cls.tolist()]).to(device)
+            # Select X from the remaining classes with X = num_negatives - set(targets_cls)
+            text_desc_embeds, targets_cls = add_extra_negatives(runtime, text_embeds, all_cls_ids, num_negatives, targets_cls)
 
             # Also update number of classes in the model for contrastive loss in the upper branch
-            local_model.update_num_classes(len(unique_class_ids))
+            if isinstance(model, torch.nn.DataParallel) or isinstance(model, DDP):
+                model.module.update_num_classes(num_negatives)
+            else:
+                model.update_num_classes(num_negatives)
         else:
-            text_desc_embeds = text_embeds.repeat(batch_size, 1)   #.to(device)
+            text_desc_embeds = text_embeds.clone()
+            
         # ------------------------------------------------------------------
-
+        # 3160MB
         # Update targets for box and class losses in addition to the xclip loss
         image_ids = [".".join(image_path.split("/")[-1].split(".")[:-1]) for image_path in image_paths]
         targets = []
@@ -401,7 +489,15 @@ def train_loop(dataset: str,
                 if load_boxes_base:
                     ori_image_name = df_cub_test.loc[df_cub_test['new_image_name'] == image_id + ".jpg"]["org_image_name"].values[0]
                     boxes_dir_base = f"{PRECOMPUTED_DIR}/cub/test/owlvit-base-patch32_cub-12-parts/data/{ori_image_name.replace('.jpg', '.pth')}"
-
+            elif dataset == 'stanforddogs':
+                boxes_dir = f"{PRECOMPUTED_DIR}/{dataset}/part_boxes/owlvit-large-patch14_stanforddog-6-parts-dog_dog_update_logits/{image_id}.pth"
+                key_boxes = "boxes_info"
+                key_logits = 'part_logits'
+            elif dataset == 'dog_soup':
+                boxes_dir = f"/home/lab/xclip/owlvit_boxes/dogsoup_v1/part_boxes/owlvit-large-patch14_stanforddog-6-parts-dog_update_logits/{image_id}.pth"
+                key_boxes = "boxes_info"
+                key_logits = 'part_logits'
+                
             else:
                 boxes_dir = f"../pred_boxes/{dataset}/owl_vit_owlvit-large-patch14_descriptors_chatgpt_groundtruths/{image_id}.pth"
                 key_boxes = "boxes"
@@ -456,23 +552,25 @@ def train_loop(dataset: str,
 
         if eval_only:
             with torch.no_grad():
-                logits, loss, loss_dict = forward_inputs(local_model, images, text_inputs_parts, text_desc_embeds, targets, weight_dict, visualize_batch_count, store_path)
+                logits, loss, loss_dict = forward_inputs(model, images, text_inputs_parts, text_desc_embeds, targets, weight_dict, visualize_batch_count, store_path)
 
             batch_loss = loss.item()
             batch_losses.append(batch_loss)
         else:
             optimizer.zero_grad()
-            logits, loss, loss_dict = forward_inputs(local_model, images, text_inputs_parts, text_desc_embeds, targets, weight_dict, visualize_batch_count, store_path)
-
-            # compute loss and update model's weights
-            batch_loss = loss.item()
-            batch_losses.append(batch_loss)
+            logits, loss, loss_dict = forward_inputs(model, images, text_inputs_parts, text_desc_embeds, targets, weight_dict, visualize_batch_count, store_path)
 
             loss.backward()
             optimizer.step()
             if train_scheduler is not None:
                 train_scheduler.step()
 
+            # compute loss and update model's weights
+            # if dist.is_initialized():
+            #     loss = reduce_losses(loss, 1) # reduce losses over all GPUs for logging, batch size already considered so set to 1.
+            batch_loss = loss.item()
+            batch_losses.append(batch_loss)
+            
         # log model accuracy
         if acc_metric_top1.num_classes == logits.shape[-1]:
             acc_metric_top1.update(logits, targets_cls)
@@ -521,7 +619,7 @@ def parse_arguments():
     #   Must-check arguments for experiments but usually FIXED
     # ------------------------------------------------------------
     parser.add_argument('--model', help='select model', default="owlvit-large-patch14", choices=["owlvit-base-patch32", "owlvit-base-patch16", "owlvit-large-patch14"])
-    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup"])
+    parser.add_argument('--dataset', help='select dataset', default="cub", choices=["imagenet", "imagenet-v2", "imagenet-a", "imagenet-c", "places365", "cub", "nabirds", "bird_soup", "stanforddogs", "dog_soup"])
     parser.add_argument('--sub_datasets', help='select a group of datasets in Bird Soup', default="all")
     parser.add_argument('--distortion', help='select distortion type if using ImageNet-C', default="defocus_blur", choices=["defocus_blur", "glass_blur", "motion_blur", "zoom_blur", "shot_noise", "gaussian_noise", "impulse_noise"])
     parser.add_argument('--distortion_severity', type=int, help='select distortion severity if using ImageNet-C', default=1, choices=[1, 2, 3, 4, 5])
@@ -539,7 +637,7 @@ def parse_arguments():
     # ------------------------------------------------------------
     #   Must-check arguments for experiments: FREQUENTLY CHANGE
     # ------------------------------------------------------------
-    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt"])
+    parser.add_argument('--descriptors', help='select descriptors for OwlViT', default="chatgpt", choices=["sachit", "chatgpt", 'stanforddogs'])
     parser.add_argument('--prompt_type', type=int, help='select prompt type', default=5)
     parser.add_argument('--owlvit_threshold', type=float, help='select threshold for owl_vit', default=-1)
     parser.add_argument('--owlvit_conf_scores', help='use owlvit scores as confidence scores', action="store_true")
@@ -550,6 +648,7 @@ def parse_arguments():
     parser.add_argument('--scheduler_mode', type=str, help='select mode for scheduler', default="min")
     parser.add_argument('--scheduler_factor', type=float, help='select factor for scheduler', default=0.5)
     parser.add_argument('--scheduler_patience', type=int, help='select patience for scheduler', default=5)
+    parser.add_argument('--scheduler_verbose', action="store_true", help='print logs for scheduler')
 
     parser.add_argument('--num_negatives_train', type=int, help='number of train negatives for contrastive learning', default=32)
     parser.add_argument('--num_negatives_val', type=int, help='number of val negatives for contrastive learning', default=32)
@@ -601,6 +700,8 @@ def parse_arguments():
     parser.add_argument('--verbose', help='print logs', action="store_true")
     parser.add_argument("--no_log", action='store_true', help="disable wandb logging.")
     parser.add_argument("--project_name", type=str, default="xclip", help="name of the wandb project.")
+    parser.add_argument("--enable_dp", action="store_true", help="enable DataParallel for training. Note: Not efficient, but allow us to train with larger batch size.")
+    parser.add_argument("--run_name", type=str, default="", help="name of the wandb run.")
 
     args = parser.parse_args()
     return args
@@ -625,7 +726,10 @@ if __name__ == '__main__':
 
     wandbLogger = None
     if not args.no_log or args.eval_test:
-        run_name = f"{str(datetime.now().strftime('%m_%d_%Y-%H:%M:%S'))}_lr_{args.lr}_{args.epochs}ep_prompt{args.prompt_type}"
+        if args.run_name is None:
+            run_name = f"{str(datetime.now().strftime('%m_%d_%Y-%H:%M:%S'))}_lr_{args.lr}_{args.epochs}ep_prompt{args.prompt_type}" 
+        else:
+            run_name = args.run_name
         sub_dir = f"evaluation_{args.network_type}" if args.eval_test else f"training_{args.network_type}"
         if args.finetuning is not None:
             sub_dir = f"finetune_{args.network_type}/{args.finetuning}"
@@ -639,7 +743,7 @@ if __name__ == '__main__':
             os.makedirs(out_dir, exist_ok=True)
 
             if not args.no_log:
-                wandbLogger = wandb.init(project=args.project_name, name=run_name, resume=False, dir=out_dir, mode='disabled' if args.no_log else 'online', entity='pmthangk09')
+                wandbLogger = wandb.init(project=args.project_name, name=run_name, resume=False, dir=out_dir, mode='disabled' if args.no_log else 'online')
             else:
                 print("Warning: wandb logging is disabled. Make sure this action is intended.")
 
@@ -651,7 +755,8 @@ if __name__ == '__main__':
     device_list = [int(x) for x in args.devices.split(",")]
     check_device_availability(device_list)
     device = f'cuda:{device_list[rank]}' if world_size > 1 else f'cuda:{device_list[0]}'
-    torch.cuda.set_device(device)
+    if not args.enable_dp:
+        torch.cuda.set_device(device)
 
     # load pre-trained model
     owlvit_det_processor = OwlViTProcessor.from_pretrained(f"google/{args.model}")
@@ -671,11 +776,16 @@ if __name__ == '__main__':
     train_dataset, val_dataset = load_training_dataset(args.dataset, args.sub_datasets, args.eval_size, transform=owlvit_det_processor, random_state=args.random_seed, zeroshot_split=args.zeroshot_split)
     target_classes = train_dataset.classes if hasattr(train_dataset, "classes") else train_dataset.dataset.classes
     target_classes_val = val_dataset.classes if hasattr(val_dataset, "classes") else val_dataset.dataset.classes
+    # ### for debugging ###
+    # # for testing purposes, sample 12345 images from train set
+    # from torch.utils.data import Subset
+    # sample_idxs = np.random.choice(len(train_dataset), 12345, replace=False)
+    # train_dataset = Subset(train_dataset, sample_idxs)
 
     test_dataset = None
     if args.eval_test:
         test_dataset, _ = load_training_dataset(args.dataset, args.sub_datasets, 1.0, transform=owlvit_det_processor, random_state=args.random_seed, zeroshot_split=args.zeroshot_split, split="test")
-        target_classes = test_dataset.classes if hasattr(test_dataset, "classes") else test_dataset.dataset.classes
+        target_classes_val = test_dataset.classes if hasattr(test_dataset, "classes") else test_dataset.dataset.classes
 
     if args.dataset == "bird_soup":
         target_classes = [c.lower().replace("-", " ").replace("'s", "") for c in target_classes]
@@ -683,11 +793,13 @@ if __name__ == '__main__':
 
     # prepare text embeddings
     # Use target_classes to filter out classes that are not in the dataset (for BirdSoup)
-    descriptions_only, _ = load_descriptions(dataset_name=args.dataset, prompt_type=0, desc_type=args.descriptors, target_classes=target_classes, descriptor_path=args.descriptor_path)
-    templated_descriptions, _ = load_descriptions(dataset_name=args.dataset, prompt_type=args.prompt_type, desc_type=args.descriptors, target_classes=target_classes, descriptor_path=args.descriptor_path)
-    templated_descriptions_val, _ = load_descriptions(dataset_name=args.dataset, prompt_type=args.prompt_type, desc_type=args.descriptors, target_classes=target_classes_val, descriptor_path=args.descriptor_path)
+    descriptions_only, _ = load_descriptions(dataset_name=args.dataset, prompt_type=0, desc_type=args.descriptors, target_classes=target_classes, descriptor_path=args.descriptor_path, unmute=False)
+    templated_descriptions, _ = load_descriptions(dataset_name=args.dataset, prompt_type=args.prompt_type, desc_type=args.descriptors, target_classes=target_classes, descriptor_path=args.descriptor_path, unmute=rank in {-1, 0})
+    templated_descriptions_val, _ = load_descriptions(dataset_name=args.dataset, prompt_type=args.prompt_type, desc_type=args.descriptors, target_classes=target_classes_val, descriptor_path=args.descriptor_path, unmute=False)
 
     # Sorted the keys in templated_descriptions to match the order of classes in target_classes
+    assert set(templated_descriptions.keys()) == set(target_classes)
+    assert set(templated_descriptions_val.keys()) == set(target_classes_val)
     templated_descriptions = {k: templated_descriptions[k] for k in sorted(templated_descriptions, key=target_classes.index)}
     templated_descriptions_val = {k: templated_descriptions_val[k] for k in sorted(templated_descriptions_val, key=target_classes_val.index)}
 
@@ -701,7 +813,7 @@ if __name__ == '__main__':
 
     # Use parts only for localization
     all_parts = []
-    if args.descriptors == "chatgpt":
+    if args.descriptors in {"chatgpt", "stanforddogs"}:
         all_parts = [[descriptor.split(":")[0] for descriptor in descriptors if ":" in descriptor] for descriptors in descriptions_only.values()][0]
         sel_part_indices = list(range(len(all_parts)))
 
@@ -727,29 +839,35 @@ if __name__ == '__main__':
                    "loss_sym_box_label": loss_weights[3], "loss_xclip": loss_weights[4]}
 
     # Initialize OwlViT model for Classification
-    model = OwlViTForClassification(owlvit_det_model=owlvit_det_model, num_classes=num_classes, num_parts=len(all_parts), device=device,
+    model = OwlViTForClassification(owlvit_det_model=owlvit_det_model, num_classes=num_classes, num_parts=len(all_parts),
                                     freeze_box_heads=args.freeze_box_heads, train_box_heads_only=args.train_box_heads_only,
                                     network_type=args.network_type, classification_loss=args.classification_loss,
                                     weight_dict=weight_dict, logits_from_teacher=args.logits_from_teacher,
-                                    finetuning=args.finetuning, alpha=args.alpha, gamma=args.gamma)
+                                    finetuning=args.finetuning, alpha=args.alpha, gamma=args.gamma,
+                                    device=None if args.enable_dp else device,)
+    # # check if pytorch version is > 2.0
+    # if int(torch.__version__.split('.')[0]) >= 2:
+    #     model = torch.compile(model, mode = "default")
+    
 
-    trained_params, frozen_params = 0, 0
-    for name, param in model.named_parameters():
-        if not args.no_log and rank in {-1, 0}:
-            print(f"{name}: {param.shape if len(param.shape) > 0 else param.type()} - Required grad: {param.requires_grad}")
+    if rank in {-1, 0}:
+        trained_params, frozen_params = 0, 0
+        for name, param in model.named_parameters():
+            if not args.no_log and rank in {-1, 0}:
+                print(f"{name}: {param.shape if len(param.shape) > 0 else param.type()} - Required grad: {param.requires_grad}")
 
-        params = reduce(operator.mul, list(param.shape)) if len(param.shape) > 0 else 1
-        if param.requires_grad:
-            trained_params += params
-        else:
-            frozen_params += params
+            params = reduce(operator.mul, list(param.shape)) if len(param.shape) > 0 else 1
+            if param.requires_grad:
+                trained_params += params
+            else:
+                frozen_params += params
 
-    print(f"Trainable parameters: {format(trained_params, ',')}")
-    print(f"Frozen parameters: {format(frozen_params, ',')}")
+        print(f"Trainable parameters: {format(trained_params, ',')}")
+        print(f"Frozen parameters: {format(frozen_params, ',')}")
 
     if args.best_model:
         # Load best model: OwlViT-Base + OwlViT_CLS_PLUS + Finetune MLP + Vision encoder
-        ckpt = torch.load(args.best_model, map_location=device)
+        ckpt = torch.load(args.best_model, map_location='cpu')
         model.load_state_dict(ckpt, strict=False)
 
     # TODO: FORCE UPDATING BOX HEAD
@@ -757,7 +875,7 @@ if __name__ == '__main__':
         model.update_box_head(args.box_head_num_layers)
 
     # Write model architecture to file
-    if not args.no_log:
+    if not args.no_log and rank in {-1, 0}:
         # write model architecture to file for tracking purposes
         with open(f'{out_dir}/model_arch.txt', 'w') as f:
             f.write(str(model) + "\n\n")
@@ -799,9 +917,12 @@ if __name__ == '__main__':
         #         print(f"GPU: {rank}, Batch: {i}, First item ID: {input[0]['id']}")
 
     if rank != -1:
-        model = DDP(model, device_ids=[device], output_device=device)
+        model = DDP(model, device_ids=[device], output_device=device, find_unused_parameters=True)
     else:
-        model.to(device)
+        model = model.to(device)
+        
+    if args.enable_dp:
+        model = torch.nn.DataParallel(model, device_ids=device_list, output_device=device)
 
     # if resume:
         # load the latest checkpoint
@@ -813,8 +934,17 @@ if __name__ == '__main__':
     optimizer = torch.optim.AdamW(model.parameters(), lr=float(args.lr), weight_decay=float(args.weight_decay))
 
     # use plateau scheduler
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=args.scheduler_mode, factor=args.scheduler_factor, patience=args.scheduler_patience, verbose=args.verbose)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=args.scheduler_mode, factor=args.scheduler_factor, patience=args.scheduler_patience, verbose=args.scheduler_verbose)
 
+    # compute the text embeddings 
+    text_embeds, text_embeds_val, text_inputs_parts, total_descriptors_part = compute_text_embeds(model, owlvit_det_processor, all_descriptions, all_descriptions_val, args.batch_size, device)
+
+    # TODO: try a different scheduler
+    # train_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6, last_epoch=-1)
+    # At https://github.com/openai/CLIP/issues/107
+    # The LR schedule didn't have restarts, the multiplier becomes (almost) 1.0 after warmup, and monotonically decreases 0.0 drawing a cosine curve over 32 epochs.
+    # A linear warmup was done over the first 2,000 iterations and is not dependent of the period of the cosine function.
+    
     # train loops
     if not args.eval_test:
         val_best_acc, val_best_loss, best_epoch = 0, 9999, 0
@@ -822,16 +952,20 @@ if __name__ == '__main__':
 
         for epoch in range(args.epochs):
             # train
-            train_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=train_loader,
+            train_results = train_loop(dataset=args.dataset, model=model, data_loader=train_loader,
                                        num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
-                                       optimizer=optimizer, log_interval=10, epoch=epoch, weight_dict=weight_dict)
+                                       optimizer=optimizer, log_interval=10, epoch=epoch, weight_dict=weight_dict, is_dp=args.enable_dp,
+                                       text_inputs_parts=text_inputs_parts, total_descriptors_part=total_descriptors_part,
+                                       text_embeds=text_embeds, num_negatives=args.num_negatives_train, templated_descriptions=templated_descriptions)
 
             model, train_loss, train_top1, train_top5, train_od_epoch_loss_dict = train_results
 
             # eval
-            eval_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=val_loader,
+            eval_results = train_loop(dataset=args.dataset, model=model, data_loader=val_loader,
                                       num_classes=num_classes, device=device, rank=rank,  wandbLogger=wandbLogger,
-                                      eval_only=True, weight_dict=weight_dict)
+                                      eval_only=True, weight_dict=weight_dict, is_dp=args.enable_dp,
+                                      text_inputs_parts=text_inputs_parts, total_descriptors_part=total_descriptors_part,
+                                      text_embeds=text_embeds_val, num_negatives=args.num_negatives_val, templated_descriptions=templated_descriptions_val)
 
             val_loss, val_top1, val_top5, val_od_epoch_loss_dict = eval_results
 
@@ -847,7 +981,7 @@ if __name__ == '__main__':
                 if not args.no_log:
                     wandb.log(train_log_dict | val_log_dict | train_od_epoch_loss_dict | val_od_epoch_loss_dict | {"epochs": epoch}, commit=False)
 
-                sd = model.module.state_dict() if world_size > 1 else model.state_dict()
+                sd = model.module.state_dict() if hasattr(model, "module") else model.state_dict()
                 if args.save_freq > 0 and epoch % args.save_freq == 0:
                     torch.save(sd, os.path.join(wandb.run.dir, f"e{epoch:04d}.pt"))
 
@@ -872,9 +1006,12 @@ if __name__ == '__main__':
         print(f'Best val/val_loss top1: {val_best_acc:.4f}/{val_best_loss:.4f} at epoch {best_epoch}.')
         print(" ".join([f"{k}: {v:.5f}" for k, v in val_od_epoch_loss_dict.items()]))
     else:
-        test_results = train_loop(dataset=args.dataset, model=model, processor=owlvit_det_processor, data_loader=test_loader,
-                                  num_classes=num_classes, device=device, rank=rank, wandbLogger=wandbLogger,
-                                  eval_only=True, weight_dict=weight_dict)
+        test_results = train_loop(dataset=args.dataset, model=model, data_loader=test_loader,
+                                    num_classes=num_classes, device=device, rank=rank,  wandbLogger=wandbLogger,
+                                    eval_only=True, weight_dict=weight_dict, is_dp=args.enable_dp,
+                                    text_inputs_parts=text_inputs_parts, total_descriptors_part=total_descriptors_part,
+                                    text_embeds=text_embeds_val, num_negatives=args.num_negatives_val, templated_descriptions=templated_descriptions_val)
+
 
         test_loss, test_top1, test_top5, test_od_epoch_loss_dict = test_results
 
@@ -888,7 +1025,7 @@ if __name__ == '__main__':
     end_time = datetime.now()
 
     with open(f'{out_dir}/results.json', 'w') as f:
-        json.dump({f"Best Accuracy ({'val' if not args.eval_test else 'test'})": best_acc,
+        json.dump({f"Best Accuracy ({'test' if args.eval_test else 'val'})": best_acc,
                    "Best epoch": best_epoch,
                    "Number of examples": len(val_dataset),
                    "Start time": start_time.strftime("%d/%m/%Y %H:%M:%S"),
