@@ -17,9 +17,9 @@
       publisher = "Association for Computational Linguistics"
     }
     
-### How is our method different from other methods?
+### 🌟 Interactive Demo 🌟
 
-[Interactive Demo](https://huggingface.co/spaces/XAI/PEEB) that shows how one can edit a class' descriptors to directly modify the classifier.
+[Interactive Demo](https://huggingface.co/spaces/XAI/PEEB) that shows how one can edit a class' descriptors (during inference) to directly modify the classifier.
 
 
 ### Model Card
