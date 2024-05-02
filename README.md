@@ -1,4 +1,4 @@
-# PEEB: Part-based Classifier with an Explainable and Editable Language Bottleneck
+# PEEB: Part-based Image Classifier with an Explainable and Editable Language Bottleneck
 
 _**TLDR:** We proposed a part-based bird classifier that makes predictions based on part-wise descriptions. Our method directly utilizes human-provided descriptions (in this work, from GPT4). It outperforms CLIP and M&V by 10 points in CUB and 28 points in NABirds._
 
