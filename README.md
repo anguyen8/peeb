@@ -5,9 +5,7 @@ _**TLDR:** We proposed a part-based bird classifier that makes predictions based
 
 ### How is our method different from other methods?
 
-[Comparison between M&V (demo)](http://x-clip.auburn.edu:8087)
-
-[Editable Demo](http://x-clip.auburn.edu:7087)
+[Interactive Demo](https://huggingface.co/spaces/XAI/PEEB) that shows how one can edit a class' descriptors to directly modify the classifier.
 
 
 ### Model Card
