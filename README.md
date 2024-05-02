@@ -1,8 +1,22 @@
 # PEEB: Part-based Image Classifier with an Explainable and Editable Language Bottleneck
 
-_**TLDR:** We proposed a part-based bird classifier that makes predictions based on part-wise descriptions. Our method directly utilizes human-provided descriptions (in this work, from GPT4). It outperforms CLIP and M&V by 10 points in CUB and 28 points in NABirds._
+`Official Implementation` for NAACL 2024 Findings paper [PEEB: Part-based Image Classifiers with an Explainable and Editable Language Bottleneck
+](https://arxiv.org/abs/2403.05297) by [Thang M. Pham](https://scholar.google.com/citations?user=eNrX3mYAAAAJ&hl=en), [Peijie Chen](https://chanfeechen.github.io/resume), [Tin Nguyen](https://ngthanhtin.github.io/), [Seunghyun Yoon](https://david-yoon.github.io/), [Trung Bui](https://research.adobe.com/person/trung-bui/), [Anh Totti Nguyen](https://anhnguyen.me/).
 
+**TLDR:** We proposed a part-based fine-grained image classifier (identifying 🐦 or 🐕) that makes predictions by matching visual object parts detected in the input image with textual part-wise descriptions of each class. Our method directly utilizes human-provided descriptions (in this work, from GPT4). PEEB outperforms [CLIP](https://github.com/openai/CLIP) (2021) and [M&V](https://arxiv.org/abs/2210.07183) (2023) by +10 points on CUB and +28 points on NABirds in generalized zero-shot settings. While CLIP and its extensions depend heavily on the prompt to contain the known class name, PEEB relies solely on the textual descriptors and does not use class names and therefore generalizes to objects where class names or examplar photos are not unknown.
 
+**If you use this software, please consider citing:**
+
+    @article{auburn2024peeb,
+      title={PEEB: Part-based Image Classifiers with an Explainable and Editable Language Bottleneck},
+      author={Pham, Thang M and Chen, Peijie and Nguyen, Tin and Yoon, Seunghyun and Bui, Trung and Nguyen, Anh},
+      booktitle = "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics",
+      month = jul,
+      year = "2024",
+      address = "Mexico city, Mexico",
+      publisher = "Association for Computational Linguistics"
+    }
+    
 ### How is our method different from other methods?
 
 [Interactive Demo](https://huggingface.co/spaces/XAI/PEEB) that shows how one can edit a class' descriptors to directly modify the classifier.
@@ -31,7 +45,7 @@ python -m spacy download en_core_web_sm
 ```
 
 
-### How to construct Bird-11K?
+### How to construct Bird-11K 🐦?
 
 We do not redistribute the datasets; we provide a ```metadata``` of the combined dataset. To prepare the `Bird-11K` dataset, please follow [Data preparation](./Data_preparation.md) to prepare the data if you would like to train the model.
 
