@@ -99,3 +99,39 @@ For evaluation only, you may run the following script (for CUB):
 python train_owl_vit.py --model owlvit-base-patch32 --dataset bird_soup --sub_datasets all --descriptors chatgpt --prompt_type 0 --batch_size 32 --num_workers 8 --devices 0 --loss_weights 0,1,1,1,1 --network_type classification --eval_test --no_log --test_file "../data/bird_11K/metadata/finetuning/cub_test_reindexed.h5" --best_model "" --birdsoup_level 1
 ```
 Evaluation commands of other test sets can be found in [here](./scripts/). 
+
+
+## Troubleshooting
+
+### Issue: Unable to reproduce zero-shot results on CUB
+**Problem:** Users may experience difficulty reproducing the reported zero-shot results on the CUB dataset.
+
+**Solution**: 
+
+Download the test file here [cub_test_reindexed.h5](https://tigermailauburn-my.sharepoint.com/:u:/g/personal/ttn0011_auburn_edu/EbN9S7JXxy1MoRoa6ZopdJoBK1iDz3TywVQExK26XvAEsg?e=NXZRYP). 
+
+Download the model here [PEEB_CUB.pt](https://drive.google.com/file/d/1IIGllKlCc8zgRVJiTXIB1CpbWRbwIhfU/view?pli=1).
+
+And put these files to the arguments `--test_file` and `--best_model`, respectively, in the following **zero-shot evaluation command**.
+
+**Zero-shot Evaluation Command:**
+   For reproducing zero-shot results on CUB, use the following command:
+   ```bash
+   python src/train_owl_vit.py \
+     --model owlvit-base-patch32 \
+     --dataset bird_soup \
+     --sub_datasets all \
+     --descriptors chatgpt \
+     --prompt_type 0 \
+     --batch_size 32 \
+     --num_workers 8 \
+     --devices 0 \
+     --loss_weights 0,1,1,1,1 \
+     --network_type classification \
+     --eval_test \
+     --no_log \
+     --test_file "cub_test_reindexed.h5" \
+     --best_model "PEEB_CUB.pt" \
+     --birdsoup_level 1
+   ```
+
